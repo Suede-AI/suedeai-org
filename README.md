@@ -73,6 +73,10 @@ Deployment flow:
 3. Point `suedeai.org` at the Vercel project
 4. Keep `suedeai.ai` as the main site and let this site link into it
 
+Detailed guide:
+
+- [Vercel + Supabase + Namecheap deployment guide](/Users/jason/Documents/CodexXcampaign/SEO Webisite/docs/deployment/vercel-supabase-namecheap.md)
+
 ### Verification
 
 ```bash
