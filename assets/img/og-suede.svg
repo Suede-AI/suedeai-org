@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Suede — Proof of Creation. Programmable IP.</title>
+  <desc id="desc">Bright infrastructure brand card for suedeai.org.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#eef5ff"/>
+      <stop offset="100%" stop-color="#d8e7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g stroke="#0057ff" fill="none" opacity="0.22">
+    <circle cx="960" cy="182" r="82"/>
+    <circle cx="960" cy="182" r="132"/>
+    <circle cx="960" cy="182" r="184"/>
+  </g>
+  <text x="92" y="120" fill="#47617e" font-family="Arial, sans-serif" font-size="24" letter-spacing="5">THE OWNERSHIP LAYER FOR THE AI ERA</text>
+  <text x="92" y="272" fill="#08101d" font-family="Arial, sans-serif" font-size="88" font-weight="700">Proof of Creation.</text>
+  <text x="92" y="368" fill="#08101d" font-family="Arial, sans-serif" font-size="88" font-weight="700">Programmable IP.</text>
+  <text x="92" y="454" fill="#47617e" font-family="Arial, sans-serif" font-size="30">Verifiable ownership, provenance, voice, likeness, and rights infrastructure.</text>
+  <text x="92" y="540" fill="#0057ff" font-family="Arial, sans-serif" font-size="28">suedeai.org</text>
+</svg>

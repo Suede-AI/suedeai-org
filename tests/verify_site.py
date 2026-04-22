@@ -37,6 +37,20 @@ def assert_regex(label: str, haystack: str, pattern: str, failures: list[str]) -
 def main() -> int:
     failures: list[str] = []
 
+    home_path = ROOT / "index.html"
+    if home_path.exists():
+        home_html = read_text(home_path)
+        assert_contains("index.html", home_html, "Proof of Creation. Programmable IP.", failures)
+        assert_contains("index.html", home_html, "Get the Book", failures)
+        assert_contains("index.html", home_html, 'href="https://suedeai.ai/"', failures)
+        assert_contains(
+            "index.html",
+            home_html,
+            "Proof-of-Creation Infrastructure for the AI-Native Economy",
+            failures,
+        )
+        assert_contains("index.html", home_html, "Capture -&gt; Prove -&gt; Monetize", failures)
+
     for file_name, route in PAGES.items():
         path = ROOT / file_name
         if not path.exists():
