@@ -17,3 +17,23 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
+
+## Deployment Notes
+
+### Static hosting
+
+Upload all files and folders as-is to the web root for `suedeai.org`.
+
+### Namecheap shared hosting
+
+- static pages work immediately
+- `book-capture.php` and `contact-submit.php` require PHP enabled
+- the PHP handlers append submissions to local `.log` files in the site root
+
+### Verification
+
+```bash
+python3 tests/verify_site.py
+php -l book-capture.php
+php -l contact-submit.php
+```
