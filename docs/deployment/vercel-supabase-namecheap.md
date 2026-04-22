@@ -4,6 +4,7 @@
 
 - `suedeai.org` served from Vercel
 - forms captured through Vercel serverless functions + Supabase
+- book requests compiled in Supabase for manual delivery from `info@suedeai.org`
 - Namecheap used as registrar and DNS
 - `suedeai.ai` remains the broader main site
 
@@ -22,11 +23,20 @@ If your SQL editor does not support `\i`, paste the contents of [schema.sql](/Us
 Set these in the Vercel project settings:
 
 - `SUPABASE_URL`
-- `SUPABASE_SERVICE_ROLE_KEY`
+- `SUPABASE_PUBLISHABLE_KEY`
 - `SUPABASE_BOOK_TABLE`
 - `SUPABASE_CONTACT_TABLE`
 
+Optional but recommended:
+
+- `CONTACT_EMAIL_FROM`
+- `CONTACT_NOTIFY_TO`
+
 Use [.env.example](/Users/jason/Documents/CodexXcampaign/SEO Webisite/.env.example) as the reference.
+
+For Supabase capture, use the publishable key with the insert-only RLS policies from [schema.sql](/Users/jason/Documents/CodexXcampaign/SEO Webisite/supabase/schema.sql). Do not use the service-role key in Vercel for this website.
+
+For the current manual workflow, use `info@suedeai.org` as the send-from address when you follow up with book requests.
 
 ## 3. Import Into Vercel
 

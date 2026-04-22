@@ -69,8 +69,25 @@ def main() -> int:
         assert_contains(file_name, html, 'name="twitter:card"', failures)
         assert_regex(file_name, html, r"<h1>.+</h1>", failures)
         assert_contains(file_name, html, 'type="application/ld+json"', failures)
-        assert_contains(file_name, html, "Talk to Suede", failures)
         assert_contains(file_name, html, MAIN_SITE_URL, failures)
+
+    pages_requiring_contact = [
+        "index.html",
+        "proof-of-creation/index.html",
+        "programmable-ip/index.html",
+        "content-provenance/index.html",
+        "creator-ownership/index.html",
+        "ai-voice-protection/index.html",
+        "ai-likeness-protection/index.html",
+        "human-authenticity-layer/index.html",
+        "book/index.html",
+        "contact/index.html",
+    ]
+
+    for file_name in pages_requiring_contact:
+        path = ROOT / file_name
+        if path.exists():
+            assert_contains(file_name, read_text(path), "Talk to Suede", failures)
 
     concept_expectations = {
         "proof-of-creation/index.html": "Proof of creation matters more when content becomes infinite.",
@@ -96,24 +113,38 @@ def main() -> int:
             assert_contains(file_name, read_text(path), sentence, failures)
 
     form_expectations = {
-        "book/index.html": 'action="/book-capture.php"',
-        "contact/index.html": 'action="/contact-submit.php"',
-        "book/thanks/index.html": "Thanks. The book request is in.",
-        "contact/thanks/index.html": "Thanks. Your note is in.",
+        "book/index.html": [
+            'data-api-endpoint="/api/book/"',
+            "Email Me the Preview",
+        ],
+        "contact/index.html": [
+            'action="/contact-submit.php"',
+            'data-api-endpoint="/api/contact/"',
+        ],
+        "book/thanks/index.html": [
+            "Your request is in.",
+        ],
+        "contact/thanks/index.html": [
+            "Thanks. Your note is in.",
+        ],
     }
 
-    for file_name, fragment in form_expectations.items():
+    for file_name, fragments in form_expectations.items():
         path = ROOT / file_name
         if path.exists():
-            assert_contains(file_name, read_text(path), fragment, failures)
+            html = read_text(path)
+            for fragment in fragments:
+                assert_contains(file_name, html, fragment, failures)
 
     robots = ROOT / "robots.txt"
     sitemap = ROOT / "sitemap.xml"
     og_asset = ROOT / "assets" / "img" / "og-suede.svg"
+    cover_asset = ROOT / "assets" / "img" / "stake-your-claim-cover.jpg"
+    pdf_asset = ROOT / "assets" / "files" / "stake-your-claim-condensed-preview.pdf"
     css_asset = ROOT / "assets" / "css" / "site.css"
     js_asset = ROOT / "assets" / "js" / "site.js"
 
-    for asset in [robots, sitemap, og_asset, css_asset, js_asset]:
+    for asset in [robots, sitemap, og_asset, cover_asset, pdf_asset, css_asset, js_asset]:
         if not asset.exists():
             failures.append(f"{asset.relative_to(ROOT)}: file does not exist")
 

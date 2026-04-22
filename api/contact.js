@@ -1,7 +1,9 @@
 const {
   allowPostOnly,
+  getEnv,
   insertRow,
   normalizeText,
+  sendEmail,
   sendJson,
 } = require("./_shared");
 
@@ -33,6 +35,19 @@ module.exports = async (req, res) => {
   if (!result.ok) {
     sendJson(res, result.status, result.payload);
     return;
+  }
+
+  const notifyTo = getEnv("CONTACT_NOTIFY_TO");
+  const sender = getEnv("CONTACT_EMAIL_FROM");
+
+  if (notifyTo && sender) {
+    await sendEmail({
+      from: sender,
+      to: [notifyTo],
+      subject: `New suedeai.org contact${topic ? `: ${topic}` : ""}`,
+      text: `Name: ${name}\nEmail: ${email}\nTopic: ${topic || "(none)"}\n\n${message}`,
+      reply_to: email,
+    });
   }
 
   sendJson(res, 200, { ok: true, redirectTo: "/contact/thanks/" });
