@@ -72,6 +72,41 @@ def main() -> int:
         assert_contains(file_name, html, "Talk to Suede", failures)
         assert_contains(file_name, html, MAIN_SITE_URL, failures)
 
+    concept_expectations = {
+        "proof-of-creation/index.html": "Proof of creation matters more when content becomes infinite.",
+        "programmable-ip/index.html": "Programmable IP turns rights from paperwork into infrastructure.",
+        "content-provenance/index.html": "Content provenance is what makes authenticity durable instead of performative.",
+    }
+
+    for file_name, sentence in concept_expectations.items():
+        path = ROOT / file_name
+        if path.exists():
+            assert_contains(file_name, read_text(path), sentence, failures)
+
+    wedge_expectations = {
+        "creator-ownership/index.html": "Creator ownership becomes more important as AI makes creation abundant.",
+        "ai-voice-protection/index.html": "AI voice protection needs rights infrastructure, not just detection.",
+        "ai-likeness-protection/index.html": "Likeness protection is a core ownership problem in synthetic media.",
+        "human-authenticity-layer/index.html": "Human authenticity becomes premium when synthetic content is cheap.",
+    }
+
+    for file_name, sentence in wedge_expectations.items():
+        path = ROOT / file_name
+        if path.exists():
+            assert_contains(file_name, read_text(path), sentence, failures)
+
+    form_expectations = {
+        "book/index.html": 'action="/book-capture.php"',
+        "contact/index.html": 'action="/contact-submit.php"',
+        "book/thanks/index.html": "Thanks. The book request is in.",
+        "contact/thanks/index.html": "Thanks. Your note is in.",
+    }
+
+    for file_name, fragment in form_expectations.items():
+        path = ROOT / file_name
+        if path.exists():
+            assert_contains(file_name, read_text(path), fragment, failures)
+
     robots = ROOT / "robots.txt"
     sitemap = ROOT / "sitemap.xml"
     og_asset = ROOT / "assets" / "img" / "og-suede.svg"
