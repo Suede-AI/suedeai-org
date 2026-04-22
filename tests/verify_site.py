@@ -114,11 +114,12 @@ def main() -> int:
 
     form_expectations = {
         "book/index.html": [
+            'action="/api/book/"',
             'data-api-endpoint="/api/book/"',
             "Email Me the Preview",
         ],
         "contact/index.html": [
-            'action="/contact-submit.php"',
+            'action="/api/contact/"',
             'data-api-endpoint="/api/contact/"',
         ],
         "book/thanks/index.html": [

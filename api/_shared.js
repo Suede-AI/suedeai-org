@@ -4,6 +4,12 @@ function sendJson(res, status, payload) {
   res.end(JSON.stringify(payload));
 }
 
+function redirect(res, location) {
+  res.statusCode = 303;
+  res.setHeader("Location", location);
+  res.end("");
+}
+
 function getEnv(name) {
   return String(process.env[name] || "").trim();
 }
@@ -127,12 +133,54 @@ function allowPostOnly(req, res) {
   return true;
 }
 
+function readField(source, key) {
+  return source && Object.prototype.hasOwnProperty.call(source, key) ? source[key] : "";
+}
+
+function parseFormEncoded(value) {
+  const params = new URLSearchParams(String(value || ""));
+  return Object.fromEntries(params.entries());
+}
+
+function getRequestFields(req) {
+  if (req.body && typeof req.body === "object" && !Array.isArray(req.body)) {
+    return req.body;
+  }
+
+  const contentType = String(req.headers["content-type"] || "").toLowerCase();
+  const raw = req.body;
+
+  if (typeof raw === "string" && raw) {
+    if (contentType.includes("application/json")) {
+      try {
+        return JSON.parse(raw);
+      } catch {
+        return {};
+      }
+    }
+
+    if (contentType.includes("application/x-www-form-urlencoded")) {
+      return parseFormEncoded(raw);
+    }
+  }
+
+  return {};
+}
+
+function wantsJson(req) {
+  const accept = String(req.headers.accept || "").toLowerCase();
+  return accept.includes("application/json");
+}
+
 module.exports = {
   allowPostOnly,
   escapeHtml,
   getEnv,
+  getRequestFields,
   insertRow,
   normalizeText,
+  redirect,
   sendEmail,
   sendJson,
+  wantsJson,
 };

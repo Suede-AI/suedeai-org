@@ -1,10 +1,13 @@
 const {
   allowPostOnly,
   getEnv,
+  getRequestFields,
   insertRow,
   normalizeText,
+  redirect,
   sendEmail,
   sendJson,
+  wantsJson,
 } = require("./_shared");
 
 module.exports = async (req, res) => {
@@ -12,13 +15,21 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const name = normalizeText(req.body?.name);
-  const email = normalizeText(req.body?.email);
-  const topic = normalizeText(req.body?.topic);
-  const message = normalizeText(req.body?.message);
+  const fields = getRequestFields(req);
+  const name = normalizeText(fields.name);
+  const email = normalizeText(fields.email);
+  const topic = normalizeText(fields.topic);
+  const message = normalizeText(fields.message);
 
   if (!name || !message || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    sendJson(res, 400, { error: "Name, email, and message are required." });
+    if (wantsJson(req)) {
+      sendJson(res, 400, { error: "Name, email, and message are required." });
+      return;
+    }
+
+    res.statusCode = 400;
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.end("Name, email, and message are required.");
     return;
   }
 
@@ -33,7 +44,14 @@ module.exports = async (req, res) => {
   });
 
   if (!result.ok) {
-    sendJson(res, result.status, result.payload);
+    if (wantsJson(req)) {
+      sendJson(res, result.status, result.payload);
+      return;
+    }
+
+    res.statusCode = result.status;
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.end(result.payload.error || "Submission failed.");
     return;
   }
 
@@ -50,5 +68,10 @@ module.exports = async (req, res) => {
     });
   }
 
-  sendJson(res, 200, { ok: true, redirectTo: "/contact/thanks/" });
+  if (wantsJson(req)) {
+    sendJson(res, 200, { ok: true, redirectTo: "/contact/thanks/" });
+    return;
+  }
+
+  redirect(res, "/contact/thanks/");
 };

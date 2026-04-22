@@ -52,13 +52,13 @@
       </div>
       <aside class="form-card">
         <h2>Send a note</h2>
-        <form action="/contact-submit.php" method="post" data-api-endpoint="/api/contact/" data-success-redirect="/contact/thanks/">
+        <form action="/api/contact/" method="post" data-api-endpoint="/api/contact/" data-success-redirect="/contact/thanks/">
           <label>Name<input type="text" name="name" required></label>
           <label>Email<input type="email" name="email" required></label>
           <label>Topic<input type="text" name="topic"></label>
           <label>Message<textarea name="message" required></textarea></label>
           <button class="button button--primary" type="submit">Talk to Suede</button>
-          <p class="note" data-form-status hidden>Vercel will submit this into Supabase when configured. Shared hosting falls back to PHP.</p>
+          <p class="note" data-form-status hidden>Your note is being recorded so the Suede team can follow up directly.</p>
         </form>
       </aside>
     </div>

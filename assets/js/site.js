@@ -23,7 +23,7 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
 
     const statusNode = form.querySelector("[data-form-status]");
     const submitButton = form.querySelector('button[type="submit"]');
-    const formData = new FormData(form);
+    const payload = Object.fromEntries(new FormData(form).entries());
 
     if (submitButton) {
       submitButton.disabled = true;
@@ -39,8 +39,9 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
         method: "POST",
         headers: {
           Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: formData,
+        body: JSON.stringify(payload),
       });
 
       const payload = await response.json().catch(() => ({}));
@@ -52,7 +53,7 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
       window.location.href = payload.redirectTo || form.dataset.successRedirect || "/";
     } catch (error) {
       if (statusNode) {
-        statusNode.textContent = `${error.message} Falling back to standard submission...`;
+        statusNode.textContent = `${error.message} Retrying with a standard submission...`;
       }
       form.submit();
       return;
