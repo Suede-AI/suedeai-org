@@ -621,6 +621,59 @@ textarea {
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(230, 240, 255, 0.92));
 }
 
+.founder-panel {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(230, 240, 255, 0.88));
+  box-shadow: var(--shadow-lg);
+}
+
+.founder-panel__image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 20% 16%, rgba(0, 87, 255, 0.12), transparent 26%),
+    linear-gradient(180deg, #0b1320 0%, #10192a 100%);
+  min-height: 380px;
+}
+
+.founder-panel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.founder-panel__content .lede {
+  margin-bottom: 16px;
+}
+
+.founder-panel__content p:last-of-type {
+  margin-bottom: 22px;
+}
+
+.founder-panel__meta {
+  display: grid;
+  gap: 4px;
+}
+
+.founder-panel__meta strong {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.founder-panel__meta span {
+  color: var(--ink-soft);
+}
+
 @media (max-width: 980px) {
   .hero__grid,
   .page-layout,
@@ -631,7 +684,8 @@ textarea {
   .thesis-strip,
   .book-hero__grid,
   .book-strip,
-  .book-topic-grid {
+  .book-topic-grid,
+  .founder-panel {
     grid-template-columns: 1fr;
   }
 
@@ -662,5 +716,9 @@ textarea {
   .sidebar-nav,
   .form-card {
     position: static;
+  }
+
+  .founder-panel__image-wrap {
+    min-height: 320px;
   }
 }
