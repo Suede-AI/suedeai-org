@@ -51,12 +51,12 @@
       </div>
       <aside class="form-card">
         <h2>Get the Book</h2>
-        <form action="/book-capture.php" method="post">
+        <form action="/book-capture.php" method="post" data-api-endpoint="/api/book" data-success-redirect="/book/thanks/">
           <label>Email<input type="email" name="email" required></label>
           <label>Name<input type="text" name="name"></label>
           <label>What brought you here?<textarea name="context"></textarea></label>
           <button class="button button--primary" type="submit">Get the Book</button>
-          <p class="note" data-form-status hidden>Static fallback: this form can submit directly on Namecheap shared hosting.</p>
+          <p class="note" data-form-status hidden>Vercel will submit this into Supabase when configured. Shared hosting falls back to PHP.</p>
         </form>
       </aside>
     </div>

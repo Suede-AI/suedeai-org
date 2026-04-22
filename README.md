@@ -30,6 +30,49 @@ Upload all files and folders as-is to the web root for `suedeai.org`.
 - `book-capture.php` and `contact-submit.php` require PHP enabled
 - the PHP handlers append submissions to local `.log` files in the site root
 
+### Vercel + Supabase
+
+- the site deploys cleanly to Vercel as a static site with serverless functions in `api/`
+- the book and contact forms progressively post to `/api/book` and `/api/contact` when those routes exist
+- if the Vercel API route fails or is unavailable, the forms fall back to the PHP actions for shared hosting
+
+Required Vercel environment variables:
+
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `SUPABASE_BOOK_TABLE` default: `book_leads`
+- `SUPABASE_CONTACT_TABLE` default: `contact_inquiries`
+
+Suggested Supabase tables:
+
+```sql
+create table if not exists public.book_leads (
+  id bigint generated always as identity primary key,
+  email text not null,
+  name text,
+  context text,
+  source text,
+  submitted_at timestamptz not null
+);
+
+create table if not exists public.contact_inquiries (
+  id bigint generated always as identity primary key,
+  name text not null,
+  email text not null,
+  topic text,
+  message text not null,
+  source text,
+  submitted_at timestamptz not null
+);
+```
+
+Deployment flow:
+
+1. Import this repo into Vercel
+2. Add the Supabase environment variables
+3. Point `suedeai.org` at the Vercel project
+4. Keep `suedeai.ai` as the main site and let this site link into it
+
 ### Verification
 
 ```bash
