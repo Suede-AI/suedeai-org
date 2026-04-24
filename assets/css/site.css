@@ -519,9 +519,16 @@ textarea {
 }
 
 .book-cover-card img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
   border-radius: 20px;
   box-shadow: 0 24px 60px rgba(6, 10, 18, 0.28);
 }
+
 
 .book-cover-card__meta {
   display: grid;
