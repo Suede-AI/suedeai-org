@@ -8,10 +8,6 @@ if (toggle && nav) {
   });
 }
 
-document.querySelectorAll("[data-form-status]").forEach((node) => {
-  node.hidden = false;
-});
-
 document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
   form.addEventListener("submit", async (event) => {
     const endpoint = form.getAttribute("data-api-endpoint");
@@ -54,6 +50,10 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
     } catch (error) {
       if (statusNode) {
         statusNode.textContent = `${error.message} Retrying with a standard submission...`;
+      }
+      const fallbackAction = form.getAttribute("data-fallback-action");
+      if (fallbackAction) {
+        form.setAttribute("action", fallbackAction);
       }
       form.submit();
       return;

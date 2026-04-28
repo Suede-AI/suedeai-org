@@ -114,13 +114,15 @@ def main() -> int:
 
     form_expectations = {
         "book/index.html": [
-            'action="/api/book/"',
+            'action="/book-capture.php"',
             'data-api-endpoint="/api/book/"',
+            'data-fallback-action="/book-capture.php"',
             "Email Me the Preview",
         ],
         "contact/index.html": [
-            'action="/api/contact/"',
+            'action="/contact-submit.php"',
             'data-api-endpoint="/api/contact/"',
+            'data-fallback-action="/contact-submit.php"',
         ],
         "book/thanks/index.html": [
             "Your request is in.",

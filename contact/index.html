@@ -52,7 +52,7 @@
       </div>
       <aside class="form-card">
         <h2>Send a note</h2>
-        <form action="/api/contact/" method="post" data-api-endpoint="/api/contact/" data-success-redirect="/contact/thanks/">
+        <form action="/contact-submit.php" method="post" data-api-endpoint="/api/contact/" data-fallback-action="/contact-submit.php" data-success-redirect="/contact/thanks/">
           <label>Name<input type="text" name="name" required></label>
           <label>Email<input type="email" name="email" required></label>
           <label>Topic<input type="text" name="topic"></label>

@@ -139,7 +139,7 @@
           <span class="eyebrow">Get It By Email</span>
           <h2>Request the abridged PDF.</h2>
           <p class="form-card__lede">Enter your email and we’ll add you to the request list for the condensed preview. Thank you for your interest in Suede’s work. We’ll send the abridged PDF shortly from <strong>info@suedeai.org</strong>. It distills the substance of the larger 500-page work into a faster, more digestible read.</p>
-          <form action="/api/book/" method="post" data-api-endpoint="/api/book/" data-success-redirect="/book/thanks/">
+          <form action="/book-capture.php" method="post" data-api-endpoint="/api/book/" data-fallback-action="/book-capture.php" data-success-redirect="/book/thanks/">
             <label>Email<input type="email" name="email" required autocomplete="email"></label>
             <label>Name<input type="text" name="name" autocomplete="name"></label>
             <label>What brought you here?<textarea name="context" placeholder="Optional"></textarea></label>
