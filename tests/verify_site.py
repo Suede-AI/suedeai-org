@@ -46,7 +46,7 @@ def main() -> int:
         assert_contains(
             "index.html",
             home_html,
-            "Proof-of-Creation Infrastructure for the AI-Native Economy",
+            "Proof-of-Creation Infrastructure",
             failures,
         )
         assert_contains("index.html", home_html, "Capture -&gt; Prove -&gt; Monetize", failures)
@@ -90,9 +90,9 @@ def main() -> int:
             assert_contains(file_name, read_text(path), "Talk to Suede", failures)
 
     concept_expectations = {
-        "proof-of-creation/index.html": "Proof of creation matters more when content becomes infinite.",
-        "programmable-ip/index.html": "Programmable IP turns rights from paperwork into infrastructure.",
-        "content-provenance/index.html": "Content provenance is what makes authenticity durable instead of performative.",
+        "proof-of-creation/index.html": "Proof of creation makes authorship, provenance, and creator rights verifiable",
+        "programmable-ip/index.html": "Programmable IP moves ownership, licensing, attribution, and usage rules",
+        "content-provenance/index.html": "Content provenance records the source, authorship, and ownership context",
     }
 
     for file_name, sentence in concept_expectations.items():
@@ -101,9 +101,9 @@ def main() -> int:
             assert_contains(file_name, read_text(path), sentence, failures)
 
     wedge_expectations = {
-        "creator-ownership/index.html": "Creator ownership becomes more important as AI makes creation abundant.",
-        "ai-voice-protection/index.html": "AI voice protection needs rights infrastructure, not just detection.",
-        "ai-likeness-protection/index.html": "Likeness protection is a core ownership problem in synthetic media.",
+        "creator-ownership/index.html": "Creator ownership becomes more important as AI makes production easier.",
+        "ai-voice-protection/index.html": "AI voice protection is a rights problem, not just a detection problem.",
+        "ai-likeness-protection/index.html": "AI likeness protection starts with ownership, consent, and proof.",
         "human-authenticity-layer/index.html": "Human authenticity becomes premium when synthetic content is cheap.",
     }
 
