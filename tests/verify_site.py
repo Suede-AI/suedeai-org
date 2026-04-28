@@ -50,6 +50,7 @@ def main() -> int:
             failures,
         )
         assert_contains("index.html", home_html, "Capture -&gt; Prove -&gt; Monetize", failures)
+        assert_contains("index.html", home_html, "Creation is moving faster than ownership.", failures)
 
     for file_name, route in PAGES.items():
         path = ROOT / file_name
@@ -166,7 +167,7 @@ def main() -> int:
             print(f"- {failure}")
         return 1
 
-    print(f"PASS: verified {len(PAGES)} HTML pages and core SEO assets")
+    print(f"PASS: verified {len(PAGES)} HTML pages and core assets")
     return 0
 
 
