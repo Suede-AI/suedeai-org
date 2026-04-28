@@ -1,23 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": true,
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "https://www.suedeai.xyz/",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "destination": "https://www.suedeai.xyz/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/:path*/",
-      "destination": "https://www.suedeai.xyz/:path*/",
-      "permanent": false
-    }
-  ],
   "headers": [
     {
       "source": "/assets/(.*)",
