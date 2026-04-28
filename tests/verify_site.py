@@ -64,6 +64,10 @@ def main() -> int:
         assert_regex(file_name, html, r"<title>.+</title>", failures)
         assert_regex(file_name, html, r'<meta name="description" content="[^"]+">', failures)
         assert_contains(file_name, html, f'<link rel="canonical" href="{canonical}">', failures)
+        assert_contains(file_name, html, '<link rel="icon" href="/favicon.ico" sizes="any">', failures)
+        assert_contains(file_name, html, '<link rel="icon" href="/favicon.svg" type="image/svg+xml">', failures)
+        assert_contains(file_name, html, '<link rel="apple-touch-icon" href="/apple-touch-icon.png">', failures)
+        assert_contains(file_name, html, '<link rel="manifest" href="/site.webmanifest">', failures)
         assert_contains(file_name, html, 'property="og:title"', failures)
         assert_contains(file_name, html, 'property="og:description"', failures)
         assert_contains(file_name, html, 'property="og:image"', failures)
@@ -147,8 +151,28 @@ def main() -> int:
     pdf_asset = ROOT / "assets" / "files" / "stake-your-claim-condensed-preview.pdf"
     css_asset = ROOT / "assets" / "css" / "site.css"
     js_asset = ROOT / "assets" / "js" / "site.js"
+    favicon_ico = ROOT / "favicon.ico"
+    favicon_svg = ROOT / "favicon.svg"
+    favicon_16 = ROOT / "favicon-16x16.png"
+    favicon_32 = ROOT / "favicon-32x32.png"
+    apple_touch_icon = ROOT / "apple-touch-icon.png"
+    webmanifest = ROOT / "site.webmanifest"
 
-    for asset in [robots, sitemap, og_asset, cover_asset, pdf_asset, css_asset, js_asset]:
+    for asset in [
+        robots,
+        sitemap,
+        og_asset,
+        cover_asset,
+        pdf_asset,
+        css_asset,
+        js_asset,
+        favicon_ico,
+        favicon_svg,
+        favicon_16,
+        favicon_32,
+        apple_touch_icon,
+        webmanifest,
+    ]:
         if not asset.exists():
             failures.append(f"{asset.relative_to(ROOT)}: file does not exist")
 
