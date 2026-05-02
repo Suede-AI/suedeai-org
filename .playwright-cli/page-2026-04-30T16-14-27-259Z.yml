@@ -1,0 +1,196 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Suede Proof of Creation. Programmable IP." [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: Suede
+        - generic [ref=e6]: Proof of Creation. Programmable IP.
+      - navigation "Primary" [ref=e7]:
+        - link "Proof of Creation" [ref=e8] [cursor=pointer]:
+          - /url: /proof-of-creation/
+        - link "Why Copyright Fails" [ref=e9] [cursor=pointer]:
+          - /url: /why-copyright-fails/
+        - link "Programmable IP" [ref=e10] [cursor=pointer]:
+          - /url: /programmable-ip/
+        - link "Creator Ownership" [ref=e11] [cursor=pointer]:
+          - /url: /creator-ownership/
+        - link "Jason Colapietro" [ref=e12] [cursor=pointer]:
+          - /url: /jason-colapietro/
+        - link "Book" [ref=e13] [cursor=pointer]:
+          - /url: /book/
+        - link "Talk to Suede" [ref=e14] [cursor=pointer]:
+          - /url: /contact/
+        - link "Suede App" [ref=e15] [cursor=pointer]:
+          - /url: https://suedeai.ai/
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: Ownership Infrastructure For Creators
+        - heading "Proof of Creation. Programmable IP." [level=1] [ref=e21]:
+          - text: Proof of Creation.
+          - text: Programmable IP.
+        - paragraph [ref=e22]: Suede makes authorship, provenance, voice, likeness, and creator rights verifiable and programmable for creators building, distributing, and monetizing work in the AI era.
+        - generic [ref=e23]:
+          - link "Talk to Suede" [ref=e24] [cursor=pointer]:
+            - /url: /contact/
+          - link "Get the Book" [ref=e25] [cursor=pointer]:
+            - /url: /book/
+          - link "Visit suedeai.ai" [ref=e26] [cursor=pointer]:
+            - /url: https://suedeai.ai/
+        - generic [ref=e27]:
+          - article [ref=e28]:
+            - strong [ref=e29]: Creator Ownership
+            - paragraph [ref=e30]: Every creator needs a durable claim as work moves faster, farther, and through more tools.
+          - article [ref=e31]:
+            - strong [ref=e32]: Voice + Likeness
+            - paragraph [ref=e33]: Rights-aware protection for synthetic voice, likeness, and identity.
+          - article [ref=e34]:
+            - strong [ref=e35]: Rights Infrastructure
+            - paragraph [ref=e36]: Provenance, licensing, and attribution rails built for modern creative work.
+      - complementary [ref=e37]:
+        - generic [ref=e38]: Proof-of-Creation Infrastructure
+        - heading "Creation changed. Ownership needs to catch up." [level=2] [ref=e39]
+        - paragraph [ref=e40]: AI has changed the speed, scale, and economics of creative work. Creators, platforms, and rights holders need durable rails for provenance, consent, licensing, attribution, and human authenticity.
+        - list [ref=e41]:
+          - listitem [ref=e42]: Verifiable provenance
+          - listitem [ref=e43]: Programmable IP
+          - listitem [ref=e44]: Human authenticity
+          - listitem [ref=e45]: Ownership rails for creators, platforms, rights holders, and agent commerce
+    - region "Connected to the infrastructure teams shaping creator ownership, payments, agents, and provenance." [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: Partner Network
+          - heading "Connected to the infrastructure teams shaping creator ownership, payments, agents, and provenance." [level=2] [ref=e50]
+        - generic "Suede partner and ecosystem network" [ref=e51]:
+          - generic [ref=e52]: Google Cloud
+          - generic [ref=e53]: LayerZero
+          - generic [ref=e54]: Virtuals
+          - generic [ref=e55]: Chainlink
+          - generic [ref=e56]: AgentCash
+          - generic [ref=e57]: Base Team Members
+          - generic [ref=e58]: Stripe
+    - generic [ref=e61]:
+      - generic [ref=e62]: Creation is becoming faster, cheaper, and easier to remix.
+      - generic [ref=e63]: Ownership did not upgrade with the creative stack.
+      - generic [ref=e64]: Suede is the proof and rights layer built for creators in that gap.
+    - generic [ref=e66]:
+      - generic [ref=e67]: Where Suede Applies
+      - heading "Rights infrastructure for creators and platforms working in the AI era." [level=2] [ref=e68]
+      - generic [ref=e69]:
+        - article [ref=e70]:
+          - strong [ref=e71]: Creator Ownership
+          - paragraph [ref=e72]: Proof, provenance, and programmable rights for creators whose work is published, licensed, remixed, trained on, or distributed across new channels.
+          - link "Explore creator ownership" [ref=e73] [cursor=pointer]:
+            - /url: /creator-ownership/
+        - article [ref=e74]:
+          - strong [ref=e75]: Voice + Likeness
+          - paragraph [ref=e76]: Verification, consent, and rights controls for voice, likeness, identity, synthetic media, and creator presence.
+          - link "Explore voice protection" [ref=e77] [cursor=pointer]:
+            - /url: /ai-voice-protection/
+        - article [ref=e78]:
+          - strong [ref=e79]: Programmable Rights
+          - paragraph [ref=e80]: Move beyond passive attribution into licensing, usage rules, and ownership logic that can travel with media.
+          - link "Explore programmable IP" [ref=e81] [cursor=pointer]:
+            - /url: /programmable-ip/
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]: Why Now
+        - heading "Creation is moving faster than ownership." [level=2] [ref=e87]
+        - paragraph [ref=e88]: Modern tools can produce, remix, clone, and distribute creative work faster than traditional rights systems can respond.
+      - generic [ref=e89]:
+        - strong [ref=e90]: Proof, Consent, Rights
+        - paragraph [ref=e91]: Suede gives creators and platforms a way to connect media to the people, permissions, and ownership behind it.
+      - generic [ref=e92]:
+        - strong [ref=e93]: Capture -> Prove -> Monetize
+        - paragraph [ref=e94]: Record where a work came from, prove who controls it, and make rights usable across licensing, distribution, and commerce.
+    - generic [ref=e96]:
+      - generic [ref=e97]: Rights Layer
+      - heading "Built for the point where creation, identity, and ownership meet." [level=2] [ref=e98]
+      - generic [ref=e99]:
+        - article [ref=e100]:
+          - strong [ref=e101]: For Creators
+          - paragraph [ref=e102]: Protect authorship, voice, likeness, and usage rights as work moves through platforms, intelligent tools, communities, and markets.
+        - article [ref=e103]:
+          - strong [ref=e104]: For Platforms
+          - paragraph [ref=e105]: Add provenance, permissions, attribution, and licensing logic without making ownership a manual process.
+        - article [ref=e106]:
+          - strong [ref=e107]: For Rights Holders
+          - paragraph [ref=e108]: Turn static claims into verifiable, programmable rights that can support licensing, commerce, and downstream use.
+    - generic [ref=e110]:
+      - generic [ref=e111]: Ownership Stack
+      - heading "The core pieces of rights infrastructure for creators in the AI era." [level=2] [ref=e112]
+      - generic [ref=e113]:
+        - link "Proof of Creation Verifiable authorship, ownership, and provenance when creative work becomes abundant." [ref=e114] [cursor=pointer]:
+          - /url: /proof-of-creation/
+          - strong [ref=e115]: Proof of Creation
+          - paragraph [ref=e116]: Verifiable authorship, ownership, and provenance when creative work becomes abundant.
+        - link "Why Copyright Fails Why reactive enforcement breaks when AI moves faster than ownership systems." [ref=e117] [cursor=pointer]:
+          - /url: /why-copyright-fails/
+          - strong [ref=e118]: Why Copyright Fails
+          - paragraph [ref=e119]: Why reactive enforcement breaks when AI moves faster than ownership systems.
+        - link "Content Provenance Trust, attribution, source history, and authenticity beyond surface metadata." [ref=e120] [cursor=pointer]:
+          - /url: /content-provenance/
+          - strong [ref=e121]: Content Provenance
+          - paragraph [ref=e122]: Trust, attribution, source history, and authenticity beyond surface metadata.
+        - link "Royalties Automated value flow begins with verifiable origin and programmable rights." [ref=e123] [cursor=pointer]:
+          - /url: /royalties/
+          - strong [ref=e124]: Royalties
+          - paragraph [ref=e125]: Automated value flow begins with verifiable origin and programmable rights.
+    - generic [ref=e127]:
+      - generic [ref=e128]: System
+      - heading "Three layers. One ownership stack." [level=2] [ref=e129]
+      - generic [ref=e130]:
+        - article [ref=e131]:
+          - strong [ref=e132]: Sing + Sign Hardware
+          - paragraph [ref=e133]: Patented hardware that proves the authenticity of the owner and creator at capture, then lets that proof be used inside the work or outside it.
+        - article [ref=e134]:
+          - strong [ref=e135]: On-Chain Registry
+          - paragraph [ref=e136]: Transparent provenance, ownership, and licensing rails for creator assets and rights.
+        - article [ref=e137]:
+          - strong [ref=e138]: AI Agent
+          - paragraph [ref=e139]: Rights and monetization logic designed for agent-native commerce.
+      - paragraph [ref=e140]: Together, these layers make ownership legible before media spreads, not after the value has already moved.
+    - generic [ref=e143]:
+      - img "Jason Colapietro, founder of Suede Labs" [ref=e145]
+      - generic [ref=e146]:
+        - generic [ref=e147]: Founder
+        - 'heading "The founder is the thesis: ownership has to become infrastructure." [level=2] [ref=e148]'
+        - paragraph [ref=e149]: "Jason Colapietro is not a sidebar to Suede's thesis. His work is the thesis in motion: the internet upgraded access, AI upgraded creation, and the next layer has to upgrade ownership."
+        - paragraph [ref=e150]: Suede is built from that conviction. Provenance, likeness, voice, rights, and programmable IP are not side conversations. They are the infrastructure layer creators need for the next media economy.
+        - generic [ref=e151]:
+          - strong [ref=e152]: Jason Colapietro
+          - generic [ref=e153]: Founder & CEO, Suede Labs
+        - generic [ref=e154]:
+          - generic [ref=e155]: Founder as thesis
+          - generic [ref=e156]: Ownership infrastructure for creators in the AI era
+        - generic [ref=e157]:
+          - link "Founder Profile" [ref=e158] [cursor=pointer]:
+            - /url: /jason-colapietro/
+          - link "Official Image Gallery" [ref=e159] [cursor=pointer]:
+            - /url: https://suedeai.ai/jason-colapietro-images
+    - generic [ref=e161]:
+      - generic [ref=e162]: Book
+      - heading "A high-signal preview on creator ownership, authorship, rights, agents, and what the market is still missing." [level=2] [ref=e163]
+      - paragraph [ref=e164]:
+        - text: The abridged version of
+        - emphasis [ref=e165]: Stake Your Claim
+        - text: gives serious readers the core thesis without asking them to start with the full 500-page work.
+      - generic [ref=e166]:
+        - link "Read the Sharp Excerpt" [ref=e167] [cursor=pointer]:
+          - /url: /sharp-excerpt/
+        - link "Full Preview" [ref=e168] [cursor=pointer]:
+          - /url: /full-preview/
+        - link "Get the Book" [ref=e169] [cursor=pointer]:
+          - /url: /book/
+  - contentinfo [ref=e170]:
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - strong [ref=e173]: Suede
+        - paragraph [ref=e174]: Proof-of-creation and programmable IP infrastructure for provenance, human authenticity, and creator ownership in the AI era.
+      - generic [ref=e175]:
+        - link "Talk to Suede" [ref=e176] [cursor=pointer]:
+          - /url: /contact/
+        - link "Get the Book" [ref=e177] [cursor=pointer]:
+          - /url: /book/
+        - link "Suede App" [ref=e178] [cursor=pointer]:
+          - /url: https://suedeai.ai/
