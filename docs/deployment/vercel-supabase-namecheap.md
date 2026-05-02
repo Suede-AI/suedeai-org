@@ -29,6 +29,8 @@ Set these in the Vercel project settings:
 
 Optional but recommended:
 
+- `RESEND_API_KEY`
+- `BOOK_EMAIL_FROM`
 - `CONTACT_EMAIL_FROM`
 - `CONTACT_NOTIFY_TO`
 
@@ -36,7 +38,7 @@ Use [.env.example](/Users/jason/Documents/CodexXcampaign/SEO Webisite/.env.examp
 
 For Supabase capture, use the publishable key with the insert-only RLS policies from [schema.sql](/Users/jason/Documents/CodexXcampaign/SEO Webisite/supabase/schema.sql). Do not use the service-role key in Vercel for this website.
 
-For the current manual workflow, use `info@suedeai.org` as the send-from address when you follow up with book requests.
+Use `info@suedeai.org` as the send-from address for reader preview delivery and contact notifications.
 
 ## 3. Import Into Vercel
 
@@ -75,6 +77,9 @@ Check:
 - homepage loads with CSS/JS
 - `/proof-of-creation/` loads
 - `/book/` form submits successfully
+- `/sharp-excerpt/` loads
+- `/full-preview/` loads
+- `/assets/files/stake-your-claim-condensed-preview.pdf` loads
 - `/contact/` form submits successfully
 - `sitemap.xml` and `robots.txt` are public
 - canonical tags point at `https://suedeai.org/...`
