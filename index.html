@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Suede | Proof of Creation and Programmable IP Infrastructure</title>
-  <meta name="description" content="Suede provides proof-of-creation and programmable IP infrastructure for AI media, provenance, creator ownership, voice rights, likeness rights, and agent-native commerce.">
+  <title>Suede | Ownership Infrastructure for Creators in the AI Era</title>
+  <meta name="description" content="Suede provides proof-of-creation and programmable IP infrastructure for creators, provenance, ownership, voice rights, likeness rights, licensing, and agent-native commerce in the AI era.">
   <link rel="canonical" href="https://suedeai.org/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Suede | Proof of Creation and Programmable IP Infrastructure">
-  <meta property="og:description" content="Ownership infrastructure for AI media: proof of creation, provenance, creator rights, voice protection, likeness protection, and programmable IP.">
+  <meta property="og:title" content="Suede | Ownership Infrastructure for Creators in the AI Era">
+  <meta property="og:description" content="Ownership infrastructure for creators in the AI era: proof of creation, provenance, creator rights, voice protection, likeness protection, licensing, and programmable IP.">
   <meta property="og:url" content="https://suedeai.org/">
   <meta property="og:image" content="https://suedeai.org/assets/img/og-suede.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Suede | Proof of Creation and Programmable IP Infrastructure">
-  <meta name="twitter:description" content="Proof-of-creation and programmable IP infrastructure for the AI era.">
+  <meta name="twitter:title" content="Suede | Ownership Infrastructure for Creators in the AI Era">
+  <meta name="twitter:description" content="Proof-of-creation and programmable IP infrastructure for creators in the AI era.">
   <meta name="twitter:image" content="https://suedeai.org/assets/img/og-suede.svg">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script defer src="/assets/js/site.js"></script>
@@ -25,10 +26,32 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Suede",
+    "@id": "https://suedeai.org#organization",
+    "name": "Suede Labs AI",
+    "alternateName": ["Suede", "Suede AI"],
     "url": "https://suedeai.org/",
-    "sameAs": ["https://suedeai.ai/"],
-    "description": "Suede provides proof-of-creation and programmable IP infrastructure for AI media, provenance, creator ownership, voice rights, likeness rights, and agent-native commerce."
+    "logo": "https://app.suedeai.xyz/apple-touch-icon.png",
+    "sameAs": [
+      "https://suedeai.ai/",
+      "https://app.suedeai.xyz/",
+      "https://x.com/AISUEDE",
+      "https://github.com/Suede-AI"
+    ],
+    "founder": {
+      "@type": "Person",
+      "@id": "https://app.suedeai.xyz/founder#person",
+      "name": "Jason Colapietro",
+      "url": "https://app.suedeai.xyz/founder",
+      "jobTitle": "Founder",
+      "sameAs": [
+        "https://suedeai.org/jason-colapietro/",
+        "https://app.suedeai.xyz/founder",
+        "https://app.suedeai.xyz/jason-colapietro-images",
+        "https://x.com/johnnysuede",
+        "https://github.com/Suede-AI"
+      ]
+    },
+    "description": "Suede provides proof-of-creation and programmable IP infrastructure for creators, provenance, ownership, voice rights, likeness rights, licensing, and agent-native commerce in the AI era."
   }
   </script>
 </head>
@@ -42,8 +65,10 @@
       <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
         <a href="/proof-of-creation/">Proof of Creation</a>
+        <a href="/why-copyright-fails/">Why Copyright Fails</a>
         <a href="/programmable-ip/">Programmable IP</a>
         <a href="/creator-ownership/">Creator Ownership</a>
+        <a href="/jason-colapietro/">Jason Colapietro</a>
         <a href="/book/">Book</a>
         <a href="/contact/">Talk to Suede</a>
         <a href="https://suedeai.ai/" rel="noopener">Suede App</a>
@@ -55,9 +80,9 @@
     <section class="hero">
       <div class="site-shell hero__grid">
         <div>
-          <span class="eyebrow">Ownership Infrastructure For AI Media</span>
+          <span class="eyebrow">Ownership Infrastructure For Creators</span>
           <h1>Proof of Creation.<br>Programmable IP.</h1>
-          <p class="lede">Suede makes authorship, provenance, voice, likeness, and creator rights verifiable and programmable for the AI-native economy.</p>
+          <p class="lede">Suede makes authorship, provenance, voice, likeness, and creator rights verifiable and programmable for creators building, distributing, and monetizing work in the AI era.</p>
           <div class="button-row">
             <a class="button button--primary" href="/contact/">Talk to Suede</a>
             <a class="button button--secondary" href="/book/">Get the Book</a>
@@ -66,7 +91,7 @@
           <div class="metric-grid">
             <article class="metric">
               <strong>Creator Ownership</strong>
-              <p>AI made creation abundant. Durable ownership is the new scarcity.</p>
+              <p>Every creator needs a durable claim as work moves faster, farther, and through more tools.</p>
             </article>
             <article class="metric">
               <strong>Voice + Likeness</strong>
@@ -74,30 +99,49 @@
             </article>
             <article class="metric">
               <strong>Rights Infrastructure</strong>
-              <p>Provenance, licensing, and attribution rails built for AI media.</p>
+              <p>Provenance, licensing, and attribution rails built for modern creative work.</p>
             </article>
           </div>
         </div>
         <aside class="hero-card signal-rings">
           <span class="eyebrow">Proof-of-Creation Infrastructure</span>
           <h2>Creation changed. Ownership needs to catch up.</h2>
-          <p>AI can generate media at unlimited scale. Creators, platforms, and rights holders need durable rails for provenance, consent, licensing, attribution, and human authenticity.</p>
+          <p>AI has changed the speed, scale, and economics of creative work. Creators, platforms, and rights holders need durable rails for provenance, consent, licensing, attribution, and human authenticity.</p>
           <ul>
             <li>Verifiable provenance</li>
             <li>Programmable IP</li>
             <li>Human authenticity</li>
-            <li>Ownership rails for AI media, creators, and agent commerce</li>
+            <li>Ownership rails for creators, platforms, rights holders, and agent commerce</li>
           </ul>
         </aside>
+      </div>
+    </section>
+
+    <section class="section section--partners" aria-labelledby="partner-network-heading">
+      <div class="site-shell partner-band">
+        <div class="partner-band__copy">
+          <span class="eyebrow">Suede Partners</span>
+          <h2 id="partner-network-heading">Our partner network spans the infrastructure teams shaping creator ownership, payments, agents, and provenance.</h2>
+        </div>
+        <div class="partner-band__logos" aria-label="Suede partner and ecosystem network">
+          <span style="--partner-logo: url('/assets/img/partners/google-cloud.svg')">Google Cloud</span>
+          <span style="--partner-logo: url('/assets/img/partners/layerzero.png')">LayerZero</span>
+          <span style="--partner-logo: url('/assets/img/partners/virtuals.png')">Virtuals</span>
+          <span style="--partner-logo: url('/assets/img/partners/chainlink.svg')">Chainlink</span>
+          <span style="--partner-logo: url('/assets/img/partners/chaingpt.svg')">ChainGPT</span>
+          <span style="--partner-logo: url('/assets/img/partners/agentcash.png')">AgentCash</span>
+          <span style="--partner-logo: url('/assets/img/partners/base.png')">Base Team</span>
+          <span style="--partner-logo: url('/assets/img/partners/stripe.svg')">Stripe</span>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="site-shell">
         <div class="thesis-strip">
-          <div>AI made creation abundant.</div>
-          <div>Ownership did not upgrade with it.</div>
-          <div>Suede is the proof and rights layer built for that gap.</div>
+          <div>Creation is becoming faster, cheaper, and easier to remix.</div>
+          <div>Ownership did not upgrade with the creative stack.</div>
+          <div>Suede is the proof and rights layer built for creators in that gap.</div>
         </div>
       </div>
     </section>
@@ -105,16 +149,16 @@
     <section class="section">
       <div class="site-shell">
         <span class="eyebrow">Where Suede Applies</span>
-        <h2>Rights infrastructure for the people and platforms creating with AI.</h2>
+        <h2>Rights infrastructure for creators and platforms working in the AI era.</h2>
         <div class="card-grid">
           <article class="keyword-card">
             <strong>Creator Ownership</strong>
-            <p>Proof, provenance, and programmable rights for creators whose work is distributed, remixed, trained on, or generated with AI.</p>
+            <p>Proof, provenance, and programmable rights for creators whose work is published, licensed, remixed, trained on, or distributed across new channels.</p>
             <a href="/creator-ownership/">Explore creator ownership</a>
           </article>
           <article class="keyword-card">
             <strong>Voice + Likeness</strong>
-            <p>Verification, consent, and rights controls for synthetic voice, likeness, identity, and AI-generated media.</p>
+            <p>Verification, consent, and rights controls for voice, likeness, identity, synthetic media, and creator presence.</p>
             <a href="/ai-voice-protection/">Explore voice protection</a>
           </article>
           <article class="keyword-card">
@@ -132,7 +176,7 @@
           <div class="dark-band__item">
             <span class="eyebrow">Why Now</span>
             <h2>Creation is moving faster than ownership.</h2>
-            <p>AI tools can produce, remix, clone, and distribute media faster than traditional rights systems can respond.</p>
+            <p>Modern tools can produce, remix, clone, and distribute creative work faster than traditional rights systems can respond.</p>
           </div>
           <div class="dark-band__item">
             <strong>Proof, Consent, Rights</strong>
@@ -153,7 +197,7 @@
         <div class="card-grid">
           <article class="keyword-card">
             <strong>For Creators</strong>
-            <p>Protect authorship, voice, likeness, and usage rights as work moves through AI-native tools and platforms.</p>
+            <p>Protect authorship, voice, likeness, and usage rights as work moves through platforms, intelligent tools, communities, and markets.</p>
           </article>
           <article class="keyword-card">
             <strong>For Platforms</strong>
@@ -161,7 +205,7 @@
           </article>
           <article class="keyword-card">
             <strong>For Rights Holders</strong>
-            <p>Turn static claims into verifiable, programmable rights that can support AI media, commerce, and downstream use.</p>
+            <p>Turn static claims into verifiable, programmable rights that can support licensing, commerce, and downstream use.</p>
           </article>
         </div>
       </div>
@@ -170,11 +214,12 @@
     <section class="section">
       <div class="site-shell">
         <span class="eyebrow">Ownership Stack</span>
-        <h2>The core pieces of AI-era rights infrastructure.</h2>
+        <h2>The core pieces of rights infrastructure for creators in the AI era.</h2>
         <div class="link-grid">
-          <a class="keyword-card" href="/proof-of-creation/"><strong>Proof of Creation</strong><p>Verifiable authorship, ownership, and provenance when AI makes media abundant.</p></a>
+          <a class="keyword-card" href="/proof-of-creation/"><strong>Proof of Creation</strong><p>Verifiable authorship, ownership, and provenance when creative work becomes abundant.</p></a>
+          <a class="keyword-card" href="/why-copyright-fails/"><strong>Why Copyright Fails</strong><p>Why reactive enforcement breaks when AI moves faster than ownership systems.</p></a>
           <a class="keyword-card" href="/content-provenance/"><strong>Content Provenance</strong><p>Trust, attribution, source history, and authenticity beyond surface metadata.</p></a>
-          <a class="keyword-card" href="/human-authenticity-layer/"><strong>Human Authenticity Layer</strong><p>Proof, consent, and identity rights when media can be generated instantly.</p></a>
+          <a class="keyword-card" href="/royalties/"><strong>Royalties</strong><p>Automated value flow begins with verifiable origin and programmable rights.</p></a>
         </div>
       </div>
     </section>
@@ -182,15 +227,15 @@
     <section class="section">
       <div class="site-shell">
         <span class="eyebrow">System</span>
-        <h2>Four layers. One ownership stack.</h2>
+        <h2>Three layers. One ownership stack.</h2>
         <div class="card-grid">
           <article class="keyword-card">
-            <strong>Hardware Anchor</strong>
-            <p>Proof that can begin at capture instead of being patched on after distribution.</p>
+            <strong>Sing + Sign Hardware</strong>
+            <p>Patented hardware that proves the authenticity of the owner and creator at capture, then lets that proof be used inside the work or outside it.</p>
           </article>
           <article class="keyword-card">
             <strong>On-Chain Registry</strong>
-            <p>Transparent provenance, ownership, and licensing rails for AI-native media.</p>
+            <p>Transparent provenance, ownership, and licensing rails for creator assets and rights.</p>
           </article>
           <article class="keyword-card">
             <strong>AI Agent</strong>
@@ -209,16 +254,20 @@
           </div>
           <div class="founder-panel__content">
             <span class="eyebrow">Founder</span>
-            <h2>The founder thesis is simple: ownership has to become infrastructure.</h2>
-            <p class="lede">Jason Colapietro founded Suede Labs around a direct shift: the internet upgraded access, AI upgraded creation, and the next layer has to upgrade ownership.</p>
-            <p>Suede is built from that conviction. Provenance, likeness, voice, rights, and programmable IP are not side conversations. They are infrastructure for the next media economy.</p>
+            <h2>The founder is the thesis: ownership has to become infrastructure.</h2>
+            <p class="lede">Jason Colapietro is not a sidebar to Suede's thesis. His work is the thesis in motion: the internet upgraded access, AI upgraded creation, and the next layer has to upgrade ownership.</p>
+            <p>Suede is built from that conviction. Provenance, likeness, voice, rights, and programmable IP are not side conversations. They are the infrastructure layer creators need for the next media economy.</p>
             <div class="founder-panel__meta">
               <strong>Jason Colapietro</strong>
               <span>Founder &amp; CEO, Suede Labs</span>
             </div>
             <div class="founder-panel__accent">
-              <span>Founder-led thesis</span>
-              <span>Ownership infrastructure for AI media</span>
+              <span>Founder as thesis</span>
+              <span>Ownership infrastructure for creators in the AI era</span>
+            </div>
+            <div class="button-row" style="margin-top:22px;">
+              <a class="button button--secondary" href="/jason-colapietro/">Founder Profile</a>
+              <a class="button button--ghost" href="https://suedeai.ai/jason-colapietro-images" rel="noopener">Official Image Gallery</a>
             </div>
           </div>
         </div>
@@ -228,11 +277,12 @@
     <section class="section">
       <div class="site-shell cta-band">
         <span class="eyebrow">Book</span>
-        <h2>A high-signal preview on AI ownership, authorship, rights, agents, and what the market is still missing.</h2>
+        <h2>A high-signal preview on creator ownership, authorship, rights, agents, and what the market is still missing.</h2>
         <p class="lede">The abridged version of <em>Stake Your Claim</em> gives serious readers the core thesis without asking them to start with the full 500-page work.</p>
         <div class="button-row">
-          <a class="button button--primary" href="/book/">Get the Book</a>
-          <a class="button button--secondary" href="/contact/">Talk to Suede</a>
+          <a class="button button--primary" href="/sharp-excerpt/">Read the Sharp Excerpt</a>
+          <a class="button button--secondary" href="/full-preview/">Full Preview</a>
+          <a class="button button--secondary" href="/book/">Get the Book</a>
         </div>
       </div>
     </section>
@@ -242,7 +292,7 @@
     <div class="site-footer__inner">
       <div>
         <strong>Suede</strong>
-        <p>Proof-of-creation and programmable IP infrastructure for provenance, human authenticity, and creator ownership.</p>
+        <p>Proof-of-creation and programmable IP infrastructure for provenance, human authenticity, and creator ownership in the AI era.</p>
       </div>
       <div class="button-row">
         <a href="/contact/">Talk to Suede</a>
