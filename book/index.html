@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/site.webmanifest">
   <title>Stake Your Claim Preview | AI Ownership, Authorship, and Agents | Suede</title>
   <meta name="description" content="Request the abridged preview of Stake Your Claim, Jason Colapietro's thesis on AI ownership, authorship, provenance, creator rights, AI agents, and real assets.">
@@ -75,8 +76,8 @@
             <span>Email delivery only</span>
           </div>
           <div class="button-row">
-            <a class="button button--primary" href="#get-the-book">Get the Abridged PDF</a>
-            <a class="button button--secondary" href="https://suedeai.ai/" rel="noopener">Explore Suede</a>
+            <a class="button button--primary" href="/full-preview/">Read the Full Preview</a>
+            <a class="button button--secondary" href="#get-the-book">Get It By Email</a>
           </div>
           <p class="book-hero__note">Built for readers who want the core thesis quickly, clearly, and without losing the substance of the larger work.</p>
         </div>
@@ -142,13 +143,13 @@
         <aside class="form-card form-card--book" id="get-the-book">
           <span class="eyebrow">Get It By Email</span>
           <h2>Request the abridged PDF.</h2>
-          <p class="form-card__lede">Enter your email and we’ll add you to the request list for the condensed preview. We’ll send the abridged PDF shortly from <strong>info@suedeai.org</strong>. It distills the substance of the larger 500-page work into a faster read on AI ownership, authorship, agents, and rights.</p>
+          <p class="form-card__lede">Enter your email and we’ll send the reader preview links when email delivery is configured. You can also read the <a href="/sharp-excerpt/">sharp excerpt</a> or open the <a href="/full-preview/">full preview</a> now. The condensed PDF distills the larger 500-page work into a faster read on AI ownership, authorship, agents, and rights.</p>
           <form action="/book-capture.php" method="post" data-api-endpoint="/api/book/" data-fallback-action="/book-capture.php" data-success-redirect="/book/thanks/">
             <label>Email<input type="email" name="email" required autocomplete="email"></label>
             <label>Name<input type="text" name="name" autocomplete="name"></label>
             <label>What brought you here?<textarea name="context" placeholder="Optional"></textarea></label>
             <button class="button button--primary" type="submit">Email Me the Preview</button>
-            <p class="note" data-form-status hidden>Your request is being recorded so the Suede team can send the abridged preview shortly.</p>
+            <p class="note" data-form-status hidden>Your request is being recorded and the reader preview links are being prepared.</p>
           </form>
           <p class="form-card__footnote">Want to explore Suede before requesting the preview? <a href="https://suedeai.ai/" rel="noopener">Visit suedeai.ai</a>.</p>
         </aside>
@@ -159,6 +160,14 @@
     <div class="site-footer__inner">
       <p>Proof of creation. Programmable IP. AI ownership, authorship, agents, and rights distilled from the larger 500-page work.</p>
       <a href="/contact/">Talk to Suede</a>
+    </div>
+    <div class="site-footer__legal">
+      <p>&copy; 2026 JC Investment Group LLC. All rights reserved.</p>
+      <nav aria-label="Legal">
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/refund-policy/">Refund Policy</a>
+      </nav>
     </div>
   </footer>
 </body>

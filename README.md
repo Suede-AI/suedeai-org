@@ -35,6 +35,7 @@ Upload all files and folders as-is to the web root for `suedeai.org`.
 - the site deploys cleanly to Vercel as a static site with serverless functions in `api/`
 - the book and contact forms progressively post to `/api/book` and `/api/contact` when those routes exist
 - if the Vercel API route fails or is unavailable, the forms fall back to the PHP actions for shared hosting
+- the reader funnel resolves through `/sharp-excerpt/`, `/full-preview/`, and the stable PDF asset path
 - the abridged PDF is hosted at `assets/files/stake-your-claim-condensed-preview.pdf`
 - the book cover lives at `assets/img/stake-your-claim-cover.jpg`
 - book requests are stored in Supabase for manual send-out from the Suede team
@@ -48,10 +49,12 @@ Required Vercel environment variables:
 
 Optional environment variables:
 
+- `BOOK_EMAIL_FROM`
 - `CONTACT_EMAIL_FROM`
 - `CONTACT_NOTIFY_TO`
+- `RESEND_API_KEY`
 
-Current manual-send recommendation:
+Current send-from recommendation:
 
 - `info@suedeai.org` for book delivery and contact notifications
 
@@ -61,13 +64,21 @@ Suggested Supabase tables:
 \i supabase/schema.sql
 ```
 
+Before deploys, run the cross-project RLS audit from the sibling app repo:
+
+```bash
+cd ../Suede-AI-App/frontend
+npm run audit:rls
+```
+
 Deployment flow:
 
 1. Import this repo into Vercel
 2. Add the Supabase environment variables
 3. Run the insert-only RLS policies from `supabase/schema.sql`
-4. Point `suedeai.org` at the Vercel project
-5. Keep `suedeai.ai` as the main site and let this site link into it
+4. Run `npm run audit:rls` from `../Suede-AI-App/frontend`
+5. Point `suedeai.org` at the Vercel project
+6. Keep `suedeai.ai` as the main site and let this site link into it
 
 Detailed guide:
 

@@ -1,23 +1,42 @@
 from pathlib import Path
 import re
 import sys
+import json
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://suedeai.org"
 MAIN_SITE_URL = "https://suedeai.ai/"
 
+LEGACY_REDIRECTS = {
+    "/home/": "/",
+    "/guide/": "/book/",
+    "/ai/": "/",
+}
+
+NOINDEX_PAGES = [
+    "book/thanks/index.html",
+    "contact/thanks/index.html",
+]
+
 PAGES = {
     "index.html": "/",
     "proof-of-creation/index.html": "/proof-of-creation/",
+    "why-copyright-fails/index.html": "/why-copyright-fails/",
+    "royalties/index.html": "/royalties/",
     "programmable-ip/index.html": "/programmable-ip/",
     "content-provenance/index.html": "/content-provenance/",
     "creator-ownership/index.html": "/creator-ownership/",
+    "jason-colapietro/index.html": "/jason-colapietro/",
     "ai-voice-protection/index.html": "/ai-voice-protection/",
     "ai-likeness-protection/index.html": "/ai-likeness-protection/",
     "human-authenticity-layer/index.html": "/human-authenticity-layer/",
     "book/index.html": "/book/",
+    "sharp-excerpt/index.html": "/sharp-excerpt/",
+    "full-preview/index.html": "/full-preview/",
     "contact/index.html": "/contact/",
 }
+
+PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
 
 
 def read_text(path: Path) -> str:
@@ -64,9 +83,10 @@ def main() -> int:
         assert_regex(file_name, html, r"<title>.+</title>", failures)
         assert_regex(file_name, html, r'<meta name="description" content="[^"]+">', failures)
         assert_contains(file_name, html, f'<link rel="canonical" href="{canonical}">', failures)
-        assert_contains(file_name, html, '<link rel="icon" href="/favicon.ico" sizes="any">', failures)
-        assert_contains(file_name, html, '<link rel="icon" href="/favicon.svg" type="image/svg+xml">', failures)
-        assert_contains(file_name, html, '<link rel="apple-touch-icon" href="/apple-touch-icon.png">', failures)
+        assert_contains(file_name, html, '<link rel="icon" href="/favicon.ico?v=2" sizes="any">', failures)
+        assert_contains(file_name, html, '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">', failures)
+        assert_contains(file_name, html, '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">', failures)
+        assert_contains(file_name, html, '<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">', failures)
         assert_contains(file_name, html, '<link rel="manifest" href="/site.webmanifest">', failures)
         assert_contains(file_name, html, 'property="og:title"', failures)
         assert_contains(file_name, html, 'property="og:description"', failures)
@@ -79,13 +99,18 @@ def main() -> int:
     pages_requiring_contact = [
         "index.html",
         "proof-of-creation/index.html",
+        "why-copyright-fails/index.html",
+        "royalties/index.html",
         "programmable-ip/index.html",
         "content-provenance/index.html",
         "creator-ownership/index.html",
+        "jason-colapietro/index.html",
         "ai-voice-protection/index.html",
         "ai-likeness-protection/index.html",
         "human-authenticity-layer/index.html",
         "book/index.html",
+        "sharp-excerpt/index.html",
+        "full-preview/index.html",
         "contact/index.html",
     ]
 
@@ -96,6 +121,8 @@ def main() -> int:
 
     concept_expectations = {
         "proof-of-creation/index.html": "Proof of creation makes authorship, provenance, and creator rights verifiable",
+        "why-copyright-fails/index.html": "Copyright tries to protect ownership after distribution.",
+        "royalties/index.html": "You cannot automate royalties on content you cannot verify.",
         "programmable-ip/index.html": "Programmable IP moves ownership, licensing, attribution, and usage rules",
         "content-provenance/index.html": "Content provenance records the source, authorship, and ownership context",
     }
@@ -124,6 +151,17 @@ def main() -> int:
             'data-fallback-action="/book-capture.php"',
             "Email Me the Preview",
         ],
+        "sharp-excerpt/index.html": [
+            "The sharp excerpt",
+            'href="/full-preview/"',
+            'href="/book/#get-the-book"',
+            PREVIEW_PDF_PATH,
+        ],
+        "full-preview/index.html": [
+            "Read the condensed preview",
+            PREVIEW_PDF_PATH,
+            'href="/book/#get-the-book"',
+        ],
         "contact/index.html": [
             'action="/contact-submit.php"',
             'data-api-endpoint="/api/contact/"',
@@ -146,6 +184,7 @@ def main() -> int:
 
     robots = ROOT / "robots.txt"
     sitemap = ROOT / "sitemap.xml"
+    vercel_config = ROOT / "vercel.json"
     og_asset = ROOT / "assets" / "img" / "og-suede.svg"
     cover_asset = ROOT / "assets" / "img" / "stake-your-claim-cover.jpg"
     pdf_asset = ROOT / "assets" / "files" / "stake-your-claim-condensed-preview.pdf"
@@ -161,6 +200,7 @@ def main() -> int:
     for asset in [
         robots,
         sitemap,
+        vercel_config,
         og_asset,
         cover_asset,
         pdf_asset,
@@ -176,6 +216,47 @@ def main() -> int:
         if not asset.exists():
             failures.append(f"{asset.relative_to(ROOT)}: file does not exist")
 
+    book_api = ROOT / "api" / "book.js"
+    if book_api.exists():
+        book_api_text = read_text(book_api)
+        for fragment in [
+            "buildReaderPreviewEmail",
+            "https://suedeai.org/sharp-excerpt/",
+            "https://suedeai.org/full-preview/",
+            f"https://suedeai.org{PREVIEW_PDF_PATH}",
+            "Stake Your Claim reader preview",
+        ]:
+            assert_contains("api/book.js", book_api_text, fragment, failures)
+
+    if vercel_config.exists():
+        config = json.loads(read_text(vercel_config))
+        redirect_map = {
+            redirect.get("source"): redirect
+            for redirect in config.get("redirects", [])
+        }
+
+        for source, destination in LEGACY_REDIRECTS.items():
+            redirect = redirect_map.get(source)
+            if not redirect:
+                failures.append(f"vercel.json: missing redirect for {source}")
+                continue
+            if redirect.get("destination") != destination:
+                failures.append(
+                    f"vercel.json: {source} redirects to {redirect.get('destination')}, expected {destination}"
+                )
+            if redirect.get("permanent") is not True:
+                failures.append(f"vercel.json: {source} redirect is not permanent")
+
+    for file_name in NOINDEX_PAGES:
+        path = ROOT / file_name
+        if path.exists():
+            assert_contains(
+                file_name,
+                read_text(path),
+                '<meta name="robots" content="noindex, follow">',
+                failures,
+            )
+
     if robots.exists():
         robots_text = read_text(robots)
         assert_contains("robots.txt", robots_text, "Sitemap: https://suedeai.org/sitemap.xml", failures)
@@ -184,6 +265,8 @@ def main() -> int:
         sitemap_text = read_text(sitemap)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/book/</loc>", failures)
+        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/sharp-excerpt/</loc>", failures)
+        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/full-preview/</loc>", failures)
 
     if failures:
         print("FAIL: site verification failed")
