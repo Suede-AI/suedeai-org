@@ -40,13 +40,13 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
         body: JSON.stringify(payload),
       });
 
-      const payload = await response.json().catch(() => ({}));
+      const result = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        throw new Error(payload.error || "Submission failed.");
+        throw new Error(result.error || "Submission failed.");
       }
 
-      window.location.href = payload.redirectTo || form.dataset.successRedirect || "/";
+      window.location.href = result.redirectTo || form.dataset.successRedirect || "/";
     } catch (error) {
       if (statusNode) {
         statusNode.textContent = `${error.message} Retrying with a standard submission...`;
