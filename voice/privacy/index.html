@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Suede Sing — Privacy Policy | Suede AI</title>
+  <meta name="description" content="Privacy policy for the Suede Sing iOS app: what data is processed, where it lives, and what never leaves your device.">
+  <link rel="canonical" href="https://suedeai.org/voice/privacy/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Suede Sing — Privacy Policy">
+  <meta property="og:description" content="What data Suede Sing processes, what stays on your device, and how the on-device-only architecture works.">
+  <meta property="og:url" content="https://suedeai.org/voice/privacy/">
+  <meta property="og:image" content="https://suedeai.org/assets/img/og-suede.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Suede Sing — Privacy Policy">
+  <meta name="twitter:description" content="On-device-only by architecture. Audio never leaves the phone.">
+  <meta name="twitter:image" content="https://suedeai.org/assets/img/og-suede.svg">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script defer src="/assets/js/site.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Suede Sing Privacy Policy",
+    "url": "https://suedeai.org/voice/privacy/",
+    "description": "Privacy policy for the Suede Sing iOS app.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Suede AI",
+      "url": "https://suedeai.org/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Suede AI",
+      "legalName": "JC Investment Group LLC",
+      "url": "https://suedeai.org/",
+      "email": "info@suedeai.org"
+    },
+    "dateModified": "2026-05-13"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="/"><span class="brand__name">Suede</span><span class="brand__tag">Suede Sing</span></a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
+        <a href="https://print.suedeai.ai/">Suede Sing</a>
+        <a href="https://print.suedeai.ai/demo">Demo</a>
+        <a href="https://print.suedeai.ai/press">Press</a>
+        <a href="/voice/terms/">Terms</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="site-shell">
+    <section class="page-hero">
+      <span class="eyebrow">Suede Sing · Legal</span>
+      <h1>Suede Sing Privacy Policy</h1>
+      <p class="lede">Suede Sing is built on a single architectural commitment: <strong>your singing audio never leaves your device.</strong> This page explains what that means in practice, what little information the app does process, and your rights as a user. The Suede Sing iOS app is published by <strong>JC Investment Group LLC</strong>, a Florida limited liability company doing business as Suede AI ("we", "us", "our").</p>
+      <p><strong>Last updated:</strong> May 13, 2026</p>
+    </section>
+
+    <div class="page-layout">
+      <div class="content-stack">
+        <article class="panel">
+          <h2>1. The on-device principle</h2>
+          <p>Suede Sing performs all of its singing-voice analysis — pitch detection, spectral analysis, register classification, range tracking, recommendation matching — locally on your iPhone using Apple's Accelerate framework and on-device classifiers. The microphone audio captured during a session is processed in memory on your device and is never uploaded to any Suede AI server, third-party server, or cloud service.</p>
+          <p>The app's App Privacy declaration in the App Store reflects this architecture: <strong>"Data Not Collected."</strong></p>
+        </article>
+
+        <article class="panel">
+          <h2>2. What is captured during a session</h2>
+          <p><strong>Microphone audio.</strong> During an active range test or practice session, Suede Sing records audio from your iPhone microphone. The audio buffer is held in memory only for the duration of the analysis, processed locally, and discarded once the session is complete or the app is closed. Suede Sing does not retain the raw audio after a session ends.</p>
+          <p><strong>Derived measurements.</strong> The numeric outputs of the on-device analysis — your range bounds in MIDI, spectral feature values such as H1-H2 ratio and harmonic-to-noise ratio, register classifications, vibrato measurements, exercise-completion timestamps — are stored locally on your device in a SQLite database (the same database iOS apps routinely use for offline state). These measurements form your "TonePrint" history.</p>
+          <p><strong>Where they live.</strong> The TonePrint database lives in the app's local sandbox container on your iPhone. iOS isolates this from other apps. iCloud Backup will include this database if and only if you have iCloud Backup enabled for the device — that backup is encrypted by Apple and not accessible to Suede AI.</p>
+        </article>
+
+        <article class="panel">
+          <h2>3. What Suede Sing does not collect</h2>
+          <ul>
+            <li>No account is created. There is no signup. There is no login.</li>
+            <li>No name, email address, phone number, or contact information is requested or stored.</li>
+            <li>No third-party analytics, advertising SDKs, attribution SDKs, or tracking pixels are integrated into the app.</li>
+            <li>No social-graph access, no contacts access, no photo-library access, no calendar access.</li>
+            <li>No audio is transmitted to any server, including ours.</li>
+            <li>No biometric identifiers are derived or stored.</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>4. Permissions the app requests</h2>
+          <p><strong>Microphone access.</strong> Required to perform the singing-voice analysis. iOS will display a system prompt the first time you start a session. You may revoke microphone access at any time in iOS Settings &gt; Privacy &amp; Security &gt; Microphone &gt; Suede Sing.</p>
+          <p><strong>Notifications (optional).</strong> If you enable practice reminders, Suede Sing schedules local notifications on your device. The notification content (e.g., reminder text) is generated locally; nothing is sent to a push-notification server about the content.</p>
+        </article>
+
+        <article class="panel">
+          <h2>5. Network activity</h2>
+          <p>Suede Sing v1.0 has no networked feature that handles your singing audio or measurements. The app may make outbound network calls only for the following narrow purposes:</p>
+          <ul>
+            <li>Downloading static drill content (audio reference tones, exercise descriptions) from our content delivery network the first time a drill is opened — analogous to a podcast app downloading episode metadata.</li>
+            <li>Loading external links you tap (the privacy policy you are currently reading, the Terms of Use, the founder's website) in your iOS browser.</li>
+          </ul>
+          <p>None of these calls include your singing audio or your TonePrint measurements.</p>
+        </article>
+
+        <article class="panel">
+          <h2>6. Third-party services</h2>
+          <p>Suede Sing v1.0 does not integrate any third-party SDKs that collect personal data. The only third party in the architecture is the content delivery network that serves static drill assets, which receives standard server logs (IP address, request timestamp, file requested) for those file requests but no information about the user beyond what every iOS app's network requests reveal.</p>
+        </article>
+
+        <article class="panel">
+          <h2>7. Children</h2>
+          <p>Suede Sing is rated 4+ and is intended for general audiences including young singers. Because the app does not collect any personal information, there is no information about a child to retain, share, or delete. Parents and guardians remain in control of microphone permission via iOS Settings.</p>
+        </article>
+
+        <article class="panel">
+          <h2>8. Your rights and your data</h2>
+          <p>Because Suede Sing does not collect any personal information about you, there is generally no Suede-AI-held data to access, correct, port, or delete on your behalf. You can delete the entire TonePrint database — and all derived measurements — at any time by uninstalling the app from your iPhone.</p>
+          <p>If you have questions about your rights under the CCPA/CPRA, GDPR, or another applicable privacy law as it relates to Suede Sing specifically, email <a href="mailto:privacy@suedeai.org">privacy@suedeai.org</a>.</p>
+        </article>
+
+        <article class="panel">
+          <h2>9. Changes to this policy</h2>
+          <p>If a future version of Suede Sing introduces a feature that processes data differently — for example, an opt-in cloud sync for the TonePrint, or a coach-share export — we will update this policy and surface the change inside the app before any such feature is enabled for your account.</p>
+        </article>
+
+        <article class="panel">
+          <h2>10. Contact</h2>
+          <p>Privacy questions about Suede Sing? Email <a href="mailto:privacy@suedeai.org">privacy@suedeai.org</a> or write to JC Investment Group LLC at the address listed on our <a href="/contact/">contact page</a>.</p>
+        </article>
+      </div>
+
+      <aside class="sidebar-nav">
+        <h2>Suede Sing</h2>
+        <ul>
+          <li><a href="https://print.suedeai.ai/">Product</a></li>
+          <li><a href="https://print.suedeai.ai/demo">60-second demo</a></li>
+          <li><a href="https://print.suedeai.ai/press">Press kit</a></li>
+        </ul>
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="/voice/privacy/">Suede Sing Privacy</a></li>
+          <li><a href="/voice/terms/">Suede Sing Terms</a></li>
+          <li><a href="/privacy/">Suede AI Privacy</a></li>
+          <li><a href="/terms/">Suede AI Terms</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>Suede Sing measures the signal in your singing voice — on your device, every session.</p>
+      <a href="/contact/">Talk to Suede</a>
+    </div>
+    <div class="site-footer__legal">
+      <p>&copy; 2026 JC Investment Group LLC. All rights reserved.</p>
+      <nav aria-label="Legal">
+        <a href="/voice/terms/">Suede Sing Terms</a>
+        <a href="/voice/privacy/">Suede Sing Privacy</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
