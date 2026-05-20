@@ -64,7 +64,7 @@ jobs:
               && grep -qiE '<title>[^<]+</title>' "$body_file" \
               && grep -qiE '<link[^>]+rel="canonical"' "$body_file" \
               && grep -qiE '<meta[^>]+property="og:' "$body_file" \
-              && grep -qi 'application/ld\+json' "$body_file"; then
+              && grep -qiF 'application/ld+json' "$body_file"; then
               ready=true
               break
             fi
@@ -84,7 +84,7 @@ jobs:
             echo "  <title>:          $( grep -qiE '<title>[^<]+</title>' "$body_file" && echo yes || echo no )"
             echo "  canonical link:   $( grep -qiE '<link[^>]+rel="canonical"' "$body_file" && echo yes || echo no )"
             echo "  og: meta:         $( grep -qiE '<meta[^>]+property="og:' "$body_file" && echo yes || echo no )"
-            echo "  JSON-LD:          $( grep -qi 'application/ld\+json' "$body_file" && echo yes || echo no )"
+            echo "  JSON-LD:          $( grep -qiF 'application/ld+json' "$body_file" && echo yes || echo no )"
             exit 1
           fi
 
