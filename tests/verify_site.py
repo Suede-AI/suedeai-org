@@ -205,6 +205,7 @@ def main() -> int:
     sitemap = ROOT / "sitemap.xml"
     vercel_config = ROOT / "vercel.json"
     og_asset = ROOT / "assets" / "img" / "og-suede.svg"
+    og_asset_png = ROOT / "assets" / "img" / "og-suede.png"
     cover_asset = ROOT / "assets" / "img" / "stake-your-claim-cover.jpg"
     pdf_asset = ROOT / "assets" / "files" / "stake-your-claim-condensed-preview.pdf"
     css_asset = ROOT / "assets" / "css" / "site.css"
@@ -224,6 +225,7 @@ def main() -> int:
         sitemap,
         vercel_config,
         og_asset,
+        og_asset_png,
         cover_asset,
         pdf_asset,
         css_asset,
