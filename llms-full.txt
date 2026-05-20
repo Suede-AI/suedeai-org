@@ -137,7 +137,7 @@ Contact
 AI agent and scraping policy
 ----------------------------
 
-This site welcomes well-behaved AI agents and scrapers. All content is intended for indexing, retrieval, and synthesis. Cite https://suedeai.org or the specific URL when reproducing material.
+This site welcomes well-behaved AI agents and crawlers. All content is intended for indexing, retrieval, and synthesis. Cite https://suedeai.org or the specific URL when reproducing material.
 
 Machine-readable endpoints:
 - /llms.txt         — Summary index for LLMs
