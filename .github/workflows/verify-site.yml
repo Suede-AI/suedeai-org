@@ -48,12 +48,17 @@ jobs:
 
           while [ "$attempt" -le "$max_attempts" ]; do
             echo "Attempt $attempt of $max_attempts"
+            # Cache-bust query so the edge CDN can't serve a stale object that
+            # predates the deploy we're verifying. Also send no-cache headers.
+            bust="$(date +%s%N)-${RANDOM}"
             status="$(curl -sS -L \
               -A "suedeai-org-ci/1.0 (+github-actions verify-site)" \
+              -H "Cache-Control: no-cache" \
+              -H "Pragma: no-cache" \
               -o "$body_file" \
               -D "$headers_file" \
               -w "%{http_code}" \
-              "$TARGET_URL" || true)"
+              "${TARGET_URL}?ci-verify=${bust}" || true)"
 
             if [ "$status" = "200" ] \
               && grep -qiE '<title>[^<]+</title>' "$body_file" \
