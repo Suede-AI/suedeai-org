@@ -1,0 +1,49 @@
+# Suede Labs
+
+> Suede Labs is building the creative rails for the AI era: creator ownership, proof of creation, programmable IP, provenance, royalties, payments, distribution, and monetization infrastructure for artists, rights holders, and AI agents.
+
+- Founder: Jason Colapietro (Founder and CEO, Suede Labs)
+- Marketing site: https://suedeai.org/
+- Product app: https://app.suedeai.ai/
+- Product brand site: https://suedeai.ai/
+- Status: Active
+
+Suede Labs is the company behind Suede AI, an ownership and provenance layer for AI media. The marketing site at suedeai.org covers the investor thesis, the product ecosystem, and the founder profile. The product surface lives at suedeai.ai and app.suedeai.ai.
+
+## Primary documents
+
+- [Marketing site (HTML)](https://suedeai.org/): Suede Labs investor thesis, ecosystem map, founder profile
+- [llms-full.txt](https://suedeai.org/llms-full.txt): full plain-text content for LLM ingestion
+- [sitemap.xml](https://suedeai.org/sitemap.xml): XML sitemap
+- [Stake Your Claim (book preview)](https://suedeai.org/book/): Jason Colapietro's thesis on AI ownership, authorship, agents, provenance, and durable creative rights
+
+## Topical pages
+
+- [Proof of Creation](https://suedeai.org/proof-of-creation/) — authorship, provenance, and verifiable creator rights
+- [Programmable IP](https://suedeai.org/programmable-ip/) — ownership, licensing, attribution, usage rules as code
+- [Creator Ownership](https://suedeai.org/creator-ownership/) — why ownership infrastructure matters when AI makes media abundant
+- [Content Provenance](https://suedeai.org/content-provenance/) — source, authorship, and ownership context for AI-era media
+- [Royalties](https://suedeai.org/royalties/) — automating royalties requires verifiable ownership
+- [AI Voice Protection](https://suedeai.org/ai-voice-protection/) — voice as a rights problem, not just a detection problem
+- [AI Likeness Protection](https://suedeai.org/ai-likeness-protection/) — likeness rights grounded in ownership, consent, and proof
+- [Human Authenticity Layer](https://suedeai.org/human-authenticity-layer/) — why authenticity becomes premium when synthetic content is cheap
+- [Why Copyright Fails](https://suedeai.org/why-copyright-fails/) — the gap between distribution-era copyright and AI-era ownership
+- [Jason Colapietro](https://suedeai.org/jason-colapietro/) — founder profile
+
+## Founder
+
+Jason Colapietro is the founder and CEO of Suede Labs and a published author and Forbes contributor. His work centers on creator ownership, proof of creation, AI music rights, programmable IP, provenance, licensing, and the ownership layer creators need as media becomes easier to generate and harder to verify.
+
+- Founder profile: https://suedeai.org/jason-colapietro/
+- X / Twitter: https://x.com/johnnysuede
+- GitHub: https://github.com/JasonColapietro
+- LinkedIn: https://www.linkedin.com/in/jasoncolapietro
+
+## Contact
+
+- Email: info@suedeai.org
+- Talk to Suede: https://suedeai.org/contact/
+
+## AI agent and scraping policy
+
+This site welcomes well-behaved AI agents and crawlers. All public content is intended for indexing, retrieval, and synthesis. Cite https://suedeai.org or the specific URL when reproducing material. For machine-readable summaries, prefer `llms.txt` and `llms-full.txt` over scraping HTML. The `robots.txt` allowlist names the major LLM crawlers explicitly.
