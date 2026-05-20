@@ -35,13 +35,16 @@ jobs:
 
           echo "Probing $TARGET_URL"
 
-          # Allow a brief retry window so a fresh Vercel deploy has time to flip live.
+          # Vercel deploys take 30-120s to propagate after push, and the smoke test
+          # is checking the deploy from THIS push. Retry until the new SEO markers
+          # are present (or budget exhausted), not just until we get HTTP 200.
           attempt=1
-          max_attempts=5
-          sleep_between=15
+          max_attempts=10
+          sleep_between=20
           status=""
           body_file="$(mktemp)"
           headers_file="$(mktemp)"
+          ready=false
 
           while [ "$attempt" -le "$max_attempts" ]; do
             echo "Attempt $attempt of $max_attempts"
@@ -52,38 +55,31 @@ jobs:
               -w "%{http_code}" \
               "$TARGET_URL" || true)"
 
-            if [ "$status" = "200" ]; then
+            if [ "$status" = "200" ] \
+              && grep -qiE '<title>[^<]+</title>' "$body_file" \
+              && grep -qiE '<link[^>]+rel="canonical"' "$body_file" \
+              && grep -qiE '<meta[^>]+property="og:' "$body_file" \
+              && grep -qi 'application/ld\+json' "$body_file"; then
+              ready=true
               break
             fi
-            echo "Got HTTP $status — retrying in ${sleep_between}s"
+
+            echo "Got HTTP $status, response not fully ready — retrying in ${sleep_between}s"
             attempt=$((attempt + 1))
             sleep "$sleep_between"
           done
 
-          if [ "$status" != "200" ]; then
-            echo "FAIL: expected HTTP 200 from $TARGET_URL, got $status"
-            echo "---- response headers ----"
+          if [ "$ready" != "true" ]; then
+            echo "FAIL: $TARGET_URL did not converge to ready state after $max_attempts attempts"
+            echo "Last HTTP status: $status"
+            echo "---- last response headers ----"
             cat "$headers_file"
-            exit 1
-          fi
-
-          if ! grep -qiE '<title>[^<]+</title>' "$body_file"; then
-            echo "FAIL: response missing a non-empty <title>"
-            exit 1
-          fi
-
-          if ! grep -qiE '<link[^>]+rel="canonical"' "$body_file"; then
-            echo "FAIL: response missing <link rel=\"canonical\">"
-            exit 1
-          fi
-
-          if ! grep -qiE '<meta[^>]+property="og:' "$body_file"; then
-            echo "FAIL: response missing at least one og: meta tag"
-            exit 1
-          fi
-
-          if ! grep -qi 'application/ld\+json' "$body_file"; then
-            echo "FAIL: response missing JSON-LD structured data"
+            echo "---- presence ----"
+            echo "  HTTP 200:         $( [ "$status" = "200" ] && echo yes || echo no )"
+            echo "  <title>:          $( grep -qiE '<title>[^<]+</title>' "$body_file" && echo yes || echo no )"
+            echo "  canonical link:   $( grep -qiE '<link[^>]+rel="canonical"' "$body_file" && echo yes || echo no )"
+            echo "  og: meta:         $( grep -qiE '<meta[^>]+property="og:' "$body_file" && echo yes || echo no )"
+            echo "  JSON-LD:          $( grep -qi 'application/ld\+json' "$body_file" && echo yes || echo no )"
             exit 1
           fi
 
