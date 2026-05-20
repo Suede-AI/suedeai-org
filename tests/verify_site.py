@@ -6,6 +6,7 @@ import json
 ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://suedeai.org"
 MAIN_SITE_URL = "https://suedeai.ai/"
+FAVICON_VERSION = "v=3"
 
 LEGACY_REDIRECTS = {
     "/home/": "/",
@@ -48,8 +49,8 @@ def assert_contains(label: str, haystack: str, needle: str, failures: list[str])
         failures.append(f"{label}: missing '{needle}'")
 
 
-def assert_regex(label: str, haystack: str, pattern: str, failures: list[str]) -> None:
-    if not re.search(pattern, haystack, re.IGNORECASE | re.MULTILINE):
+def assert_regex(label: str, haystack: str, pattern: str, failures: list[str], flags: int = re.IGNORECASE | re.MULTILINE) -> None:
+    if not re.search(pattern, haystack, flags):
         failures.append(f"{label}: missing pattern /{pattern}/")
 
 
@@ -59,17 +60,33 @@ def main() -> int:
     home_path = ROOT / "index.html"
     if home_path.exists():
         home_html = read_text(home_path)
-        assert_contains("index.html", home_html, "Proof of Creation. Programmable IP.", failures)
-        assert_contains("index.html", home_html, "Get the Book", failures)
+        # New "Creative rails for the AI era" content strings — root is now the Suede Labs investor thesis page
+        assert_contains("index.html", home_html, "Creative rails for the", failures)
+        assert_contains("index.html", home_html, "AI era.", failures)
+        assert_contains("index.html", home_html, "Suede Labs", failures)
+        assert_contains("index.html", home_html, "Suede Labs investor thesis", failures)
+        assert_contains("index.html", home_html, "Talk to Suede", failures)
+        assert_contains("index.html", home_html, "Jason Colapietro", failures)
         assert_contains("index.html", home_html, 'href="https://suedeai.ai/"', failures)
-        assert_contains(
-            "index.html",
-            home_html,
-            "Proof-of-Creation Infrastructure",
-            failures,
-        )
-        assert_contains("index.html", home_html, "Capture -&gt; Prove -&gt; Monetize", failures)
-        assert_contains("index.html", home_html, "Creation is moving faster than ownership.", failures)
+        # Root SEO presence — restored after the "Creative rails" redesign
+        assert_contains("index.html", home_html, '<link rel="canonical" href="https://suedeai.org/"', failures)
+        assert_contains("index.html", home_html, '<link rel="icon" href="/favicon.ico?v=3" sizes="any">', failures)
+        assert_contains("index.html", home_html, '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">', failures)
+        assert_contains("index.html", home_html, '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">', failures)
+        assert_contains("index.html", home_html, '<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">', failures)
+        assert_contains("index.html", home_html, '<link rel="manifest" href="/site.webmanifest">', failures)
+        assert_contains("index.html", home_html, 'property="og:title"', failures)
+        assert_contains("index.html", home_html, 'property="og:description"', failures)
+        assert_contains("index.html", home_html, 'property="og:image"', failures)
+        assert_contains("index.html", home_html, 'property="og:url"', failures)
+        assert_contains("index.html", home_html, 'name="twitter:card"', failures)
+        assert_contains("index.html", home_html, 'type="application/ld+json"', failures)
+        # JSON-LD must include Organization (Suede Labs) and Person (Jason Colapietro)
+        assert_contains("index.html", home_html, '"@type": "Organization"', failures)
+        assert_contains("index.html", home_html, '"@type": "Person"', failures)
+
+    h1_pattern = r"<h1\b[^>]*>.*?</h1>"
+    h1_flags = re.IGNORECASE | re.DOTALL
 
     for file_name, route in PAGES.items():
         path = ROOT / file_name
@@ -81,18 +98,20 @@ def main() -> int:
         canonical = f"{SITE_URL}{route}"
 
         assert_regex(file_name, html, r"<title>.+</title>", failures)
-        assert_regex(file_name, html, r'<meta name="description" content="[^"]+">', failures)
-        assert_contains(file_name, html, f'<link rel="canonical" href="{canonical}">', failures)
-        assert_contains(file_name, html, '<link rel="icon" href="/favicon.ico?v=2" sizes="any">', failures)
-        assert_contains(file_name, html, '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">', failures)
-        assert_contains(file_name, html, '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">', failures)
-        assert_contains(file_name, html, '<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">', failures)
+        # Allow multi-line/whitespace-formatted description tags so the regex works against
+        # both compact subpage markup and the prettier multi-line root markup.
+        assert_regex(file_name, html, r'<meta\s+name="description"\s+content="[^"]+"', failures, flags=re.IGNORECASE | re.DOTALL)
+        assert_contains(file_name, html, f'<link rel="canonical" href="{canonical}"', failures)
+        assert_contains(file_name, html, f'<link rel="icon" href="/favicon.ico?{FAVICON_VERSION}" sizes="any">', failures)
+        assert_contains(file_name, html, f'<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?{FAVICON_VERSION}">', failures)
+        assert_contains(file_name, html, f'<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?{FAVICON_VERSION}">', failures)
+        assert_contains(file_name, html, f'<link rel="apple-touch-icon" href="/apple-touch-icon.png?{FAVICON_VERSION}">', failures)
         assert_contains(file_name, html, '<link rel="manifest" href="/site.webmanifest">', failures)
         assert_contains(file_name, html, 'property="og:title"', failures)
         assert_contains(file_name, html, 'property="og:description"', failures)
         assert_contains(file_name, html, 'property="og:image"', failures)
         assert_contains(file_name, html, 'name="twitter:card"', failures)
-        assert_regex(file_name, html, r"<h1>.+</h1>", failures)
+        assert_regex(file_name, html, h1_pattern, failures, flags=h1_flags)
         assert_contains(file_name, html, 'type="application/ld+json"', failures)
         assert_contains(file_name, html, MAIN_SITE_URL, failures)
 
@@ -144,11 +163,12 @@ def main() -> int:
         if path.exists():
             assert_contains(file_name, read_text(path), sentence, failures)
 
+    # Form expectations match the current Vercel-API-only flow. The PHP shared-hosting
+    # fallback was removed; book and contact submit directly to /api/book/ and /api/contact/.
     form_expectations = {
         "book/index.html": [
-            'action="/book-capture.php"',
+            'action="/api/book/"',
             'data-api-endpoint="/api/book/"',
-            'data-fallback-action="/book-capture.php"',
             "Email Me the Preview",
         ],
         "sharp-excerpt/index.html": [
@@ -163,9 +183,8 @@ def main() -> int:
             'href="/book/#get-the-book"',
         ],
         "contact/index.html": [
-            'action="/contact-submit.php"',
+            'action="/api/contact/"',
             'data-api-endpoint="/api/contact/"',
-            'data-fallback-action="/contact-submit.php"',
         ],
         "book/thanks/index.html": [
             "Your request is in.",
@@ -196,6 +215,9 @@ def main() -> int:
     favicon_32 = ROOT / "favicon-32x32.png"
     apple_touch_icon = ROOT / "apple-touch-icon.png"
     webmanifest = ROOT / "site.webmanifest"
+    llms_txt = ROOT / "llms.txt"
+    llms_full = ROOT / "llms-full.txt"
+    license_file = ROOT / "LICENSE"
 
     for asset in [
         robots,
@@ -212,6 +234,9 @@ def main() -> int:
         favicon_32,
         apple_touch_icon,
         webmanifest,
+        llms_txt,
+        llms_full,
+        license_file,
     ]:
         if not asset.exists():
             failures.append(f"{asset.relative_to(ROOT)}: file does not exist")
@@ -260,6 +285,18 @@ def main() -> int:
     if robots.exists():
         robots_text = read_text(robots)
         assert_contains("robots.txt", robots_text, "Sitemap: https://suedeai.org/sitemap.xml", failures)
+        # AI-crawler allowlist must be explicit so Suede Labs content is indexed by the major LLM crawlers.
+        for crawler in [
+            "GPTBot",
+            "ClaudeBot",
+            "anthropic-ai",
+            "PerplexityBot",
+            "Applebot-Extended",
+            "Google-Extended",
+            "Meta-ExternalAgent",
+            "CCBot",
+        ]:
+            assert_contains("robots.txt", robots_text, f"User-agent: {crawler}", failures)
 
     if sitemap.exists():
         sitemap_text = read_text(sitemap)
