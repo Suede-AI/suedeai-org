@@ -1,0 +1,90 @@
+name: verify-site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify-source:
+    name: Source verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run python3 tests/verify_site.py
+        run: python3 tests/verify_site.py
+
+  smoke-deployed:
+    name: Deployed smoke test
+    runs-on: ubuntu-latest
+    needs: verify-source
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Curl the deployed marketing root
+        env:
+          TARGET_URL: "https://suedeai-org.vercel.app/"
+        run: |
+          set -euo pipefail
+
+          echo "Probing $TARGET_URL"
+
+          # Allow a brief retry window so a fresh Vercel deploy has time to flip live.
+          attempt=1
+          max_attempts=5
+          sleep_between=15
+          status=""
+          body_file="$(mktemp)"
+          headers_file="$(mktemp)"
+
+          while [ "$attempt" -le "$max_attempts" ]; do
+            echo "Attempt $attempt of $max_attempts"
+            status="$(curl -sS -L \
+              -A "suedeai-org-ci/1.0 (+github-actions verify-site)" \
+              -o "$body_file" \
+              -D "$headers_file" \
+              -w "%{http_code}" \
+              "$TARGET_URL" || true)"
+
+            if [ "$status" = "200" ]; then
+              break
+            fi
+            echo "Got HTTP $status — retrying in ${sleep_between}s"
+            attempt=$((attempt + 1))
+            sleep "$sleep_between"
+          done
+
+          if [ "$status" != "200" ]; then
+            echo "FAIL: expected HTTP 200 from $TARGET_URL, got $status"
+            echo "---- response headers ----"
+            cat "$headers_file"
+            exit 1
+          fi
+
+          if ! grep -qiE '<title>[^<]+</title>' "$body_file"; then
+            echo "FAIL: response missing a non-empty <title>"
+            exit 1
+          fi
+
+          if ! grep -qiE '<link[^>]+rel="canonical"' "$body_file"; then
+            echo "FAIL: response missing <link rel=\"canonical\">"
+            exit 1
+          fi
+
+          if ! grep -qiE '<meta[^>]+property="og:' "$body_file"; then
+            echo "FAIL: response missing at least one og: meta tag"
+            exit 1
+          fi
+
+          if ! grep -qi 'application/ld\+json' "$body_file"; then
+            echo "FAIL: response missing JSON-LD structured data"
+            exit 1
+          fi
+
+          echo "PASS: 200 + non-empty <title> + canonical + og: + JSON-LD present"
