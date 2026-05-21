@@ -30,22 +30,44 @@
     {
       "@context": "https://schema.org",
       "@type": "Book",
-      "name": "Stake Your Claim",
+      "name": "Stake Your Claim — Human Authenticity Layer",
       "author": {
         "@type": "Person",
-        "name": "Jason Colapietro"
+        "name": "Jason 'Johnny Suede' Colapietro",
+        "url": "https://suedeai.ai/"
       },
-      "bookEdition": "Abridged Preview",
-      "description": "A condensed preview that distills the major arguments from the larger 500-page work on AI ownership, authorship, provenance, creator rights, agents, and building durable assets.",
+      "bookFormat": "https://schema.org/EBook",
+      "inLanguage": "en",
+      "description": "Jason 'Johnny Suede' Colapietro's thesis on AI ownership, authorship, provenance, creator rights, agents, and building durable assets in the AI era.",
       "image": "https://suedeai.org/assets/img/stake-your-claim-cover.jpg",
-      "url": "https://suedeai.org/book/",
+      "url": "https://www.amazon.com/dp/B0GD5FX6N6",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ASIN",
+        "value": "B0GD5FX6N6"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Suede Labs"
+      },
       "about": [
         "AI ownership",
         "AI authorship",
         "content provenance",
         "creator rights",
-        "AI agents"
-      ]
+        "AI agents",
+        "human authenticity layer"
+      ],
+      "workExample": {
+        "@type": "Book",
+        "bookFormat": "https://schema.org/EBook",
+        "inLanguage": "en",
+        "url": "https://www.amazon.com/dp/B0GD5FX6N6",
+        "potentialAction": {
+          "@type": "ReadAction",
+          "target": "https://www.amazon.com/dp/B0GD5FX6N6"
+        }
+      }
     }
   ]
   </script>
@@ -76,10 +98,11 @@
             <span>Email delivery only</span>
           </div>
           <div class="button-row">
-            <a class="button button--primary" href="/full-preview/">Read the Full Preview</a>
+            <a class="button button--primary" href="https://www.amazon.com/dp/B0GD5FX6N6" rel="noopener">Buy on Amazon Kindle</a>
+            <a class="button button--secondary" href="/full-preview/">Read the Full Preview</a>
             <a class="button button--secondary" href="#get-the-book">Get It By Email</a>
           </div>
-          <p class="book-hero__note">Built for readers who want the core thesis quickly, clearly, and without losing the substance of the larger work.</p>
+          <p class="book-hero__note">Available on <a href="https://www.amazon.com/dp/B0GD5FX6N6" rel="noopener">Amazon Kindle</a> (ASIN B0GD5FX6N6). Built for readers who want the core thesis quickly, clearly, and without losing the substance of the larger work.</p>
         </div>
         <aside class="book-cover-card">
           <img src="/assets/img/stake-your-claim-cover.jpg" alt="Stake Your Claim cover by Jason Colapietro" width="1600" height="2400">
@@ -143,7 +166,7 @@
         <aside class="form-card form-card--book" id="get-the-book">
           <span class="eyebrow">Get It By Email</span>
           <h2>Request the abridged PDF.</h2>
-          <p class="form-card__lede">Enter your email and we’ll send the reader preview links when email delivery is configured. You can also read the <a href="/sharp-excerpt/">sharp excerpt</a> or open the <a href="/full-preview/">full preview</a> now. The condensed PDF distills the larger 500-page work into a faster read on AI ownership, authorship, agents, and rights.</p>
+          <p class="form-card__lede">Want the full edition? <a href="https://www.amazon.com/dp/B0GD5FX6N6" rel="noopener">Buy <em>Stake Your Claim</em> on Amazon Kindle</a> (ASIN B0GD5FX6N6). Or enter your email below and we’ll send the reader preview links when email delivery is configured. You can also read the <a href="/sharp-excerpt/">sharp excerpt</a> or open the <a href="/full-preview/">full preview</a> now. The condensed PDF distills the larger 500-page work into a faster read on AI ownership, authorship, agents, and rights.</p>
           <form action="/api/book/" method="post" data-api-endpoint="/api/book/" data-fallback-action="/api/book/" data-success-redirect="/book/thanks/">
             <label>Email<input type="email" name="email" required autocomplete="email"></label>
             <label>Name<input type="text" name="name" autocomplete="name"></label>
