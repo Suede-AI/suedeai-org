@@ -570,6 +570,40 @@ ul {
   text-decoration: underline;
 }
 
+.site-footer__ecosystem {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  padding: 18px 0 14px;
+  border-top: 1px solid rgba(239, 246, 255, 0.10);
+}
+
+.site-footer__ecosystem h2 {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(239, 246, 255, 0.62);
+}
+
+.site-footer__ecosystem nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 0.9rem;
+}
+
+.site-footer__ecosystem a {
+  color: rgba(239, 246, 255, 0.84);
+  text-decoration: none;
+}
+
+.site-footer__ecosystem a:hover,
+.site-footer__ecosystem a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
 form {
   display: grid;
   gap: 14px;
