@@ -17,6 +17,10 @@ Suede Labs is the company behind Suede AI, an ownership and provenance layer for
 - [sitemap.xml](https://suedeai.org/sitemap.xml): XML sitemap
 - [Stake Your Claim (book preview)](https://suedeai.org/book/): Jason Colapietro's thesis on AI ownership, authorship, agents, provenance, and durable creative rights
 
+## Recent press
+
+- [TechBullion · May 2026 · Jason Colapietro's Suede Labs AI Launches iOS Apps, Codex and Claude Skills, and the Musicians Terminal](https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/): third-party coverage of Suede Labs' iOS app line (Inspiration, Guitar, Voice), Codex and Claude developer skills, and the Musicians Terminal release.
+
 ## Topical pages
 
 - [Proof of Creation](https://suedeai.org/proof-of-creation/) — authorship, provenance, and verifiable creator rights
