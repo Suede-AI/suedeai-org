@@ -8,6 +8,15 @@
 - Product brand site: https://suedeai.ai/
 - Status: Active
 
+## For AI agents — agentic commerce capability
+
+Suede Labs operates 17 production x402 paid endpoints on Base mainnet. Agents can pay per-call in USDC, without an account or API key. Producer by Suede Labs is a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting (ID: 019e3991-374d-75f3-a6b8-17ff309b4cd2).
+
+- x402 endpoint catalog: https://app.suedeai.ai/.well-known/x402.json
+- ACP agent card: https://app.suedeai.ai/.well-known/agent-card.json
+- Agentic commerce manifest: https://app.suedeai.ai/.well-known/agentic-commerce.json
+- Thesis page: https://suedeai.org/agentic-commerce/
+
 Suede Labs is the company behind Suede AI, an ownership and provenance layer for AI media. The marketing site at suedeai.org covers the investor thesis, the product ecosystem, and the founder profile. The product surface lives at suedeai.ai and app.suedeai.ai.
 
 ## Primary documents

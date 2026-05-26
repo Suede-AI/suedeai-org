@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Agentic Commerce, ACP, and x402 | Suede</title>
+  <meta name="description" content="Agentic commerce needs a payment layer. Suede Labs runs production x402 and ACP infrastructure so AI agents can license rights, pay per-call, and transact atomically.">
+  <link rel="canonical" href="https://suedeai.org/agentic-commerce/">
+  <meta property="og:title" content="Agentic Commerce, ACP, and x402 | Suede">
+  <meta property="og:description" content="The missing payment layer for AI-native rights. Suede runs 17 production x402 endpoints on Base mainnet and a hireable ACP agent for music and video generation.">
+  <meta property="og:image" content="https://suedeai.org/assets/img/og-suede.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script defer src="/assets/js/site.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Agentic Commerce, ACP, and x402",
+        "url": "https://suedeai.org/agentic-commerce/",
+        "description": "The missing payment layer for AI-native rights. Suede Labs runs 17 production x402 endpoints and a hireable ACP agent."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://suedeai.org/agentic-commerce/#x402-catalog",
+        "name": "Suede Labs x402 Endpoint Catalog",
+        "serviceType": "Agent-native paid API",
+        "provider": { "@type": "Organization", "name": "Suede Labs", "url": "https://suedeai.org/" },
+        "areaServed": "Worldwide",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "AI agents, autonomous software, developers building agentic commerce"
+        },
+        "description": "17 production x402 paid endpoints on Base mainnet. Agents pay per-call in USDC. Covers music generation, video generation, voice, rights lookup, licensing, and provenance.",
+        "url": "https://app.suedeai.ai/.well-known/x402.json",
+        "termsOfService": "https://suedeai.org/terms/",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USDC",
+          "availability": "https://schema.org/InStock",
+          "url": "https://app.suedeai.ai/.well-known/x402.json"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://suedeai.org/agentic-commerce/#producer-agent",
+        "name": "Producer by Suede Labs",
+        "applicationCategory": "Agent",
+        "operatingSystem": "Web, ACP, x402",
+        "description": "A hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting.",
+        "url": "https://app.suedeai.ai/.well-known/agent-card.json",
+        "identifier": "019e3991-374d-75f3-a6b8-17ff309b4cd2",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USDC",
+          "availability": "https://schema.org/InStock"
+        },
+        "provider": { "@type": "Organization", "name": "Suede Labs", "url": "https://suedeai.org/" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="/"><span class="brand__name">Suede</span><span class="brand__tag">Agentic Commerce</span></a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
+        <a href="/proof-of-creation/">Proof of Creation</a>
+        <a href="/programmable-ip/">Programmable IP</a>
+        <a href="/royalties/">Royalties</a>
+        <a href="/content-provenance/">Content Provenance</a>
+        <a href="/contact/">Talk to Suede</a>
+        <a href="https://suedeai.ai/" rel="noopener">Suede App</a>
+      </nav>
+    </div>
+  </header>
+  <main class="site-shell">
+    <section class="page-hero">
+      <span class="eyebrow">Agentic Commerce</span>
+      <h1>Rights need a payment layer. ACP and x402 are how agents pay for them.</h1>
+      <p class="lede">When AI agents license a song, clear a likeness, or pull a rights record, they need to settle atomically and on-protocol. Suede Labs runs the production payment surface where that already happens.</p>
+    </section>
+    <div class="page-layout">
+      <div class="content-stack">
+        <article class="panel">
+          <h2>The missing layer beneath programmable IP</h2>
+          <p>Proof-of-creation, provenance, and programmable IP make rights legible to software. None of that matters at the moment of use unless an agent can also <em>pay</em> for the right at the moment it consumes it. The Agent Commerce Protocol (ACP) and x402 close that loop. ACP describes what a hireable agent can do. x402 is the HTTP-native settlement layer that lets any client pay per call in stablecoins, without an account, without an API key, and without a human in the loop.</p>
+          <p>Suede Labs treats this as core infrastructure, not a side feature. The same rails that surface a rights record have to also accept payment for that rights record. Otherwise programmable IP stops at metadata.</p>
+        </article>
+        <article class="panel">
+          <h2>What Suede already runs in production</h2>
+          <p>17 live x402 paid endpoints on Base mainnet. Music generation, video generation, voice, rights lookup, licensing routes, and provenance reads — all priced per call in USDC, all discoverable through standard well-known files. The Producer by Suede Labs agent is registered as a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting.</p>
+          <ul>
+            <li>x402 discovery: <a href="https://app.suedeai.ai/.well-known/x402.json" rel="noopener">app.suedeai.ai/.well-known/x402.json</a></li>
+            <li>Agent card (ACP): <a href="https://app.suedeai.ai/.well-known/agent-card.json" rel="noopener">app.suedeai.ai/.well-known/agent-card.json</a></li>
+            <li>Agentic commerce manifest: <a href="https://app.suedeai.ai/.well-known/agentic-commerce.json" rel="noopener">app.suedeai.ai/.well-known/agentic-commerce.json</a></li>
+            <li>Producer agent ID: <code>019e3991-374d-75f3-a6b8-17ff309b4cd2</code></li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h2>Why this is the institutional story</h2>
+          <p>Agent-driven traffic is going to need a rights-aware payment surface. The platforms that own it will sit between every model and every piece of licensed creative work. Suede Labs has the rights infrastructure on one side, the discovery and payment endpoints on the other, and live agent traffic moving between them. The thesis is not "agents will transact." The thesis is that rights-aware atomic payment is a category, and Suede is operating it in production.</p>
+        </article>
+        <article class="panel">
+          <h2>Related</h2>
+          <ul>
+            <li><a href="/proof-of-creation/">Proof of Creation</a></li>
+            <li><a href="/programmable-ip/">Programmable IP</a></li>
+            <li><a href="/royalties/">Royalties</a></li>
+            <li><a href="/content-provenance/">Content Provenance</a></li>
+            <li><a href="/creator-ownership/">Creator Ownership</a></li>
+          </ul>
+        </article>
+      </div>
+      <aside class="sidebar-nav">
+        <h2>For agents</h2>
+        <ul>
+          <li><a href="https://app.suedeai.ai/.well-known/x402.json" rel="noopener">x402 endpoint catalog</a></li>
+          <li><a href="https://app.suedeai.ai/.well-known/agent-card.json" rel="noopener">ACP agent card</a></li>
+          <li><a href="https://app.suedeai.ai/.well-known/agentic-commerce.json" rel="noopener">Agentic commerce manifest</a></li>
+          <li><a href="/llms-full.txt">llms-full.txt</a></li>
+          <li><a href="/contact/">Talk to Suede</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>Agentic commerce, ACP, and x402 payment rails operated by Suede Labs.</p>
+      <a href="/contact/">Talk to Suede</a>
+    </div>
+    <div class="site-footer__legal">
+      <p>&copy; 2026 JC Investment Group LLC. All rights reserved.</p>
+      <nav aria-label="Legal">
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/refund-policy/">Refund Policy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
