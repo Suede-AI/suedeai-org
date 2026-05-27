@@ -43,7 +43,7 @@ Suede is not a single app. It is an expanding set of products and rails that mee
 - Project launch — Launchpad (https://launch.suedeai.ai/): creative launches, demand formation, project activation
 - Income routes — Vaults: royalty, ownership, artist income, participation paths
 - Payment rail — x402: internet-native payments for agents, APIs, content, and commerce
-- Market reach — Distribution (https://distro.suedeai.xyz/): routes that move creative work from proof into audience and revenue
+- Market reach — Distribution (https://distro.suedeai.ai/): routes that move creative work from proof into audience and revenue
 
 
 Path to monetization
@@ -69,7 +69,7 @@ The breadth matters because the creative industry will not be rebuilt by one fea
 | Strumly + iOS   | https://strumly.suedeai.ai/          | Foundational artist-growth and empowerment products                                         |
 | Launchpad       | https://launch.suedeai.ai/           | Demand formation, activation, fundability for creative projects                             |
 | Vaults + x402   | https://suedeai.org/#monetization    | Royalty participation, agent-native payments, API commerce, internet-native value flow      |
-| Distribution    | https://distro.suedeai.xyz/          | Bridge from registered, owned work to audience reach, release activity, and revenue paths   |
+| Distribution    | https://distro.suedeai.ai/           | Bridge from registered, owned work to audience reach, release activity, and revenue paths   |
 
 
 Topical pages
