@@ -1,3 +1,26 @@
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: 0.5rem;
+  z-index: 1000;
+  padding: 0.625rem 1rem;
+  background: oklch(16% 0.01 70);
+  color: oklch(94% 0.018 80);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+}
+
 :root {
   --ink: oklch(16% 0.01 70);
   --ink-soft: oklch(24% 0.012 70);

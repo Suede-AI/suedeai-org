@@ -96,7 +96,7 @@ module.exports = async (req, res) => {
 
   if (canSendReaderEmail) {
     const emailTemplate = buildReaderPreviewEmail({ name });
-    await sendEmail({
+    const emailResult = await sendEmail({
       from: sender,
       to: [email],
       subject: emailTemplate.subject,
@@ -104,6 +104,14 @@ module.exports = async (req, res) => {
       html: emailTemplate.html,
       reply_to: "info@suedeai.org",
     });
+
+    if (!emailResult || !emailResult.ok) {
+      console.error("[book] reader preview email failed", {
+        recipient: email,
+        status: emailResult && emailResult.status,
+        payload: emailResult && emailResult.payload,
+      });
+    }
   }
 
   if (wantsJson(req)) {
