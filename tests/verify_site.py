@@ -35,6 +35,7 @@ PAGES = {
     "sharp-excerpt/index.html": "/sharp-excerpt/",
     "full-preview/index.html": "/full-preview/",
     "contact/index.html": "/contact/",
+    "investors/index.html": "/investors/",
 }
 
 PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
@@ -191,6 +192,11 @@ def main() -> int:
         ],
         "contact/thanks/index.html": [
             "Thanks. Your note is in.",
+        ],
+        "investors/index.html": [
+            'action="/api/investors/"',
+            'data-api-endpoint="/api/investors/"',
+            "who owns the rails",
         ],
     }
 
