@@ -209,6 +209,7 @@ def main() -> int:
     cover_asset = ROOT / "assets" / "img" / "stake-your-claim-cover.jpg"
     pdf_asset = ROOT / "assets" / "files" / "stake-your-claim-condensed-preview.pdf"
     css_asset = ROOT / "assets" / "css" / "site.css"
+    investors_css = ROOT / "assets" / "css" / "investors.css"
     js_asset = ROOT / "assets" / "js" / "site.js"
     favicon_ico = ROOT / "favicon.ico"
     favicon_svg = ROOT / "favicon.svg"
@@ -229,6 +230,7 @@ def main() -> int:
         cover_asset,
         pdf_asset,
         css_asset,
+        investors_css,
         js_asset,
         favicon_ico,
         favicon_svg,
