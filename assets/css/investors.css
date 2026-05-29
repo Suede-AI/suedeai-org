@@ -1,0 +1,89 @@
+/* Investor funnel — scoped styles. Suede Institutional IP Terminal palette. */
+.inv {
+  --inv-ink: #050b16;
+  --inv-panel: #09101b;
+  --inv-control: #0d1726;
+  --inv-line: rgba(34, 211, 238, 0.18);
+  --inv-cyan: #22d3ee;
+  --inv-red: #9f101a;
+  --inv-emerald: #34d399;
+  --inv-sky: #38bdf8;
+  --inv-text: #eef2f7;
+  --inv-muted: rgba(238, 242, 247, 0.66);
+  --inv-radius: 6px;
+  background: var(--inv-ink);
+  color: var(--inv-text);
+}
+.inv__band {
+  width: 100%;
+  padding: clamp(3rem, 2rem + 5vw, 7rem) clamp(1rem, 0.5rem + 3vw, 4rem);
+  border-bottom: 1px solid var(--inv-line);
+}
+.inv__inner { max-width: 1080px; margin: 0 auto; }
+.inv__eyebrow {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--inv-cyan); margin: 0 0 0.75rem;
+}
+.inv__h1 {
+  font-size: clamp(2.4rem, 1.2rem + 4.6vw, 4.6rem); line-height: 1.02;
+  letter-spacing: -0.02em; margin: 0 0 1rem; font-weight: 820;
+}
+.inv__lede { font-size: clamp(1.05rem, 0.98rem + 0.5vw, 1.3rem); color: var(--inv-muted); max-width: 48ch; }
+.inv__cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.inv__btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 1.4rem; border-radius: var(--inv-radius);
+  font-weight: 600; text-decoration: none; border: 1px solid transparent;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background 150ms, border-color 150ms;
+}
+.inv__btn--primary { background: var(--inv-red); color: #fff; }
+.inv__btn--primary:hover { transform: translateY(-1px); background: #b51420; }
+.inv__btn--ghost { border-color: var(--inv-line); color: var(--inv-text); }
+.inv__btn--ghost:hover { border-color: var(--inv-cyan); }
+.inv__btn:focus-visible { outline: 2px solid var(--inv-cyan); outline-offset: 2px; }
+.inv__strip { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 2rem; font-size: 0.82rem; }
+.inv__strip a { color: var(--inv-muted); text-decoration: none; border-bottom: 1px dotted var(--inv-line); }
+.inv__strip a:hover { color: var(--inv-emerald); }
+.inv__strip a:focus-visible { color: var(--inv-emerald); outline: 2px solid var(--inv-cyan); outline-offset: 2px; }
+.inv__h2 { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem); letter-spacing: -0.01em; margin: 0 0 1rem; }
+.inv__body { color: var(--inv-muted); max-width: 64ch; }
+.inv__grid { display: grid; gap: 1px; background: var(--inv-line); border: 1px solid var(--inv-line); border-radius: var(--inv-radius); overflow: hidden; margin-top: 1.5rem; }
+.inv__grid--4 { grid-template-columns: repeat(4, 1fr); }
+.inv__cell { background: var(--inv-panel); padding: 1.5rem; }
+.inv__cell h3 { margin: 0 0 0.4rem; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--inv-cyan); }
+.inv__cell p { margin: 0; color: var(--inv-muted); font-size: 0.95rem; }
+.inv__ledger { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin-top: 1.5rem; }
+.inv__ledger th, .inv__ledger td { text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid var(--inv-line); vertical-align: top; }
+.inv__ledger th { color: var(--inv-cyan); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.12em; }
+.inv__ledger a { color: var(--inv-sky); }
+.inv__live { color: var(--inv-emerald); font-weight: 600; }
+.inv__signals { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.75rem; }
+.inv__signals li { padding-left: 1.5rem; position: relative; color: var(--inv-muted); }
+.inv__signals li::before { content: "▸"; position: absolute; left: 0; color: var(--inv-cyan); }
+.inv__form { display: grid; gap: 1rem; max-width: 640px; margin-top: 1.5rem; position: relative; }
+.inv__field { display: grid; gap: 0.35rem; }
+.inv__field label, .inv__form legend { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--inv-muted); }
+.inv__form input[type="text"], .inv__form input[type="email"], .inv__form input[type="url"], .inv__form select, .inv__form textarea {
+  min-height: 44px; padding: 0.65rem 0.8rem; border-radius: var(--inv-radius);
+  background: var(--inv-control); border: 1px solid var(--inv-line); color: var(--inv-text); font: inherit; width: 100%;
+}
+.inv__form textarea { min-height: 120px; resize: vertical; }
+.inv__form input:focus, .inv__form select:focus, .inv__form textarea:focus { outline: 2px solid var(--inv-cyan); outline-offset: 1px; }
+.inv__checks { display: grid; gap: 0.5rem; border: 0; padding: 0; margin: 0; }
+.inv__checks label { display: flex; gap: 0.5rem; align-items: center; text-transform: none; letter-spacing: 0; color: var(--inv-text); }
+.inv__checks input { accent-color: var(--inv-cyan); width: 18px; height: 18px; }
+.inv__checks input:focus-visible, .inv__consent input:focus-visible { outline: 2px solid var(--inv-cyan); outline-offset: 1px; }
+.inv__consent { display: flex; gap: 0.5rem; align-items: center; text-transform: none; letter-spacing: 0; color: var(--inv-text); font-size: 0.9rem; }
+.inv__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.inv__status { color: var(--inv-emerald); font-size: 0.9rem; }
+.inv__cols { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+@media (max-width: 720px) {
+  .inv__grid--4 { grid-template-columns: 1fr 1fr; }
+  .inv__cols { grid-template-columns: 1fr; }
+  .inv__ledger thead { display: none; }
+  .inv__ledger td { display: block; border: 0; padding: 0.3rem 0; }
+  .inv__ledger tr { display: block; padding: 0.9rem 0; border-bottom: 1px solid var(--inv-line); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inv__btn { transition: none; }
+}
