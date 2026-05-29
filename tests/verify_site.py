@@ -18,6 +18,7 @@ NOINDEX_PAGES = [
     "book/thanks/index.html",
     "contact/thanks/index.html",
     "investors/thanks/index.html",
+    "welcome-back/index.html",
 ]
 
 PAGES = {
