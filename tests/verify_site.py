@@ -17,6 +17,7 @@ LEGACY_REDIRECTS = {
 NOINDEX_PAGES = [
     "book/thanks/index.html",
     "contact/thanks/index.html",
+    "investors/thanks/index.html",
 ]
 
 PAGES = {
@@ -197,6 +198,9 @@ def main() -> int:
             'action="/api/investors/"',
             'data-api-endpoint="/api/investors/"',
             "who owns the rails",
+        ],
+        "investors/thanks/index.html": [
+            "Your request is in.",
         ],
     }
 
