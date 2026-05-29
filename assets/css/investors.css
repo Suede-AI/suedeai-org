@@ -60,7 +60,7 @@
 .inv__signals { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.75rem; }
 .inv__signals li { padding-left: 1.5rem; position: relative; color: var(--inv-muted); }
 .inv__signals li::before { content: "▸"; position: absolute; left: 0; color: var(--inv-cyan); }
-.inv__form { display: grid; gap: 1rem; max-width: 640px; margin-top: 1.5rem; }
+.inv__form { display: grid; gap: 1rem; max-width: 640px; margin-top: 1.5rem; position: relative; }
 .inv__field { display: grid; gap: 0.35rem; }
 .inv__field label, .inv__form legend { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--inv-muted); }
 .inv__form input[type="text"], .inv__form input[type="email"], .inv__form input[type="url"], .inv__form select, .inv__form textarea {
