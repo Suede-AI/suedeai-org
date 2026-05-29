@@ -40,9 +40,11 @@
 .inv__btn--primary:hover { transform: translateY(-1px); background: #b51420; }
 .inv__btn--ghost { border-color: var(--inv-line); color: var(--inv-text); }
 .inv__btn--ghost:hover { border-color: var(--inv-cyan); }
+.inv__btn:focus-visible { outline: 2px solid var(--inv-cyan); outline-offset: 2px; }
 .inv__strip { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 2rem; font-size: 0.82rem; }
 .inv__strip a { color: var(--inv-muted); text-decoration: none; border-bottom: 1px dotted var(--inv-line); }
 .inv__strip a:hover { color: var(--inv-emerald); }
+.inv__strip a:focus-visible { color: var(--inv-emerald); outline: 2px solid var(--inv-cyan); outline-offset: 2px; }
 .inv__h2 { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem); letter-spacing: -0.01em; margin: 0 0 1rem; }
 .inv__body { color: var(--inv-muted); max-width: 64ch; }
 .inv__grid { display: grid; gap: 1px; background: var(--inv-line); border: 1px solid var(--inv-line); border-radius: var(--inv-radius); overflow: hidden; margin-top: 1.5rem; }
@@ -70,6 +72,7 @@
 .inv__checks { display: grid; gap: 0.5rem; border: 0; padding: 0; margin: 0; }
 .inv__checks label { display: flex; gap: 0.5rem; align-items: center; text-transform: none; letter-spacing: 0; color: var(--inv-text); }
 .inv__checks input { accent-color: var(--inv-cyan); width: 18px; height: 18px; }
+.inv__checks input:focus-visible, .inv__consent input:focus-visible { outline: 2px solid var(--inv-cyan); outline-offset: 1px; }
 .inv__consent { display: flex; gap: 0.5rem; align-items: center; text-transform: none; letter-spacing: 0; color: var(--inv-text); font-size: 0.9rem; }
 .inv__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .inv__status { color: var(--inv-emerald); font-size: 0.9rem; }
