@@ -267,6 +267,16 @@ def main() -> int:
         ]:
             assert_contains("api/book.js", book_api_text, fragment, failures)
 
+    investors_api = ROOT / "api" / "investors.js"
+    if investors_api.exists():
+        investors_api_text = read_text(investors_api)
+        for fragment in [
+            "investor_leads",
+            "suedeai.org/investors",
+            "INVESTOR_NOTIFY_TO",
+        ]:
+            assert_contains("api/investors.js", investors_api_text, fragment, failures)
+
     if vercel_config.exists():
         config = json.loads(read_text(vercel_config))
         redirect_map = {
@@ -318,6 +328,7 @@ def main() -> int:
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/book/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/sharp-excerpt/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/full-preview/</loc>", failures)
+        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/investors/</loc>", failures)
 
     if failures:
         print("FAIL: site verification failed")
