@@ -17,6 +17,8 @@ LEGACY_REDIRECTS = {
 NOINDEX_PAGES = [
     "book/thanks/index.html",
     "contact/thanks/index.html",
+    "investors/thanks/index.html",
+    "welcome-back/index.html",
 ]
 
 PAGES = {
@@ -35,6 +37,7 @@ PAGES = {
     "sharp-excerpt/index.html": "/sharp-excerpt/",
     "full-preview/index.html": "/full-preview/",
     "contact/index.html": "/contact/",
+    "investors/index.html": "/investors/",
 }
 
 PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
@@ -192,6 +195,14 @@ def main() -> int:
         "contact/thanks/index.html": [
             "Thanks. Your note is in.",
         ],
+        "investors/index.html": [
+            'action="/api/investors/"',
+            'data-api-endpoint="/api/investors/"',
+            "who owns the rails",
+        ],
+        "investors/thanks/index.html": [
+            "Your request is in.",
+        ],
     }
 
     for file_name, fragments in form_expectations.items():
@@ -209,6 +220,7 @@ def main() -> int:
     cover_asset = ROOT / "assets" / "img" / "stake-your-claim-cover.jpg"
     pdf_asset = ROOT / "assets" / "files" / "stake-your-claim-condensed-preview.pdf"
     css_asset = ROOT / "assets" / "css" / "site.css"
+    investors_css = ROOT / "assets" / "css" / "investors.css"
     js_asset = ROOT / "assets" / "js" / "site.js"
     favicon_ico = ROOT / "favicon.ico"
     favicon_svg = ROOT / "favicon.svg"
@@ -229,6 +241,7 @@ def main() -> int:
         cover_asset,
         pdf_asset,
         css_asset,
+        investors_css,
         js_asset,
         favicon_ico,
         favicon_svg,
@@ -254,6 +267,16 @@ def main() -> int:
             "Stake Your Claim reader preview",
         ]:
             assert_contains("api/book.js", book_api_text, fragment, failures)
+
+    investors_api = ROOT / "api" / "investors.js"
+    if investors_api.exists():
+        investors_api_text = read_text(investors_api)
+        for fragment in [
+            "investor_leads",
+            "suedeai.org/investors",
+            "INVESTOR_NOTIFY_TO",
+        ]:
+            assert_contains("api/investors.js", investors_api_text, fragment, failures)
 
     if vercel_config.exists():
         config = json.loads(read_text(vercel_config))
@@ -306,6 +329,7 @@ def main() -> int:
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/book/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/sharp-excerpt/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/full-preview/</loc>", failures)
+        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/investors/</loc>", failures)
 
     if failures:
         print("FAIL: site verification failed")

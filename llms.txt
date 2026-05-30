@@ -41,6 +41,7 @@ Suede Labs is the company behind Suede AI, an ownership and provenance layer for
 - [AI Likeness Protection](https://suedeai.org/ai-likeness-protection/) — likeness rights grounded in ownership, consent, and proof
 - [Human Authenticity Layer](https://suedeai.org/human-authenticity-layer/) — why authenticity becomes premium when synthetic content is cheap
 - [Why Copyright Fails](https://suedeai.org/why-copyright-fails/) — the gap between distribution-era copyright and AI-era ownership
+- [Investor Brief](https://suedeai.org/investors/) — request investor materials and learn about the Suede Labs AI raise for creator ownership and programmable IP infrastructure
 - [Jason Colapietro](https://suedeai.org/jason-colapietro/) — founder profile
 
 ## Founder
