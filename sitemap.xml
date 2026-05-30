@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://suedeai.org/</loc><lastmod>2026-05-27</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://suedeai.org/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <image:image><image:loc>https://suedeai.org/assets/img/founder-jason.png</image:loc><image:title>Jason Colapietro (Johnny Suede) — Founder and CEO of Suede Labs AI</image:title></image:image>
+  </url>
   <url><loc>https://suedeai.org/proof-of-creation/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/why-copyright-fails/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/royalties/</loc><lastmod>2026-05-27</lastmod></url>
@@ -8,7 +12,12 @@
   <url><loc>https://suedeai.org/agentic-commerce/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/content-provenance/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/creator-ownership/</loc><lastmod>2026-05-27</lastmod></url>
-  <url><loc>https://suedeai.org/jason-colapietro/</loc><lastmod>2026-05-27</lastmod></url>
+  <url>
+    <loc>https://suedeai.org/jason-colapietro/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <image:image><image:loc>https://suedeai.org/assets/img/founder-jason.png</image:loc><image:title>Jason Colapietro (Johnny Suede) — Founder and CEO of Suede Labs AI</image:title><image:caption>Jason Colapietro, founder and CEO of Suede Labs AI</image:caption></image:image>
+    <image:image><image:loc>https://suedeai.org/assets/img/jason-colapietro.png</image:loc><image:title>Jason Colapietro (Johnny Suede)</image:title><image:caption>Jason Colapietro, Founder and CEO of Suede Labs AI</image:caption></image:image>
+  </url>
   <url><loc>https://suedeai.org/ai-voice-protection/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/ai-likeness-protection/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/human-authenticity-layer/</loc><lastmod>2026-05-27</lastmod></url>
@@ -16,7 +25,11 @@
   <url><loc>https://suedeai.org/sharp-excerpt/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/full-preview/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/contact/</loc><lastmod>2026-05-27</lastmod></url>
-  <url><loc>https://suedeai.org/investors/</loc><lastmod>2026-05-29</lastmod></url>
+  <url>
+    <loc>https://suedeai.org/investors/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <image:image><image:loc>https://suedeai.org/assets/img/founder-jason.png</image:loc><image:title>Jason Colapietro (Johnny Suede) — Founder and CEO of Suede Labs AI</image:title></image:image>
+  </url>
   <url><loc>https://suedeai.org/terms/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/privacy/</loc><lastmod>2026-05-27</lastmod></url>
   <url><loc>https://suedeai.org/voice/terms/</loc><lastmod>2026-05-27</lastmod></url>
