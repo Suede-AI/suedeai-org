@@ -59,13 +59,20 @@ module.exports = async (req, res) => {
   const sender = getEnv("CONTACT_EMAIL_FROM");
 
   if (notifyTo && sender) {
-    await sendEmail({
+    const emailResult = await sendEmail({
       from: sender,
       to: [notifyTo],
       subject: `New suedeai.org contact${topic ? `: ${topic}` : ""}`,
       text: `Name: ${name}\nEmail: ${email}\nTopic: ${topic || "(none)"}\n\n${message}`,
       reply_to: email,
     });
+
+    if (!emailResult || !emailResult.ok) {
+      console.error("[contact] email notification failed", {
+        status: emailResult && emailResult.status,
+        payload: emailResult && emailResult.payload,
+      });
+    }
   }
 
   if (wantsJson(req)) {
