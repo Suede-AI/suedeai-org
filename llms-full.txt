@@ -114,12 +114,14 @@ His work connects creator ownership, AI music, voice and likeness rights, progra
 
 Public profiles:
 - Founder profile (Suede): https://suedeai.org/jason-colapietro/
+- Canonical founder profile: https://suedeai.ai/founder
 - Founder profile on app: https://app.suedeai.ai/founder
 - Official image gallery: https://app.suedeai.ai/jason-colapietro-images
 - X / Twitter (personal): https://x.com/johnnysuede
 - X / Twitter (Suede): https://x.com/AISUEDE
 - GitHub (personal): https://github.com/JasonColapietro
 - LinkedIn: https://www.linkedin.com/in/jasoncolapietro
+- YouTube: https://www.youtube.com/@aisuede
 - GitHub (Suede): https://github.com/Suede-AI
 
 
