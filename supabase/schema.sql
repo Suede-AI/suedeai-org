@@ -57,3 +57,44 @@ grant insert on public.book_leads to anon, authenticated;
 grant insert on public.contact_inquiries to anon, authenticated;
 
 grant usage on schema public to anon, authenticated;
+
+create table if not exists public.investor_leads (
+  id bigint generated always as identity primary key,
+  name text not null,
+  email text not null,
+  firm text not null,
+  role text,
+  investor_type text,
+  check_size text,
+  timeline text,
+  intent text,
+  website text,
+  message text,
+  consent_marketing boolean default false,
+  source text default 'suedeai.org/investors',
+  utm_source text,
+  utm_campaign text,
+  status text not null default 'new',
+  submitted_at timestamptz not null default now()
+);
+
+create index if not exists investor_leads_submitted_at_idx
+  on public.investor_leads (submitted_at desc);
+
+alter table public.investor_leads enable row level security;
+
+drop policy if exists "investor_leads_insert_anon" on public.investor_leads;
+create policy "investor_leads_insert_anon"
+  on public.investor_leads
+  for insert
+  to anon, authenticated
+  with check (
+    source = 'suedeai.org/investors'
+    and name is not null
+    and email is not null
+    and firm is not null
+    and submitted_at is not null
+  );
+
+revoke all on public.investor_leads from anon, authenticated;
+grant insert on public.investor_leads to anon, authenticated;
