@@ -16,7 +16,7 @@
     <meta name="keywords" content="Suede Labs, Suede AI, Jason Colapietro, creative rails, AI era, creator ownership, programmable IP, proof of creation, provenance, royalties, x402, artist growth, music rights, AI media">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#050b16">
     <link rel="canonical" href="https://suedeai.org/" />
 
     <meta property="og:type" content="website">
@@ -42,7 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@440;620;700;760&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -197,9 +197,11 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
+    <div id="rail-scope">
+      <section class="hero grain" aria-labelledby="hero-title">
         <div class="hero-inner">
           <div class="hero-copy">
+            <p class="hero-kicker">00 — Suede Labs</p>
             <h1 id="hero-title">Creative rails for the AI era.</h1>
             <p class="hero-lede">
               Suede Labs builds the ownership infrastructure for the agentic internet:
@@ -226,28 +228,34 @@
             </dl>
           </div>
 
-          <figure class="hero-portrait">
-            <div class="portrait-rule portrait-rule-left" aria-hidden="true">Creator-owned by design</div>
-            <img
-              src="/assets/img/founder-jason.png"
-              alt="Jason Colapietro, founder of Suede Labs"
-              width="1060"
-              height="1484"
-              decoding="async"
-            />
-            <figcaption>
-              <span>Jason Colapietro</span>
-              Founder &amp; CEO, Suede Labs
-            </figcaption>
-            <div class="portrait-rule portrait-rule-right" aria-hidden="true">Payments settled</div>
-          </figure>
+          <div class="hero-terminal" aria-label="Suede rights and settlement console">
+            <div class="terminal-title">
+              <span>Suede Console</span>
+              <strong>Connected</strong>
+            </div>
+            <pre><code><span class="t-prompt">&gt;</span> suede register --work "Night Circuit" --creator @mara
+<span class="t-ok">OK</span> proof-of-creation written  <span class="t-id">sd_9f3a1c</span>
+
+<span class="t-prompt">&gt;</span> suede license <span class="t-id">sd_9f3a1c</span> --use commercial --term 3y
+<span class="t-ok">OK</span> license created  <span class="t-id">lic_96e2</span>  <span class="t-muted">CC-BY-4.0</span>
+
+<span class="t-prompt">&gt;</span> suede pay --license <span class="t-id">lic_96e2</span> --method usdc
+<span class="t-ok">OK</span> payment settled: $250.00 USDC
+
+<span class="t-prompt">&gt;</span> suede route --license <span class="t-id">lic_96e2</span> --to creator
+<span class="t-ok">OK</span> value routed to @mara: $212.50</code></pre>
+            <div class="terminal-foot">
+              <span>Own &middot; License &middot; Settle</span>
+              <span class="verified">Verified on-chain</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="thesis" class="thesis-band" aria-labelledby="thesis-title">
+      <section id="thesis" class="band" data-band="panel" data-rail-section="01" aria-labelledby="thesis-title">
         <div class="section-shell thesis-layout">
           <div>
-            <span class="section-index">01 Thesis</span>
+            <p class="eyebrow">01 — Thesis</p>
             <h2 id="thesis-title">The next internet will be agentic, creative, and owned.</h2>
           </div>
           <div class="thesis-copy">
@@ -266,10 +274,10 @@
         </div>
       </section>
 
-      <section id="rails" class="rails-band" aria-labelledby="rails-title">
+      <section id="rails" class="band" data-band="deep" data-rail-section="02" aria-labelledby="rails-title">
         <div class="section-shell">
           <div class="section-heading">
-            <span class="section-index">02 Ecosystem Rail</span>
+            <p class="eyebrow">02 — Ecosystem rail</p>
             <h2 id="rails-title">Infrastructure for creative ownership.</h2>
             <p>
               The rail is not one feature. It is a system for identity,
@@ -306,10 +314,10 @@
         </div>
       </section>
 
-      <section id="agentic-commerce" class="commerce-band" aria-labelledby="agentic-commerce-title">
+      <section id="agentic-commerce" class="band" data-band="panel" data-rail-section="03" aria-labelledby="agentic-commerce-title">
         <div class="section-shell commerce-layout">
           <div>
-            <span class="section-index">03 Agentic Commerce</span>
+            <p class="eyebrow eyebrow-action">03 — Agentic commerce</p>
             <h2 id="agentic-commerce-title">Infrastructure for the agentic economy.</h2>
             <p>
               Agents need rails. Suede provides the primitives and protocols to
@@ -330,30 +338,30 @@
               <span>Suede Console</span>
               <strong>Connected</strong>
             </div>
-            <pre><code>&gt; suede find --type music --query "cinematic hook" --limit 3
-OK 3 results
+            <pre><code><span class="t-prompt">&gt;</span> suede find --type music --query "cinematic hook" --limit 3
+<span class="t-ok">OK</span> 3 results
 
 id          title              creator       license       price
-sd_9f3a...  Night Circuit      @mara         CC-BY-4.0     $80.00
-sd_d81e...  Glass Voltage      @west         Custom        $250.00
-sd_77cc...  Signal Choir       @lin          CC-BY-SA      $120.00
+<span class="t-id">sd_9f3a...</span>  Night Circuit      @mara         CC-BY-4.0     $80.00
+<span class="t-id">sd_d81e...</span>  Glass Voltage      @west         Custom        $250.00
+<span class="t-id">sd_77cc...</span>  Signal Choir       @lin          CC-BY-SA      $120.00
 
-&gt; suede license sd_d81e --use commercial --term 3y
-OK license created
+<span class="t-prompt">&gt;</span> suede license <span class="t-id">sd_d81e</span> --use commercial --term 3y
+<span class="t-ok">OK</span> license created
 
-&gt; suede pay --license lic_96e --method usdc
-OK payment settled: $250.00 USDC
+<span class="t-prompt">&gt;</span> suede pay --license <span class="t-id">lic_96e</span> --method usdc
+<span class="t-ok">OK</span> payment settled: $250.00 USDC
 
-&gt; suede deliver lic_96e --format original --url
-OK https://assets.suedeai.org/d/Tc9ale2...</code></pre>
+<span class="t-prompt">&gt;</span> suede deliver <span class="t-id">lic_96e</span> --format original --url
+<span class="t-ok">OK</span> <span class="t-muted">https://assets.suedeai.org/d/Tc9ale2...</span></code></pre>
           </div>
         </div>
       </section>
 
-      <section id="proof" class="proof-band" aria-labelledby="proof-title">
+      <section id="proof" class="band" data-band="proof" data-rail-section="04" aria-labelledby="proof-title">
         <div class="section-shell proof-layout">
           <div class="section-heading">
-            <span class="section-index">04 Proof</span>
+            <p class="eyebrow">04 — Proof</p>
             <h2 id="proof-title">A live stack, not a slide.</h2>
             <p class="section-lede">
               Suede connects product surfaces, protocol endpoints, and public
@@ -385,7 +393,7 @@ OK https://assets.suedeai.org/d/Tc9ale2...</code></pre>
         </div>
       </section>
 
-      <section id="founder" class="founder-band" aria-labelledby="founder-title">
+      <section id="founder" class="band" data-band="control" data-rail-section="05" aria-labelledby="founder-title">
         <div class="section-shell founder-layout">
           <figure class="founder-portrait">
             <img
@@ -397,7 +405,7 @@ OK https://assets.suedeai.org/d/Tc9ale2...</code></pre>
             />
           </figure>
           <div>
-            <span class="section-index">05 Founder</span>
+            <p class="eyebrow">05 — Founder</p>
             <h2 id="founder-title">Jason Colapietro is building the ownership layer creators need.</h2>
             <p>
               Jason Colapietro is a published author, Forbes contributor, and
@@ -412,7 +420,7 @@ OK https://assets.suedeai.org/d/Tc9ale2...</code></pre>
             </div>
           </div>
           <aside class="press-list" aria-label="Press and official sources">
-            <span class="section-index">Press</span>
+            <p class="eyebrow">Press</p>
             <a href="https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/" target="_blank" rel="noopener">
               <strong>TechBullion</strong>
               <span>Suede Labs AI launches iOS apps, Codex and Claude skills, and the Musicians Terminal.</span>
@@ -425,10 +433,10 @@ OK https://assets.suedeai.org/d/Tc9ale2...</code></pre>
         </div>
       </section>
 
-      <section id="contact" class="final-cta" aria-labelledby="close-title">
+      <section id="contact" class="band" data-band="deep" data-rail-section="06" aria-labelledby="close-title">
         <div class="section-shell close-layout">
           <div>
-            <span class="section-index">06 Let's build the future of creative ownership</span>
+            <p class="eyebrow eyebrow-action">06 — Contact</p>
             <h2 id="close-title">Work with Suede Labs.</h2>
           </div>
           <div>
@@ -444,7 +452,19 @@ OK https://assets.suedeai.org/d/Tc9ale2...</code></pre>
           </div>
         </div>
       </section>
+    </div>
     </main>
+
+    <nav class="section-rail" id="sectionRail" aria-label="Section index">
+      <ol>
+        <li><a href="#thesis" data-rail="01">01 — Thesis</a></li>
+        <li><a href="#rails" data-rail="02">02 — Rail</a></li>
+        <li><a href="#agentic-commerce" data-rail="03">03 — Commerce</a></li>
+        <li><a href="#proof" data-rail="04">04 — Proof</a></li>
+        <li><a href="#founder" data-rail="05">05 — Founder</a></li>
+        <li><a href="#contact" data-rail="06">06 — Contact</a></li>
+      </ol>
+    </nav>
 
     <footer class="site-footer">
       <span>Suede Labs</span>
@@ -452,5 +472,67 @@ OK https://assets.suedeai.org/d/Tc9ale2...</code></pre>
       <a href="mailto:hello@suedeai.org">hello@suedeai.org</a>
       <a href="https://x.com/AISUEDE" target="_blank" rel="noopener">@AISUEDE</a>
     </footer>
+
+    <script>
+      // Sticky right-rail section index (Variant B).
+      // IntersectionObserver only — no scroll-handler churn; marks the section
+      // nearest the viewport center. Transitions are gated in CSS behind
+      // prefers-reduced-motion.
+      (function () {
+        var rail = document.getElementById("sectionRail");
+        var scope = document.getElementById("rail-scope");
+        if (!rail || !scope || !("IntersectionObserver" in window)) return;
+
+        var links = Array.prototype.slice.call(rail.querySelectorAll("a"));
+        function setActive(id) {
+          links.forEach(function (a) {
+            a.classList.toggle("is-active", a.getAttribute("data-rail") === id);
+          });
+        }
+
+        var sections = Array.prototype.slice.call(
+          scope.querySelectorAll("[data-rail-section]")
+        );
+        var ratios = {};
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              ratios[e.target.getAttribute("data-rail-section")] =
+                e.isIntersecting ? e.intersectionRatio : 0;
+            });
+            var best = null,
+              top = -1;
+            Object.keys(ratios).forEach(function (k) {
+              if (ratios[k] > top) {
+                top = ratios[k];
+                best = k;
+              }
+            });
+            if (best && top > 0) setActive(best);
+          },
+          { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+        );
+        sections.forEach(function (s) {
+          observer.observe(s);
+        });
+
+        setActive("01");
+
+        // Hide the rail over the hero — there's no section to track there and
+        // it would otherwise overlap the hero console — then reveal it once the
+        // hero has mostly scrolled away.
+        var hero = document.querySelector(".hero");
+        if (hero) {
+          new IntersectionObserver(
+            function (entries) {
+              rail.classList.toggle("is-visible", !entries[0].isIntersecting);
+            },
+            { threshold: 0.15 }
+          ).observe(hero);
+        } else {
+          rail.classList.add("is-visible");
+        }
+      })();
+    </script>
   </body>
 </html>
