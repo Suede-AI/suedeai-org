@@ -1,20 +1,21 @@
-/* Investor funnel - scoped institutional Suede palette. */
+/* Investor funnel — scoped to the Dark Institutional IP Terminal system. */
 .inv {
-  --inv-ink: #0b0c0c;
-  --inv-panel: #15181b;
-  --inv-control: #101214;
-  --inv-line: rgba(243, 243, 239, 0.17);
-  --inv-line-strong: rgba(243, 243, 239, 0.34);
-  --inv-red: #e24b3d;
-  --inv-red-dark: #aa332b;
-  --inv-sage: #7ea184;
-  --inv-gold: #c2a24b;
-  --inv-text: #f3f3ef;
-  --inv-muted: rgba(243, 243, 239, 0.68);
-  --inv-radius: 6px;
+  --inv-ink: #050b16; /* Deep Ink — page band */
+  --inv-panel: #09101b; /* Panel Ink — cells */
+  --inv-control: #0d1726; /* Control Ink — inputs / raised */
+  --inv-line: rgba(255, 255, 255, 0.08);
+  --inv-line-strong: rgba(34, 211, 238, 0.14);
+  --inv-red: #9f101a; /* Rights Red — action / ownership */
+  --inv-red-dark: #d11f2b; /* Rights Red Bright — hover / active */
+  --inv-cyan: #22d3ee; /* Registry Cyan — proof / verification */
+  --inv-sky: #38bdf8; /* Proof Sky — links / supporting proof */
+  --inv-emerald: #34d399; /* Verified Emerald — live / settled */
+  --inv-text: #eef2f7; /* Page Mist */
+  --inv-muted: #8a97a8; /* Slate */
+  --inv-radius: 5px;
   background:
-    linear-gradient(90deg, rgba(243, 243, 239, 0.04) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(243, 243, 239, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     var(--inv-ink);
   background-size: 44px 44px, 44px 44px, auto;
   color: var(--inv-text);
@@ -32,28 +33,43 @@
 }
 
 .inv__eyebrow {
-  margin: 0 0 0.75rem;
-  color: var(--inv-red);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+  color: var(--inv-muted);
   font-family: var(--font-mono, monospace);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+.inv__eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  background: var(--inv-cyan);
+  flex: none;
 }
 
 .inv__h1 {
   max-width: 850px;
   margin: 0 0 1rem;
+  font-family: var(--font-display, Georgia, serif);
   font-size: 4.5rem;
-  font-weight: 820;
-  line-height: 1;
-  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--inv-text);
 }
 
 .inv__lede {
   max-width: 50rem;
   color: var(--inv-muted);
   font-size: 1.2rem;
+  line-height: 1.55;
 }
 
 .inv__cta-row {
@@ -73,31 +89,39 @@
   border-radius: var(--inv-radius);
   font-family: var(--font-mono, monospace);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-decoration: none;
   text-transform: uppercase;
+  transition:
+    background 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .inv__btn--primary {
+  border-color: var(--inv-red);
   background: var(--inv-red);
-  color: #fff;
+  color: var(--inv-text);
 }
 
 .inv__btn--primary:hover {
+  border-color: var(--inv-red-dark);
   background: var(--inv-red-dark);
 }
 
 .inv__btn--ghost {
-  border-color: var(--inv-line-strong);
+  border-color: var(--inv-line);
   color: var(--inv-text);
 }
 
 .inv__btn--ghost:hover {
-  border-color: var(--inv-red);
+  border-color: var(--inv-cyan);
+  color: var(--inv-cyan);
 }
 
 .inv__btn:focus-visible {
-  outline: 2px solid var(--inv-red);
+  outline: 2px solid var(--inv-cyan);
   outline-offset: 2px;
 }
 
@@ -113,18 +137,22 @@
   color: var(--inv-muted);
   text-decoration: none;
   border-bottom: 1px dotted var(--inv-line-strong);
+  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .inv__strip a:hover {
-  color: var(--inv-sage);
+  color: var(--inv-cyan);
 }
 
 .inv__h2 {
   max-width: 760px;
   margin: 0 0 1rem;
+  font-family: var(--font-display, Georgia, serif);
   font-size: 2.45rem;
+  font-weight: 400;
   line-height: 1.06;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
+  color: var(--inv-text);
 }
 
 .inv__body {
@@ -153,10 +181,10 @@
 
 .inv__cell h3 {
   margin: 0 0 0.4rem;
-  color: var(--inv-red);
+  color: var(--inv-cyan);
   font-family: var(--font-mono, monospace);
   font-size: 0.78rem;
-  letter-spacing: 0;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -181,21 +209,32 @@
   vertical-align: top;
 }
 
+.inv__ledger td {
+  color: var(--inv-text);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
 .inv__ledger th {
-  color: var(--inv-red);
+  color: var(--inv-cyan);
   font-family: var(--font-mono, monospace);
   font-size: 0.72rem;
-  letter-spacing: 0;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .inv__ledger a {
-  color: var(--inv-gold);
+  color: var(--inv-sky);
+  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.inv__ledger a:hover {
+  color: var(--inv-cyan);
 }
 
 .inv__live,
 .inv__status {
-  color: var(--inv-sage);
+  color: var(--inv-emerald);
 }
 
 .inv__live {
@@ -220,7 +259,7 @@
   content: "-";
   position: absolute;
   left: 0;
-  color: var(--inv-red);
+  color: var(--inv-cyan);
 }
 
 .inv__form {
@@ -241,7 +280,7 @@
   color: var(--inv-muted);
   font-family: var(--font-mono, monospace);
   font-size: 0.78rem;
-  letter-spacing: 0;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -268,8 +307,9 @@
 .inv__form input:focus,
 .inv__form select:focus,
 .inv__form textarea:focus {
-  outline: 2px solid var(--inv-red);
+  outline: 2px solid var(--inv-cyan);
   outline-offset: 1px;
+  border-color: var(--inv-line-strong);
 }
 
 .inv__checks {
@@ -294,12 +334,12 @@
 .inv__checks input {
   width: 18px;
   height: 18px;
-  accent-color: var(--inv-red);
+  accent-color: var(--inv-cyan);
 }
 
 .inv__checks input:focus-visible,
 .inv__consent input:focus-visible {
-  outline: 2px solid var(--inv-red);
+  outline: 2px solid var(--inv-cyan);
   outline-offset: 1px;
 }
 
@@ -371,5 +411,13 @@
 
   .inv__btn {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inv__btn,
+  .inv__strip a,
+  .inv__ledger a {
+    transition: none;
   }
 }
