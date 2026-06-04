@@ -16,6 +16,41 @@
       "source": "/ai/",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/the-hidden-tax-stealing-time-money-and-control/",
+      "destination": "/creator-ownership/",
+      "permanent": true
+    },
+    {
+      "source": "/how-record-labels-trap-artists-the-kreayshawn-case-study/",
+      "destination": "/royalties/",
+      "permanent": true
+    },
+    {
+      "source": "/the-future-of-music-rights-technology-meets-creativity/",
+      "destination": "/programmable-ip/",
+      "permanent": true
+    },
+    {
+      "source": "/beyond-points-4-ways-suede-labs-is-redefining-user-rewards/",
+      "destination": "/royalties/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/(.*)",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
