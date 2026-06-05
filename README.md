@@ -82,7 +82,7 @@ Deployment flow:
 
 Detailed guide:
 
-- [Vercel + Supabase + Namecheap deployment guide](/Users/jason/Documents/CodexXcampaign/SEO Webisite/docs/deployment/vercel-supabase-namecheap.md)
+- Vercel + Supabase + Namecheap deployment guide (internal)
 
 ### Verification
 
