@@ -53,7 +53,15 @@ Jason Colapietro is the founder and CEO of Suede Labs and a published author and
 - GitHub: https://github.com/JasonColapietro
 - LinkedIn: https://www.linkedin.com/in/jasoncolapietro
 - YouTube: https://www.youtube.com/@aisuede
+- Crunchbase (founder): https://www.crunchbase.com/person/jason-colapietro-d83e
 - Canonical founder entity: https://suedeai.ai/founder
+
+## Company profiles
+
+- Crunchbase (Suede Labs AI): https://www.crunchbase.com/organization/suede-labs-ai
+- LinkedIn (Suede Labs AI): https://www.linkedin.com/company/suede-labs-ai
+- Crunchbase (JC Investment Group, parent company): https://www.crunchbase.com/organization/jc-investment-group
+- LinkedIn (JC Investment Group, parent company): https://www.linkedin.com/company/jc-investment-group
 
 ## Contact
 
