@@ -29,6 +29,17 @@ Suede Labs is the company behind Suede AI, an ownership and provenance layer for
 ## Recent press
 
 - [TechBullion · May 2026 · Jason Colapietro's Suede Labs AI Launches iOS Apps, Codex and Claude Skills, and the Musicians Terminal](https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/): third-party coverage of Suede Labs' iOS app line (Inspiration, Guitar, Voice), Codex and Claude developer skills, and the Musicians Terminal release.
+- [Altcoin Investor · May 2026 · How AI, Blockchain, and On-Chain IP Are Changing Creator Ownership](https://altcoininvestor.com/ai-blockchain-on-chain-ip-creator-ownership/): coverage of Suede Labs AI's creator-first positioning in on-chain IP, rights passports, royalty routing, sync metadata, and multi-chain ownership.
+- [TechBullion · Feb 2026 · Suede Labs Advances in the Avalanche Build Games With Massive Infrastructure Play](https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/): coverage of Suede Labs' full-stack on-chain IP and rights registry built for the Avalanche Build Games.
+- [TechBullion · Feb 2026 · Best Suno Alternatives in 2026: Suede Labs and Top Competitors](https://techbullion.com/best-suno-alternatives-in-2026-suede-labs-and-top-competitors/): names Suede Labs the leading Suno alternative for 2026.
+- [Digital Journal · Jan 2026 · New Book Showcases Proof of Creation System as AI Copyright Battles Escalate](https://www.digitaljournal.com/pr/news/revupmarketer/new-book-showcases-proof-creation-1180132396.html): coverage of Jason Colapietro's proof-of-creation framework and creator-rights thesis.
+- [TechBullion · Jan 2026 · Suede Labs Brings AI-Powered Creative Tools to Students](https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/): coverage of Suede Labs' self-funded education deployments in African classrooms.
+- [TechBullion · Dec 2025 · Suede Labs Launches A Comprehensive On-Chain IP Authentication System](https://techbullion.com/suede-labs-launches-a-comprehensive-on-chain-ip-authentication-system/): coverage of Suede Labs' on-chain IP registry, provenance layer, licensing, and monetization rails.
+
+## News listings
+
+- [MEXC News · 2026 · Suede Labs coverage](https://www.mexc.com/news/816091): MEXC News syndication of Suede Labs coverage (Avalanche Build Games, African schools program, on-chain IP authentication).
+- [AI Agents Directory · 2026 · Suede AI Review & Alternatives](https://aiagentsdirectory.com/agent/suede-ai): directory listing and review profile for Suede AI.
 
 ## Topical pages
 
