@@ -92,26 +92,39 @@ module.exports = async (req, res) => {
   }
 
   const sender = getEnv("BOOK_EMAIL_FROM") || getEnv("CONTACT_EMAIL_FROM");
-  const canSendReaderEmail = sender && getEnv("RESEND_API_KEY");
 
-  if (canSendReaderEmail) {
-    const emailTemplate = buildReaderPreviewEmail({ name });
-    const emailResult = await sendEmail({
-      from: sender,
-      to: [email],
-      subject: emailTemplate.subject,
-      text: emailTemplate.text,
-      html: emailTemplate.html,
-      reply_to: "info@suedeai.org",
-    });
-
-    if (!emailResult || !emailResult.ok) {
-      console.error("[book] reader preview email failed", {
-        recipient: email,
-        status: emailResult && emailResult.status,
-        payload: emailResult && emailResult.payload,
-      });
+  if (!sender || !getEnv("RESEND_API_KEY")) {
+    if (wantsJson(req)) {
+      sendJson(res, 503, { error: "Email delivery is not configured." });
+      return;
     }
+    res.statusCode = 503;
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.end("Email delivery is not configured.");
+    return;
+  }
+
+  const emailTemplate = buildReaderPreviewEmail({ name });
+  const emailResult = await sendEmail({
+    from: sender,
+    to: [email],
+    subject: emailTemplate.subject,
+    text: emailTemplate.text,
+    html: emailTemplate.html,
+    reply_to: "info@suedeai.org",
+  });
+
+  if (!emailResult.ok) {
+    if (wantsJson(req)) {
+      sendJson(res, emailResult.status || 502, {
+        error: "Submission was recorded, but email delivery failed.",
+      });
+      return;
+    }
+    res.statusCode = emailResult.status || 502;
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.end("Submission was recorded, but email delivery failed.");
+    return;
   }
 
   if (wantsJson(req)) {
