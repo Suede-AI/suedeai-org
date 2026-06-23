@@ -111,7 +111,7 @@ module.exports = async (req, res) => {
     subject: emailTemplate.subject,
     text: emailTemplate.text,
     html: emailTemplate.html,
-    reply_to: "info@suedeai.org",
+    reply_to: getEnv("BOOK_REPLY_TO") || sender,
   });
 
   if (!emailResult.ok) {
