@@ -1435,6 +1435,12 @@ h3 {
   border-bottom: 0;
 }
 
+a.eco-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .eco-card:hover {
   background: color-mix(in srgb, var(--registry-cyan) 4%, transparent);
 }
