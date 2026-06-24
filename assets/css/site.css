@@ -1042,6 +1042,80 @@ textarea {
   letter-spacing: 0.12em;
 }
 
+/* ---- Founder pull-quote — mirrors the canonical .expert-quote on /styles.css ---- */
+.pull-quote {
+  margin: 0 0 1.5rem;
+  padding: clamp(18px, 2.5vw, 26px);
+  border: 1px solid var(--hairline-cyan);
+  border-left: 3px solid var(--registry-cyan);
+  border-radius: var(--radius-md);
+  background: var(--ink-panel);
+}
+
+.pull-quote blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.pull-quote blockquote p {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+.pull-quote figcaption {
+  margin-top: 16px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* ---- Author / attribution panel — replaces inline red-border treatment ---- */
+.panel--author {
+  margin-top: 2rem;
+  border-top: 2px solid var(--registry-cyan);
+}
+
+/* ---- "Also by" reading list — sidebar / footnote book list ---- */
+.also-by {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.also-by .eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.also-by ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* ---- Centered single CTA block ---- */
+.book-strip--center {
+  justify-content: center;
+  text-align: center;
+}
+
+.book-strip--center .button-row {
+  margin-top: 1rem;
+  justify-content: center;
+}
+
 @media (max-width: 1100px) {
   .hero h1,
   .page-hero h1 {

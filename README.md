@@ -5,10 +5,12 @@ Static website source for `suedeai.org`.
 ## Structure
 
 - `index.html` and page folders contain deployable static pages
-- `assets/css/site.css` contains the shared visual system
+- `styles.css` is the homepage stylesheet (Dark Institutional IP Terminal system)
+- `assets/css/site.css` is the shared visual system for all sub-pages (same design tokens)
+- `assets/css/investors.css` scopes the investor-funnel styles
 - `assets/js/site.js` contains small progressive enhancements
+- `api/` holds the Vercel serverless handlers (`book`, `contact`, `investors`)
 - `tests/verify_site.py` validates page coverage and SEO-critical markup
-- `book-capture.php` and `contact-submit.php` are optional shared-hosting handlers
 
 ## Local preview
 
@@ -24,17 +26,10 @@ Then open `http://localhost:8000`.
 
 Upload all files and folders as-is to the web root for `suedeai.org`.
 
-### Namecheap shared hosting
-
-- static pages work immediately
-- `book-capture.php` and `contact-submit.php` require PHP enabled
-- the PHP handlers append submissions to local `.log` files in the site root
-
 ### Vercel + Supabase
 
-- the site deploys cleanly to Vercel as a static site with serverless functions in `api/`
-- the book and contact forms progressively post to `/api/book` and `/api/contact` when those routes exist
-- if the Vercel API route fails or is unavailable, the forms fall back to the PHP actions for shared hosting
+- the site deploys to Vercel as a static site with serverless functions in `api/`
+- the book, contact, and investor forms post to `/api/book/`, `/api/contact/`, and `/api/investors/`
 - the reader funnel resolves through `/sharp-excerpt/`, `/full-preview/`, and the stable PDF asset path
 - the abridged PDF is hosted at `assets/files/stake-your-claim-condensed-preview.pdf`
 - the book cover lives at `assets/img/stake-your-claim-cover.jpg`
@@ -88,6 +83,4 @@ Detailed guide:
 
 ```bash
 python3 tests/verify_site.py
-php -l book-capture.php
-php -l contact-submit.php
 ```

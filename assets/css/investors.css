@@ -160,6 +160,22 @@
   color: var(--inv-muted);
 }
 
+.inv__books {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--inv-muted);
+}
+
+.inv__books a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.inv__books a:hover {
+  color: var(--inv-cyan);
+}
+
 .inv__grid {
   display: grid;
   gap: 1px;
