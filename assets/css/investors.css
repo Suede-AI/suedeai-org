@@ -278,6 +278,17 @@
   color: var(--inv-cyan);
 }
 
+.inv__signals a {
+  color: var(--inv-sky);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast, 150ms) ease;
+}
+
+.inv__signals a:hover {
+  color: var(--inv-cyan);
+}
+
 .inv__form {
   position: relative;
   display: grid;
