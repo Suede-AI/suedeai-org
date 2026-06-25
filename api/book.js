@@ -14,7 +14,7 @@ const {
 const SHARP_EXCERPT_URL = "https://suedeai.org/sharp-excerpt/";
 const FULL_PREVIEW_URL = "https://suedeai.org/full-preview/";
 const PREVIEW_PDF_URL = "https://suedeai.org/assets/files/stake-your-claim-condensed-preview.pdf";
-const COVER_IMG_URL = "https://suedeai.org/assets/img/stake-your-claim-cover.jpg";
+const BOX_IMG_URL = "https://suedeai.org/assets/img/stake-your-claim-box.png";
 const LOGO_IMG_URL = "https://suedeai.org/android-chrome-192x192.png";
 
 function buildReaderPreviewEmail({ name }) {
@@ -49,9 +49,9 @@ function buildReaderPreviewEmail({ name }) {
       </table>
     </td></tr>
 
-    <!-- ── Hero ── -->
-    <tr><td style="line-height:0;border-radius:14px;overflow:hidden;">
-      <img src="${COVER_IMG_URL}" width="560" alt="Stake Your Claim" style="display:block;width:100%;max-width:560px;border-radius:14px;">
+    <!-- ── Box hero ── -->
+    <tr><td style="line-height:0;text-align:center;padding-bottom:8px;">
+      <img src="${BOX_IMG_URL}" width="400" alt="Stake Your Claim" style="display:block;margin:0 auto;width:100%;max-width:400px;">
     </td></tr>
 
     <!-- ── Headline ── -->
