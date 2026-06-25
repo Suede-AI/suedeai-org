@@ -74,82 +74,70 @@ function buildReaderPreviewEmail({ name }) {
       </table>
     </td></tr>
 
-    <!-- ── Item 01: Sharp Excerpt ── -->
-    <tr><td style="padding-bottom:10px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:12px;border:1px solid #141e2e;">
-        <tr>
-          <!-- Red accent bar -->
-          <td width="4" bgcolor="#9f101a" style="width:4px;border-radius:12px 0 0 12px;font-size:0;">&nbsp;</td>
-          <!-- Content -->
-          <td style="padding:22px 22px 22px 20px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-              <tr>
-                <td style="vertical-align:top;padding-right:16px;">
-                  <!-- Number badge -->
-                  <div style="display:inline-block;background-color:#9f101a;color:#eef2f7;font-size:10px;font-weight:800;letter-spacing:0.08em;padding:3px 8px;border-radius:4px;line-height:1.4;">01</div>
-                </td>
-                <td style="vertical-align:top;width:100%;">
-                  <p style="margin:0 0 4px;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#d11f2b;">Sharp Excerpt</p>
-                  <p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#eef2f7;line-height:1.3;">The sharpest cut.</p>
-                  <p style="margin:0 0 16px;font-size:13px;color:#8a97a8;line-height:1.6;">Six pages. What AI ownership actually means, and why authorship is the new moat.</p>
-                  <a href="${SHARP_EXCERPT_URL}" style="display:inline-block;background-color:#9f101a;color:#ffffff;text-decoration:none;font-size:13px;font-weight:700;padding:10px 18px;border-radius:7px;letter-spacing:0.01em;">Read now &rarr;</a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-
-    <!-- ── Item 02: Full Preview ── -->
-    <tr><td style="padding-bottom:10px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:12px;border:1px solid #141e2e;">
-        <tr>
-          <!-- Cyan accent bar -->
-          <td width="4" bgcolor="#22d3ee" style="width:4px;border-radius:12px 0 0 12px;font-size:0;">&nbsp;</td>
-          <!-- Content -->
-          <td style="padding:22px 22px 22px 20px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-              <tr>
-                <td style="vertical-align:top;padding-right:16px;">
-                  <div style="display:inline-block;background-color:#0a2330;border:1px solid #22d3ee;color:#22d3ee;font-size:10px;font-weight:800;letter-spacing:0.08em;padding:3px 8px;border-radius:4px;line-height:1.4;">02</div>
-                </td>
-                <td style="vertical-align:top;width:100%;">
-                  <p style="margin:0 0 4px;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#22d3ee;">Full Preview</p>
-                  <p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#eef2f7;line-height:1.3;">The complete reader preview.</p>
-                  <p style="margin:0 0 16px;font-size:13px;color:#8a97a8;line-height:1.6;">40+ pages covering AI authorship, provenance, licensing infrastructure, royalty routing, and agent commerce.</p>
-                  <a href="${FULL_PREVIEW_URL}" style="display:inline-block;background-color:#0a2330;border:1px solid #22d3ee;color:#22d3ee;text-decoration:none;font-size:13px;font-weight:700;padding:10px 18px;border-radius:7px;letter-spacing:0.01em;">Read now &rarr;</a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-
-    <!-- ── Item 03: PDF ── -->
+    <!-- ── Items ── -->
     <tr><td style="padding-bottom:32px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:12px;border:1px solid #141e2e;">
-        <tr>
-          <!-- Muted accent bar -->
-          <td width="4" bgcolor="#2a3542" style="width:4px;border-radius:12px 0 0 12px;font-size:0;">&nbsp;</td>
-          <!-- Content -->
-          <td style="padding:22px 22px 22px 20px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-              <tr>
-                <td style="vertical-align:top;padding-right:16px;">
-                  <div style="display:inline-block;background-color:#141e2e;border:1px solid #2a3542;color:#8a97a8;font-size:10px;font-weight:800;letter-spacing:0.08em;padding:3px 8px;border-radius:4px;line-height:1.4;">03</div>
-                </td>
-                <td style="vertical-align:top;width:100%;">
-                  <p style="margin:0 0 4px;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#8a97a8;">Condensed PDF</p>
-                  <p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#eef2f7;line-height:1.3;">Portable. Keep it.</p>
-                  <p style="margin:0 0 16px;font-size:13px;color:#8a97a8;line-height:1.6;">A condensed take on the full preview. Download and reference it anywhere.</p>
-                  <a href="${PREVIEW_PDF_URL}" style="display:inline-block;background-color:#141e2e;border:1px solid #2a3542;color:#8a97a8;text-decoration:none;font-size:13px;font-weight:700;padding:10px 18px;border-radius:7px;letter-spacing:0.01em;">Download PDF &rarr;</a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+
+        <!-- Sharp Excerpt -->
+        <tr><td style="padding-bottom:8px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:10px;border:1px solid #141e2e;">
+            <tr>
+              <td width="3" bgcolor="#9f101a" style="width:3px;border-radius:10px 0 0 10px;font-size:0;">&nbsp;</td>
+              <td style="padding:16px 18px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td>
+                    <p style="margin:0 0 3px;font-size:14px;font-weight:700;color:#eef2f7;">Sharp Excerpt</p>
+                    <p style="margin:0;font-size:13px;color:#8a97a8;line-height:1.5;">Six pages. What AI ownership actually means.</p>
+                  </td>
+                  <td style="text-align:right;white-space:nowrap;padding-left:16px;">
+                    <a href="${SHARP_EXCERPT_URL}" style="font-size:13px;font-weight:600;color:#d11f2b;text-decoration:none;">Read &rarr;</a>
+                  </td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+
+        <!-- Full Preview -->
+        <tr><td style="padding-bottom:8px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:10px;border:1px solid #141e2e;">
+            <tr>
+              <td width="3" bgcolor="#22d3ee" style="width:3px;border-radius:10px 0 0 10px;font-size:0;">&nbsp;</td>
+              <td style="padding:16px 18px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td>
+                    <p style="margin:0 0 3px;font-size:14px;font-weight:700;color:#eef2f7;">Full Preview</p>
+                    <p style="margin:0;font-size:13px;color:#8a97a8;line-height:1.5;">40+ pages — authorship, provenance, rights, agent commerce.</p>
+                  </td>
+                  <td style="text-align:right;white-space:nowrap;padding-left:16px;">
+                    <a href="${FULL_PREVIEW_URL}" style="font-size:13px;font-weight:600;color:#22d3ee;text-decoration:none;">Read &rarr;</a>
+                  </td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+
+        <!-- Condensed PDF -->
+        <tr><td>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:10px;border:1px solid #141e2e;">
+            <tr>
+              <td width="3" bgcolor="#2a3542" style="width:3px;border-radius:10px 0 0 10px;font-size:0;">&nbsp;</td>
+              <td style="padding:16px 18px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td>
+                    <p style="margin:0 0 3px;font-size:14px;font-weight:700;color:#eef2f7;">Condensed PDF</p>
+                    <p style="margin:0;font-size:13px;color:#8a97a8;line-height:1.5;">Portable version — download and keep.</p>
+                  </td>
+                  <td style="text-align:right;white-space:nowrap;padding-left:16px;">
+                    <a href="${PREVIEW_PDF_URL}" style="font-size:13px;font-weight:600;color:#8a97a8;text-decoration:none;">Download &rarr;</a>
+                  </td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+
       </table>
     </td></tr>
 
