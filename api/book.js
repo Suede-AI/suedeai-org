@@ -78,17 +78,41 @@ function buildReaderPreviewEmail({ name }) {
     <tr><td style="padding-bottom:32px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 
-        <!-- Reader Preview (excerpt + full) -->
+        <!-- Sharp Excerpt -->
         <tr><td style="padding-bottom:8px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:10px;border:1px solid #141e2e;">
             <tr>
               <td width="3" bgcolor="#9f101a" style="width:3px;border-radius:10px 0 0 10px;font-size:0;">&nbsp;</td>
               <td style="padding:16px 18px;">
-                <p style="margin:0 0 3px;font-size:14px;font-weight:700;color:#eef2f7;">Reader Preview</p>
-                <p style="margin:0 0 12px;font-size:13px;color:#8a97a8;line-height:1.5;">AI ownership, authorship, provenance, rights, and agent commerce.</p>
-                <a href="${SHARP_EXCERPT_URL}" style="font-size:13px;font-weight:600;color:#d11f2b;text-decoration:none;">Sharp excerpt &rarr;</a>
-                <span style="font-size:13px;color:#2a3542;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-                <a href="${FULL_PREVIEW_URL}" style="font-size:13px;font-weight:600;color:#22d3ee;text-decoration:none;">Full preview &rarr;</a>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td>
+                    <p style="margin:0 0 3px;font-size:14px;font-weight:700;color:#eef2f7;">Sharp Excerpt</p>
+                    <p style="margin:0;font-size:13px;color:#8a97a8;line-height:1.5;">Six pages. What AI ownership actually means.</p>
+                  </td>
+                  <td style="text-align:right;white-space:nowrap;padding-left:16px;">
+                    <a href="${SHARP_EXCERPT_URL}" style="font-size:13px;font-weight:600;color:#d11f2b;text-decoration:none;">Read &rarr;</a>
+                  </td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+
+        <!-- Full Preview -->
+        <tr><td style="padding-bottom:8px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:10px;border:1px solid #141e2e;">
+            <tr>
+              <td width="3" bgcolor="#22d3ee" style="width:3px;border-radius:10px 0 0 10px;font-size:0;">&nbsp;</td>
+              <td style="padding:16px 18px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td>
+                    <p style="margin:0 0 3px;font-size:14px;font-weight:700;color:#eef2f7;">Full Preview</p>
+                    <p style="margin:0;font-size:13px;color:#8a97a8;line-height:1.5;">40+ pages — authorship, provenance, rights, agent commerce.</p>
+                  </td>
+                  <td style="text-align:right;white-space:nowrap;padding-left:16px;">
+                    <a href="${FULL_PREVIEW_URL}" style="font-size:13px;font-weight:600;color:#22d3ee;text-decoration:none;">Read &rarr;</a>
+                  </td>
+                </tr></table>
               </td>
             </tr>
           </table>
