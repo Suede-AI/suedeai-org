@@ -16,7 +16,7 @@
     <meta name="keywords" content="Suede Labs AI, Suede AI, Jason Colapietro, creator ownership, AI era, programmable IP, proof of creation, provenance, royalties, x402, music rights, AI media, agent commerce">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="theme-color" content="#050b16">
+    <meta name="theme-color" content="#f8f5ee">
     <link rel="canonical" href="https://suedeai.org/" />
 
     <meta property="og:type" content="website">
@@ -232,7 +232,7 @@
         <div class="hero-inner">
           <div class="hero-copy">
             <p class="hero-kicker">00 — Suede Labs</p>
-            <h1 id="hero-title">Creator ownership infrastructure for the AI era.</h1>
+            <h1 id="hero-title">Creative rails for the AI era.</h1>
             <p class="hero-lede">
               Suede Labs builds the ownership infrastructure for the agentic internet:
               provenance, licensing, payments, distribution, and value flow for creators.
@@ -258,22 +258,37 @@
             </dl>
           </div>
 
-          <div class="hero-terminal" aria-label="Suede rights and settlement console">
+          <div class="hero-terminal" aria-label="Suede rights passport preview">
             <div class="terminal-title">
-              <span>Suede Console</span>
-              <strong>Connected</strong>
+              <span>Rights passport</span>
+              <strong>Live proof</strong>
             </div>
-            <pre><code><span class="t-prompt">&gt;</span> suede register --work "Night Circuit" --creator @mara
-<span class="t-ok">OK</span> proof-of-creation written  <span class="t-id">sd_9f3a1c</span>
-
-<span class="t-prompt">&gt;</span> suede license <span class="t-id">sd_9f3a1c</span> --use commercial --term 3y
-<span class="t-ok">OK</span> license created  <span class="t-id">lic_96e2</span>  <span class="t-muted">CC-BY-4.0</span>
-
-<span class="t-prompt">&gt;</span> suede pay --license <span class="t-id">lic_96e2</span> --method usdc
-<span class="t-ok">OK</span> payment settled: $250.00 USDC
-
-<span class="t-prompt">&gt;</span> suede route --license <span class="t-id">lic_96e2</span> --to creator
-<span class="t-ok">OK</span> value routed to @mara: $212.50</code></pre>
+            <div class="receipt-note">
+              <p class="receipt-title">Night Circuit</p>
+              <div class="receipt-meta" role="group" aria-label="Registered work details">
+                <span>Registered today</span>
+                <span>Creator @mara</span>
+                <span>Base mainnet</span>
+              </div>
+              <div class="receipt-body">
+                <div class="receipt-field">
+                  <span>Proof of creation</span>
+                  <strong>sd_9f3a1c</strong>
+                </div>
+                <div class="receipt-field">
+                  <span>Commercial license</span>
+                  <strong>lic_96e2</strong>
+                </div>
+                <div class="receipt-field">
+                  <span>Payment settled</span>
+                  <strong>$250.00 USDC</strong>
+                </div>
+              </div>
+              <div class="receipt-route" role="group" aria-label="Royalty route">
+                <span style="--route-fill: 85%"></span>
+                <p>Creator route: $212.50 confirmed</p>
+              </div>
+            </div>
             <div class="terminal-foot">
               <span>Own &middot; License &middot; Settle</span>
               <span class="verified">Verified on-chain</span>
