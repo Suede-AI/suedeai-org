@@ -87,6 +87,9 @@ def main() -> int:
         # JSON-LD must include Organization (Suede Labs) and Person (Jason Colapietro)
         assert_contains("index.html", home_html, '"@type": "Organization"', failures)
         assert_contains("index.html", home_html, '"@type": "Person"', failures)
+        assert_contains("index.html", home_html, '"@id": "https://suedeai.ai/founder#person"', failures)
+        assert_contains("index.html", home_html, '"url": "https://suedeai.ai/founder"', failures)
+        assert_contains("index.html", home_html, '"https://suedeai.org/jason-colapietro/"', failures)
 
     h1_pattern = r"<h1\b[^>]*>.*?</h1>"
     h1_flags = re.IGNORECASE | re.DOTALL
@@ -117,6 +120,19 @@ def main() -> int:
         assert_regex(file_name, html, h1_pattern, failures, flags=h1_flags)
         assert_contains(file_name, html, 'type="application/ld+json"', failures)
         assert_contains(file_name, html, MAIN_SITE_URL, failures)
+
+    founder_path = ROOT / "jason-colapietro" / "index.html"
+    if founder_path.exists():
+        founder_html = read_text(founder_path)
+        assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#person"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://suedeai.ai/founder"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
+
+    llms_path = ROOT / "llms.txt"
+    if llms_path.exists():
+        llms_text = read_text(llms_path)
+        assert_contains("llms.txt", llms_text, "Canonical founder entity: https://suedeai.ai/founder", failures)
+        assert_contains("llms.txt", llms_text, "Supporting founder profile: https://suedeai.org/jason-colapietro/", failures)
 
     pages_requiring_contact = [
         "index.html",

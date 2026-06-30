@@ -2,11 +2,13 @@
 
 > Suede Labs is building the creative rails for the AI era: creator ownership, proof of creation, programmable IP, provenance, royalties, payments, distribution, and monetization infrastructure for artists, rights holders, and AI agents.
 
-- Founder: Jason Colapietro (Founder and CEO, Suede Labs)
+- Founder: Jason Colapietro (Founder and CEO, Suede Labs AI; also known as Johnny Suede)
 - Marketing site: https://suedeai.org/
 - Product app: https://app.suedeai.ai/
 - Product brand site: https://suedeai.ai/
 - Status: Active
+- Canonical founder entity: https://suedeai.ai/founder
+- Supporting founder profile: https://suedeai.org/jason-colapietro/
 
 ## For AI agents — agentic commerce capability
 
@@ -54,7 +56,6 @@ Jason Colapietro is the founder and CEO of Suede Labs and a published author and
 - LinkedIn: https://www.linkedin.com/in/jasoncolapietro
 - YouTube: https://www.youtube.com/@aisuede
 - Crunchbase (founder): https://www.crunchbase.com/person/jason-colapietro-d83e
-- Canonical founder entity: https://suedeai.ai/founder
 
 ## Company profiles
 
