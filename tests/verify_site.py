@@ -59,6 +59,7 @@ def assert_regex(label: str, haystack: str, pattern: str, failures: list[str], f
 
 def main() -> int:
     failures: list[str] = []
+    stale_founder_url_pattern = r'"@id"\s*:\s*"https://suedeai\.ai/founder#person"[\s\S]{0,2000}?"url"\s*:\s*"https://suedeai\.org/jason-colapietro/"'
 
     home_path = ROOT / "index.html"
     if home_path.exists():
@@ -127,6 +128,14 @@ def main() -> int:
         assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#person"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
+
+    for html_path in ROOT.rglob("*.html"):
+        html_text = read_text(html_path)
+        if re.search(stale_founder_url_pattern, html_text, re.IGNORECASE | re.MULTILINE):
+            relative_path = html_path.relative_to(ROOT).as_posix()
+            failures.append(
+                f"{relative_path}: founder person @id uses supporting profile URL instead of https://suedeai.ai/founder"
+            )
 
     llms_path = ROOT / "llms.txt"
     if llms_path.exists():
