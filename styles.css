@@ -2387,6 +2387,16 @@ h1 {
   color: var(--paper-green);
 }
 
+#proof .inline-link {
+  color: var(--paper-green);
+  text-decoration-color: rgba(220, 233, 106, 0.42);
+}
+
+#proof .inline-link:hover {
+  color: #f7f3e9;
+  text-decoration-color: currentColor;
+}
+
 .section-shell {
   padding: var(--space-section) 0;
 }
