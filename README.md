@@ -11,7 +11,7 @@ Static website source for `suedeai.org`.
 - `assets/css/site.css` is the shared visual system for all sub-pages (same design tokens)
 - `assets/css/investors.css` scopes the investor-funnel styles
 - `assets/js/site.js` contains small progressive enhancements
-- `api/` holds the Vercel serverless handlers (`book`, `contact`, `investors`)
+- `api/` holds the Vercel serverless handlers (`book`, `book-call`, `contact`, `investors`)
 - `tests/verify_site.py` validates page coverage and SEO-critical markup
 
 ## Local preview
@@ -31,11 +31,12 @@ Upload all files and folders as-is to the web root for `suedeai.org`.
 ### Vercel + Supabase
 
 - the site deploys to Vercel as a static site with serverless functions in `api/`
-- the book, contact, and investor forms post to `/api/book/`, `/api/contact/`, and `/api/investors/`
+- the book, call, contact, and investor forms post to `/api/book/`, `/api/book-call/`, `/api/contact/`, and `/api/investors/`
 - the reader funnel resolves through `/sharp-excerpt/`, `/full-preview/`, and the stable PDF asset path
+- the reader-preview email (`api/book.js`) includes a "Book a Call" CTA linking to `/book-a-call/`
 - the abridged PDF is hosted at `assets/files/stake-your-claim-condensed-preview.pdf`
 - the book cover lives at `assets/img/stake-your-claim-cover.jpg`
-- book requests are stored in Supabase for manual send-out from the Suede team
+- book requests and call requests are stored in Supabase for manual follow-up from the Suede team
 
 Required Vercel environment variables:
 
@@ -43,12 +44,14 @@ Required Vercel environment variables:
 - `SUPABASE_PUBLISHABLE_KEY`
 - `SUPABASE_BOOK_TABLE` default: `book_leads`
 - `SUPABASE_CONTACT_TABLE` default: `contact_inquiries`
+- `SUPABASE_CALL_TABLE` default: `call_requests`
 
 Optional environment variables:
 
 - `BOOK_EMAIL_FROM`
 - `CONTACT_EMAIL_FROM`
 - `CONTACT_NOTIFY_TO`
+- `CALL_NOTIFY_TO` falls back to `CONTACT_NOTIFY_TO` if unset
 - `RESEND_API_KEY`
 
 Current send-from recommendation:

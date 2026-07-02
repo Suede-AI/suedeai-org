@@ -101,6 +101,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://suedeai.org/book-a-call/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://suedeai.org/contact/</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>

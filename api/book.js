@@ -14,6 +14,7 @@ const {
 const SHARP_EXCERPT_URL = "https://suedeai.org/sharp-excerpt/";
 const FULL_PREVIEW_URL = "https://suedeai.org/full-preview/";
 const PREVIEW_PDF_URL = "https://suedeai.org/assets/files/stake-your-claim-condensed-preview.pdf";
+const BOOK_A_CALL_URL = "https://suedeai.org/book-a-call/";
 const BOX_IMG_URL = "https://suedeai.org/assets/img/stake-your-claim-box.png";
 const LOGO_IMG_URL = "https://suedeai.org/android-chrome-192x192.png";
 
@@ -141,6 +142,17 @@ function buildReaderPreviewEmail({ name }) {
       </table>
     </td></tr>
 
+    <!-- ── Book a call CTA ── -->
+    <tr><td style="padding-bottom:32px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1726" style="border-radius:10px;border:1px solid #22d3ee;">
+        <tr><td style="padding:22px 22px 24px;text-align:center;">
+          <p style="margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#22d3ee;">Want to talk it through?</p>
+          <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#8a97a8;">Book a call with Jason — partnerships, investing, rights and licensing, or just your reaction to the book.</p>
+          <a href="${BOOK_A_CALL_URL}" style="display:inline-block;background-color:#22d3ee;color:#050b16;font-size:14px;font-weight:700;text-decoration:none;padding:12px 24px;border-radius:8px;">Book a Call &rarr;</a>
+        </td></tr>
+      </table>
+    </td></tr>
+
     <!-- ── Footer ── -->
     <tr><td style="border-top:1px solid #141e2e;padding-top:28px;text-align:center;">
       <p style="margin:0 0 8px;font-size:12px;color:#3d4d5e;">
@@ -174,6 +186,9 @@ function buildReaderPreviewEmail({ name }) {
       `   ${PREVIEW_PDF_URL}`,
       "",
       "AI ownership, authorship, provenance, creator rights, and what durable assets look like in the agent economy.",
+      "",
+      "Want to talk it through? Book a call with Jason:",
+      `   ${BOOK_A_CALL_URL}`,
       "",
       "— Suede  |  suedeai.org",
     ].join("\n"),

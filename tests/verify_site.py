@@ -18,6 +18,7 @@ NOINDEX_PAGES = [
     "book/thanks/index.html",
     "contact/thanks/index.html",
     "investors/thanks/index.html",
+    "book-a-call/thanks/index.html",
     "welcome-back/index.html",
 ]
 
@@ -38,6 +39,7 @@ PAGES = {
     "full-preview/index.html": "/full-preview/",
     "contact/index.html": "/contact/",
     "investors/index.html": "/investors/",
+    "book-a-call/index.html": "/book-a-call/",
 }
 
 PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
@@ -159,6 +161,7 @@ def main() -> int:
         "sharp-excerpt/index.html",
         "full-preview/index.html",
         "contact/index.html",
+        "book-a-call/index.html",
     ]
 
     for file_name in pages_requiring_contact:
@@ -228,6 +231,14 @@ def main() -> int:
         "investors/thanks/index.html": [
             "Your request is in.",
         ],
+        "book-a-call/index.html": [
+            'action="/api/book-call/"',
+            'data-api-endpoint="/api/book-call/"',
+            "Request a Call",
+        ],
+        "book-a-call/thanks/index.html": [
+            "Your request is in.",
+        ],
     }
 
     for file_name, fragments in form_expectations.items():
@@ -290,8 +301,20 @@ def main() -> int:
             "https://suedeai.org/full-preview/",
             f"https://suedeai.org{PREVIEW_PDF_PATH}",
             "Stake Your Claim reader preview",
+            "https://suedeai.org/book-a-call/",
+            "Book a Call",
         ]:
             assert_contains("api/book.js", book_api_text, fragment, failures)
+
+    book_call_api = ROOT / "api" / "book-call.js"
+    if book_call_api.exists():
+        book_call_api_text = read_text(book_call_api)
+        for fragment in [
+            "call_requests",
+            "suedeai.org/book-a-call",
+            "/book-a-call/thanks/",
+        ]:
+            assert_contains("api/book-call.js", book_call_api_text, fragment, failures)
 
     investors_api = ROOT / "api" / "investors.js"
     if investors_api.exists():
@@ -355,6 +378,7 @@ def main() -> int:
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/sharp-excerpt/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/full-preview/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/investors/</loc>", failures)
+        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/book-a-call/</loc>", failures)
 
     if failures:
         print("FAIL: site verification failed")

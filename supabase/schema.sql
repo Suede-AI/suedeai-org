@@ -98,3 +98,37 @@ create policy "investor_leads_insert_anon"
 
 revoke all on public.investor_leads from anon, authenticated;
 grant insert on public.investor_leads to anon, authenticated;
+
+create table if not exists public.call_requests (
+  id bigint generated always as identity primary key,
+  name text not null,
+  email text not null,
+  topic text,
+  company text,
+  message text not null,
+  timeframe text,
+  source text default 'suedeai.org/book-a-call',
+  status text not null default 'new',
+  submitted_at timestamptz not null default now()
+);
+
+create index if not exists call_requests_submitted_at_idx
+  on public.call_requests (submitted_at desc);
+
+alter table public.call_requests enable row level security;
+
+drop policy if exists "call_requests_insert_anon" on public.call_requests;
+create policy "call_requests_insert_anon"
+  on public.call_requests
+  for insert
+  to anon, authenticated
+  with check (
+    source = 'suedeai.org/book-a-call'
+    and name is not null
+    and email is not null
+    and message is not null
+    and submitted_at is not null
+  );
+
+revoke all on public.call_requests from anon, authenticated;
+grant insert on public.call_requests to anon, authenticated;
