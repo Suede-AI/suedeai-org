@@ -58,6 +58,11 @@ grant insert on public.contact_inquiries to anon, authenticated;
 
 grant usage on schema public to anon, authenticated;
 
+comment on table public.book_leads is
+  'Marketing site lead-capture form (suedeai.org/book): visitor-submitted email requests for the Stake Your Claim reader preview. Insert-only via anon key from the public website form.';
+comment on table public.contact_inquiries is
+  'Marketing site lead-capture form (suedeai.org/contact): visitor-submitted general contact messages. Insert-only via anon key from the public website form.';
+
 create table if not exists public.investor_leads (
   id bigint generated always as identity primary key,
   name text not null,
@@ -99,6 +104,9 @@ create policy "investor_leads_insert_anon"
 revoke all on public.investor_leads from anon, authenticated;
 grant insert on public.investor_leads to anon, authenticated;
 
+comment on table public.investor_leads is
+  'Marketing site lead-capture form (suedeai.org/investors): visitor-submitted investor interest requests. Insert-only via anon key from the public website form.';
+
 create table if not exists public.call_requests (
   id bigint generated always as identity primary key,
   name text not null,
@@ -132,3 +140,6 @@ create policy "call_requests_insert_anon"
 
 revoke all on public.call_requests from anon, authenticated;
 grant insert on public.call_requests to anon, authenticated;
+
+comment on table public.call_requests is
+  'Marketing site lead-capture form (suedeai.org/book-a-call): visitor-submitted requests to schedule a call. Insert-only via anon key from the public website form; no automated scheduling or PII beyond name/email/message.';
