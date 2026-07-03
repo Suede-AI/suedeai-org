@@ -195,6 +195,9 @@
           <h2>Request the abridged PDF.</h2>
           <p class="form-card__lede">Enter your email and we’ll send the reader preview links when email delivery is configured. You can also read the <a href="/sharp-excerpt/">sharp excerpt</a> or open the <a href="/full-preview/">full preview</a> now. The condensed PDF distills the larger 500-page work into a faster read on AI ownership, authorship, agents, and rights.</p>
           <form action="/api/book/" method="post" data-api-endpoint="/api/book/" data-fallback-action="/api/book/" data-success-redirect="/book/thanks/">
+            <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+              <label>Company URL<input type="text" name="company_url" tabindex="-1" autocomplete="off"></label>
+            </div>
             <label>Email<input type="email" name="email" required autocomplete="email"></label>
             <label>Name<input type="text" name="name" autocomplete="name"></label>
             <label>What brought you here?<textarea name="context" placeholder="Optional"></textarea></label>

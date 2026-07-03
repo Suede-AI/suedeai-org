@@ -201,6 +201,7 @@ def main() -> int:
             'action="/api/book/"',
             'data-api-endpoint="/api/book/"',
             "Email Me the Preview",
+            'name="company_url"',
         ],
         "sharp-excerpt/index.html": [
             "The sharp excerpt",
@@ -303,6 +304,7 @@ def main() -> int:
             "Stake Your Claim reader preview",
             "https://suedeai.org/book-a-call/",
             "Book a Call",
+            "company_url",
         ]:
             assert_contains("api/book.js", book_api_text, fragment, failures)
 
