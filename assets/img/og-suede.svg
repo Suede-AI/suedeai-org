@@ -1,21 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Suede — Proof of Creation. Programmable IP.</title>
-  <desc id="desc">Bright infrastructure brand card for suedeai.org.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0%" stop-color="#eef5ff"/>
-      <stop offset="100%" stop-color="#d8e7ff"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <g stroke="#0057ff" fill="none" opacity="0.22">
-    <circle cx="960" cy="182" r="82"/>
-    <circle cx="960" cy="182" r="132"/>
-    <circle cx="960" cy="182" r="184"/>
+  <title id="title">Suede Labs — Creative rails for the AI era.</title>
+  <desc id="desc">Paper-and-ink brand card for suedeai.org, matching the live homepage register.</desc>
+  <rect width="1200" height="630" fill="#f8f5ee"/>
+  <g stroke="#5a6900" fill="none">
+    <circle cx="1120" cy="20" r="90" stroke-width="2" opacity="0.55"/>
+    <circle cx="1120" cy="20" r="145" stroke-width="2" opacity="0.35"/>
+    <circle cx="1120" cy="20" r="205" stroke-width="2" opacity="0.2"/>
+    <circle cx="1120" cy="20" r="270" stroke-width="2" opacity="0.1"/>
   </g>
-  <text x="92" y="120" fill="#47617e" font-family="Arial, sans-serif" font-size="24" letter-spacing="5">THE OWNERSHIP LAYER FOR THE AI ERA</text>
-  <text x="92" y="272" fill="#08101d" font-family="Arial, sans-serif" font-size="88" font-weight="700">Proof of Creation.</text>
-  <text x="92" y="368" fill="#08101d" font-family="Arial, sans-serif" font-size="88" font-weight="700">Programmable IP.</text>
-  <text x="92" y="454" fill="#47617e" font-family="Arial, sans-serif" font-size="30">Verifiable ownership, provenance, voice, likeness, and rights infrastructure.</text>
-  <text x="92" y="540" fill="#0057ff" font-family="Arial, sans-serif" font-size="28">suedeai.org</text>
+  <text x="92" y="110" fill="#5d5a53" font-family="'Geist Mono', ui-monospace, monospace" font-size="22" letter-spacing="3">00 &#8212; SUEDE LABS</text>
+  <text x="92" y="215" fill="#242424" font-family="'Instrument Serif', Georgia, serif" font-size="84">Creative rails for the</text>
+  <text x="92" y="303" fill="#242424" font-family="'Instrument Serif', Georgia, serif" font-size="84">AI era.</text>
+  <text x="92" y="378" fill="#5d5a53" font-family="Geist, ui-sans-serif, sans-serif" font-size="27">
+    <tspan x="92" dy="0">Suede Labs builds the ownership infrastructure for the agentic</tspan>
+    <tspan x="92" dy="34">internet: provenance, licensing, payments, distribution, and value</tspan>
+    <tspan x="92" dy="34">flow for creators.</tspan>
+  </text>
+  <text x="92" y="530" fill="#242424" font-family="Geist, sans-serif" font-size="24" font-weight="600">Suede Labs</text>
+  <circle cx="255" cy="524" r="3" fill="#5a6900"/>
+  <text x="271" y="530" fill="#41606b" font-family="'Geist Mono', ui-monospace, monospace" font-size="22">suedeai.org</text>
 </svg>
