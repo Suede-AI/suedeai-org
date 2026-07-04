@@ -734,6 +734,41 @@ h3 {
   text-decoration: underline;
 }
 
+.founder-signature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  padding: 14px 0 20px;
+  border-top: 1px solid var(--hairline);
+  font-size: var(--text-xs, 0.8125rem);
+  color: var(--text-muted);
+}
+
+.founder-signature__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.founder-signature a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline);
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.founder-signature a:hover,
+.founder-signature a:focus {
+  color: var(--registry-cyan);
+  text-decoration-color: currentColor;
+}
+
 form {
   display: grid;
   gap: 14px;

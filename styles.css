@@ -2825,6 +2825,42 @@ h3 {
   padding-top: 2px;
 }
 
+.founder-signature {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  margin-top: 4px;
+  border-top: 1px solid rgba(36, 36, 36, 0.1);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.founder-signature__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(36, 36, 36, 0.14);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.founder-signature a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(36, 36, 36, 0.25);
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.founder-signature a:hover,
+.founder-signature a:focus {
+  color: var(--rights-red-bright);
+  text-decoration-color: currentColor;
+}
+
 .site-footer a:hover {
   color: var(--rights-red-bright);
 }
