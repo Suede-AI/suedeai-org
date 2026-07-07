@@ -84,6 +84,9 @@ def main() -> int:
     dead_asins = [
         "B0GMBBWHMQ",
     ]
+    dead_urls = [
+        "https://www.amazon.com/author/johnnysuede",
+    ]
     guitar_wrong_asin_patterns = [
         r'href="https://www\.amazon\.com/dp/B0GD5FX6N6"[^>]*>The Guitar Without a Number',
         r'"name"\s*:\s*"The Guitar Without a Number"[\s\S]{0,500}?"url"\s*:\s*"https://www\.amazon\.com/dp/B0GD5FX6N6"',
@@ -173,6 +176,10 @@ def main() -> int:
             if asin in html_text:
                 relative_path = html_path.relative_to(ROOT).as_posix()
                 failures.append(f"{relative_path}: dead Amazon ASIN '{asin}'")
+        for url in dead_urls:
+            if url in html_text:
+                relative_path = html_path.relative_to(ROOT).as_posix()
+                failures.append(f"{relative_path}: dead public URL '{url}'")
         for pattern in guitar_wrong_asin_patterns:
             if re.search(pattern, html_text, re.IGNORECASE | re.MULTILINE):
                 relative_path = html_path.relative_to(ROOT).as_posix()
@@ -192,6 +199,10 @@ def main() -> int:
                 if asin in text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
                     failures.append(f"{relative_path}: dead Amazon ASIN '{asin}'")
+            for url in dead_urls:
+                if url in text:
+                    relative_path = text_path.relative_to(ROOT).as_posix()
+                    failures.append(f"{relative_path}: dead public URL '{url}'")
 
     llms_path = ROOT / "llms.txt"
     if llms_path.exists():
