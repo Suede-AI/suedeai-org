@@ -669,7 +669,7 @@ Expected: FAIL — `investors/index.html: file does not exist`.
         </div>
         <div class="inv__strip">
           <a href="https://app.suedeai.ai/.well-known/x402.json" rel="noopener"><span class="inv__live">Live</span> on Base mainnet</a>
-          <a href="https://app.suedeai.ai/.well-known/x402.json" rel="noopener">24 agent-payable x402 endpoints</a>
+          <a href="https://app.suedeai.ai/.well-known/x402.json" rel="noopener">3 paid x402 resources</a>
           <a href="https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/" rel="noopener">iOS apps shipped</a>
           <a href="https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/" rel="noopener">Featured in TechBullion</a>
         </div>
@@ -720,9 +720,9 @@ Expected: FAIL — `investors/index.html: file does not exist`.
         <h2 class="inv__h2" id="inv-traction-heading">Traction signals</h2>
         <ul class="inv__signals">
           <li>ERC-8004 identity, reputation, and validation contracts <span class="inv__live">live on Base mainnet</span>.</li>
-          <li>24 production x402 paid endpoints — agents pay per call in USDC, no account or API key.</li>
+          <li>3 paid x402 resources — agents pay per call in USDC, no account or API key.</li>
           <li>Producer by Suede Labs is a hireable Virtuals ACP agent for music, video, and ACP/x402 consulting.</li>
-          <li>iOS app line shipped: Suede Studio Inspiration, Suede Guitar Tuner &amp; Studio, Suede Studio Voice.</li>
+          <li>iOS app line shipped: 8 live App Store apps, including Suede: AI Music Generator, Suede Guitar Tuner &amp; Studio, and Suede Studio Voice.</li>
           <li>Third-party press coverage in TechBullion (May 2026).</li>
         </ul>
       </div>

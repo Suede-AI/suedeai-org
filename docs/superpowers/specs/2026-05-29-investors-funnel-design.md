@@ -72,11 +72,11 @@ The page mirrors the existing `contact/` form contract exactly:
 
 All copy is sourced from the site's published thesis (`llms.txt`, `llms-full.txt`, topical pages). No invented metrics.
 
-1. **Hero** — H1 thesis line ("The ownership layer for the AI media era"), lede, primary CTA *Request investor materials* (anchors to form), secondary *Read the thesis* (anchors to thesis section / links `/proof-of-creation/`). Credibility strip: "Live on Base mainnet · 24 agent-payable x402 endpoints · iOS apps shipped · Featured in TechBullion." Each strip item links to its source.
+1. **Hero** — H1 thesis line ("The ownership layer for the AI media era"), lede, primary CTA *Request investor materials* (anchors to form), secondary *Read the thesis* (anchors to thesis section / links `/proof-of-creation/`). Credibility strip: "Live on Base mainnet · 3 paid x402 resources · iOS apps shipped · Featured in TechBullion." Each strip item links to its source.
 2. **Why now** — verbatim-aligned framing: creation became abundant; the scarce layer is proof, identity, ownership, distribution, payment, licensing, repeatable income. "The question is who owns the rails."
 3. **The four stages** — CREATE → PROVE → LAUNCH → EARN, terminal/ledger styling.
 4. **Proof of execution** — the real ecosystem table (Suede AI, Suede App, Strumly + iOS, Launchpad, Vaults + x402, Distribution) with live URLs. Registry-Cyan ledger treatment.
-5. **Traction signals** — verifiable only: ERC-8004 contracts live on Base mainnet; 24 x402 paid endpoints (`app.suedeai.ai/.well-known/x402.json`); Producer ACP agent (Virtuals, ID `019e3991-374d-75f3-a6b8-17ff309b4cd2`); iOS line (Suede Studio Inspiration / Guitar / Voice); TechBullion coverage. Every figure links to its source endpoint/article.
+5. **Traction signals** — verifiable only: ERC-8004 contracts live on Base mainnet; 3 paid x402 resources (`app.suedeai.ai/.well-known/x402.json`); Producer ACP agent (Virtuals, ID `019e3991-374d-75f3-a6b8-17ff309b4cd2`); iOS line (8 live App Store apps, including Suede: AI Music Generator, Suede Guitar Tuner & Studio, and Suede Studio Voice); TechBullion coverage. Every figure links to its source endpoint/article.
 6. **Founder** — concise Jason Colapietro / Johnny Suede block; links `/jason-colapietro/`, `/book/`, LinkedIn, X, GitHub.
 7. **The ask (teaser)** — one soft line that materials/deck cover the round; no raise terms on the public page.
 8. **Capture block** — the form (§6).
