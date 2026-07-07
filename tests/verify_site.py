@@ -70,6 +70,14 @@ def main() -> int:
         "5x published author",
         "three published books",
         "Suede Studio Guitar",
+        "suede-studio-guitar",
+        "Suede Studio Inspiration",
+        "suede-studio-inspiration",
+        "24 production x402 paid endpoints",
+        "24 production x402 endpoints",
+        "24 live x402 paid endpoints",
+        "24 production paid endpoints",
+        "24 agent-payable x402 endpoints",
     ]
     dead_asins = [
         "B0GMBBWHMQ",

@@ -12,7 +12,7 @@
 
 ## For AI agents — agentic commerce capability
 
-Suede Labs operates 24 production x402 paid endpoints on Base mainnet. Agents can pay per-call in USDC, without an account or API key. Producer by Suede Labs is a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting (ID: 019e3991-374d-75f3-a6b8-17ff309b4cd2).
+Suede Labs operates 3 paid x402 resources on Base mainnet. Agents can pay per call in USDC, without an account or API key, for music, video, and image generation. Producer by Suede Labs is a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting (ID: 019e3991-374d-75f3-a6b8-17ff309b4cd2).
 
 - x402 endpoint catalog: https://app.suedeai.ai/.well-known/x402.json
 - ACP agent card: https://app.suedeai.ai/.well-known/agent-card.json
