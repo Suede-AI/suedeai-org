@@ -73,6 +73,8 @@ def main() -> int:
         "suede-studio-guitar",
         "Suede Studio Inspiration",
         "suede-studio-inspiration",
+        "Suede Agents: AI That Earns",
+        "suede-agents-ai-that-earns",
         "24 production x402 paid endpoints",
         "24 production x402 endpoints",
         "24 live x402 paid endpoints",
