@@ -71,6 +71,13 @@ def main() -> int:
         "three published books",
         "Suede Studio Guitar",
     ]
+    dead_asins = [
+        "B0GMBBWHMQ",
+    ]
+    guitar_wrong_asin_patterns = [
+        r'href="https://www\.amazon\.com/dp/B0GD5FX6N6"[^>]*>The Guitar Without a Number',
+        r'"name"\s*:\s*"The Guitar Without a Number"[\s\S]{0,500}?"url"\s*:\s*"https://www\.amazon\.com/dp/B0GD5FX6N6"',
+    ]
 
     home_path = ROOT / "index.html"
     if home_path.exists():
@@ -152,6 +159,16 @@ def main() -> int:
             if phrase.lower() in lower_html_text:
                 relative_path = html_path.relative_to(ROOT).as_posix()
                 failures.append(f"{relative_path}: stale public phrase '{phrase}'")
+        for asin in dead_asins:
+            if asin in html_text:
+                relative_path = html_path.relative_to(ROOT).as_posix()
+                failures.append(f"{relative_path}: dead Amazon ASIN '{asin}'")
+        for pattern in guitar_wrong_asin_patterns:
+            if re.search(pattern, html_text, re.IGNORECASE | re.MULTILINE):
+                relative_path = html_path.relative_to(ROOT).as_posix()
+                failures.append(
+                    f"{relative_path}: The Guitar Without a Number points to the Human Authenticity ASIN"
+                )
 
     for text_path in [ROOT / "llms.txt", ROOT / "llms-full.txt"]:
         if text_path.exists():
@@ -161,6 +178,10 @@ def main() -> int:
                 if phrase.lower() in lower_text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
                     failures.append(f"{relative_path}: stale public phrase '{phrase}'")
+            for asin in dead_asins:
+                if asin in text:
+                    relative_path = text_path.relative_to(ROOT).as_posix()
+                    failures.append(f"{relative_path}: dead Amazon ASIN '{asin}'")
 
     llms_path = ROOT / "llms.txt"
     if llms_path.exists():
