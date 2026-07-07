@@ -722,7 +722,7 @@ Expected: FAIL — `investors/index.html: file does not exist`.
           <li>ERC-8004 identity, reputation, and validation contracts <span class="inv__live">live on Base mainnet</span>.</li>
           <li>24 production x402 paid endpoints — agents pay per call in USDC, no account or API key.</li>
           <li>Producer by Suede Labs is a hireable Virtuals ACP agent for music, video, and ACP/x402 consulting.</li>
-          <li>iOS app line shipped: Suede Studio Inspiration, Suede Studio Guitar, Suede Studio Voice.</li>
+          <li>iOS app line shipped: Suede Studio Inspiration, Suede Guitar Tuner &amp; Studio, Suede Studio Voice.</li>
           <li>Third-party press coverage in TechBullion (May 2026).</li>
         </ul>
       </div>

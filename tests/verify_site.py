@@ -28,6 +28,7 @@ PAGES = {
     "why-copyright-fails/index.html": "/why-copyright-fails/",
     "royalties/index.html": "/royalties/",
     "programmable-ip/index.html": "/programmable-ip/",
+    "agentic-commerce/index.html": "/agentic-commerce/",
     "content-provenance/index.html": "/content-provenance/",
     "creator-ownership/index.html": "/creator-ownership/",
     "jason-colapietro/index.html": "/jason-colapietro/",
@@ -62,6 +63,14 @@ def assert_regex(label: str, haystack: str, pattern: str, failures: list[str], f
 def main() -> int:
     failures: list[str] = []
     stale_founder_url_pattern = r'"@id"\s*:\s*"https://suedeai\.ai/founder#person"[\s\S]{0,2000}?"url"\s*:\s*"https://suedeai\.org/jason-colapietro/"'
+    public_regression_phrases = [
+        "Published author of five books",
+        "published author of five books",
+        "author of five books",
+        "5x published author",
+        "three published books",
+        "Suede Studio Guitar",
+    ]
 
     home_path = ROOT / "index.html"
     if home_path.exists():
@@ -138,6 +147,18 @@ def main() -> int:
             failures.append(
                 f"{relative_path}: founder person @id uses supporting profile URL instead of https://suedeai.ai/founder"
             )
+        for phrase in public_regression_phrases:
+            if phrase in html_text:
+                relative_path = html_path.relative_to(ROOT).as_posix()
+                failures.append(f"{relative_path}: stale public phrase '{phrase}'")
+
+    for text_path in [ROOT / "llms.txt", ROOT / "llms-full.txt"]:
+        if text_path.exists():
+            text = read_text(text_path)
+            for phrase in public_regression_phrases:
+                if phrase in text:
+                    relative_path = text_path.relative_to(ROOT).as_posix()
+                    failures.append(f"{relative_path}: stale public phrase '{phrase}'")
 
     llms_path = ROOT / "llms.txt"
     if llms_path.exists():
@@ -174,6 +195,7 @@ def main() -> int:
         "why-copyright-fails/index.html": "Copyright tries to protect ownership after distribution.",
         "royalties/index.html": "You cannot automate royalties on content you cannot verify.",
         "programmable-ip/index.html": "Programmable IP moves ownership, licensing, attribution, and usage rules",
+        "agentic-commerce/index.html": "Rights need a payment layer. ACP and x402 are how agents pay for them.",
         "content-provenance/index.html": "Content provenance records the source, authorship, and ownership context",
     }
 
@@ -377,6 +399,7 @@ def main() -> int:
         sitemap_text = read_text(sitemap)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/book/</loc>", failures)
+        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/agentic-commerce/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/sharp-excerpt/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/full-preview/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/investors/</loc>", failures)
