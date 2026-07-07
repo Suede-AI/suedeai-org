@@ -147,16 +147,18 @@ def main() -> int:
             failures.append(
                 f"{relative_path}: founder person @id uses supporting profile URL instead of https://suedeai.ai/founder"
             )
+        lower_html_text = html_text.lower()
         for phrase in public_regression_phrases:
-            if phrase in html_text:
+            if phrase.lower() in lower_html_text:
                 relative_path = html_path.relative_to(ROOT).as_posix()
                 failures.append(f"{relative_path}: stale public phrase '{phrase}'")
 
     for text_path in [ROOT / "llms.txt", ROOT / "llms-full.txt"]:
         if text_path.exists():
             text = read_text(text_path)
+            lower_text = text.lower()
             for phrase in public_regression_phrases:
-                if phrase in text:
+                if phrase.lower() in lower_text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
                     failures.append(f"{relative_path}: stale public phrase '{phrase}'")
 
