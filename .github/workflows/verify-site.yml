@@ -21,6 +21,14 @@ jobs:
       - name: Run python3 tests/verify_site.py
         run: python3 tests/verify_site.py
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run node --test tests/*.test.js
+        run: node --test tests/*.test.js
+
   smoke-deployed:
     name: Deployed smoke test
     runs-on: ubuntu-latest

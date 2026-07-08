@@ -30,8 +30,9 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
       statusNode.textContent = "Submitting...";
     }
 
+    let response;
     try {
-      const response = await fetch(endpoint, {
+      response = await fetch(endpoint, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -39,14 +40,6 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
         },
         body: JSON.stringify(payload),
       });
-
-      const result = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(result.error || "Submission failed.");
-      }
-
-      window.location.href = result.redirectTo || form.dataset.successRedirect || "/";
     } catch (error) {
       if (statusNode) {
         statusNode.textContent = `${error.message} Retrying with a standard submission...`;
@@ -61,6 +54,32 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
       if (submitButton) {
         submitButton.disabled = false;
       }
+    }
+
+    const result = await response.json().catch(() => ({}));
+
+    if (response.ok) {
+      window.location.href = result.redirectTo || form.dataset.successRedirect || "/";
+      return;
+    }
+
+    if (response.status >= 500) {
+      if (statusNode) {
+        statusNode.textContent = `${result.error || "Submission failed."} Retrying with a standard submission...`;
+      }
+      const fallbackAction = form.getAttribute("data-fallback-action");
+      if (fallbackAction) {
+        form.setAttribute("action", fallbackAction);
+      }
+      form.submit();
+      return;
+    }
+
+    if (statusNode) {
+      statusNode.textContent = result.error || "Submission failed.";
+    }
+    if (submitButton) {
+      submitButton.disabled = false;
     }
   });
 });
