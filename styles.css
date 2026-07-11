@@ -2657,7 +2657,8 @@ h3 {
   color: var(--verified-emerald);
 }
 
-.t-prompt {
+.t-prompt,
+.t-flag {
   color: var(--rights-red);
 }
 
