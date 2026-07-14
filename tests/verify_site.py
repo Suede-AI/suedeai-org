@@ -283,6 +283,7 @@ def main() -> int:
         "contact/index.html": [
             'action="/api/contact/"',
             'data-api-endpoint="/api/contact/"',
+            'name="company_url"',
         ],
         "book/thanks/index.html": [
             "Your request is in.",

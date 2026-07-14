@@ -90,6 +90,9 @@
       <aside class="form-card">
         <h2>Send a focused note</h2>
         <form action="/api/contact/" method="post" data-api-endpoint="/api/contact/" data-fallback-action="/api/contact/" data-success-redirect="/contact/thanks/">
+          <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+            <label>Company URL<input type="text" name="company_url" tabindex="-1" autocomplete="off"></label>
+          </div>
           <label>Name<input type="text" name="name" required></label>
           <label>Email<input type="email" name="email" required></label>
           <label>Topic<input type="text" name="topic"></label>

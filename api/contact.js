@@ -17,6 +17,17 @@ module.exports = async (req, res) => {
   }
 
   const fields = getRequestFields(req);
+
+  // Honeypot: a hidden field humans never fill. If present, succeed without storing.
+  if (normalizeText(fields.company_url)) {
+    if (wantsJson(req)) {
+      sendJson(res, 200, { ok: true, redirectTo: "/contact/thanks/" });
+      return;
+    }
+    redirect(res, "/contact/thanks/");
+    return;
+  }
+
   const name = normalizeText(fields.name);
   const email = normalizeText(fields.email);
   const topic = normalizeText(fields.topic);
