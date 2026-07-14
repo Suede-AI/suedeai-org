@@ -3,6 +3,7 @@ const {
   getEnv,
   getRequestFields,
   insertRow,
+  isValidEmail,
   normalizeText,
   redirect,
   sendEmail,
@@ -69,7 +70,7 @@ module.exports = async (req, res) => {
   const utmSource = normalizeText(fields.utm_source);
   const utmCampaign = normalizeText(fields.utm_campaign);
 
-  if (!name || !firm || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+  if (!name || !firm || !email || !isValidEmail(email)) {
     const errorMessage = "Name, email, and firm are required.";
     if (wantsJson(req)) {
       sendJson(res, 400, { error: errorMessage });

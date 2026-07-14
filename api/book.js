@@ -4,6 +4,7 @@ const {
   getEnv,
   getRequestFields,
   insertRow,
+  isValidEmail,
   normalizeText,
   redirect,
   sendEmail,
@@ -217,7 +218,7 @@ module.exports = async (req, res) => {
   const name = normalizeText(fields.name);
   const context = normalizeText(fields.context);
 
-  if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+  if (!email || !isValidEmail(email)) {
     if (wantsJson(req)) {
       sendJson(res, 400, { error: "Valid email is required." });
       return;

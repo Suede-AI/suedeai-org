@@ -124,6 +124,10 @@ function normalizeText(value) {
   return String(value || "").trim().replace(/\s+/g, " ");
 }
 
+function isValidEmail(value) {
+  return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(value || ""));
+}
+
 function allowPostOnly(req, res) {
   if (req.method !== "POST") {
     sendJson(res, 405, { error: "Method not allowed." });
@@ -178,6 +182,7 @@ module.exports = {
   getEnv,
   getRequestFields,
   insertRow,
+  isValidEmail,
   normalizeText,
   redirect,
   sendEmail,

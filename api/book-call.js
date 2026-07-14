@@ -3,6 +3,7 @@ const {
   getEnv,
   getRequestFields,
   insertRow,
+  isValidEmail,
   normalizeText,
   redirect,
   sendEmail,
@@ -56,7 +57,7 @@ module.exports = async (req, res) => {
   const message = normalizeText(fields.message);
   const timeframe = normalizeText(fields.timeframe);
 
-  if (!name || !message || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+  if (!name || !message || !email || !isValidEmail(email)) {
     const errorMessage = "Name, email, and message are required.";
     if (wantsJson(req)) {
       sendJson(res, 400, { error: errorMessage });
