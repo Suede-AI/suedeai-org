@@ -734,6 +734,15 @@ h3 {
   text-decoration: underline;
 }
 
+.page-updated {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  padding: 0 0 20px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
 .founder-signature {
   display: flex;
   align-items: center;
