@@ -2866,6 +2866,13 @@ h3 {
   color: var(--rights-red-bright);
 }
 
+.page-updated {
+  grid-column: 1 / -1;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
 .section-rail a {
   color: var(--text-soft);
   font-family: var(--font-ui);
