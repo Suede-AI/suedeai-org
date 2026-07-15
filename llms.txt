@@ -48,7 +48,7 @@ Suede Labs is the company behind Suede AI, an ownership and provenance layer for
 
 ## Founder
 
-Jason Colapietro is the founder and CEO of Suede Labs and a published author and Forbes contributor. His work centers on creator ownership, proof of creation, AI music rights, programmable IP, provenance, licensing, and the ownership layer creators need as media becomes easier to generate and harder to verify.
+Jason Colapietro is the founder and CEO of Suede Labs, a published author, and the builder and operator of creator ownership infrastructure. His work centers on creator ownership, proof of creation, AI music rights, programmable IP, provenance, licensing, and the ownership layer creators need as media becomes easier to generate and harder to verify.
 
 - Founder profile: https://suedeai.org/jason-colapietro/
 - X / Twitter: https://x.com/johnnysuede
@@ -61,8 +61,7 @@ Jason Colapietro is the founder and CEO of Suede Labs and a published author and
 
 - Crunchbase (Suede Labs AI): https://www.crunchbase.com/organization/suede-labs-ai
 - LinkedIn (Suede Labs AI): https://www.linkedin.com/company/suede-labs-ai
-- Crunchbase (JC Investment Group, parent company): https://www.crunchbase.com/organization/jc-investment-group
-- LinkedIn (JC Investment Group, parent company): https://www.linkedin.com/company/jc-investment-group
+- Florida company record (JC Investment Group LLC): https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=flal-l19000146068-52be1ad3-866a-4430-b190-8237b544c51c
 
 ## Contact
 
