@@ -731,6 +731,9 @@ h3 {
 
 .faq-item dd a {
   color: var(--proof-sky);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 .text-link {
@@ -1020,6 +1023,9 @@ h3 {
 
 .inline-link {
   color: var(--registry-cyan);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
   transition: color var(--dur-fast) var(--ease);
 }
 
@@ -2401,8 +2407,7 @@ h1 {
 }
 
 #proof h2,
-#proof h3,
-#proof .cred-row dt {
+#proof h3 {
   color: #f7f3e9;
 }
 
