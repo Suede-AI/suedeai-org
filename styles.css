@@ -3082,3 +3082,71 @@ h3 {
     transition: none;
   }
 }
+
+/* ============================================================= RANKING SOCIAL PROOF */
+.review-badge {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.55rem;
+  width: fit-content;
+  padding: 9px 16px;
+  border: var(--border-width) solid var(--verified-emerald);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--verified-emerald) 6%, transparent);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+
+.review-badge:hover {
+  background: color-mix(in srgb, var(--verified-emerald) 14%, transparent);
+  border-color: var(--verified-emerald);
+}
+
+.review-badge__stars {
+  color: var(--warning-amber);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.review-badge__score {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.review-badge__count {
+  margin-left: 0.2rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.review-badge__divider {
+  color: var(--text-muted);
+}
+
+.review-badge__claim {
+  color: var(--verified-emerald);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.review-badge__source {
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: none;
+}
+
+.review-badge--hero {
+  margin-top: 16px;
+}
+
+.review-badge--footer {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
