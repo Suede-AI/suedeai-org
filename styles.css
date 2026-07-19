@@ -1534,6 +1534,87 @@ a.eco-card {
   color: var(--text-muted);
 }
 
+/* ============================================================= ECOSYSTEM LOGO STRIP */
+
+.ecosystem-strip {
+  margin-top: clamp(2.5rem, 3.5vw, 4rem);
+  padding-top: clamp(1.75rem, 2.5vw, 2.5rem);
+  border-top: var(--border-width) solid var(--hairline);
+}
+
+.ecosystem-strip-eyebrow {
+  margin-bottom: 0.6rem;
+}
+
+.ecosystem-strip-lede {
+  max-width: 64ch;
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.ecosystem-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ecosystem-logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  padding: 14px 16px;
+  border: var(--border-width) solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--ink-control);
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+
+.ecosystem-logo a:hover {
+  background: color-mix(in srgb, var(--registry-cyan) 5%, var(--ink-control));
+  border-color: var(--hairline-cyan);
+}
+
+.ecosystem-logo img {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+/* ChainGPT's mark ships near-white for dark surfaces; invert it so it reads
+   against this component's light card background. */
+.ecosystem-logo img[src$="chaingpt.svg"] {
+  filter: invert(1);
+}
+
+.ecosystem-logo-name {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.ecosystem-logo-tag {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 /* ============================================================= INFRASTRUCTURE STACK */
 
 .stack-subhead {
@@ -3078,7 +3159,8 @@ h3 {
   .button,
   .eco-card,
   .skills-proof-card,
-  .path-row {
+  .path-row,
+  .ecosystem-logo a {
     transition: none;
   }
 }
