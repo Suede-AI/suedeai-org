@@ -3,7 +3,7 @@ Suede Labs
 
 URL: https://suedeai.org
 Type: Creative-rails infrastructure company for the AI era
-Founder: Jason Colapietro (Founder and CEO, Suede Labs)
+Founder: Jason Colapietro (Founder and CEO, Suede Labs; also known as Jay Colapietro and Johnny Suede)
 Flagship product: Suede AI (https://suedeai.ai / https://app.suedeai.ai)
 
 Suede Labs is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede Labs builds for that layer.
@@ -108,7 +108,7 @@ Founder — Jason Colapietro
 
 Role: Founder and CEO, Suede Labs
 
-Jason Colapietro is a published author and the operator behind Suede Labs. The internet upgraded access. AI upgraded creation. The next layer has to upgrade ownership. Suede is built from that conviction: proof, voice, likeness, rights, and programmable IP as core infrastructure, not as afterthought.
+Jason Colapietro, also known as Jay Colapietro and Johnny Suede, is a published author and the operator behind Suede Labs. The internet upgraded access. AI upgraded creation. The next layer has to upgrade ownership. Suede is built from that conviction: proof, voice, likeness, rights, and programmable IP as core infrastructure, not as afterthought.
 
 His work connects creator ownership, AI music, voice and likeness rights, programmable IP, licensing, and agent-readable commerce into one infrastructure story. The goal is practical: help creators prove what they made, control how it can be used, and turn rights into something software can understand.
 
@@ -116,6 +116,8 @@ Public profiles:
 - Founder profile (Suede): https://suedeai.org/jason-colapietro/
 - Canonical founder profile: https://suedeai.ai/founder
 - Founder profile: https://suedeai.ai/founder
+- Personal identity page: https://jasoncolapietro.com/
+- Creative identity page: https://johnnysuede.com/
 - Official image gallery: https://suedeai.ai/jason-colapietro-images
 - X / Twitter (personal): https://x.com/johnnysuede
 - X / Twitter (Suede): https://x.com/AISUEDE

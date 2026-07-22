@@ -157,8 +157,11 @@ def main() -> int:
     if founder_path.exists():
         founder_html = read_text(founder_path)
         assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#person"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"alternateName": ["Jay Colapietro", "Johnny Suede"]', failures)
         assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, 'href="https://johnnysuede.com/"', failures)
 
     for html_path in ROOT.rglob("*.html"):
         html_text = read_text(html_path)
@@ -203,6 +206,8 @@ def main() -> int:
                 if url in text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
                     failures.append(f"{relative_path}: dead public URL '{url}'")
+            assert_contains(text_path.name, text, "Jay Colapietro", failures)
+            assert_contains(text_path.name, text, "Johnny Suede", failures)
 
     llms_path = ROOT / "llms.txt"
     if llms_path.exists():
