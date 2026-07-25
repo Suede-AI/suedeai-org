@@ -135,7 +135,7 @@ Stake Your Claim is Jason Colapietro's thesis on AI ownership, authorship, prove
 - Book landing: https://suedeai.org/book/
 - Sharp excerpt: https://suedeai.org/sharp-excerpt/
 - Full preview: https://suedeai.org/full-preview/
-- Condensed PDF: https://suedeai.org/assets/files/stake-your-claim-condensed-preview.pdf
+- Canonical condensed PDF: https://suedeai.ai/stake-your-claim-condensed-preview.pdf
 
 
 Contact

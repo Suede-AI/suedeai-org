@@ -87,5 +87,6 @@ Detailed guide:
 ### Verification
 
 ```bash
+python3 -m pip install --requirement requirements-test.txt
 python3 tests/verify_site.py
 ```

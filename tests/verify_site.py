@@ -3,10 +3,17 @@ import re
 import sys
 import json
 
+from pypdf import PdfReader
+
 ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://suedeai.org"
 MAIN_SITE_URL = "https://suedeai.ai/"
 FAVICON_VERSION = "v=3"
+CANONICAL_PREVIEW_PDF_URL = "https://suedeai.ai/stake-your-claim-condensed-preview.pdf"
+LEGACY_PREVIEW_PDF_URL = "https://suedeai.org/assets/files/stake-your-claim-condensed-preview.pdf"
+OFFICIAL_CASE_CITATION = "Bartz et al. v. Anthropic PBC, No. 3:24-cv-05417-AMO (N.D. Cal.)"
+UNRELATED_ORGANIZATION_WIKIDATA = "https://www.wikidata.org/wiki/Q131489584"
+FOUNDER_WIKIDATA = "https://www.wikidata.org/wiki/Q140235755"
 
 LEGACY_REDIRECTS = {
     "/home/": "/",
@@ -55,9 +62,46 @@ def assert_contains(label: str, haystack: str, needle: str, failures: list[str])
         failures.append(f"{label}: missing '{needle}'")
 
 
+def assert_not_contains(label: str, haystack: str, needle: str, failures: list[str]) -> None:
+    if needle in haystack:
+        failures.append(f"{label}: contains forbidden '{needle}'")
+
+
 def assert_regex(label: str, haystack: str, pattern: str, failures: list[str], flags: int = re.IGNORECASE | re.MULTILINE) -> None:
     if not re.search(pattern, haystack, flags):
         failures.append(f"{label}: missing pattern /{pattern}/")
+
+
+def json_ld_nodes(html_text: str) -> list[dict]:
+    nodes: list[dict] = []
+    scripts = re.findall(
+        r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+        html_text,
+        re.IGNORECASE | re.DOTALL,
+    )
+    for script in scripts:
+        payload = json.loads(script)
+        if isinstance(payload, dict) and isinstance(payload.get("@graph"), list):
+            nodes.extend(node for node in payload["@graph"] if isinstance(node, dict))
+        elif isinstance(payload, dict):
+            nodes.append(payload)
+    return nodes
+
+
+def node_has_type(node: dict, expected_type: str) -> bool:
+    node_type = node.get("@type")
+    if isinstance(node_type, list):
+        return expected_type in node_type
+    return node_type == expected_type
+
+
+def same_as_urls(node: dict) -> set[str]:
+    same_as = node.get("sameAs", [])
+    if isinstance(same_as, str):
+        return {same_as}
+    if isinstance(same_as, list):
+        return {value for value in same_as if isinstance(value, str)}
+    return set()
 
 
 def main() -> int:
@@ -163,6 +207,30 @@ def main() -> int:
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://johnnysuede.com/"', failures)
 
+    for schema_path in [home_path, founder_path]:
+        if not schema_path.exists():
+            continue
+        relative_path = schema_path.relative_to(ROOT).as_posix()
+        nodes = json_ld_nodes(read_text(schema_path))
+        organizations = [node for node in nodes if node_has_type(node, "Organization")]
+        people = [node for node in nodes if node_has_type(node, "Person")]
+        if not organizations:
+            failures.append(f"{relative_path}: missing Organization JSON-LD node")
+        if not people:
+            failures.append(f"{relative_path}: missing Person JSON-LD node")
+        for organization in organizations:
+            organization_same_as = same_as_urls(organization)
+            if UNRELATED_ORGANIZATION_WIKIDATA in organization_same_as:
+                failures.append(
+                    f"{relative_path}: Organization sameAs contains unrelated Wikidata {UNRELATED_ORGANIZATION_WIKIDATA}"
+                )
+            if FOUNDER_WIKIDATA in organization_same_as:
+                failures.append(
+                    f"{relative_path}: founder Wikidata must remain on Person, not Organization"
+                )
+        if people and not any(FOUNDER_WIKIDATA in same_as_urls(person) for person in people):
+            failures.append(f"{relative_path}: Person sameAs is missing founder Wikidata {FOUNDER_WIKIDATA}")
+
     for html_path in ROOT.rglob("*.html"):
         html_text = read_text(html_path)
         if re.search(stale_founder_url_pattern, html_text, re.IGNORECASE | re.MULTILINE):
@@ -214,6 +282,13 @@ def main() -> int:
         llms_text = read_text(llms_path)
         assert_contains("llms.txt", llms_text, "Canonical founder entity: https://suedeai.ai/founder", failures)
         assert_contains("llms.txt", llms_text, "Supporting founder profile: https://suedeai.org/jason-colapietro/", failures)
+
+    for machine_path in [llms_path, ROOT / "llms-full.txt"]:
+        if not machine_path.exists():
+            continue
+        machine_text = read_text(machine_path)
+        assert_contains(machine_path.name, machine_text, CANONICAL_PREVIEW_PDF_URL, failures)
+        assert_not_contains(machine_path.name, machine_text, LEGACY_PREVIEW_PDF_URL, failures)
 
     pages_requiring_contact = [
         "index.html",
@@ -365,6 +440,39 @@ def main() -> int:
         if not asset.exists():
             failures.append(f"{asset.relative_to(ROOT)}: file does not exist")
 
+    if pdf_asset.exists():
+        reader = PdfReader(str(pdf_asset))
+        if len(reader.pages) != 46:
+            failures.append(
+                f"{pdf_asset.relative_to(ROOT)}: expected 46 pages, found {len(reader.pages)}"
+            )
+        pdf_text = " ".join((page.extract_text() or "") for page in reader.pages)
+        pdf_text = re.sub(r"(\w)[\u00ad\u2010]\s+(\w)", r"\1\2", pdf_text)
+        pdf_text = re.sub(r"\s+", " ", pdf_text)
+        assert_contains(
+            pdf_asset.relative_to(ROOT).as_posix(),
+            pdf_text,
+            OFFICIAL_CASE_CITATION,
+            failures,
+        )
+        assert_not_contains(
+            pdf_asset.relative_to(ROOT).as_posix(),
+            pdf_text,
+            "Harmon v. GenAudio",
+            failures,
+        )
+        for preserved_claim in [
+            "Over seventy copyright lawsuits have been filed against major AI companies since 2023.",
+            "The ones who do will be compensated. The ones who don't will be told their claim cannot be substantiated.",
+            "Register your work. That is the entire instruction. Everything else follows from that one action.",
+        ]:
+            assert_contains(
+                pdf_asset.relative_to(ROOT).as_posix(),
+                pdf_text,
+                preserved_claim,
+                failures,
+            )
+
     book_api = ROOT / "api" / "book.js"
     if book_api.exists():
         book_api_text = read_text(book_api)
@@ -418,6 +526,31 @@ def main() -> int:
                 )
             if redirect.get("permanent") is not True:
                 failures.append(f"vercel.json: {source} redirect is not permanent")
+
+        pdf_header_rule = next(
+            (
+                rule
+                for rule in config.get("headers", [])
+                if rule.get("source") == PREVIEW_PDF_PATH
+            ),
+            None,
+        )
+        if not pdf_header_rule:
+            failures.append(f"vercel.json: missing PDF header rule for {PREVIEW_PDF_PATH}")
+        else:
+            pdf_headers = {
+                header.get("key", "").lower(): header.get("value")
+                for header in pdf_header_rule.get("headers", [])
+            }
+            if pdf_headers.get("x-robots-tag") != "noindex, follow":
+                failures.append(
+                    f"vercel.json: {PREVIEW_PDF_PATH} must send X-Robots-Tag: noindex, follow"
+                )
+            expected_link = f'<{CANONICAL_PREVIEW_PDF_URL}>; rel="canonical"'
+            if pdf_headers.get("link") != expected_link:
+                failures.append(
+                    f"vercel.json: {PREVIEW_PDF_PATH} must send Link: {expected_link}"
+                )
 
     for file_name in NOINDEX_PAGES:
         path = ROOT / file_name
