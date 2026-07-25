@@ -14,6 +14,7 @@ LEGACY_PREVIEW_PDF_URL = "https://suedeai.org/assets/files/stake-your-claim-cond
 OFFICIAL_CASE_CITATION = "Bartz et al. v. Anthropic PBC, No. 3:24-cv-05417-AMO (N.D. Cal.)"
 UNRELATED_ORGANIZATION_WIKIDATA = "https://www.wikidata.org/wiki/Q131489584"
 FOUNDER_WIKIDATA = "https://www.wikidata.org/wiki/Q140235755"
+FOUNDER_OG_IMAGE_URL = f"{SITE_URL}/assets/img/og-jason-colapietro.png"
 
 LEGACY_REDIRECTS = {
     "/home/": "/",
@@ -206,6 +207,26 @@ def main() -> int:
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://johnnysuede.com/"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, f'<meta property="og:image" content="{FOUNDER_OG_IMAGE_URL}">', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '<meta property="og:image:width" content="1200">', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '<meta property="og:image:height" content="630">', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '<meta property="og:image:type" content="image/png">', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, f'<meta name="twitter:image" content="{FOUNDER_OG_IMAGE_URL}">', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"primaryImageOfPage": "https://suedeai.org/assets/img/founder-jason.png"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '<img src="/assets/img/founder-jason.png"', failures)
+
+        founder_og_path = ROOT / "assets" / "img" / "og-jason-colapietro.png"
+        if not founder_og_path.exists():
+            failures.append("assets/img/og-jason-colapietro.png: file does not exist")
+        else:
+            png_header = founder_og_path.read_bytes()[:24]
+            if png_header[:8] != b"\x89PNG\r\n\x1a\n":
+                failures.append("assets/img/og-jason-colapietro.png: expected PNG signature")
+            elif (
+                int.from_bytes(png_header[16:20], "big"),
+                int.from_bytes(png_header[20:24], "big"),
+            ) != (1200, 630):
+                failures.append("assets/img/og-jason-colapietro.png: expected 1200x630 dimensions")
 
     for schema_path in [home_path, founder_path]:
         if not schema_path.exists():
