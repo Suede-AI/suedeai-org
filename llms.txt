@@ -27,6 +27,7 @@ Suede Labs is the company behind Suede AI, an ownership and provenance layer for
 - [llms-full.txt](https://suedeai.org/llms-full.txt): full plain-text content for LLM ingestion
 - [sitemap.xml](https://suedeai.org/sitemap.xml): XML sitemap
 - [Stake Your Claim (book preview)](https://suedeai.org/book/): Jason Colapietro's thesis on AI ownership, authorship, agents, provenance, and durable creative rights
+- [Stake Your Claim (canonical PDF)](https://suedeai.ai/stake-your-claim-condensed-preview.pdf): condensed reader preview
 
 ## Recent press
 

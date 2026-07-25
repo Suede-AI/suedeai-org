@@ -55,6 +55,19 @@
   ],
   "headers": [
     {
+      "source": "/assets/files/stake-your-claim-condensed-preview.pdf",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        },
+        {
+          "key": "Link",
+          "value": "<https://suedeai.ai/stake-your-claim-condensed-preview.pdf>; rel=\"canonical\""
+        }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
       "headers": [
         {
