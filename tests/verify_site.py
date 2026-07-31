@@ -140,11 +140,11 @@ def main() -> int:
     home_path = ROOT / "index.html"
     if home_path.exists():
         home_html = read_text(home_path)
-        # New "Creative rails for the AI era" content strings — root is now the Suede Labs investor thesis page
+        # Root presents Suede Labs' current creative software and agent-commerce work.
         assert_contains("index.html", home_html, "Creative rails for the", failures)
         assert_contains("index.html", home_html, "AI era.", failures)
         assert_contains("index.html", home_html, "Suede Labs", failures)
-        assert_contains("index.html", home_html, "Suede Labs investor thesis", failures)
+        assert_contains("index.html", home_html, "creative software", failures)
         assert_contains("index.html", home_html, "Talk to Suede", failures)
         assert_contains("index.html", home_html, "Jason Colapietro", failures)
         assert_contains("index.html", home_html, 'href="https://suedeai.ai/"', failures)
@@ -340,7 +340,7 @@ def main() -> int:
         "why-copyright-fails/index.html": "Copyright tries to protect ownership after distribution.",
         "royalties/index.html": "You cannot automate royalties on content you cannot verify.",
         "programmable-ip/index.html": "Programmable IP moves ownership, licensing, attribution, and usage rules",
-        "agentic-commerce/index.html": "Rights need a payment layer. ACP and x402 are how agents pay for them.",
+        "agentic-commerce/index.html": "ACP and x402 let agents pay per call.",
         "content-provenance/index.html": "Content provenance records the source, authorship, and ownership context",
     }
 
@@ -395,7 +395,7 @@ def main() -> int:
         "investors/index.html": [
             'action="/api/investors/"',
             'data-api-endpoint="/api/investors/"',
-            "who owns the rails",
+            "Registry remediation is tracked separately",
         ],
         "investors/thanks/index.html": [
             "Your request is in.",

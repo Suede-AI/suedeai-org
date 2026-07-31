@@ -3,6 +3,51 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/proof-of-creation/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
+      "source": "/programmable-ip/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
+      "source": "/royalties/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
+      "source": "/creator-ownership/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
+      "source": "/content-provenance/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
+      "source": "/ai-voice-protection/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
+      "source": "/ai-likeness-protection/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
+      "source": "/human-authenticity-layer/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
+      "source": "/why-copyright-fails/",
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
+    },
+    {
       "source": "/home/",
       "destination": "/",
       "permanent": true
@@ -19,23 +64,23 @@
     },
     {
       "source": "/the-hidden-tax-stealing-time-money-and-control/",
-      "destination": "/creator-ownership/",
-      "permanent": true
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
     },
     {
       "source": "/how-record-labels-trap-artists-the-kreayshawn-case-study/",
-      "destination": "/royalties/",
-      "permanent": true
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
     },
     {
       "source": "/the-future-of-music-rights-technology-meets-creativity/",
-      "destination": "/programmable-ip/",
-      "permanent": true
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
     },
     {
       "source": "/beyond-points-4-ways-suede-labs-is-redefining-user-rewards/",
-      "destination": "/royalties/",
-      "permanent": true
+      "destination": "https://suedeai.ai/proof-of-creation",
+      "permanent": false
     },
     {
       "source": "/blog",
