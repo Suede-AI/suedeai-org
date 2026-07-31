@@ -14,7 +14,7 @@
 
 The Suede IP Registry, registration, licensing, royalty-routing, provenance, voice-rights, and likeness-rights product workflows are unavailable while security remediation is in progress. Suede Labs does not market those workflows as live during the hold.
 
-- Current status: https://suedeai.ai/proof-of-creation
+- Current status: https://suedeai.org/#status
 - Historical records and legal disclosures may remain available for existing users.
 
 ## Current agentic commerce capability

@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-STATUS_URL = "https://suedeai.ai/proof-of-creation"
+STATUS_URL = "https://suedeai.org/#status"
 HELD_ROUTES = [
     "/proof-of-creation/",
     "/programmable-ip/",
@@ -69,6 +69,18 @@ class RegistryMarketingHoldTests(unittest.TestCase):
             for route in HELD_ROUTES:
                 with self.subTest(file=file_name, route=route):
                     self.assertNotIn(f'href="{route}"', text)
+
+    def test_status_links_do_not_send_visitors_to_registry_marketing(self) -> None:
+        unsafe_status_url = "https://suedeai.ai/proof-of-creation"
+        for file_name in ACTIVE_MARKETING_FILES + [
+            "book/index.html",
+            "sharp-excerpt/index.html",
+            "llms.txt",
+            "llms-full.txt",
+        ]:
+            with self.subTest(file=file_name):
+                text = (ROOT / file_name).read_text(encoding="utf-8")
+                self.assertNotIn(unsafe_status_url, text)
 
     def test_public_status_is_explicit_and_machine_readable(self) -> None:
         home = (ROOT / "index.html").read_text(encoding="utf-8")
