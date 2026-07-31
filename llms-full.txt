@@ -15,7 +15,7 @@ IP Registry security status
 The Suede IP Registry and the related registration, licensing, royalty-routing, provenance, voice-rights, and likeness-rights product workflows are paused while security remediation is in progress. They must not be described as live, hardened, audited, or generally available during this hold.
 
 Current status:
-- https://suedeai.ai/proof-of-creation
+- https://suedeai.org/#status
 
 Historical records, legal disclosures, and published thesis material remain available where they are needed for existing users or accurate context. They do not establish current product availability.
 
