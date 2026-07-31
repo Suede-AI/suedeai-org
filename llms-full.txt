@@ -2,105 +2,64 @@ Suede Labs
 ==========
 
 URL: https://suedeai.org
-Type: Creative-rails infrastructure company for the AI era
+Type: Creative software and agent-commerce company
 Founder: Jason Colapietro (Founder and CEO, Suede Labs; also known as Jay Colapietro and Johnny Suede)
-Flagship product: Suede AI (https://suedeai.ai / https://app.suedeai.ai)
+Product brand: Suede AI (https://suedeai.ai)
 
-Suede Labs is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede Labs builds for that layer.
-
-
-Recent press
-------------
-
-TechBullion · May 25, 2026 · Jason Colapietro's Suede Labs AI Launches iOS Apps, Codex and Claude Skills, and the Musicians Terminal
-URL: https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/
-
-Third-party coverage of Suede Labs' May 2026 product wave: the iOS app line now including Suede: AI Music Generator, Suede Guitar Tuner & Studio, and Suede Studio Voice; Codex and Claude developer skills for AI coding agents; and the Musicians Terminal — a working-musician console for catalog management, rights routing, royalty splits, and licensing decisions. The piece grounds the creator-ownership thesis in shipped product surfaces rather than slideware.
+Suede Labs builds creative software, public agent skills, and payment infrastructure for artists, developers, and AI agents. Current public product claims on this site are limited to surfaces that can be verified independently of the Suede IP Registry.
 
 
-The Suede Labs thesis
+IP Registry security status
+---------------------------
+
+The Suede IP Registry and the related registration, licensing, royalty-routing, provenance, voice-rights, and likeness-rights product workflows are paused while security remediation is in progress. They must not be described as live, hardened, audited, or generally available during this hold.
+
+Current status:
+- https://suedeai.ai/proof-of-creation
+
+Historical records, legal disclosures, and published thesis material remain available where they are needed for existing users or accurate context. They do not establish current product availability.
+
+
+Current live surfaces
 ---------------------
 
-Creation got faster. The creative economy needs new rails.
+AGENTIC COMMERCE
 
-AI made creative output abundant. That shifts the scarce layer to proof, identity, distribution, payment, licensing, and repeatable artist income. The investor question is not whether another tool can generate media. The question is who owns the rails when creators, agents, platforms, and fans need to turn work into durable value.
+Suede Labs operates 3 paid x402 resources on Base mainnet:
+- music generation
+- video generation
+- image generation
 
-The four stages Suede addresses:
+Agents pay per call in USDC without an account or API key.
 
-1. CREATE — AI lowers the cost of making songs, images, video, campaigns, lessons, and synthetic media.
-2. PROVE — Creators need authorship, voice, likeness, consent, provenance, and rights to travel with the work.
-3. LAUNCH — Creative projects need routes to funding, audience activation, ownership participation, and demand.
-4. EARN — Payments, vaults, royalties, licensing, distribution, and agent commerce turn creative output into income.
+Machine-readable endpoints:
+- x402 catalog: https://app.suedeai.ai/.well-known/x402.json
+- ACP agent card: https://app.suedeai.ai/.well-known/agent-card.json
+- agentic commerce manifest: https://app.suedeai.ai/.well-known/agentic-commerce.json
+- agentic commerce overview: https://suedeai.org/agentic-commerce/
 
+PRODUCER BY SUEDE LABS
 
-Ecosystem — one company, multiple proof surfaces
--------------------------------------------------
+Producer by Suede Labs is a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting.
 
-Suede is not a single app. It is an expanding set of products and rails that meet artists at different points in the journey: growth, ownership, launch, payments, distribution, and agentic commerce.
+Agent identifier:
+- 019e3991-374d-75f3-a6b8-17ff309b4cd2
 
-- Ownership layer — Suede AI (https://suedeai.ai/): proof-of-creation, programmable IP, rights, provenance
-- Artist growth — Strumly + iOS apps (https://strumly.suedeai.ai/): practice, growth, empowerment, creator-product surfaces
-- Project launch — Launchpad (https://launch.suedeai.ai/): creative launches, demand formation, project activation
-- Income routes — Vaults: royalty, ownership, artist income, participation paths
-- Payment rail — x402: internet-native payments for agents, APIs, content, and commerce
-- Market reach — Distribution (https://distro.suedeai.ai/): routes that move creative work from proof into audience and revenue
+CREATOR SOFTWARE AND COMMUNITY
 
-
-Path to monetization
---------------------
-
-Artist income is not a button. It is a route. Suede's value is the full path from creative act to economic outcome.
-
-- GROWTH: Strumly and iOS apps build artist capability and engagement.
-- PROOF: Suede AI attaches rights, provenance, ownership, and licensing logic.
-- LAUNCH: Launchpad gives creative projects a native route to demand.
-- EARN: Vaults, x402, royalties, and distribution create monetization routes.
+Suede Labs also operates creator software, iOS apps, Suede Social, public creator skills, and music-focused editorial and tooling. The estate directory is available at https://hub.suedeai.ai.
 
 
-Proof of execution
-------------------
+Company and investor information
+--------------------------------
 
-The breadth matters because the creative industry will not be rebuilt by one feature. Suede Labs is connecting the surfaces that artists and rights holders need to create, grow, own, launch, and earn.
+The company story, current product status, and investor request form are available at:
+- marketing site: https://suedeai.org/
+- investor brief: https://suedeai.org/investors/
+- about: https://suedeai.org/about/
+- contact: https://suedeai.org/contact/
 
-| Surface         | URL                                  | What it does                                                                                |
-|-----------------|--------------------------------------|---------------------------------------------------------------------------------------------|
-| Suede AI        | https://suedeai.ai/                  | Ownership infrastructure for proof-of-creation, programmable IP, creator rights, provenance |
-| Suede App       | https://app.suedeai.ai/              | Working product surface for rights passports, licensing, royalties, vaults, workflows       |
-| Strumly + iOS   | https://strumly.suedeai.ai/          | Foundational artist-growth and empowerment products                                         |
-| Launchpad       | https://launch.suedeai.ai/           | Demand formation, activation, fundability for creative projects                             |
-| Vaults + x402   | https://suedeai.org/#monetization    | Royalty participation, agent-native payments, API commerce, internet-native value flow      |
-| Distribution    | https://distro.suedeai.ai/           | Bridge from registered, owned work to audience reach, release activity, and revenue paths   |
-
-
-Topical pages
--------------
-
-PROOF OF CREATION (https://suedeai.org/proof-of-creation/)
-Proof of creation makes authorship, provenance, and creator rights verifiable in the AI era. Suede provides ownership infrastructure for AI media.
-
-PROGRAMMABLE IP (https://suedeai.org/programmable-ip/)
-Programmable IP moves ownership, licensing, attribution, and usage rules from PDFs and contracts into code that platforms, agents, and creators can read.
-
-CREATOR OWNERSHIP (https://suedeai.org/creator-ownership/)
-Creator ownership becomes more important as AI makes production easier. Ownership infrastructure is the wedge.
-
-CONTENT PROVENANCE (https://suedeai.org/content-provenance/)
-Content provenance records the source, authorship, and ownership context of creative work so AI media stays accountable downstream.
-
-ROYALTIES (https://suedeai.org/royalties/)
-You cannot automate royalties on content you cannot verify. Ownership and provenance are the prerequisites.
-
-AI VOICE PROTECTION (https://suedeai.org/ai-voice-protection/)
-AI voice protection is a rights problem, not just a detection problem. The fix starts with ownership and consent.
-
-AI LIKENESS PROTECTION (https://suedeai.org/ai-likeness-protection/)
-AI likeness protection starts with ownership, consent, and proof — not just takedowns.
-
-HUMAN AUTHENTICITY LAYER (https://suedeai.org/human-authenticity-layer/)
-Human authenticity becomes premium when synthetic content is cheap. Authenticity is an ownership signal, not a watermark.
-
-WHY COPYRIGHT FAILS (https://suedeai.org/why-copyright-fails/)
-Copyright tries to protect ownership after distribution. AI-era media moves faster than that. Ownership has to be machine-readable upstream.
+The investor materials should be read with the same Registry hold: paused rights workflows are roadmap and remediation work, not shipped production proof.
 
 
 Founder — Jason Colapietro
@@ -108,55 +67,46 @@ Founder — Jason Colapietro
 
 Role: Founder and CEO, Suede Labs
 
-Jason Colapietro, also known as Jay Colapietro and Johnny Suede, is a published author and the operator behind Suede Labs. The internet upgraded access. AI upgraded creation. The next layer has to upgrade ownership. Suede is built from that conviction: proof, voice, likeness, rights, and programmable IP as core infrastructure, not as afterthought.
-
-His work connects creator ownership, AI music, voice and likeness rights, programmable IP, licensing, and agent-readable commerce into one infrastructure story. The goal is practical: help creators prove what they made, control how it can be used, and turn rights into something software can understand.
+Jason Colapietro, also known as Jay Colapietro and Johnny Suede, is a published author and the operator behind Suede Labs. His research and books cover AI ownership, authorship, proof systems, programmable IP, provenance, licensing, and agent commerce. That authorship is historical and educational context; it does not mean the paused IP Registry is currently available.
 
 Public profiles:
-- Founder profile (Suede): https://suedeai.org/jason-colapietro/
-- Canonical founder profile: https://suedeai.ai/founder
-- Founder profile: https://suedeai.ai/founder
-- Personal identity page: https://jasoncolapietro.com/
-- Creative identity page: https://johnnysuede.com/
-- Official image gallery: https://suedeai.ai/jason-colapietro-images
-- X / Twitter (personal): https://x.com/johnnysuede
-- X / Twitter (Suede): https://x.com/AISUEDE
-- GitHub (personal): https://github.com/JasonColapietro
+- supporting founder profile: https://suedeai.org/jason-colapietro/
+- canonical founder profile: https://suedeai.ai/founder
+- personal identity page: https://jasoncolapietro.com/
+- creative identity page: https://johnnysuede.com/
+- X: https://x.com/johnnysuede
+- GitHub: https://github.com/JasonColapietro
 - LinkedIn: https://www.linkedin.com/in/jasoncolapietro
 - YouTube: https://www.youtube.com/@aisuede
-- GitHub (Suede): https://github.com/Suede-AI
+- GitHub organization: https://github.com/Suede-AI
 
 
-Stake Your Claim (book)
------------------------
+Stake Your Claim
+----------------
 
-Stake Your Claim is Jason Colapietro's thesis on AI ownership, authorship, provenance, creator rights, AI agents, and durable assets in the AI era.
+Stake Your Claim is Jason Colapietro's published thesis on AI ownership, authorship, provenance, creator rights, AI agents, and durable assets in the AI era. It is educational material, not a statement that every product concept discussed in the book is available.
 
-- Book landing: https://suedeai.org/book/
-- Sharp excerpt: https://suedeai.org/sharp-excerpt/
-- Full preview: https://suedeai.org/full-preview/
-- Canonical condensed PDF: https://suedeai.ai/stake-your-claim-condensed-preview.pdf
+- book landing: https://suedeai.org/book/
+- sharp excerpt: https://suedeai.org/sharp-excerpt/
+- full preview: https://suedeai.org/full-preview/
+- canonical condensed PDF: https://suedeai.ai/stake-your-claim-condensed-preview.pdf
 
 
 Contact
 -------
 
 - Email: info@suedeai.org
-- Talk to Suede: https://suedeai.org/contact/
+- Contact page: https://suedeai.org/contact/
 - Marketing site: https://suedeai.org/
-- Product app: https://app.suedeai.ai/
 
 
 AI agent and scraping policy
 ----------------------------
 
-This site welcomes well-behaved AI agents and crawlers. All content is intended for indexing, retrieval, and synthesis. Cite https://suedeai.org or the specific URL when reproducing material.
+This site welcomes well-behaved AI agents and crawlers. Public content may be indexed, retrieved, and synthesized. Do not infer current Registry availability from archived pages, legal terms, historical claims, or book excerpts. Use the security status section above.
 
 Machine-readable endpoints:
-- /llms.txt         — Summary index for LLMs
-- /llms-full.txt    — Full plain-text content (this file)
-- /sitemap.xml      — XML sitemap
-- /robots.txt       — Crawler permissions with explicit AI-crawler allowlist
-
-Embedded structured data on HTML pages:
-- JSON-LD: Organization (Suede Labs), Person (Jason Colapietro), WebSite, plus per-page entities (WebPage, ProfilePage, Book, ContactPage)
+- /llms.txt
+- /llms-full.txt
+- /sitemap.xml
+- /robots.txt
