@@ -11,9 +11,11 @@
   <text x="92" y="110" fill="#5d5a53" font-family="'Geist Mono', ui-monospace, monospace" font-size="22" letter-spacing="3">00 &#8212; SUEDE LABS</text>
   <text x="92" y="215" fill="#242424" font-family="'Instrument Serif', Georgia, serif" font-size="84">Creative rails for the</text>
   <text x="92" y="303" fill="#242424" font-family="'Instrument Serif', Georgia, serif" font-size="84">AI era.</text>
-  <text x="92" y="378" fill="#5d5a53" font-family="Geist, ui-sans-serif, sans-serif" font-size="27">Creative software, public agent skills, and x402 payments</text>
-  <text x="92" y="412" fill="#5d5a53" font-family="Geist, ui-sans-serif, sans-serif" font-size="27">for artists, developers, and AI agents.</text>
-  <text x="92" y="446" fill="#5d5a53" font-family="Geist, ui-sans-serif, sans-serif" font-size="27">IP Registry workflows are paused during remediation.</text>
+  <text x="92" y="378" fill="#5d5a53" font-family="Geist, ui-sans-serif, sans-serif" font-size="27">
+    <tspan x="92" dy="0">Suede Labs builds the ownership infrastructure for the agentic</tspan>
+    <tspan x="92" dy="34">internet: provenance, licensing, payments, distribution, and value</tspan>
+    <tspan x="92" dy="34">flow for creators.</tspan>
+  </text>
   <text x="92" y="530" fill="#242424" font-family="Geist, sans-serif" font-size="24" font-weight="600">Suede Labs</text>
   <circle cx="255" cy="524" r="3" fill="#5a6900"/>
   <text x="271" y="530" fill="#41606b" font-family="'Geist Mono', ui-monospace, monospace" font-size="22">suedeai.org</text>
