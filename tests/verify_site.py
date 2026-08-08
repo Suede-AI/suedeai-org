@@ -202,7 +202,7 @@ def main() -> int:
     if founder_path.exists():
         founder_html = read_text(founder_path)
         assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#person"', failures)
-        assert_contains("jason-colapietro/index.html", founder_html, '"alternateName": ["Jay Colapietro", "Johnny Suede"]', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"alternateName": ["Johnny Suede"]', failures)
         assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
@@ -295,7 +295,13 @@ def main() -> int:
                 if url in text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
                     failures.append(f"{relative_path}: dead public URL '{url}'")
-            assert_contains(text_path.name, text, "Jay Colapietro", failures)
+            # "Jay Colapietro" was declared as an alias until 2026-08-07 and
+            # removed: Jason has never used it publicly, so it consolidated no
+            # real query or citation, and answer engines had begun repeating
+            # the claim as established fact. Guard against reintroduction.
+            if "Jay Colapietro" in text:
+                relative_path = text_path.relative_to(ROOT).as_posix()
+                failures.append(f"{relative_path}: removed alias 'Jay Colapietro'")
             assert_contains(text_path.name, text, "Johnny Suede", failures)
 
     llms_path = ROOT / "llms.txt"
