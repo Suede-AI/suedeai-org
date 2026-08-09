@@ -167,6 +167,17 @@ def main() -> int:
         assert_contains("index.html", home_html, '"@id": "https://suedeai.ai/founder#person"', failures)
         assert_contains("index.html", home_html, '"url": "https://suedeai.ai/founder"', failures)
         assert_contains("index.html", home_html, '"https://suedeai.org/jason-colapietro/"', failures)
+        for route, price in (
+            ("music-gen", "$0.50/call"),
+            ("video-gen", "$4.99/call"),
+            ("image-gen", "$0.15/call"),
+            ("Music $0.50", "Video $4.99"),
+            ("Video $4.99", "Image $0.15"),
+        ):
+            assert_contains("index.html", home_html, route, failures)
+            assert_contains("index.html", home_html, price, failures)
+        for stale_price in ("Music $0.20", "Video $1.50", "Image $0.05"):
+            assert_not_contains("index.html", home_html, stale_price, failures)
 
     h1_pattern = r"<h1\b[^>]*>.*?</h1>"
     h1_flags = re.IGNORECASE | re.DOTALL
