@@ -731,7 +731,7 @@ Expected: FAIL — `investors/index.html: file does not exist`.
     <section class="inv__band" aria-labelledby="inv-founder-heading">
       <div class="inv__inner">
         <h2 class="inv__h2" id="inv-founder-heading">Founder</h2>
-        <p class="inv__body"><strong>Jason Colapietro</strong> (Johnny Suede) is the Founder and CEO of Suede Labs AI, a published author and Forbes contributor. The internet upgraded access; AI upgraded creation; the next layer has to upgrade ownership. Read the <a href="/jason-colapietro/">founder profile</a> and the thesis book <a href="/book/">Stake Your Claim</a>.</p>
+        <p class="inv__body"><strong>Jason Colapietro</strong> (Johnny Suede) is the Founder and CEO of Suede Labs AI and a published author. The internet upgraded access; AI upgraded creation; the next layer has to upgrade ownership. Read the <a href="/jason-colapietro/">founder profile</a> and the thesis book <a href="/book/">Stake Your Claim</a>.</p>
       </div>
     </section>
 
