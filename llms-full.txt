@@ -1,9 +1,9 @@
-Suede Labs
-==========
+Suede Labs AI
+=============
 
 URL: https://suedeai.org
 Type: Creative-rails infrastructure company for the AI era
-Founder: Jason Colapietro (Founder and CEO, Suede Labs; publishes under the pen name Johnny Suede)
+Founder: Jason Colapietro (Founder and CEO, Suede Labs AI; publishes under the pen name Johnny Suede)
 Flagship product: Suede AI (https://suedeai.ai / https://app.suedeai.ai)
 
 Suede Labs is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede Labs builds for that layer.
@@ -12,10 +12,40 @@ Suede Labs is building the creative rails for the AI era. The thesis is straight
 Recent press
 ------------
 
+Programming Insider · July 6, 2026 · In the Age of Infinite Content, Spam Is Instant Death
+URL: https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/
+
+Jason Colapietro argues that content spam is dead as a strategy and that AI agents now need proof, not volume. Suede Labs AI was built on the premise that provenance and reputation, not keyword output, are what make a business legible to agents.
+
 TechBullion · May 25, 2026 · Jason Colapietro's Suede Labs AI Launches iOS Apps, Codex and Claude Skills, and the Musicians Terminal
 URL: https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/
 
 Third-party coverage of Suede Labs' May 2026 product wave: the iOS app line now including Suede: AI Music Generator, Suede Guitar Tuner & Studio, and Suede Studio Voice; Codex and Claude developer skills for AI coding agents; and the Musicians Terminal — a working-musician console for catalog management, rights routing, royalty splits, and licensing decisions. The piece grounds the creator-ownership thesis in shipped product surfaces rather than slideware.
+
+Altcoin Investor · May 9, 2026 · How AI, Blockchain, and On-Chain IP Are Changing Creator Ownership
+URL: https://altcoininvestor.com/ai-blockchain-on-chain-ip-creator-ownership/
+
+Coverage of Suede Labs AI's creator-first positioning in on-chain IP: rights passports, royalty routing, sync metadata, vaults, and multi-chain ownership infrastructure.
+
+TechBullion · February 27, 2026 · Suede Labs Advances in the Avalanche Build Games With Massive Infrastructure Play
+URL: https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/
+
+Coverage of Suede Labs advancing in the Avalanche Build Games with a full-stack on-chain IP and rights registry that lets creators register, protect, and monetize work through smart contracts.
+
+TechBullion · February 9, 2026 · Best Suno Alternatives in 2026: Suede Labs and Top Competitors
+URL: https://techbullion.com/best-suno-alternatives-in-2026-suede-labs-and-top-competitors/
+
+TechBullion names Suede Labs the leading alternative for 2026, citing creator ownership infrastructure with distribution, personalized models, real-time royalties, and blockchain-based IP protection.
+
+TechBullion · January 7, 2026 · Suede Labs Brings AI-Powered Creative Tools to Students
+URL: https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/
+
+Coverage of Suede Labs' self-funded education deployments bringing AI-powered creative tools and IP-first thinking to students in African classrooms.
+
+TechBullion · December 15, 2025 · Suede Labs Launches a Comprehensive On-Chain IP Authentication System
+URL: https://techbullion.com/suede-labs-launches-a-comprehensive-on-chain-ip-authentication-system/
+
+Coverage of the launch of Suede Labs' on-chain IP registry, provenance layer, licensing, and monetization rails.
 
 
 The Suede Labs thesis
