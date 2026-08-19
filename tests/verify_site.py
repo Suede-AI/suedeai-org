@@ -108,6 +108,11 @@ def same_as_urls(node: dict) -> set[str]:
 def main() -> int:
     failures: list[str] = []
     stale_founder_url_pattern = r'"@id"\s*:\s*"https://suedeai\.ai/founder#person"[\s\S]{0,2000}?"url"\s*:\s*"https://suedeai\.org/jason-colapietro/"'
+    # Phrases that must NEVER appear on a public surface. The book-count entries
+    # below are stale-claim guards, not claims: the shelf reached six titles on
+    # 2026-08-19 when The Screenshot shipped, so "five books" is now wrong and
+    # stays banned. Do not "update" these to the current count — that would ban
+    # the true claim instead of the stale one.
     public_regression_phrases = [
         "Published author of five books",
         "published author of five books",
