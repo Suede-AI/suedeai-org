@@ -109,15 +109,19 @@ def main() -> int:
     failures: list[str] = []
     stale_founder_url_pattern = r'"@id"\s*:\s*"https://suedeai\.ai/founder#person"[\s\S]{0,2000}?"url"\s*:\s*"https://suedeai\.org/jason-colapietro/"'
     # Phrases that must NEVER appear on a public surface. The book-count entries
-    # below are stale-claim guards, not claims: the shelf reached six titles on
-    # 2026-08-19 when The Screenshot shipped, so "five books" is now wrong and
-    # stays banned. Do not "update" these to the current count — that would ban
-    # the true claim instead of the stale one.
+    # below are stale-claim guards, not claims. Amazon is the canonical total of
+    # published books, so the published count is four; the shelf still carries
+    # six titles, the other two named as self-hosted works. Every count this
+    # estate has previously published — five, six, three — is therefore stale
+    # and stays banned. Do not "update" these to the current count; that would
+    # ban the true claim instead of the stale one.
     public_regression_phrases = [
         "Published author of five books",
         "published author of five books",
         "author of five books",
         "5x published author",
+        "author of six books",
+        "six published books",
         "three published books",
         "Suede Studio Guitar",
         "suede-studio-guitar",
