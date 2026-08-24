@@ -64,11 +64,14 @@
         "url": "https://app.suedeai.ai/.well-known/x402.json",
         "termsOfService": "https://suedeai.org/terms/",
         "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USDC",
-          "availability": "https://schema.org/InStock",
-          "url": "https://app.suedeai.ai/.well-known/x402.json"
-        }
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "0.15",
+            "highPrice": "4.99",
+            "offerCount": 3,
+            "availability": "https://schema.org/InStock",
+            "url": "https://app.suedeai.ai/.well-known/x402.json"
+          }
       },
       {
         "@type": "SoftwareApplication",
@@ -80,10 +83,13 @@
         "url": "https://app.suedeai.ai/.well-known/agent-card.json",
         "identifier": "019e3991-374d-75f3-a6b8-17ff309b4cd2",
         "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USDC",
-          "availability": "https://schema.org/InStock"
-        },
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "0.15",
+            "highPrice": "4.99",
+            "offerCount": 3,
+            "availability": "https://schema.org/InStock"
+          },
         "provider": { "@type": "Organization", "name": "Suede Labs", "url": "https://suedeai.org/" }
       },
       {
