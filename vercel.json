@@ -38,6 +38,26 @@
       "permanent": true
     },
     {
+      "source": "/bringing-ip-ai-powered-creative-tools-to-students/",
+      "destination": "/creator-ownership/",
+      "permanent": true
+    },
+    {
+      "source": "/build-your-community-the-art-of-derivatives-remixes/",
+      "destination": "/programmable-ip/",
+      "permanent": true
+    },
+    {
+      "source": "/the-first-fully-autonomous-agentic-music-marketplace/",
+      "destination": "/agentic-commerce/",
+      "permanent": true
+    },
+    {
+      "source": "/the-truth-engine-for-digital-ip-and-its-live-now/",
+      "destination": "/proof-of-creation/",
+      "permanent": true
+    },
+    {
       "source": "/blog",
       "destination": "/",
       "permanent": true
@@ -45,6 +65,36 @@
     {
       "source": "/blog/",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/voice/",
+      "destination": "/voice/support/",
       "permanent": true
     },
     {
