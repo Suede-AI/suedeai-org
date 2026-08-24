@@ -20,6 +20,19 @@ LEGACY_REDIRECTS = {
     "/home/": "/",
     "/guide/": "/book/",
     "/ai/": "/",
+    "/the-hidden-tax-stealing-time-money-and-control/": "/creator-ownership/",
+    "/how-record-labels-trap-artists-the-kreayshawn-case-study/": "/royalties/",
+    "/the-future-of-music-rights-technology-meets-creativity/": "/programmable-ip/",
+    "/beyond-points-4-ways-suede-labs-is-redefining-user-rewards/": "/royalties/",
+    "/bringing-ip-ai-powered-creative-tools-to-students/": "/creator-ownership/",
+    "/build-your-community-the-art-of-derivatives-remixes/": "/programmable-ip/",
+    "/the-first-fully-autonomous-agentic-music-marketplace/": "/agentic-commerce/",
+    "/the-truth-engine-for-digital-ip-and-its-live-now/": "/proof-of-creation/",
+    "/feed/": "/",
+    "/comments/feed/": "/",
+    "/sitemap_index.xml": "/sitemap.xml",
+    "/wp-sitemap.xml": "/sitemap.xml",
+    "/voice/": "/voice/support/",
 }
 
 NOINDEX_PAGES = [
