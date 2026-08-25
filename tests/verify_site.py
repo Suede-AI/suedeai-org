@@ -2,6 +2,7 @@ from pathlib import Path
 import re
 import sys
 import json
+import struct
 
 from pypdf import PdfReader
 
@@ -15,6 +16,8 @@ OFFICIAL_CASE_CITATION = "Bartz et al. v. Anthropic PBC, No. 3:24-cv-05417-AMO (
 UNRELATED_ORGANIZATION_WIKIDATA = "https://www.wikidata.org/wiki/Q131489584"
 FOUNDER_WIKIDATA = "https://www.wikidata.org/wiki/Q140235755"
 FOUNDER_OG_IMAGE_URL = f"{SITE_URL}/assets/img/og-jason-colapietro.png"
+FAVICON_MAX_BYTES = 12_000
+FAVICON_REQUIRED_SIZES = [(16, 16), (32, 32), (48, 48)]
 CANONICAL_ORGANIZATION_ID = "https://suedeai.ai/#organization"
 CANONICAL_ORGANIZATION_SAME_AS = [
     "https://suedeai.org/",
@@ -130,6 +133,37 @@ def same_as_urls(node: dict) -> set[str]:
     if isinstance(same_as, list):
         return {value for value in same_as if isinstance(value, str)}
     return set()
+
+
+def ico_sizes(path: Path) -> list[tuple[int, int]]:
+    data = path.read_bytes()
+    if len(data) < 6:
+        raise ValueError("ICO header is truncated")
+    reserved, icon_type, image_count = struct.unpack_from("<HHH", data)
+    if reserved != 0 or icon_type != 1:
+        raise ValueError("expected a Windows icon file")
+    if len(data) < 6 + (16 * image_count):
+        raise ValueError("ICO directory is truncated")
+
+    sizes: list[tuple[int, int]] = []
+    for index in range(image_count):
+        entry_offset = 6 + (16 * index)
+        width_byte, height_byte = struct.unpack_from("BB", data, entry_offset)
+        width, height = width_byte or 256, height_byte or 256
+        payload_size, payload_offset = struct.unpack_from("<II", data, entry_offset + 8)
+        payload_end = payload_offset + payload_size
+        if payload_size == 0 or payload_offset < 6 + (16 * image_count) or payload_end > len(data):
+            raise ValueError(f"{width}x{height} frame payload is out of bounds")
+        payload = data[payload_offset:payload_end]
+        if len(payload) < 24 or payload[:8] != b"\x89PNG\r\n\x1a\n" or payload[12:16] != b"IHDR":
+            raise ValueError(f"{width}x{height} frame is not a valid embedded PNG")
+        png_width, png_height = struct.unpack_from(">II", payload, 16)
+        if (png_width, png_height) != (width, height):
+            raise ValueError(
+                f"{width}x{height} directory entry contains a {png_width}x{png_height} PNG"
+            )
+        sizes.append((width, height))
+    return sizes
 
 
 def main() -> int:
@@ -532,6 +566,22 @@ def main() -> int:
     ]:
         if not asset.exists():
             failures.append(f"{asset.relative_to(ROOT)}: file does not exist")
+
+    if favicon_ico.exists():
+        favicon_bytes = favicon_ico.stat().st_size
+        if favicon_bytes > FAVICON_MAX_BYTES:
+            failures.append(
+                f"favicon.ico: expected at most {FAVICON_MAX_BYTES} bytes, found {favicon_bytes}"
+            )
+        try:
+            favicon_sizes = ico_sizes(favicon_ico)
+        except ValueError as error:
+            failures.append(f"favicon.ico: {error}")
+        else:
+            if favicon_sizes != FAVICON_REQUIRED_SIZES:
+                failures.append(
+                    f"favicon.ico: expected frames {FAVICON_REQUIRED_SIZES}, found {favicon_sizes}"
+                )
 
     if pdf_asset.exists():
         reader = PdfReader(str(pdf_asset))
