@@ -76,7 +76,7 @@ Jason Colapietro, who publishes under the pen name Johnny Suede, is the founder 
 
 ## Contact
 
-- Email: info@suedeai.org
+- Email: info@suedeai.ai
 - Talk to Suede: https://suedeai.org/contact/
 
 ## AI agent and scraping policy

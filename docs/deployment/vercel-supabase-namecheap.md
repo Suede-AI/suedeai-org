@@ -4,7 +4,7 @@
 
 - `suedeai.org` served from Vercel
 - forms captured through Vercel serverless functions + Supabase
-- book requests compiled in Supabase for manual delivery from `info@suedeai.org`
+- book requests compiled in Supabase for manual delivery from `info@suedeai.ai`
 - Namecheap used as registrar and DNS
 - `suedeai.ai` remains the broader main site
 
@@ -38,7 +38,7 @@ Use [.env.example](/Users/jason/Documents/CodexXcampaign/SEO Webisite/.env.examp
 
 For Supabase capture, use the publishable key with the insert-only RLS policies from [schema.sql](/Users/jason/Documents/CodexXcampaign/SEO Webisite/supabase/schema.sql). Do not use the service-role key in Vercel for this website.
 
-Use `info@suedeai.org` as the send-from address for reader preview delivery and contact notifications.
+Use `info@suedeai.ai` as the send-from address for reader preview delivery and contact notifications.
 
 ## 3. Import Into Vercel
 

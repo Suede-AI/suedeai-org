@@ -171,7 +171,7 @@ Stake Your Claim is Jason Colapietro's thesis on AI ownership, authorship, prove
 Contact
 -------
 
-- Email: info@suedeai.org
+- Email: info@suedeai.ai
 - Talk to Suede: https://suedeai.org/contact/
 - Marketing site: https://suedeai.org/
 - Product app: https://app.suedeai.ai/

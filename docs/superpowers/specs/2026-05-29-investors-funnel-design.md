@@ -203,8 +203,8 @@ Open PRs #3/#5/#6 touch `index.html` and `jason-colapietro/index.html`. This wor
 
 ```
 SUPABASE_INVESTOR_TABLE=investor_leads
-INVESTOR_EMAIL_FROM=info@suedeai.org
-INVESTOR_NOTIFY_TO=info@suedeai.org
+INVESTOR_EMAIL_FROM=info@suedeai.ai
+INVESTOR_NOTIFY_TO=info@suedeai.ai
 INVESTOR_AUTORESPONDER=false
 INVESTOR_DECK_URL=
 INVESTOR_CALENDAR_URL=

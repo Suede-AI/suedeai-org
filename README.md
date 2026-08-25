@@ -56,7 +56,7 @@ Optional environment variables:
 
 Current send-from recommendation:
 
-- `info@suedeai.org` for book delivery and contact notifications
+- `info@suedeai.ai` for book delivery and contact notifications
 
 Suggested Supabase tables:
 
