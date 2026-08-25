@@ -15,6 +15,20 @@ OFFICIAL_CASE_CITATION = "Bartz et al. v. Anthropic PBC, No. 3:24-cv-05417-AMO (
 UNRELATED_ORGANIZATION_WIKIDATA = "https://www.wikidata.org/wiki/Q131489584"
 FOUNDER_WIKIDATA = "https://www.wikidata.org/wiki/Q140235755"
 FOUNDER_OG_IMAGE_URL = f"{SITE_URL}/assets/img/og-jason-colapietro.png"
+CANONICAL_ORGANIZATION_ID = "https://suedeai.ai/#organization"
+CANONICAL_ORGANIZATION_SAME_AS = [
+    "https://suedeai.org/",
+    "https://x.com/AISUEDE",
+    "https://github.com/Suede-AI",
+    "https://www.youtube.com/@aisuede",
+    "https://www.instagram.com/suedeai/",
+    "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
+    "https://t.me/SUEDEAI",
+    "https://linktr.ee/suedelabsai",
+    "https://www.crunchbase.com/organization/suede-labs-ai",
+    "https://www.linkedin.com/company/suede-labs-ai",
+    "https://www.wikidata.org/wiki/Q141169484",
+]
 
 LEGACY_REDIRECTS = {
     "/home/": "/",
@@ -259,6 +273,36 @@ def main() -> int:
         people = [node for node in nodes if node_has_type(node, "Person")]
         if not organizations:
             failures.append(f"{relative_path}: missing Organization JSON-LD node")
+        if schema_path == home_path:
+            canonical_organizations = [
+                organization
+                for organization in organizations
+                if organization.get("@id") == CANONICAL_ORGANIZATION_ID
+            ]
+            if len(canonical_organizations) != 1:
+                failures.append(
+                    f"{relative_path}: expected exactly one Organization JSON-LD node with @id {CANONICAL_ORGANIZATION_ID}"
+                )
+            else:
+                raw_same_as = canonical_organizations[0].get("sameAs")
+                valid_same_as_list = (
+                    isinstance(raw_same_as, list)
+                    and all(isinstance(url, str) for url in raw_same_as)
+                    and len(raw_same_as) == len(set(raw_same_as))
+                )
+                if not valid_same_as_list:
+                    failures.append(
+                        f"{relative_path}: Organization sameAs must be a unique list of URL strings"
+                    )
+                organization_same_as = same_as_urls(canonical_organizations[0])
+                if valid_same_as_list and raw_same_as != CANONICAL_ORGANIZATION_SAME_AS:
+                    canonical_same_as = set(CANONICAL_ORGANIZATION_SAME_AS)
+                    missing = sorted(canonical_same_as - organization_same_as)
+                    unexpected = sorted(organization_same_as - canonical_same_as)
+                    failures.append(
+                        f"{relative_path}: Organization sameAs differs from the canonical entity set; "
+                        f"missing={missing}, unexpected={unexpected}, order_matches=False"
+                    )
         if not people:
             failures.append(f"{relative_path}: missing Person JSON-LD node")
         for organization in organizations:
