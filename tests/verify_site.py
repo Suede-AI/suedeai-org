@@ -195,6 +195,10 @@ def main() -> int:
         "24 live x402 paid endpoints",
         "24 production paid endpoints",
         "24 agent-payable x402 endpoints",
+        " ".join(("Suede", "Web", "Systems")),
+        "".join(("suede", "web", "systems")) + ".ai",
+        "-".join(("full", "stack")) + " GEO",
+        "-".join(("full", "stack")) + " AI visibility",
     ]
     dead_asins = [
         "B0GMBBWHMQ",
@@ -359,7 +363,7 @@ def main() -> int:
             failures.append(
                 f"{relative_path}: founder person @id uses supporting profile URL instead of https://suedeai.ai/founder"
             )
-        lower_html_text = html_text.lower()
+        lower_html_text = " ".join(html_text.lower().split())
         for phrase in public_regression_phrases:
             if phrase.lower() in lower_html_text:
                 relative_path = html_path.relative_to(ROOT).as_posix()
@@ -382,7 +386,7 @@ def main() -> int:
     for text_path in [ROOT / "llms.txt", ROOT / "llms-full.txt"]:
         if text_path.exists():
             text = read_text(text_path)
-            lower_text = text.lower()
+            lower_text = " ".join(text.lower().split())
             for phrase in public_regression_phrases:
                 if phrase.lower() in lower_text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
