@@ -434,6 +434,21 @@
     border: 0;
   }
 
+  /* thead is hidden above, so without these the stacked rows render as an
+     unlabelled run of values with no way to tell which column is which. */
+  .inv__ledger td::before {
+    content: attr(data-label) ": ";
+    color: var(--inv-cyan);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .inv__ledger td:not([data-label])::before {
+    content: none;
+  }
+
   .inv__ledger tr {
     display: block;
     padding: 0.9rem 0;
