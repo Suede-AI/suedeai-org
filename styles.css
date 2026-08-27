@@ -1986,9 +1986,15 @@ a.eco-card {
    Granola-inspired light editorial system for suedeai.org.
    Keeps Suede's proof/ownership content, but moves the public face from
    institutional terminal to warm product artifact.
+
+   Deliberately scoped to body.editorial rather than re-declaring :root. This
+   sheet is loaded only by index.html, so a second :root silently shadowed the
+   canonical dark tokens defined above and made 61% of this file dead as a
+   token source with nothing to indicate it. Scoping keeps both systems
+   inspectable and makes the override surface explicit.
    ========================================================================== */
 
-:root {
+body.editorial {
   --paper: #f8f5ee;
   --paper-warm: #efe9da;
   --paper-green: #dce96a;
@@ -2013,9 +2019,9 @@ a.eco-card {
   --shadow-tight: 0 12px 28px rgba(49, 45, 37, 0.12);
   --radius: 8px;
   --radius-sm: 8px;
-  --text-display: 5.35rem;
-  --text-h1: 3.15rem;
-  --text-h2: 2.35rem;
+  --text-display: clamp(3.1rem, 1.5rem + 6.4vw, 5.35rem);
+  --text-h1: clamp(2.1rem, 1.4rem + 2.8vw, 3.15rem);
+  --text-h2: clamp(1.75rem, 1.3rem + 1.8vw, 2.35rem);
   --text-h3: 1.28rem;
   --text-lede: 1.24rem;
   --text-base: 1rem;
@@ -2024,12 +2030,13 @@ a.eco-card {
   --maxw: 1200px;
 }
 
-html {
-  background: var(--paper);
+/* html is the parent of body, so it cannot read tokens scoped to
+   body.editorial. Guarded on the class and stated literally. */
+html:has(body.editorial) {
+  background: #f8f5ee;
 }
 
-body {
-  overflow-x: hidden;
+body.editorial {
   background:
     linear-gradient(90deg, rgba(36, 36, 36, 0.035) 1px, transparent 1px),
     linear-gradient(180deg, rgba(36, 36, 36, 0.03) 1px, transparent 1px),
@@ -2132,6 +2139,10 @@ p {
 }
 
 .hero {
+  /* .hero::before is positioned past the right edge on purpose. Clipping it
+     here replaces the body-level overflow-x:hidden, which created a scroll
+     container that breaks position:sticky descendants in Safari. */
+  overflow: clip;
   min-height: 680px;
   padding: 112px 0 34px;
   border-bottom: 0;
@@ -3002,12 +3013,6 @@ h3 {
 }
 
 @media (max-width: 1180px) {
-  :root {
-    --text-display: 4.45rem;
-    --text-h1: 2.85rem;
-    --space-gutter: 1.5rem;
-  }
-
   .hero {
     background:
       linear-gradient(90deg, transparent 0 50%, var(--paper-green) 50% 58%, transparent 58%),
@@ -3020,12 +3025,6 @@ h3 {
 }
 
 @media (max-width: 900px) {
-  :root {
-    --text-display: 4rem;
-    --text-h1: 2.45rem;
-    --space-section: 4.75rem;
-  }
-
   .site-header {
     grid-template-columns: 1fr auto;
   }
@@ -3084,13 +3083,6 @@ h3 {
 }
 
 @media (max-width: 680px) {
-  :root {
-    --text-display: 3.1rem;
-    --text-h1: 2.1rem;
-    --text-lede: 1.12rem;
-    --space-gutter: 1rem;
-  }
-
   .site-header {
     left: 10px;
     right: 10px;

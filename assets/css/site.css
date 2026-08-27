@@ -332,8 +332,11 @@ h3 {
 .hero h1,
 .page-hero h1 {
   margin: 0 0 18px;
-  font-size: 4.6rem;
-  line-height: 1.02;
+  /* 2.6rem at 360px -> 4.6rem at 1400px. Replaces stepped overrides that
+     dropped the H1 by 19.2px across a single pixel of resize at 680/681. */
+  font-size: clamp(2.6rem, 1.4rem + 3.6vw, 4.6rem);
+  line-height: 1.03;
+  text-wrap: balance;
   letter-spacing: -0.01em;
   color: var(--text-primary);
 }
@@ -425,7 +428,7 @@ h3 {
 .section h2,
 .page-hero h2 {
   margin: 0 0 14px;
-  font-size: 2.9rem;
+  font-size: clamp(2rem, 1.4rem + 1.9vw, 2.9rem);
   line-height: 1.05;
   letter-spacing: -0.01em;
   color: var(--text-primary);
@@ -921,7 +924,8 @@ button[aria-disabled="true"] {
 
 .book-hero__copy h1 {
   margin: 0 0 18px;
-  font-size: 4rem;
+  font-size: clamp(2.45rem, 1.5rem + 2.9vw, 4rem);
+  text-wrap: balance;
   line-height: 1.02;
   letter-spacing: -0.01em;
   color: var(--text-primary);
@@ -1215,18 +1219,6 @@ button[aria-disabled="true"] {
 }
 
 @media (max-width: 1100px) {
-  .hero h1,
-  .page-hero h1 {
-    font-size: 3.8rem;
-  }
-
-  .section h2,
-  .page-hero h2,
-  .thesis-panel h1,
-  .thesis-panel h2 {
-    font-size: 2.45rem;
-  }
-
   .book-hero__copy h1 {
     font-size: 3.2rem;
   }
@@ -1304,23 +1296,6 @@ button[aria-disabled="true"] {
 
   .hero {
     padding-top: 54px;
-  }
-
-  .hero h1,
-  .page-hero h1 {
-    font-size: 2.6rem;
-    line-height: 1.04;
-  }
-
-  .section h2,
-  .page-hero h2,
-  .thesis-panel h1,
-  .thesis-panel h2 {
-    font-size: 2rem;
-  }
-
-  .book-hero__copy h1 {
-    font-size: 2.45rem;
   }
 
   .button-row,
