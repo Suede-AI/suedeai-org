@@ -2,6 +2,7 @@ from pathlib import Path
 import re
 import sys
 import json
+import struct
 
 from pypdf import PdfReader
 
@@ -15,6 +16,22 @@ OFFICIAL_CASE_CITATION = "Bartz et al. v. Anthropic PBC, No. 3:24-cv-05417-AMO (
 UNRELATED_ORGANIZATION_WIKIDATA = "https://www.wikidata.org/wiki/Q131489584"
 FOUNDER_WIKIDATA = "https://www.wikidata.org/wiki/Q140235755"
 FOUNDER_OG_IMAGE_URL = f"{SITE_URL}/assets/img/og-jason-colapietro.png"
+FAVICON_MAX_BYTES = 12_000
+FAVICON_REQUIRED_SIZES = [(16, 16), (32, 32), (48, 48)]
+CANONICAL_ORGANIZATION_ID = "https://suedeai.ai/#organization"
+CANONICAL_ORGANIZATION_SAME_AS = [
+    "https://suedeai.org/",
+    "https://x.com/AISUEDE",
+    "https://github.com/Suede-AI",
+    "https://www.youtube.com/@aisuede",
+    "https://www.instagram.com/suedeai/",
+    "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
+    "https://t.me/SUEDEAI",
+    "https://linktr.ee/suedelabsai",
+    "https://www.crunchbase.com/organization/suede-labs-ai",
+    "https://www.linkedin.com/company/suede-labs-ai",
+    "https://www.wikidata.org/wiki/Q141169484",
+]
 
 LEGACY_REDIRECTS = {
     "/home/": "/",
@@ -118,6 +135,37 @@ def same_as_urls(node: dict) -> set[str]:
     return set()
 
 
+def ico_sizes(path: Path) -> list[tuple[int, int]]:
+    data = path.read_bytes()
+    if len(data) < 6:
+        raise ValueError("ICO header is truncated")
+    reserved, icon_type, image_count = struct.unpack_from("<HHH", data)
+    if reserved != 0 or icon_type != 1:
+        raise ValueError("expected a Windows icon file")
+    if len(data) < 6 + (16 * image_count):
+        raise ValueError("ICO directory is truncated")
+
+    sizes: list[tuple[int, int]] = []
+    for index in range(image_count):
+        entry_offset = 6 + (16 * index)
+        width_byte, height_byte = struct.unpack_from("BB", data, entry_offset)
+        width, height = width_byte or 256, height_byte or 256
+        payload_size, payload_offset = struct.unpack_from("<II", data, entry_offset + 8)
+        payload_end = payload_offset + payload_size
+        if payload_size == 0 or payload_offset < 6 + (16 * image_count) or payload_end > len(data):
+            raise ValueError(f"{width}x{height} frame payload is out of bounds")
+        payload = data[payload_offset:payload_end]
+        if len(payload) < 24 or payload[:8] != b"\x89PNG\r\n\x1a\n" or payload[12:16] != b"IHDR":
+            raise ValueError(f"{width}x{height} frame is not a valid embedded PNG")
+        png_width, png_height = struct.unpack_from(">II", payload, 16)
+        if (png_width, png_height) != (width, height):
+            raise ValueError(
+                f"{width}x{height} directory entry contains a {png_width}x{png_height} PNG"
+            )
+        sizes.append((width, height))
+    return sizes
+
+
 def main() -> int:
     failures: list[str] = []
     stale_founder_url_pattern = r'"@id"\s*:\s*"https://suedeai\.ai/founder#person"[\s\S]{0,2000}?"url"\s*:\s*"https://suedeai\.org/jason-colapietro/"'
@@ -147,6 +195,10 @@ def main() -> int:
         "24 live x402 paid endpoints",
         "24 production paid endpoints",
         "24 agent-payable x402 endpoints",
+        " ".join(("Suede", "Web", "Systems")),
+        "".join(("suede", "web", "systems")) + ".ai",
+        "-".join(("full", "stack")) + " GEO",
+        "-".join(("full", "stack")) + " AI visibility",
     ]
     dead_asins = [
         "B0GMBBWHMQ",
@@ -259,6 +311,36 @@ def main() -> int:
         people = [node for node in nodes if node_has_type(node, "Person")]
         if not organizations:
             failures.append(f"{relative_path}: missing Organization JSON-LD node")
+        if schema_path == home_path:
+            canonical_organizations = [
+                organization
+                for organization in organizations
+                if organization.get("@id") == CANONICAL_ORGANIZATION_ID
+            ]
+            if len(canonical_organizations) != 1:
+                failures.append(
+                    f"{relative_path}: expected exactly one Organization JSON-LD node with @id {CANONICAL_ORGANIZATION_ID}"
+                )
+            else:
+                raw_same_as = canonical_organizations[0].get("sameAs")
+                valid_same_as_list = (
+                    isinstance(raw_same_as, list)
+                    and all(isinstance(url, str) for url in raw_same_as)
+                    and len(raw_same_as) == len(set(raw_same_as))
+                )
+                if not valid_same_as_list:
+                    failures.append(
+                        f"{relative_path}: Organization sameAs must be a unique list of URL strings"
+                    )
+                organization_same_as = same_as_urls(canonical_organizations[0])
+                if valid_same_as_list and raw_same_as != CANONICAL_ORGANIZATION_SAME_AS:
+                    canonical_same_as = set(CANONICAL_ORGANIZATION_SAME_AS)
+                    missing = sorted(canonical_same_as - organization_same_as)
+                    unexpected = sorted(organization_same_as - canonical_same_as)
+                    failures.append(
+                        f"{relative_path}: Organization sameAs differs from the canonical entity set; "
+                        f"missing={missing}, unexpected={unexpected}, order_matches=False"
+                    )
         if not people:
             failures.append(f"{relative_path}: missing Person JSON-LD node")
         for organization in organizations:
@@ -281,7 +363,7 @@ def main() -> int:
             failures.append(
                 f"{relative_path}: founder person @id uses supporting profile URL instead of https://suedeai.ai/founder"
             )
-        lower_html_text = html_text.lower()
+        lower_html_text = " ".join(html_text.lower().split())
         for phrase in public_regression_phrases:
             if phrase.lower() in lower_html_text:
                 relative_path = html_path.relative_to(ROOT).as_posix()
@@ -304,7 +386,7 @@ def main() -> int:
     for text_path in [ROOT / "llms.txt", ROOT / "llms-full.txt"]:
         if text_path.exists():
             text = read_text(text_path)
-            lower_text = text.lower()
+            lower_text = " ".join(text.lower().split())
             for phrase in public_regression_phrases:
                 if phrase.lower() in lower_text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
@@ -488,6 +570,22 @@ def main() -> int:
     ]:
         if not asset.exists():
             failures.append(f"{asset.relative_to(ROOT)}: file does not exist")
+
+    if favicon_ico.exists():
+        favicon_bytes = favicon_ico.stat().st_size
+        if favicon_bytes > FAVICON_MAX_BYTES:
+            failures.append(
+                f"favicon.ico: expected at most {FAVICON_MAX_BYTES} bytes, found {favicon_bytes}"
+            )
+        try:
+            favicon_sizes = ico_sizes(favicon_ico)
+        except ValueError as error:
+            failures.append(f"favicon.ico: {error}")
+        else:
+            if favicon_sizes != FAVICON_REQUIRED_SIZES:
+                failures.append(
+                    f"favicon.ico: expected frames {FAVICON_REQUIRED_SIZES}, found {favicon_sizes}"
+                )
 
     if pdf_asset.exists():
         reader = PdfReader(str(pdf_asset))

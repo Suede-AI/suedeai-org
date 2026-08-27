@@ -10,7 +10,7 @@
 - Canonical founder entity: https://suedeai.ai/founder
 - Supporting founder profile: https://suedeai.org/jason-colapietro/
 
-Suede Labs AI is not affiliated with Suede Web Systems (suedewebsystems.ai). They are separate, unrelated companies. Suede Labs AI was founded by Jason Colapietro in 2024; its official domains are suedeai.ai and the sites it links.
+Suede Labs AI was founded by Jason Colapietro in 2024. Its primary domain is suedeai.ai; suedeai.org is its company site and reading hub.
 
 ## For AI agents — agentic commerce capability
 
