@@ -4,7 +4,7 @@
 
 - Founder: Jason Colapietro (Founder and CEO, Suede Labs AI; publishes under the pen name Johnny Suede)
 - Marketing site: https://suedeai.org/
-- Product app: https://app.suedeai.ai/
+- Product app: https://suedeai.ai/
 - Product brand site: https://suedeai.ai/
 - Status: Active
 - Canonical founder entity: https://suedeai.ai/founder

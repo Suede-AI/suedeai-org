@@ -708,6 +708,33 @@ h3 {
   color: var(--text-muted);
 }
 
+/* Every Suede property, priority-ordered, on every page. Modelled on
+   .site-footer__legal below so it inherits the same hairline and rhythm. */
+.site-footer__ecosystem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  padding: 14px 0;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-footer__ecosystem a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-footer__ecosystem a:hover,
+.site-footer__ecosystem a:focus-visible {
+  color: var(--registry-cyan);
+}
+
 .site-footer__legal {
   display: flex;
   flex-wrap: wrap;
