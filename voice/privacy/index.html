@@ -55,7 +55,7 @@
       "url": "https://suedeai.org/",
       "email": "info@suedeai.ai"
     },
-    "dateModified": "2026-08-09"
+    "dateModified": "2026-08-26"
   }
   </script>
 </head>
@@ -78,7 +78,7 @@
       <span class="eyebrow">Suede Voice · Legal</span>
       <h1>Suede Voice Privacy Policy</h1>
       <p class="lede"><strong>Suede Voice</strong> on Android (package <code>ai.suedeai.suedevoice</code>) and on iOS shares one architectural commitment: <strong>your singing audio never leaves your device.</strong> This page explains what that means in practice, what information the app processes, and your rights as a user. Suede Voice is published by <strong>JC Investment Group LLC</strong>, a Florida limited liability company doing business as Suede AI ("we", "us", "our"). Suede Voice was previously listed as <strong>Suede Studio Voice</strong> and, before that, <strong>Suede Sing</strong>; this policy covers the same app under those earlier names.</p>
-      <p><strong>Last updated:</strong> August 9, 2026</p>
+      <p><strong>Last updated:</strong> August 26, 2026</p>
     </section>
 
     <div class="page-layout">
@@ -91,9 +91,10 @@
 
         <article class="panel">
           <h2>2. What is captured during a session</h2>
-          <p><strong>Microphone audio.</strong> During an active range test or practice session, the app records audio from your phone's microphone and processes it locally. Suede Voice keeps local WAV replays by default so you can review individual notes; you can turn off <em>Keep audio recordings</em> or delete all saved recordings from Settings at any time.</p>
+          <p><strong>Microphone audio.</strong> During an active range test or practice session, the app records audio from your phone's microphone and processes it locally. The range test keeps a local WAV replay of each attempted note <strong>by default</strong>, so you can review individual notes; you can turn off <em>Keep audio recordings</em> or delete all saved replays from Settings at any time. Practice, routines, calibration and the iOS Studio screen analyse sound as it arrives and write no file.</p>
+          <p><strong>The Recorder (iOS only).</strong> The Recorder is a separate feature whose purpose is to keep what you sing: every take is written to this device as a WAV, up to five minutes each, and stays until you delete it from the Recorder screen. The <em>Keep audio recordings</em> setting governs range-test replays and does not apply to takes. If you export a take through the iOS share sheet, that copy goes wherever you send it, and this policy stops at the point the file leaves the app.</p>
           <p><strong>Derived measurements.</strong> Numeric outputs of the on-device analysis — including range bounds, pitch and stability measurements, register classifications, calibration data, and exercise-completion timestamps — are stored locally in the app's private database so progress and recommendations remain available.</p>
-          <p><strong>Where they live.</strong> The database and replay files live inside the app's private sandbox. Android app backup is disabled for Suede Voice on Android, so its database and replay files are not included in Android cloud backup. Suede Voice on iOS explicitly excludes replay files from iCloud and iTunes backup; its local numeric database may be included in your encrypted iCloud device backup when iCloud Backup is enabled. Suede AI cannot access that backup.</p>
+          <p><strong>Where they live.</strong> The database and replay files live inside the app's private sandbox. Android app backup is disabled for Suede Voice on Android, so its database and replay files are not included in Android cloud backup. On iOS, the replay files, the Recorder takes and the results database are all explicitly excluded from iCloud and iTunes backup, so none of them are copied off the device that way. Your app preferences on iOS are ordinary device settings and are included in a device backup like any app's; they hold no audio and no measurements. Suede AI cannot access any backup.</p>
         </article>
 
         <article class="panel">
@@ -101,7 +102,8 @@
           <ul>
             <li>No account is created. There is no signup. There is no login.</li>
             <li>No name, email address, phone number, or contact information is requested or stored.</li>
-            <li>No third-party analytics, advertising SDKs, attribution SDKs, or tracking pixels are integrated into the app.</li>
+            <li>No third-party analytics, advertising, attribution, or crash-reporting SDKs, and no tracking pixels, are integrated into either app. No Firebase, Mixpanel, Amplitude, or equivalent.</li>
+            <li>No advertising identifier is read. Neither app touches the IDFA, the Android Advertising ID, or any equivalent, and neither shows the App Tracking Transparency prompt.</li>
             <li>No social-graph access, no contacts access, no photo-library access, no calendar access.</li>
             <li>No audio is transmitted to any server, including ours.</li>
             <li>No biometric identifiers are derived or stored.</li>
@@ -116,7 +118,9 @@
 
         <article class="panel">
           <h2>5. Network activity</h2>
-          <p>Suede Voice on Android has no internet permission and cannot make network requests. Suede Voice on iOS does not include a network client or a feature that uploads audio, measurements, or other app data. The app can open external links you deliberately tap — such as this privacy policy, the Terms of Use, or a Suede website — in your phone's browser.</p>
+          <p>Suede Voice on Android has no internet permission and cannot make a network request at all — the operating system enforces that, not our convention.</p>
+          <p>Suede Voice on iOS has no feature that uploads audio, measurements, replays, takes, or calibration data, and none of those ever leave the device. Two things on iOS do involve the network, and neither carries anything about your voice: Apple's StoreKit handles subscription billing, and the campaign-measurement feature described in the next section, which is switched off in the current release.</p>
+          <p>Both apps can open external links you deliberately tap — such as this privacy policy, the Terms of Use, or a Suede website — in your phone's browser.</p>
           <ul>
             <li>The linked website receives ordinary web-request information such as IP address, timestamp, and the page requested.</li>
             <li>No singing audio, replay file, calibration data, or session measurement is included in that browser request.</li>
@@ -124,29 +128,45 @@
         </article>
 
         <article class="panel">
-          <h2>6. Third-party services</h2>
+          <h2>6. Campaign measurement (iOS only, off in the current release)</h2>
+          <p>The iOS app contains an Apple Ads attribution feature. When it is switched on, and only then, it can report to a Suede-operated collector: a random install ID generated on this device and used for nothing else; the app's bundle ID, version and build; the timestamps of the first eligible launch and of the event; one event name &mdash; that the app was installed, or that you completed a range test for the first time; and an Apple AdServices attribution token, which Apple issues so a campaign can be matched to an install.</p>
+          <p>It never sends audio, replays, takes, measurements, results, or anything derived from how you sound.</p>
+          <p><strong>Current state: the feature is inert.</strong> No collector endpoint is configured in the shipped build, so the app cannot make an attribution request even if the setting were switched on. Nothing has been collected. Our App Store privacy answer is "Data Not Collected" and that is accurate today.</p>
+          <p>If that ever changes, this section, our App Store privacy answers and the app's privacy manifest change together, before the build ships. That is enforced rather than promised: an automated check in our build fails if a version of the app can collect while this page still says it cannot.</p>
+          <p>How it is governed, whenever it is live:</p>
+          <ul>
+            <li>It stays off until you answer a disclosure screen that explains it. An unanswered prompt is never treated as consent, and declining costs you no feature.</li>
+            <li>Settings &gt; Campaign measurement turns it off again at any time.</li>
+            <li>"Erase measurement data" deletes what was sent. Erasing is permanent: it also turns the feature off for good on that install.</li>
+            <li>Nothing is combined with data from other companies, and no profile follows you between apps or websites.</li>
+          </ul>
+          <p>The Android app has none of this. It has no attribution code and no internet permission, so the operating system itself prevents it from opening a network connection.</p>
+        </article>
+
+        <article class="panel">
+          <h2>7. Third-party services</h2>
           <p>Suede Voice does not integrate advertising, attribution, analytics, crash-reporting, or social-tracking SDKs that collect personal data. Exercise content and audio reference tones are bundled or synthesized on-device.</p>
         </article>
 
         <article class="panel">
-          <h2>7. Children</h2>
+          <h2>8. Children</h2>
           <p>The app is intended for general audiences, including young singers. Because the app does not send personal information to Suede AI, there is no Suede-AI-held information about a child to retain, share, or delete. Parents and guardians remain in control of microphone and notification permissions through device settings.</p>
         </article>
 
         <article class="panel">
-          <h2>8. Your rights and your data</h2>
-          <p>Because the app does not collect personal information about you, there is generally no Suede-AI-held data to access, correct, port, or delete on your behalf. On Android, Settings lets you delete saved WAV replays and reset calibration data; numeric session history remains local until you clear the app's storage or uninstall it. On iOS, uninstalling the app removes its local database from the device.</p>
-          <p>If you have questions about your rights under the CCPA/CPRA, GDPR, or another applicable privacy law as it relates to this app, email <a href="mailto:privacy@suedeai.org">privacy@suedeai.org</a>.</p>
+          <h2>9. Your rights and your data</h2>
+          <p>Because the app does not collect personal information about you, there is generally no Suede-AI-held data to access, correct, port, or delete on your behalf. On both platforms, Settings lets you delete saved WAV replays and reset calibration data. On iOS, Recorder takes are deleted individually from the Recorder screen &mdash; "Delete saved audio recordings" covers range-test replays and does not touch them. Numeric session history is deliberately kept when replays are deleted, so your progress charts survive; clear it by uninstalling the app, or on Android with the system's per-app "Clear storage".</p>
+          <p>If you have questions about your rights under the CCPA/CPRA, GDPR, or another applicable privacy law as it relates to this app, email <a href="mailto:info@suedeai.ai">info@suedeai.ai</a>.</p>
         </article>
 
         <article class="panel">
-          <h2>9. Changes to this policy</h2>
+          <h2>10. Changes to this policy</h2>
           <p>If a future version introduces a feature that processes data differently — for example, opt-in cloud sync or a coach-share export — we will update this policy and surface the change inside the app before that feature is enabled.</p>
         </article>
 
         <article class="panel">
-          <h2>10. Contact</h2>
-          <p>Privacy questions about Suede Voice? Email <a href="mailto:privacy@suedeai.org">privacy@suedeai.org</a> or write to JC Investment Group LLC at the address listed on our <a href="/contact/">contact page</a>.</p>
+          <h2>11. Contact</h2>
+          <p>Privacy questions about Suede Voice? Email <a href="mailto:info@suedeai.ai">info@suedeai.ai</a> or write to JC Investment Group LLC at the address listed on our <a href="/contact/">contact page</a>.</p>
         </article>
       </div>
 
