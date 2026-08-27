@@ -36,9 +36,61 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ContactPage","@id":"https://suedeai.org/contact/#contactpage","name":"Talk to Suede","url":"https://suedeai.org/contact/","description":"Contact Suede for partnerships, investors, proof-of-creation infrastructure, creator ownership, voice protection, likeness protection, and programmable IP.","dateModified":"2026-07-15","isPartOf":{"@id":"https://suedeai.org/#website"},"about":{"@id":"https://suedeai.ai/#organization"},"author":{"@type":"Person","@id":"https://suedeai.ai/founder#person","name":"Jason Colapietro","alternateName":"Johnny Suede","url":"https://suedeai.ai/founder","sameAs":["https://x.com/johnnysuede","https://github.com/JasonColapietro","https://www.linkedin.com/in/jasoncolapietro","https://www.youtube.com/@aisuede","https://suedeai.ai/founder","https://suedeai.org/jason-colapietro/","https://jasoncolapietro.substack.com/","https://agents.suedeai.ai/founder","https://www.crunchbase.com/person/jason-colapietro-d83e","https://www.wikidata.org/wiki/Q140235755"]}}
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://suedeai.org/#website",
+      "url": "https://suedeai.org/",
+      "name": "Suede Labs AI",
+      "alternateName": [
+        "Suede Labs",
+        "Suede AI"
+      ],
+      "publisher": {
+        "@id": "https://suedeai.ai/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://suedeai.ai/#organization",
+      "name": "Suede Labs AI",
+      "alternateName": [
+        "Suede Labs",
+        "Suede AI",
+        "Suede"
+      ],
+      "url": "https://suedeai.ai",
+      "logo": "https://suedeai.org/assets/img/og-suede.png",
+      "description": "Creator ownership infrastructure for the AI era. Register creative works, prove authorship, attach rights metadata, route royalties, and make IP callable by agents.",
+      "foundingDate": "2024",
+      "founder": {
+        "@id": "https://suedeai.ai/founder#person"
+      },
+      "sameAs": [
+        "https://suedeai.org/",
+        "https://x.com/AISUEDE",
+        "https://github.com/Suede-AI",
+        "https://www.youtube.com/@aisuede",
+        "https://www.instagram.com/suedeai/",
+        "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
+        "https://t.me/SUEDEAI",
+        "https://linktr.ee/suedelabsai",
+        "https://www.crunchbase.com/organization/suede-labs-ai",
+        "https://www.linkedin.com/company/suede-labs-ai",
+        "https://www.wikidata.org/wiki/Q141169484"
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
     <div class="site-header__inner">
       <a class="brand" href="/"><span class="brand__name">Suede Labs</span><span class="brand__tag">Talk to Suede</span></a>
       <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -50,7 +102,7 @@
       </nav>
     </div>
   </header>
-  <main class="site-shell">
+  <main id="main-content" class="site-shell">
     <section class="page-hero">
       <span class="eyebrow">Contact</span>
       <h1>Talk to Suede.</h1>
@@ -75,7 +127,7 @@
         </article>
         <article class="panel">
           <h2>See it working first.</h2>
-          <p>The full product, creator dashboards, and live agent-payable endpoints are at <a href="https://suedeai.ai/" rel="noopener">suedeai.ai</a> and <a href="https://app.suedeai.ai/" rel="noopener">app.suedeai.ai</a>.</p>
+          <p>The full product, creator dashboards, and live agent-payable endpoints are at <a href="https://suedeai.ai/" rel="noopener">suedeai.ai</a> and <a href="https://suedeai.ai/" rel="noopener">app.suedeai.ai</a>.</p>
         </article>
         <article class="panel panel--author">
           <p class="eyebrow">About the founder</p>
@@ -96,12 +148,12 @@
           <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
             <label>Company URL<input type="text" name="company_url" tabindex="-1" autocomplete="off"></label>
           </div>
-          <label>Name<input type="text" name="name" required></label>
-          <label>Email<input type="email" name="email" required></label>
+          <label>Name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
           <label>Topic<input type="text" name="topic"></label>
           <label>Message<textarea name="message" required></textarea></label>
           <button class="button button--primary" type="submit">Talk to Suede</button>
-          <p class="note" data-form-status hidden>Your note is being recorded so the Suede team can follow up directly.</p>
+          <p class="note" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
         </form>
       </aside>
     </div>
@@ -117,11 +169,24 @@
         <a href="/terms/">Terms</a>
         <a href="/privacy/">Privacy</a>
         <a href="/refund-policy/">Refund Policy</a>
+        <a href="/voice/support/">Suede Voice Support</a>
       </nav>
     </div>
+    <nav class="site-footer__ecosystem" aria-label="Suede properties">
+    <a href="https://suedeai.ai/" target="_blank" rel="noopener">Suede AI</a>
+    <a href="https://agents.suedeai.ai/" target="_blank" rel="noopener">Agent Studio</a>
+    <a href="https://seo.suedeai.ai/" target="_blank" rel="noopener">Suede GEO</a>
+    <a href="https://guitarhub.org/" target="_blank" rel="noopener">GuitarHub</a>
+    <a href="https://ip.suedeai.ai/" target="_blank" rel="noopener">IP Registry</a>
+    <a href="https://strumly.suedeai.ai/" target="_blank" rel="noopener">Strumly</a>
+    <a href="https://distro.suedeai.ai/" target="_blank" rel="noopener">Suede Distro</a>
+    <a href="https://muse.suedeai.ai/" target="_blank" rel="noopener">Muse</a>
+    <a href="https://social.suedeai.ai/" target="_blank" rel="noopener">Suede Social</a>
+    <a href="https://hub.suedeai.ai/" target="_blank" rel="noopener">Suede Hub</a>
+    </nav>
     <div class="founder-signature">
       <img src="/assets/img/founder-jason-colapietro.png" alt="Jason Colapietro" class="founder-signature__avatar" width="256" height="256" loading="lazy">
-      <span>Built by <a href="https://suedeai.ai/founder" target="_blank" rel="noopener noreferrer">Jason Colapietro</a>, founder of Suede Labs AI.</span>
+      <span>Built by <a href="https://suedeai.ai/founder" target="_blank" rel="noopener">Jason Colapietro</a>, founder of Suede Labs AI.</span>
     </div>
     <p class="page-updated">Page last updated <time datetime="2026-07-15">2026-07-15</time>.</p>
   </footer>

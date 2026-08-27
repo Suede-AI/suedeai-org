@@ -4,7 +4,7 @@ Suede Labs AI
 URL: https://suedeai.org
 Type: Creative-rails infrastructure company for the AI era
 Founder: Jason Colapietro (Founder and CEO, Suede Labs AI; publishes under the pen name Johnny Suede)
-Flagship product: Suede AI (https://suedeai.ai / https://app.suedeai.ai)
+Flagship product: Suede AI (https://suedeai.ai / https://suedeai.ai/)
 
 Suede Labs is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede Labs builds for that layer.
 
@@ -69,11 +69,16 @@ Ecosystem — one company, multiple proof surfaces
 Suede is not a single app. It is an expanding set of products and rails that meet artists at different points in the journey: growth, ownership, launch, payments, distribution, and agentic commerce.
 
 - Ownership layer — Suede AI (https://suedeai.ai/): proof-of-creation, programmable IP, rights, provenance
-- Artist growth — Strumly + iOS apps (https://strumly.suedeai.ai/): practice, growth, empowerment, creator-product surfaces
-- Project launch — Launchpad (https://launch.suedeai.ai/): creative launches, demand formation, project activation
-- Income routes — Vaults: royalty, ownership, artist income, participation paths
+- Agent commerce — Suede Agent Studio (https://agents.suedeai.ai/): build and publish AI agents; settled x402 calls route to the builder's wallet
+- AI search visibility — Suede GEO (https://seo.suedeai.ai/): full-stack generative engine optimization, dated captures, repaired pages
+- Learning path — GuitarHub (https://guitarhub.org/): a structured route from first chord to real playing ability
+- Public provenance — Suede IP Registry (https://ip.suedeai.ai/): fingerprint a file, sign a creator claim, timestamp it on Base and Avalanche
+- Artist growth — Strumly (https://strumly.suedeai.ai/): AI guitar coach with real-time chord feedback, drills, ear training
+- Market reach — Suede Distro (https://distro.suedeai.ai/): distribution intake with release-readiness planning
+- Daily practice — Muse (https://muse.suedeai.ai/): one creative constraint a night, the same card for every musician
+- Community — Suede Social (https://social.suedeai.ai/): a guitar community for real rigs and public Rig Cards
 - Payment rail — x402: internet-native payments for agents, APIs, content, and commerce
-- Market reach — Distribution (https://distro.suedeai.ai/): routes that move creative work from proof into audience and revenue
+- The whole board — Suede Hub (https://hub.suedeai.ai/): every Suede surface with its gate and what a creator can do there
 
 
 Path to monetization
@@ -95,11 +100,15 @@ The breadth matters because the creative industry will not be rebuilt by one fea
 | Surface         | URL                                  | What it does                                                                                |
 |-----------------|--------------------------------------|---------------------------------------------------------------------------------------------|
 | Suede AI        | https://suedeai.ai/                  | Ownership infrastructure for proof-of-creation, programmable IP, creator rights, provenance |
-| Suede App       | https://app.suedeai.ai/              | Working product surface for rights passports, licensing, royalties, vaults, workflows       |
-| Strumly + iOS   | https://strumly.suedeai.ai/          | Foundational artist-growth and empowerment products                                         |
-| Launchpad       | https://launch.suedeai.ai/           | Demand formation, activation, fundability for creative projects                             |
-| Vaults + x402   | https://suedeai.org/#monetization    | Royalty participation, agent-native payments, API commerce, internet-native value flow      |
-| Distribution    | https://distro.suedeai.ai/           | Bridge from registered, owned work to audience reach, release activity, and revenue paths   |
+| Agent Studio    | https://agents.suedeai.ai/           | Build and publish AI agents; settled x402 calls route to the builder's wallet               |
+| Suede GEO       | https://seo.suedeai.ai/              | Full-stack generative engine optimization: captures, repaired pages, a record engines quote |
+| GuitarHub       | https://guitarhub.org/               | A structured path from first chord to real playing ability                                  |
+| IP Registry     | https://ip.suedeai.ai/               | Public provenance registry on Base and Avalanche                                            |
+| Strumly         | https://strumly.suedeai.ai/          | AI guitar coach: real-time chord feedback, practice drills, ear training                    |
+| Suede Distro    | https://distro.suedeai.ai/           | Distribution intake for independent artists with release-readiness planning                 |
+| Muse            | https://muse.suedeai.ai/             | One creative constraint a night, the same card for every musician on earth                  |
+| Suede Social    | https://social.suedeai.ai/           | A guitar community for real rigs, source-backed gear takes, public Rig Cards                |
+| Suede Hub       | https://hub.suedeai.ai/              | Every Suede surface in one place, each with its gate and what a creator can do there        |
 
 
 Topical pages
@@ -174,7 +183,7 @@ Contact
 - Email: info@suedeai.ai
 - Talk to Suede: https://suedeai.org/contact/
 - Marketing site: https://suedeai.org/
-- Product app: https://app.suedeai.ai/
+- Product app: https://suedeai.ai/
 
 
 AI agent and scraping policy

@@ -1,18 +1,22 @@
 /* Investor funnel — scoped to the Dark Institutional IP Terminal system. */
 .inv {
-  --inv-ink: #050b16; /* Deep Ink — page band */
-  --inv-panel: #09101b; /* Panel Ink — cells */
-  --inv-control: #0d1726; /* Control Ink — inputs / raised */
-  --inv-line: rgba(255, 255, 255, 0.08);
-  --inv-line-strong: rgba(34, 211, 238, 0.14);
-  --inv-red: #9f101a; /* Rights Red — action / ownership */
-  --inv-red-dark: #d11f2b; /* Rights Red Bright — hover / active */
-  --inv-cyan: #22d3ee; /* Registry Cyan — proof / verification */
-  --inv-sky: #38bdf8; /* Proof Sky — links / supporting proof */
-  --inv-emerald: #34d399; /* Verified Emerald — live / settled */
-  --inv-text: #eef2f7; /* Page Mist */
-  --inv-muted: #8a97a8; /* Slate */
-  --inv-radius: 5px;
+  /* Aliases, not copies. These twelve values were duplicated from site.css as
+     literal hex, so changing a token there left the investor funnel — the
+     highest-stakes page on the site — silently on the old palette with no
+     error and no warning. */
+  --inv-ink: var(--ink-deep);
+  --inv-panel: var(--ink-panel);
+  --inv-control: var(--ink-control);
+  --inv-line: var(--hairline);
+  --inv-line-strong: var(--hairline-cyan);
+  --inv-red: var(--rights-red);
+  --inv-red-dark: var(--rights-red-bright);
+  --inv-cyan: var(--registry-cyan);
+  --inv-sky: var(--proof-sky);
+  --inv-emerald: var(--verified-emerald);
+  --inv-text: var(--text-primary);
+  --inv-muted: var(--text-muted);
+  --inv-radius: var(--radius-md, 5px);
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
@@ -58,7 +62,7 @@
   max-width: 850px;
   margin: 0 0 1rem;
   font-family: var(--font-display, Georgia, serif);
-  font-size: 4.5rem;
+  font-size: clamp(2.6rem, 1.5rem + 3.4vw, 4.5rem);
   font-weight: 400;
   line-height: 1.02;
   letter-spacing: -0.01em;
@@ -94,9 +98,9 @@
   text-decoration: none;
   text-transform: uppercase;
   transition:
-    background 150ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
-    color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    background var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1)),
+    border-color var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1)),
+    color var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 .inv__btn--primary {
@@ -137,7 +141,7 @@
   color: var(--inv-muted);
   text-decoration: none;
   border-bottom: 1px dotted var(--inv-line-strong);
-  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 .inv__strip a:hover {
@@ -241,7 +245,7 @@
 
 .inv__ledger a {
   color: var(--inv-sky);
-  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 .inv__ledger a:hover {
@@ -319,7 +323,7 @@
   width: 100%;
   min-height: 44px;
   padding: 0.65rem 0.8rem;
-  border: 1px solid var(--inv-line);
+  border: 1px solid var(--field-border, rgba(255, 255, 255, 0.3));
   border-radius: var(--inv-radius);
   background: var(--inv-control);
   color: var(--inv-text);
@@ -428,6 +432,21 @@
     display: block;
     padding: 0.3rem 0;
     border: 0;
+  }
+
+  /* thead is hidden above, so without these the stacked rows render as an
+     unlabelled run of values with no way to tell which column is which. */
+  .inv__ledger td::before {
+    content: attr(data-label) ": ";
+    color: var(--inv-cyan);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .inv__ledger td:not([data-label])::before {
+    content: none;
   }
 
   .inv__ledger tr {

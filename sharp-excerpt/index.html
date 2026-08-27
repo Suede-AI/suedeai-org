@@ -57,8 +57,8 @@
           "url": "https://suedeai.org/assets/img/founder-jason.png",
           "caption": "Jason Colapietro, Founder of Suede Labs"
         },
-        "jobTitle": "Founder",
-        "worksFor": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
+        "jobTitle": "Founder and CEO of Suede Labs AI",
+        "worksFor": { "@id": "https://suedeai.ai/#organization" },
         "sameAs": [
           "https://x.com/johnnysuede",
           "https://github.com/JasonColapietro",
@@ -72,22 +72,61 @@
           "https://www.wikidata.org/wiki/Q140235755"
         ]
       },
-      {
-        "@type": "Book",
-        "name": "Stake Your Claim",
-        "author": {"@id": "https://suedeai.ai/founder#person"},
-        "description": "AI ownership, authorship, provenance, creator rights, autonomous agents, and building durable assets in the AI era.",
-        "url": "https://suedeai.org/book/",
-        "image": "https://suedeai.org/assets/img/stake-your-claim-cover.jpg",
-        "identifier": {"@type": "PropertyValue", "propertyID": "ASIN", "value": "B0GRG8LGQQ"},
-        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"}
-      }
+      {"@type": "Book", "@id": "https://suedeai.org/sharp-excerpt/#excerpt", "exampleOfWork": {"@id": "https://suedeai.ai/founder#book-stake-your-claim"}, "name": "Stake Your Claim: Speeches, Discussions & Hard Truths on Turning the AI Onslaught into a Real Asset, Autonomous Agents, and Building Generational Wealth", "bookEdition": "Sharp Excerpt", "author": {"@id": "https://suedeai.ai/founder#person"}, "description": "AI ownership, authorship, provenance, creator rights, autonomous agents, and building durable assets in the AI era.", "url": "https://suedeai.org/sharp-excerpt/", "image": "https://suedeai.org/assets/img/stake-your-claim-cover.jpg", "publisher": {"@id": "https://suedeai.ai/#organization"}}
     ]
   }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://suedeai.ai/#organization",
+  "name": "Suede Labs AI",
+  "alternateName": [
+    "Suede Labs",
+    "Suede AI",
+    "Suede"
+  ],
+  "url": "https://suedeai.ai",
+  "logo": "https://suedeai.org/assets/img/og-suede.png",
+  "description": "Creator ownership infrastructure for the AI era. Register creative works, prove authorship, attach rights metadata, route royalties, and make IP callable by agents.",
+  "foundingDate": "2024",
+  "founder": {
+    "@id": "https://suedeai.ai/founder#person"
+  },
+  "sameAs": [
+    "https://suedeai.org/",
+    "https://x.com/AISUEDE",
+    "https://github.com/Suede-AI",
+    "https://www.youtube.com/@aisuede",
+    "https://www.instagram.com/suedeai/",
+    "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
+    "https://t.me/SUEDEAI",
+    "https://linktr.ee/suedelabsai",
+    "https://www.crunchbase.com/organization/suede-labs-ai",
+    "https://www.linkedin.com/company/suede-labs-ai",
+    "https://www.wikidata.org/wiki/Q141169484"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": "https://suedeai.ai/founder#book-stake-your-claim",
+  "name": "Stake Your Claim: Speeches, Discussions & Hard Truths on Turning the AI Onslaught into a Real Asset, Autonomous Agents, and Building Generational Wealth",
+  "author": {
+    "@id": "https://suedeai.ai/founder#person"
+  },
+  "publisher": {
+    "@id": "https://suedeai.ai/#organization"
+  }
+}
+</script>
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
     <div class="site-header__inner">
       <a class="brand" href="/"><span class="brand__name">Suede Labs</span><span class="brand__tag">Reader Preview</span></a>
       <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -99,7 +138,7 @@
       </nav>
     </div>
   </header>
-  <main class="site-shell">
+  <main id="main-content" class="site-shell">
     <section class="book-hero">
       <div class="book-hero__grid">
         <div class="book-hero__copy">
@@ -179,11 +218,24 @@
         <a href="/terms/">Terms</a>
         <a href="/privacy/">Privacy</a>
         <a href="/refund-policy/">Refund Policy</a>
+        <a href="/voice/support/">Suede Voice Support</a>
       </nav>
     </div>
+    <nav class="site-footer__ecosystem" aria-label="Suede properties">
+    <a href="https://suedeai.ai/" target="_blank" rel="noopener">Suede AI</a>
+    <a href="https://agents.suedeai.ai/" target="_blank" rel="noopener">Agent Studio</a>
+    <a href="https://seo.suedeai.ai/" target="_blank" rel="noopener">Suede GEO</a>
+    <a href="https://guitarhub.org/" target="_blank" rel="noopener">GuitarHub</a>
+    <a href="https://ip.suedeai.ai/" target="_blank" rel="noopener">IP Registry</a>
+    <a href="https://strumly.suedeai.ai/" target="_blank" rel="noopener">Strumly</a>
+    <a href="https://distro.suedeai.ai/" target="_blank" rel="noopener">Suede Distro</a>
+    <a href="https://muse.suedeai.ai/" target="_blank" rel="noopener">Muse</a>
+    <a href="https://social.suedeai.ai/" target="_blank" rel="noopener">Suede Social</a>
+    <a href="https://hub.suedeai.ai/" target="_blank" rel="noopener">Suede Hub</a>
+    </nav>
     <div class="founder-signature">
       <img src="/assets/img/founder-jason-colapietro.png" alt="Jason Colapietro" class="founder-signature__avatar" width="256" height="256" loading="lazy">
-      <span>Built by <a href="https://suedeai.ai/founder" target="_blank" rel="noopener noreferrer">Jason Colapietro</a>, founder of Suede Labs AI.</span>
+      <span>Built by <a href="https://suedeai.ai/founder" target="_blank" rel="noopener">Jason Colapietro</a>, founder of Suede Labs AI.</span>
     </div>
   </footer>
 </body>
