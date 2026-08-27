@@ -319,7 +319,7 @@
   width: 100%;
   min-height: 44px;
   padding: 0.65rem 0.8rem;
-  border: 1px solid var(--inv-line);
+  border: 1px solid var(--field-border, rgba(255, 255, 255, 0.3));
   border-radius: var(--inv-radius);
   background: var(--inv-control);
   color: var(--inv-text);

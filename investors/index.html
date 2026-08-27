@@ -43,7 +43,8 @@
   </script>
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
     <div class="site-header__inner">
       <a class="brand" href="/"><span class="brand__name">Suede Labs</span><span class="brand__tag">Investors</span></a>
       <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -55,7 +56,7 @@
       </nav>
     </div>
   </header>
-  <main class="site-shell inv">
+  <main id="main-content" class="site-shell inv">
     <section class="inv__band" aria-labelledby="inv-hero-heading">
       <div class="inv__inner">
         <p class="inv__eyebrow">Investor Brief — Suede Labs AI</p>
@@ -151,12 +152,12 @@
             <label>Company URL<input type="text" name="company_url" tabindex="-1" autocomplete="off"></label>
           </div>
           <div class="inv__cols">
-            <div class="inv__field"><label for="inv-name">Full name</label><input id="inv-name" type="text" name="name" required></div>
-            <div class="inv__field"><label for="inv-email">Email</label><input id="inv-email" type="email" name="email" required></div>
+            <div class="inv__field"><label for="inv-name">Full name</label><input id="inv-name" type="text" name="name" required autocomplete="name"></div>
+            <div class="inv__field"><label for="inv-email">Email</label><input id="inv-email" type="email" name="email" required autocomplete="email"></div>
           </div>
           <div class="inv__cols">
-            <div class="inv__field"><label for="inv-firm">Firm / organization</label><input id="inv-firm" type="text" name="firm" required></div>
-            <div class="inv__field"><label for="inv-role">Role / title</label><input id="inv-role" type="text" name="role"></div>
+            <div class="inv__field"><label for="inv-firm">Firm / organization</label><input id="inv-firm" type="text" name="firm" required autocomplete="organization"></div>
+            <div class="inv__field"><label for="inv-role">Role / title</label><input id="inv-role" type="text" name="role" autocomplete="organization-title"></div>
           </div>
           <div class="inv__cols">
             <div class="inv__field">
@@ -198,13 +199,13 @@
             <label><input type="checkbox" name="intent_deck" value="yes"> Send me the deck / data room</label>
             <label><input type="checkbox" name="intent_call" value="yes"> Book an intro call</label>
           </fieldset>
-          <div class="inv__field"><label for="inv-website">Website or LinkedIn</label><input id="inv-website" type="url" name="website"></div>
+          <div class="inv__field"><label for="inv-website">Website or LinkedIn</label><input id="inv-website" type="url" name="website" autocomplete="url"></div>
           <div class="inv__field"><label for="inv-message">Anything else?</label><textarea id="inv-message" name="message"></textarea></div>
           <label class="inv__consent"><input type="checkbox" name="consent" value="yes"> It's okay to follow up with occasional updates.</label>
           <input type="hidden" name="utm_source" value="">
           <input type="hidden" name="utm_campaign" value="">
           <button class="inv__btn inv__btn--primary" type="submit">Request access</button>
-          <p class="inv__status" data-form-status hidden role="status" aria-live="polite">Your request is being recorded so the Suede team can follow up directly.</p>
+          <p class="inv__status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
         </form>
       </div>
     </section>

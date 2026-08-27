@@ -24,6 +24,10 @@
 
   /* Hairlines */
   --hairline: rgba(255, 255, 255, 0.08);
+  /* Form controls need a 3:1 boundary (WCAG 1.4.11). The hairline above
+     is 1.24:1 against the field fill, which makes inputs invisible until
+     focused; this reaches 3.19:1 without touching page chrome. */
+  --field-border: rgba(255, 255, 255, 0.3);
   --hairline-cyan: rgba(34, 211, 238, 0.14);
 
   /* Proof-field & ambient (subtle; never gradient blobs) */
@@ -244,7 +248,9 @@ code {
 }
 
 .button--primary {
-  border-color: var(--rights-red);
+  /* Fill stays --rights-red (7.29:1 with the label). The resting border is the
+     brighter red so the control boundary itself clears 3:1 (WCAG 1.4.11). */
+  border-color: var(--rights-red-bright);
   background: var(--rights-red);
   color: var(--text-primary);
 }
@@ -795,7 +801,7 @@ textarea,
 select {
   width: 100%;
   min-height: 44px;
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--field-border);
   border-radius: var(--radius-md);
   padding: 14px 16px;
   background: var(--ink-control);
@@ -819,6 +825,27 @@ textarea {
 .note {
   color: var(--text-muted);
   font-size: 0.92rem;
+}
+
+/* A live region has to be in the accessibility tree before anything is written
+   to it, so these are never hidden — they just take no space while empty. */
+.note:empty,
+.inv__status:empty {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+[data-form-status]:focus {
+  outline: 2px solid var(--registry-cyan);
+  outline-offset: 3px;
+}
+
+/* aria-disabled replaces the disabled property, which was dropping focus to
+   <body> when the button was disabled while focused. */
+button[aria-disabled="true"] {
+  cursor: progress;
+  opacity: 0.7;
 }
 
 .success-hero {
