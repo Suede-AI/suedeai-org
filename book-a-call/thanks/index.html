@@ -25,7 +25,20 @@
   </script>
 </head>
 <body>
-  <main class="site-shell success-hero success-hero--book">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="/"><span class="brand__name">Suede Labs</span><span class="brand__tag">Book a call</span></a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
+        <a href="/proof-of-creation/">Proof of Creation</a>
+        <a href="/jason-colapietro/">Founder</a>
+        <a href="/book/">Book</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="site-shell success-hero success-hero--book">
     <div class="panel panel--success">
       <span class="eyebrow">Book a Call</span>
       <h1>Thanks. Your request is in.</h1>
@@ -38,6 +51,15 @@
     </div>
   </main>
   <footer class="site-footer">
+    <div class="site-footer__legal">
+      <p>&copy; 2026 JC Investment Group LLC. All rights reserved.</p>
+      <nav aria-label="Legal">
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/refund-policy/">Refund Policy</a>
+        <a href="/voice/support/">Suede Voice Support</a>
+      </nav>
+    </div>
     <nav class="site-footer__ecosystem" aria-label="Suede properties">
     <a href="https://suedeai.ai/" target="_blank" rel="noopener">Suede AI</a>
     <a href="https://agents.suedeai.ai/" target="_blank" rel="noopener">Agent Studio</a>
@@ -55,5 +77,6 @@
       <span>Built by <a href="https://suedeai.ai/founder" target="_blank" rel="noopener">Jason Colapietro</a>, founder of Suede Labs AI.</span>
     </div>
   </footer>
+  <script defer src="/assets/js/site.js"></script>
 </body>
 </html>

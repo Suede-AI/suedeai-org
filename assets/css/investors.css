@@ -1,18 +1,22 @@
 /* Investor funnel — scoped to the Dark Institutional IP Terminal system. */
 .inv {
-  --inv-ink: #050b16; /* Deep Ink — page band */
-  --inv-panel: #09101b; /* Panel Ink — cells */
-  --inv-control: #0d1726; /* Control Ink — inputs / raised */
-  --inv-line: rgba(255, 255, 255, 0.08);
-  --inv-line-strong: rgba(34, 211, 238, 0.14);
-  --inv-red: #9f101a; /* Rights Red — action / ownership */
-  --inv-red-dark: #d11f2b; /* Rights Red Bright — hover / active */
-  --inv-cyan: #22d3ee; /* Registry Cyan — proof / verification */
-  --inv-sky: #38bdf8; /* Proof Sky — links / supporting proof */
-  --inv-emerald: #34d399; /* Verified Emerald — live / settled */
-  --inv-text: #eef2f7; /* Page Mist */
-  --inv-muted: #8a97a8; /* Slate */
-  --inv-radius: 5px;
+  /* Aliases, not copies. These twelve values were duplicated from site.css as
+     literal hex, so changing a token there left the investor funnel — the
+     highest-stakes page on the site — silently on the old palette with no
+     error and no warning. */
+  --inv-ink: var(--ink-deep);
+  --inv-panel: var(--ink-panel);
+  --inv-control: var(--ink-control);
+  --inv-line: var(--hairline);
+  --inv-line-strong: var(--hairline-cyan);
+  --inv-red: var(--rights-red);
+  --inv-red-dark: var(--rights-red-bright);
+  --inv-cyan: var(--registry-cyan);
+  --inv-sky: var(--proof-sky);
+  --inv-emerald: var(--verified-emerald);
+  --inv-text: var(--text-primary);
+  --inv-muted: var(--text-muted);
+  --inv-radius: var(--radius-md, 5px);
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
@@ -94,9 +98,9 @@
   text-decoration: none;
   text-transform: uppercase;
   transition:
-    background 150ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
-    color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    background var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1)),
+    border-color var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1)),
+    color var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 .inv__btn--primary {
@@ -137,7 +141,7 @@
   color: var(--inv-muted);
   text-decoration: none;
   border-bottom: 1px dotted var(--inv-line-strong);
-  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 .inv__strip a:hover {
@@ -241,7 +245,7 @@
 
 .inv__ledger a {
   color: var(--inv-sky);
-  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color var(--dur-fast, 150ms) var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 .inv__ledger a:hover {

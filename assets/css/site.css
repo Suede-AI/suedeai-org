@@ -1318,9 +1318,24 @@ button[aria-disabled="true"] {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
-  opacity: 0.75;
   margin-top: 0.25rem;
+  /* Explicit colour rather than opacity, which was dimming already-muted text
+     a second time and pushing it under the contrast floor. */
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.byline a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline);
+  text-underline-offset: 2px;
+}
+
+.byline a:hover,
+.byline a:focus-visible {
+  color: var(--registry-cyan);
+  text-decoration-color: currentColor;
 }
 
 .byline__photo {
