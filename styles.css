@@ -148,6 +148,7 @@ p {
   position: fixed;
   top: 0.75rem;
   left: -10000px;
+  white-space: nowrap;
   z-index: 1000;
   padding: 0.7rem 1rem;
   border: var(--border-width) solid var(--hairline-cyan);
@@ -1589,6 +1590,10 @@ body.editorial {
   --proof-sky: #41606b;
   --verified-emerald: #4d6100;
   --warning-amber: #c26b3d;
+  /* Stars are decorative, and the system reserves amber for genuine
+     warnings. This is also the accessible weight: #c26b3d is 3.53:1 on
+     paper and fails 4.5:1 for 13.6px text; this is 4.99:1. */
+  --star-gold: #a3542c;
   --charcoal: #272724;
   --charcoal-soft: #363631;
   --shadow-soft: 0 26px 70px rgba(49, 45, 37, 0.16);
@@ -2630,7 +2635,7 @@ h3 {
   border-color: var(--verified-emerald);
 }
 .review-badge__stars {
-  color: var(--warning-amber);
+  color: var(--star-gold, #a3542c);
   font-size: 0.85rem;
   letter-spacing: 0.05em;
 }

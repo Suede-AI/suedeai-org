@@ -24,10 +24,12 @@
 
   /* Hairlines */
   --hairline: rgba(255, 255, 255, 0.08);
-  /* Form controls need a 3:1 boundary (WCAG 1.4.11). The hairline above
-     is 1.24:1 against the field fill, which makes inputs invisible until
-     focused; this reaches 3.19:1 without touching page chrome. */
-  --field-border: rgba(255, 255, 255, 0.3);
+  /* Form controls need a 3:1 boundary (WCAG 1.4.11). The hairline above is
+     1.24:1 against the field fill, which leaves inputs invisible until focused.
+     Alpha has to be composited over the fill to measure this: 0.30 lands at
+     only 2.70:1 and still fails. 0.38 composites to rgb(105,111,120) — 3.55:1
+     against the fill and 3.89:1 against the page. */
+  --field-border: rgba(255, 255, 255, 0.38);
   --hairline-cyan: rgba(34, 211, 238, 0.14);
 
   /* Proof-field & ambient (subtle; never gradient blobs) */
@@ -117,6 +119,7 @@ code {
   position: fixed;
   top: 0.75rem;
   left: -10000px;
+  white-space: nowrap;
   z-index: 1000;
   padding: 0.7rem 1rem;
   border: 1px solid var(--hairline-cyan);
@@ -677,6 +680,17 @@ button[aria-disabled="true"] {
 }
 .success-hero {
   padding: 120px 0 80px;
+}
+
+/* The confirmation-page h1 was never styled and fell back to the UA default of
+   2em, so it rendered at 32px against 67px on investors/thanks. Scoped to
+   .panel so it does not touch .inv__h1, which has its own treatment. */
+.success-hero .panel h1 {
+  margin: 0 0 14px;
+  font-size: clamp(1.9rem, 1.4rem + 1.7vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 .page-layout--book {
   grid-template-columns: minmax(0, 1fr) 360px;
