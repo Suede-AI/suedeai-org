@@ -13,7 +13,11 @@ FAVICON_VERSION = "v=3"
 CANONICAL_PREVIEW_PDF_URL = "https://suedeai.ai/stake-your-claim-condensed-preview.pdf"
 LEGACY_PREVIEW_PDF_URL = "https://suedeai.org/assets/files/stake-your-claim-condensed-preview.pdf"
 OFFICIAL_CASE_CITATION = "Bartz et al. v. Anthropic PBC, No. 3:24-cv-05417-AMO (N.D. Cal.)"
-UNRELATED_ORGANIZATION_WIKIDATA = "https://www.wikidata.org/wiki/Q131489584"
+# Q131489584 is a PERSON — "Manuella Tchamie Tchongouang", a lawyer in Cameroon —
+# not an organization and unrelated to Suede Labs. It has previously been pasted
+# into an Organization sameAs, which would assert that the company and that
+# individual are the same entity. Guard against it returning.
+UNRELATED_PERSON_WIKIDATA = "https://www.wikidata.org/wiki/Q131489584"
 FOUNDER_WIKIDATA = "https://www.wikidata.org/wiki/Q140235755"
 FOUNDER_OG_IMAGE_URL = f"{SITE_URL}/assets/img/og-jason-colapietro.png"
 FAVICON_MAX_BYTES = 12_000
@@ -348,9 +352,9 @@ def main() -> int:
             failures.append(f"{relative_path}: missing Person JSON-LD node")
         for organization in organizations:
             organization_same_as = same_as_urls(organization)
-            if UNRELATED_ORGANIZATION_WIKIDATA in organization_same_as:
+            if UNRELATED_PERSON_WIKIDATA in organization_same_as:
                 failures.append(
-                    f"{relative_path}: Organization sameAs contains unrelated Wikidata {UNRELATED_ORGANIZATION_WIKIDATA}"
+                    f"{relative_path}: Organization sameAs contains unrelated person Wikidata {UNRELATED_PERSON_WIKIDATA}"
                 )
             if FOUNDER_WIKIDATA in organization_same_as:
                 failures.append(
