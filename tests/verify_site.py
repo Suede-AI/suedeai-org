@@ -1,4 +1,5 @@
 from pathlib import Path
+from html import unescape as html_unescape
 import re
 import sys
 import json
@@ -173,6 +174,86 @@ def ico_sizes(path: Path) -> list[tuple[int, int]]:
     return sizes
 
 
+def strip_markup(html_text: str) -> str:
+    """Visible text only: drop script/style blocks, then tags, then entities."""
+    without_blocks = re.sub(
+        r"<(script|style)\b[^>]*>.*?</\1>", " ", html_text, flags=re.IGNORECASE | re.DOTALL
+    )
+    without_tags = re.sub(r"<[^>]+>", " ", without_blocks)
+    return re.sub(r"\s+", " ", html_unescape(without_tags)).strip()
+
+
+def breadcrumb_navs(html_text: str) -> list[str]:
+    """Every <nav aria-label="Breadcrumb"> block in the page, markup included."""
+    return re.findall(
+        r'<nav\b[^>]*aria-label="Breadcrumb"[^>]*>(.*?)</nav>',
+        html_text,
+        re.IGNORECASE | re.DOTALL,
+    )
+
+
+def list_item_names(node: dict) -> list[str]:
+    names: list[str] = []
+    for item in node.get("itemListElement", []):
+        if isinstance(item, dict) and isinstance(item.get("name"), str):
+            names.append(item["name"])
+    return names
+
+
+def faq_question_names(node: dict) -> list[str]:
+    names: list[str] = []
+    for entry in node.get("mainEntity", []):
+        if isinstance(entry, dict) and isinstance(entry.get("name"), str):
+            names.append(entry["name"])
+    return names
+
+
+def assert_schema_is_rendered(file_name: str, html_text: str, failures: list[str]) -> None:
+    """Structured data has to be backed by the visible page.
+
+    A BreadcrumbList with no rendered trail, or a FAQPage whose questions are
+    not real headings, tells a retrieval system about structure a reader and a
+    chunker cannot see. Both regressed on this site before; this holds them.
+    """
+    try:
+        nodes = json_ld_nodes(html_text)
+    except json.JSONDecodeError as error:
+        failures.append(f"{file_name}: JSON-LD does not parse ({error})")
+        return
+
+    for node in nodes:
+        if node_has_type(node, "BreadcrumbList"):
+            declared = list_item_names(node)
+            navs = breadcrumb_navs(html_text)
+            if not navs:
+                failures.append(
+                    f"{file_name}: BreadcrumbList declares {declared} but the page renders "
+                    'no <nav aria-label="Breadcrumb">'
+                )
+                continue
+            rendered = " ".join(strip_markup(nav) for nav in navs)
+            for name in declared:
+                if name not in rendered:
+                    failures.append(
+                        f"{file_name}: BreadcrumbList item '{name}' is not in the visible "
+                        f"breadcrumb trail (trail reads '{rendered}')"
+                    )
+
+        if node_has_type(node, "FAQPage"):
+            declared = faq_question_names(node)
+            headings = [
+                strip_markup(match)
+                for match in re.findall(
+                    r"<h[2-4]\b[^>]*>(.*?)</h[2-4]>", html_text, re.IGNORECASE | re.DOTALL
+                )
+            ]
+            for name in declared:
+                if name not in headings:
+                    failures.append(
+                        f"{file_name}: FAQPage question '{name}' is not rendered as a heading"
+                    )
+
+
 def main() -> int:
     failures: list[str] = []
     stale_founder_url_pattern = r'"@id"\s*:\s*"https://suedeai\.ai/founder#person"[\s\S]{0,2000}?"url"\s*:\s*"https://suedeai\.org/jason-colapietro/"'
@@ -278,6 +359,7 @@ def main() -> int:
         assert_regex(file_name, html, h1_pattern, failures, flags=h1_flags)
         assert_contains(file_name, html, 'type="application/ld+json"', failures)
         assert_contains(file_name, html, MAIN_SITE_URL, failures)
+        assert_schema_is_rendered(file_name, html, failures)
 
     founder_path = ROOT / "jason-colapietro" / "index.html"
     if founder_path.exists():

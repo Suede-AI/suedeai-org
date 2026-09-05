@@ -596,18 +596,26 @@ h3 {
   margin: 0;
   padding: 0;
 }
-.faq-item dt {
+/* The FAQ question is a real h3 so retrieval systems chunk each Q&A pair
+   separately, matching the six Question nodes in the FAQPage JSON-LD. These
+   rules hold the question at body scale rather than display-heading scale, so
+   the heading upgrade changes the document outline and not the visual design. */
+.faq-item h3 {
   color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
   font-weight: 600;
-  margin-bottom: 8px;
+  line-height: 1.55;
+  letter-spacing: 0;
+  margin: 0 0 8px;
 }
-.faq-item dd {
+.faq-item p {
   margin: 0;
   color: var(--text-muted);
   font-size: var(--text-sm);
   line-height: 1.6;
 }
-.faq-item dd a {
+.faq-item p a {
   color: var(--proof-sky);
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -2610,6 +2618,20 @@ h3 {
   .ecosystem-logo a {
     transition: none;
   }
+}
+/* Visually hidden but exposed to assistive tech, so an accessible name can be
+   built from content instead of an aria-label that overrides the visible text
+   (WCAG 2.5.3, label in name). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 /* ============================================================= RANKING SOCIAL PROOF */
 .review-badge {

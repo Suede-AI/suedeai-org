@@ -387,6 +387,47 @@ h3 {
 .page-hero {
   padding: 70px 0 18px;
 }
+/* Visible trail backing the BreadcrumbList JSON-LD on this page. The link text
+   is the ListItem name, so the rendered trail and the schema stay in step. */
+.breadcrumb {
+  margin-bottom: 20px;
+}
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.breadcrumb li + li::before {
+  content: "/";
+  color: var(--text-muted);
+}
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.breadcrumb a:hover {
+  color: var(--text-primary);
+}
+.breadcrumb [aria-current="page"] {
+  color: var(--text-primary);
+}
 .page-hero--thesis {
   max-width: 960px;
   padding-bottom: 28px;
