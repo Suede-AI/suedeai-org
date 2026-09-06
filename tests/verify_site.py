@@ -259,16 +259,16 @@ def main() -> int:
     stale_founder_url_pattern = r'"@id"\s*:\s*"https://suedeai\.ai/founder#person"[\s\S]{0,2000}?"url"\s*:\s*"https://suedeai\.org/jason-colapietro/"'
     # Phrases that must NEVER appear on a public surface. The book-count entries
     # below are stale-claim guards, not claims. Amazon is the canonical total of
-    # published books, so the published count is four; the shelf still carries
-    # six titles, the other two named as self-hosted works. Every count this
-    # estate has previously published — five, six, three — is therefore stale
-    # and stays banned. Do not "update" these to the current count; that would
-    # ban the true claim instead of the stale one.
+    # published books; its author shelf carried five on 2026-09-06 (The Human
+    # Authenticity Layer, Proof as Infrastructure, Stake Your Claim, The Claude
+    # Code Bible, Codex in Production), with two more titles named as
+    # self-hosted works. Every count this estate published before that, three,
+    # four and six, is stale and stays banned. When the shelf changes, move the
+    # old count into this list rather than deleting it.
     public_regression_phrases = [
-        "Published author of five books",
-        "published author of five books",
-        "author of five books",
-        "5x published author",
+        "Four published books",
+        "four published books",
+        "author of four books",
         "author of six books",
         "six published books",
         "three published books",
