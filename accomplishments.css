@@ -1,0 +1,17 @@
+/* Shared record layout; typography and colors inherit from each host. */
+.accomplishments{padding-block:3rem;scroll-margin-top:6rem;color:inherit}
+.accomplishments .accomplishments-kicker{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .8rem;color:inherit}
+.accomplishments h2{font-family:inherit;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600;letter-spacing:-.025em;line-height:1.15;margin:0 0 1rem;color:inherit}
+.accomplishments .accomplishments-intro{max-width:72ch;margin:0 0 2rem;line-height:1.7;color:inherit}
+.accomplishments .accomplishments-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem}
+.accomplishments .accomplishment{min-width:0;border-top:1px solid currentColor;padding:1.5rem 0;margin:0}
+.accomplishments .accomplishment h3{font-family:inherit;font-size:1.2rem;line-height:1.35;font-weight:600;margin:.6rem 0 .8rem;color:inherit;letter-spacing:-.01em}
+.accomplishments .accomplishment p{font-size:1rem;line-height:1.7;margin:0 0 1rem;color:inherit}
+.accomplishments .accomplishment .accomplishment-meta{font-size:.76rem;line-height:1.55;letter-spacing:.025em;margin:0;color:inherit}
+.accomplishments .accomplishment-links{display:flex;flex-wrap:wrap;gap:.6rem 1.1rem;list-style:none;margin:0;padding:0}
+.accomplishments .accomplishment-links li{margin:0;padding:0;font-size:.85rem;line-height:1.6;min-width:0}
+.accomplishments a{color:inherit;text-decoration:underline;text-underline-offset:.22em;overflow-wrap:anywhere}
+.accomplishments a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.accomplishments .accomplishments-more{margin:1.2rem 0 0;font-size:1rem}
+.accomplishments--narrow .accomplishments-list{grid-template-columns:1fr}
+@media(max-width:759px){.accomplishments .accomplishments-list{grid-template-columns:1fr}.accomplishments{padding-block:2rem}}
