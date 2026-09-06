@@ -15,3 +15,23 @@
 .accomplishments .accomplishments-more{margin:1.2rem 0 0;font-size:1rem}
 .accomplishments--narrow .accomplishments-list{grid-template-columns:1fr}
 @media(max-width:759px){.accomplishments .accomplishments-list{grid-template-columns:1fr}.accomplishments{padding-block:2rem}}
+
+/* Existing partner artwork and directory captures, shared across the estate. */
+.accomplishments .accomplishments-visuals{margin:0 0 2.5rem}
+.accomplishments .accomplishments-visuals h3{font-family:inherit;font-size:1.2rem;line-height:1.4;font-weight:600;margin:0 0 1rem;color:inherit;letter-spacing:normal}
+.accomplishments .accomplishments-partners{display:flex;flex-wrap:wrap;gap:1rem;margin:0 0 1.5rem;padding:0;list-style:none}
+.accomplishments .accomplishments-partners li{flex:1 1 240px;min-width:0;margin:0;padding:0}
+.accomplishments .accomplishments-partner{display:flex;align-items:center;gap:1rem;min-height:104px;padding:1rem 1.25rem;background:#fff;color:#202124;border:1px solid #d9dce1;border-radius:8px;text-decoration:none;height:100%;box-sizing:border-box}
+.accomplishments .accomplishments-partner img{width:42px;height:42px;flex:none;object-fit:contain;margin:0}
+.accomplishments .accomplishments-partner strong{display:block;font-size:1.1rem;line-height:1.4}
+.accomplishments .accomplishments-partner span span{display:block;font-size:.85rem;line-height:1.5;margin-top:.2rem}
+.accomplishments .accomplishments-partner:hover strong{text-decoration:underline;text-underline-offset:.2em}
+.accomplishments .accomplishments-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;align-items:start}
+.accomplishments .accomplishments-capture{min-width:0;margin:0;padding:0}
+.accomplishments .accomplishments-capture>a{display:block;background:#fff;border:1px solid #d9dce1;border-radius:6px;overflow:hidden}
+.accomplishments .accomplishments-capture img{display:block;width:100%;max-width:100%;height:auto;margin:0;object-fit:contain}
+.accomplishments .accomplishments-capture figcaption{display:block;font-family:inherit;font-size:.85rem;line-height:1.6;margin:.8rem 0 0;color:inherit}
+.accomplishments .accomplishments-capture strong{display:block;font-size:1rem;line-height:1.4;margin-bottom:.4rem}
+.accomplishments .accomplishments-capture p{font-size:inherit;line-height:inherit;margin:0 0 .5rem;color:inherit}
+.accomplishments .accomplishments-capture-links{display:flex;flex-wrap:wrap;gap:.4rem 1rem}
+@media(max-width:759px){.accomplishments .accomplishments-gallery{grid-template-columns:1fr}}
