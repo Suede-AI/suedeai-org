@@ -284,5 +284,43 @@
         }
       ]
     }
-  ]
+  ],
+  "visuals": {
+    "partners": [
+      {
+        "name": "Google Cloud",
+        "image": "/accomplishment-assets/google-cloud.svg",
+        "label": "Partnership since September 2025",
+        "url": "https://seo.suedeai.ai/evidence#google-cloud"
+      },
+      {
+        "name": "Stripe Startups",
+        "image": "/accomplishment-assets/stripe.svg",
+        "label": "Admitted July 2026",
+        "url": "https://seo.suedeai.ai/evidence#credentials"
+      }
+    ],
+    "screenshots": [
+      {
+        "title": "Suede AI on AI Agents Directory",
+        "image": "/accomplishment-assets/aiagents-directory-suede.png",
+        "width": 990,
+        "height": 470,
+        "alt": "Archived AI Agents Directory listing for Suede AI, showing a 5.0 rating from nine reviews",
+        "caption": "Archived 2026 listing: 5.0 from nine reviews. Open the live listing for its current rating and status.",
+        "url": "https://aiagentsdirectory.com/agent/suede-ai",
+        "linkLabel": "Open the live listing"
+      },
+      {
+        "title": "Best Overall · Best API Option",
+        "image": "/accomplishment-assets/aiagents-category-music.png",
+        "width": 945,
+        "height": 900,
+        "alt": "Archived AI Agents Directory music category naming Suede AI Best Overall and Best API Option among 47 tools",
+        "caption": "The archived 2026 music-category page names Suede AI in both top-pick positions.",
+        "url": "https://aiagentsdirectory.com/category/music",
+        "linkLabel": "Open the live music category"
+      }
+    ]
+  }
 }
