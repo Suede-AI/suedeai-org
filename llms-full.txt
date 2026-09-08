@@ -114,20 +114,23 @@ The breadth matters because the creative industry will not be rebuilt by one fea
 Topical pages
 -------------
 
-PROOF OF CREATION (https://suedeai.org/proof-of-creation/)
-Proof of creation makes authorship, provenance, and creator rights verifiable in the AI era. Suede provides ownership infrastructure for AI media.
-
-PROGRAMMABLE IP (https://suedeai.org/programmable-ip/)
-Programmable IP moves ownership, licensing, attribution, and usage rules from PDFs and contracts into code that platforms, agents, and creators can read.
-
 CREATOR OWNERSHIP (https://suedeai.org/creator-ownership/)
-Creator ownership becomes more important as AI makes production easier. Ownership infrastructure is the wedge.
+The hub for Suede's ownership system: understand the legal context, establish proof, preserve provenance, define machine-readable permissions, record covered uses, and route agreed payments.
+
+WHY COPYRIGHT ALONE FALLS SHORT (https://suedeai.org/why-copyright-fails/)
+Copyright remains essential for eligible human-authored work. It does not by itself make asset identity, provenance, permissions, attribution, usage events, or payment instructions machine-readable.
+
+PROOF OF CREATION (https://suedeai.org/proof-of-creation/)
+Proof of creation records evidence connecting a creator, work, version, and creation event. It is not a substitute for Copyright Office registration, contracts, or a legal determination of ownership.
 
 CONTENT PROVENANCE (https://suedeai.org/content-provenance/)
-Content provenance records the source, authorship, and ownership context of creative work so AI media stays accountable downstream.
+Content provenance records source history and derivative context. Tamper-evident provenance can support decisions without proving that every assertion is true or that the signer owns every right.
 
-ROYALTIES (https://suedeai.org/royalties/)
-You cannot automate royalties on content you cannot verify. Ownership and provenance are the prerequisites.
+PROGRAMMABLE IP (https://suedeai.org/programmable-ip/)
+Programmable IP pairs creative work with verifiable ownership data, machine-readable license terms, attribution requirements, commercial conditions, and payment rules that connected systems can evaluate.
+
+AI ROYALTIES (https://suedeai.org/royalties/)
+Programmable AI royalties require an identified work, documented authority, clear license terms, a recorded covered use, defined recipients and splits, and a supported settlement rail.
 
 AI VOICE PROTECTION (https://suedeai.org/ai-voice-protection/)
 AI voice protection is a rights problem, not just a detection problem. The fix starts with ownership and consent.
@@ -137,10 +140,6 @@ AI likeness protection starts with ownership, consent, and proof — not just ta
 
 HUMAN AUTHENTICITY LAYER (https://suedeai.org/human-authenticity-layer/)
 Human authenticity becomes premium when synthetic content is cheap. Authenticity is an ownership signal, not a watermark.
-
-WHY COPYRIGHT FAILS (https://suedeai.org/why-copyright-fails/)
-Copyright tries to protect ownership after distribution. AI-era media moves faster than that. Ownership has to be machine-readable upstream.
-
 
 Founder — Jason Colapietro
 --------------------------

@@ -550,9 +550,9 @@ def main() -> int:
 
     concept_expectations = {
         "proof-of-creation/index.html": "Proof of creation makes authorship, provenance, and creator rights verifiable",
-        "why-copyright-fails/index.html": "Copyright tries to protect ownership after distribution.",
-        "royalties/index.html": "You cannot automate royalties on content you cannot verify.",
-        "programmable-ip/index.html": "Programmable IP moves ownership, licensing, attribution, and usage rules",
+        "why-copyright-fails/index.html": "Copyright remains essential for eligible human-authored work.",
+        "royalties/index.html": "AI royalties are payments tied to a licensed or otherwise compensated use",
+        "programmable-ip/index.html": "Programmable IP is creative work paired with verifiable ownership data",
         "agentic-commerce/index.html": "Rights need a payment layer. ACP and x402 are how agents pay for them.",
         "content-provenance/index.html": "Content provenance records the source, authorship, and ownership context",
     }
@@ -573,6 +573,54 @@ def main() -> int:
         path = ROOT / file_name
         if path.exists():
             assert_contains(file_name, read_text(path), sentence, failures)
+
+    ownership_cluster = {
+        "creator-ownership/index.html": "/creator-ownership/",
+        "why-copyright-fails/index.html": "/why-copyright-fails/",
+        "proof-of-creation/index.html": "/proof-of-creation/",
+        "content-provenance/index.html": "/content-provenance/",
+        "programmable-ip/index.html": "/programmable-ip/",
+        "royalties/index.html": "/royalties/",
+    }
+
+    for file_name, own_route in ownership_cluster.items():
+        path = ROOT / file_name
+        if not path.exists():
+            continue
+        html = read_text(path)
+        for related_route in ownership_cluster.values():
+            if related_route == own_route:
+                continue
+            assert_contains(
+                file_name,
+                html,
+                f'href="{related_route}"',
+                failures,
+            )
+
+    optimized_pages = [
+        "why-copyright-fails/index.html",
+        "programmable-ip/index.html",
+        "royalties/index.html",
+    ]
+
+    for file_name in optimized_pages:
+        path = ROOT / file_name
+        if not path.exists():
+            continue
+        html = read_text(path)
+        title_match = re.search(r"<title>([^<]+)</title>", html)
+        description_match = re.search(r'<meta name="description" content="([^"]+)"', html)
+        if title_match and not 50 <= len(title_match.group(1)) <= 60:
+            failures.append(
+                f"{file_name}: title length {len(title_match.group(1))} is outside 50-60 characters"
+            )
+        if description_match and not 145 <= len(description_match.group(1)) <= 160:
+            failures.append(
+                f"{file_name}: meta description length {len(description_match.group(1))} is outside 145-160 characters"
+            )
+        assert_contains(file_name, html, 'content="2026-09-08T00:00:00Z"', failures)
+        assert_contains(file_name, html, '"dateModified":"2026-09-08"', failures)
 
     # Form expectations match the current Vercel-API-only flow. The PHP shared-hosting
     # fallback was removed; book and contact submit directly to /api/book/ and /api/contact/.
