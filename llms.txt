@@ -43,15 +43,15 @@ Suede Labs is the company behind Suede AI, an ownership and provenance layer for
 
 ## Topical pages
 
-- [Proof of Creation](https://suedeai.org/proof-of-creation/) — authorship, provenance, and verifiable creator rights
-- [Programmable IP](https://suedeai.org/programmable-ip/) — ownership, licensing, attribution, usage rules as code
-- [Creator Ownership](https://suedeai.org/creator-ownership/) — why ownership infrastructure matters when AI makes media abundant
-- [Content Provenance](https://suedeai.org/content-provenance/) — source, authorship, and ownership context for AI-era media
-- [Royalties](https://suedeai.org/royalties/) — automating royalties requires verifiable ownership
+- [Creator Ownership](https://suedeai.org/creator-ownership/) — hub for the complete proof, provenance, permission, usage, and payment system
+- [Why Copyright Alone Falls Short](https://suedeai.org/why-copyright-fails/) — copyright remains essential, but it is not an end-to-end operational system for AI media
+- [Proof of Creation](https://suedeai.org/proof-of-creation/) — evidence connecting a creator, work, version, and creation event
+- [Content Provenance](https://suedeai.org/content-provenance/) — inspectable source history and derivative context, with clear evidentiary limits
+- [Programmable IP](https://suedeai.org/programmable-ip/) — machine-readable license terms connecting proof, provenance, permission, and payment
+- [AI Royalties](https://suedeai.org/royalties/) — the path from an identified work and accepted terms to a recorded use, splits, and settlement
 - [AI Voice Protection](https://suedeai.org/ai-voice-protection/) — voice as a rights problem, not just a detection problem
 - [AI Likeness Protection](https://suedeai.org/ai-likeness-protection/) — likeness rights grounded in ownership, consent, and proof
 - [Human Authenticity Layer](https://suedeai.org/human-authenticity-layer/) — why authenticity becomes premium when synthetic content is cheap
-- [Why Copyright Fails](https://suedeai.org/why-copyright-fails/) — the gap between distribution-era copyright and AI-era ownership
 - [Investor Brief](https://suedeai.org/investors/) — request investor materials and learn about the Suede Labs AI raise for creator ownership and programmable IP infrastructure
 - [Jason Colapietro](https://suedeai.org/jason-colapietro/) — founder profile
 

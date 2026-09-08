@@ -8,11 +8,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/site.webmanifest">
-  <title>AI Royalties and Programmable IP | Suede</title>
-  <meta name="description" content="AI royalties only work when origin, ownership, usage rights, and royalty logic are defined at creation. Suede makes that programmable.">
+  <title>AI Royalties: How Programmable Payments Work | Suede</title>
+  <meta name="description" content="AI royalties need a verified work, clear license terms, defined splits, a recorded use, and a payment rail. See the full programmable royalty stack.">
   <link rel="canonical" href="https://suedeai.org/royalties/">
-  <meta property="og:title" content="AI Royalties and Programmable IP | Suede">
-  <meta property="og:description" content="How proof of creation and programmable IP make automated royalties possible for AI media.">
+  <meta property="og:title" content="AI Royalties: How Programmable Payments Work | Suede">
+  <meta property="og:description" content="The full path from a verified work and license terms to recorded use, collaborator splits, and settlement.">
   <meta property="og:image" content="https://suedeai.org/assets/img/og-suede.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -20,12 +20,13 @@
   <meta property="og:url" content="https://suedeai.org/royalties/">
   <meta property="og:type" content="article">
   <meta property="article:author" content="Jason Colapietro">
-  <meta property="article:published_time" content="2026-01-01T00:00:00Z">
+  <meta property="article:published_time" content="2026-06-11T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-08T00:00:00Z">
   <meta property="og:site_name" content="Suede">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Royalties and Programmable IP | Suede">
-  <meta name="twitter:description" content="How proof of creation and programmable IP make automated royalties possible for AI media.">
+  <meta name="twitter:title" content="AI Royalties: How Programmable Payments Work | Suede">
+  <meta name="twitter:description" content="The full path from a verified work and license terms to recorded use, collaborator splits, and settlement.">
   <meta name="twitter:image" content="https://suedeai.org/assets/img/og-suede.png">
   <meta name="author" content="Jason Colapietro">
   <meta name="keywords" content="AI royalties, programmable royalties, music royalties, creator payments, royalty automation, programmable IP, proof of creation, royalty routing, on-chain royalties, music rights, creator monetization, digital royalties">
@@ -40,7 +41,7 @@
   <script defer src="/assets/js/site.js?v=20260828"></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"WebPage","name":"AI Royalties and Programmable IP","url":"https://suedeai.org/royalties/","description":"How proof of creation and programmable IP make automated royalties possible for AI media.","author":{"@id": "https://suedeai.ai/founder#person", "name": "Jason Colapietro"}},
+    {"@type":"WebPage","name":"AI Royalties","url":"https://suedeai.org/royalties/","description":"How verified works, license terms, recorded uses, collaborator splits, and payment rails make programmable AI royalties possible.","author":{"@id": "https://suedeai.ai/founder#person", "name": "Jason Colapietro"}},
     {"@type":"BreadcrumbList","itemListElement":[
       {"@type":"ListItem","position":1,"name":"Suede","item":"https://suedeai.org/"},
       {"@type":"ListItem","position":2,"name":"Royalties","item":"https://suedeai.org/royalties/"}
@@ -48,7 +49,7 @@
   ]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Royalties do not become automatic until ownership becomes verifiable.","description":"AI royalties only work when origin, ownership, usage rights, and royalty logic are defined at creation. Suede makes that programmable.","mainEntityOfPage":"https://suedeai.org/royalties/","url":"https://suedeai.org/royalties/","author":{"@id":"https://suedeai.ai/founder#person"},"publisher":{"@id":"https://suedeai.ai/#organization"},"image":"https://suedeai.org/assets/img/og-suede.png","datePublished":"2026-06-11","dateModified":"2026-06-11"}
+  {"@context":"https://schema.org","@type":"Article","headline":"AI Royalties: How Programmable Payments Work","description":"AI royalties need a verified work, clear license terms, defined splits, a recorded use, and a payment rail. See the full programmable royalty stack.","mainEntityOfPage":"https://suedeai.org/royalties/","url":"https://suedeai.org/royalties/","author":{"@id":"https://suedeai.ai/founder#person"},"publisher":{"@id":"https://suedeai.ai/#organization"},"image":"https://suedeai.org/assets/img/og-suede.png","datePublished":"2026-06-11","dateModified":"2026-09-08","citation":["https://www.copyright.gov/engage/musicians/","https://docs.story.foundation/concepts/royalty-module"]}
   </script>
 <script type="application/ld+json">
 {
@@ -108,49 +109,74 @@
           <li aria-current="page">Royalties</li>
         </ol>
       </nav>
-      <span class="eyebrow">Automated Royalties</span>
-      <h1>Royalties do not become automatic until ownership becomes verifiable.</h1>
-      <p class="lede">You cannot automate royalties on content you cannot verify. Suede starts with proof of creation, turns media into programmable IP, and lets usage trigger attribution, licensing validation, and payment logic.</p>
+      <span class="eyebrow">AI Royalties Guide</span>
+      <h1>AI royalties need proof, terms, use, splits, and settlement.</h1>
+      <p class="lede">AI royalties are payments tied to a licensed or otherwise compensated use of creative work in an AI workflow. They become programmable only when the system can identify the work, evaluate the terms, record the covered use, and route the agreed value.</p>
       <p class="byline">By <a href="/jason-colapietro/">Jason Colapietro</a> (Johnny Suede) · Founder &amp; CEO of Suede Labs AI</p>
     </section>
 
     <div class="page-layout">
       <div class="content-stack">
-        <article class="panel">
-          <h2>Why traditional royalty systems break</h2>
-          <p>Traditional royalties rely on manual reporting, delayed platform accounting, opaque intermediaries, and after-the-fact reconciliation. AI increases output, derivatives, and distribution faster than those systems can track, which is part of <a href="/why-copyright-fails/">why copyright fails</a> to keep up.</p>
-        </article>
         <article class="panel panel--feature">
-          <h2>Proof comes before payment.</h2>
-          <p>Before royalties can work, the system needs a provable creator, a <a href="/proof-of-creation/">verified creation event</a>, defined usage rights, and <a href="/programmable-ip/">royalty logic attached to the asset</a>. Without that foundation, royalties become guesswork.</p>
-          <div class="ownership-flow ownership-flow--compact">
-            <div><strong>Sign</strong><span>Verify origin at creation.</span></div>
-            <div><strong>Define</strong><span>Attach ownership and splits.</span></div>
-            <div><strong>Execute</strong><span>Trigger payments on use.</span></div>
-          </div>
+          <span class="eyebrow">Direct Answer</span>
+          <h2>What are AI royalties?</h2>
+          <p>AI royalties are not one new statutory royalty category. The phrase describes compensation connected to AI-related uses of creative work: licensing material for training or generation, using a work in an AI-assisted product, authorizing derivatives, or sharing revenue from licensed outputs. Whether payment is owed depends on the relevant rights, contracts, licenses, platform rules, and facts.</p>
+          <p>You cannot automate royalties on content you cannot verify. A payment rail needs a reliable asset identity, a party authorized to set terms, a defined price or share, a record of the event those terms cover, and valid destinations for the money.</p>
         </article>
+
         <article class="panel">
-          <h2>What programmable royalties unlock</h2>
-          <ul>
-            <li>Direct creator payments</li>
-            <li>Collaborator splits</li>
-            <li>Derivative revenue sharing</li>
-            <li>Platform fees when they are defined upfront</li>
-          </ul>
+          <span class="eyebrow">Rights Map</span>
+          <h2>AI royalties are not one revenue stream.</h2>
+          <p>A single song can contain separate rights in the musical composition and the sound recording, and those rights may have different owners and license paths. Voice, likeness, samples, and other source material can add more permissions. A programmable system should preserve those distinctions instead of flattening every contributor into one generic owner field.</p>
+          <p>The <a href="https://www.copyright.gov/engage/musicians/" target="_blank" rel="noopener">U.S. Copyright Office's guidance for musicians</a> explains the separation between a musical work and a sound recording. Programmable royalty logic can make an agreed split easier to execute, but it does not decide who legally controls a disputed right.</p>
         </article>
-        <section class="system-links" aria-label="Related ownership pages">
-          <a class="keyword-card" href="https://ip.suedeai.ai/" rel="noopener"><strong>Suede IP Registry</strong><p>The live registry — register work, set terms, route royalties on Base and Avalanche.</p></a>
-          <a class="keyword-card" href="/proof-of-creation/"><strong>Proof of Creation</strong><p>The basis for payment.</p></a>
-          <a class="keyword-card" href="/why-copyright-fails/"><strong>Why Copyright Fails</strong><p>The reason reactive enforcement is not enough.</p></a>
-          <a class="keyword-card" href="/programmable-ip/"><strong>Programmable IP</strong><p>The rights layer that carries the rules.</p></a>
-          <a class="keyword-card" href="/agentic-commerce/"><strong>Agentic Commerce</strong><p>How agents license and pay for rights once royalty logic is defined.</p></a>
+
+        <article class="panel">
+          <span class="eyebrow">The Stack</span>
+          <h2>The five prerequisites for programmable AI royalties</h2>
+          <div class="ownership-flow">
+            <div><strong>1. Work</strong><span>A stable identifier points to the exact asset or version involved.</span></div>
+            <div><strong>2. Authority</strong><span>The party setting terms has a documented claim and contributor context.</span></div>
+            <div><strong>3. License</strong><span>Permitted uses, prices, attribution, and derivative conditions are explicit.</span></div>
+            <div><strong>4. Event</strong><span>A covered license, use, sale, or revenue event is recorded.</span></div>
+          </div>
+          <div class="ownership-flow ownership-flow--compact">
+            <div><strong>5. Split</strong><span>Recipients, percentages, fees, currencies, and payout addresses are defined.</span></div>
+            <div><strong>Settlement</strong><span>The supported rail transfers value and preserves a transaction record.</span></div>
+            <div><strong>Reconciliation</strong><span>Participants can inspect what happened and resolve exceptions.</span></div>
+          </div>
+          <p><a href="/proof-of-creation/">Proof of creation</a> and <a href="/content-provenance/">content provenance</a> support the first two prerequisites. <a href="/programmable-ip/">Programmable IP</a> makes the license and split legible to software. Settlement is the last step, not the whole system.</p>
+        </article>
+
+        <article class="panel">
+          <span class="eyebrow">Use Cases</span>
+          <h2>What programmable royalty rails can automate</h2>
+          <ul>
+            <li><strong>License fees:</strong> collect a fixed amount when a buyer or agent accepts published terms.</li>
+            <li><strong>Collaborator splits:</strong> route an agreed payment across named recipients.</li>
+            <li><strong>Derivative revenue shares:</strong> preserve parent-child relationships and calculate defined shares.</li>
+            <li><strong>Platform or protocol fees:</strong> apply disclosed fees that were part of the accepted transaction.</li>
+            <li><strong>Audit records:</strong> keep the license, event, split, and settlement connected for reconciliation.</li>
+          </ul>
+          <p>Story's official <a href="https://docs.story.foundation/concepts/royalty-module" target="_blank" rel="noopener">Royalty Module documentation</a> is one public example of software that maps derivative relationships, revenue shares, vaults, and claims. It also illustrates an important boundary: a payment still has to enter the supported system before the module can distribute it.</p>
+        </article>
+
+        <article class="panel">
+          <span class="eyebrow">Boundaries</span>
+          <h2>What royalty code cannot solve by itself</h2>
+          <p>A smart contract cannot detect every off-platform use, verify that a claimant cleared every sample, decide whether an exception such as fair use applies, force an unsupported platform to report an event, or guarantee that a transaction will earn money. It can faithfully execute the inputs and events the connected system recognizes.</p>
+          <p>That is why this cluster starts with <a href="/why-copyright-fails/">the operational gap around copyright</a>, moves through proof and provenance, defines permissions as programmable IP, and ends with royalty settlement. Skipping straight to payments produces a precise ledger for an imprecise claim.</p>
+          <p><small>This page is educational and does not provide legal, financial, or investment advice.</small></p>
+        </article>
+
+        <section class="system-links" aria-label="Creator ownership topic cluster">
+          <a class="keyword-card" href="/creator-ownership/"><strong>Creator Ownership</strong><p>Start with the hub for the complete ownership system.</p></a>
+          <a class="keyword-card" href="/programmable-ip/"><strong>Programmable IP</strong><p>See how proof, provenance, permissions, and payment fit together.</p></a>
+          <a class="keyword-card" href="/why-copyright-fails/"><strong>Why Copyright Alone Falls Short</strong><p>Understand why legal rights still need operational infrastructure.</p></a>
+          <a class="keyword-card" href="https://ip.suedeai.ai/" rel="noopener"><strong>Suede IP Registry</strong><p>Inspect the public registry and its supported ownership records.</p></a>
+          <a class="keyword-card" href="/proof-of-creation/"><strong>Proof of Creation</strong><p>Connect the work to a creation record before defining payment logic.</p></a>
+          <a class="keyword-card" href="/agentic-commerce/"><strong>Agentic Commerce</strong><p>See how agents discover terms and pay through supported rails.</p></a>
         </section>
-                <figure class="pull-quote">
-          <blockquote>
-            <p>The royalty system was built for a world where radio stations had to report every spin. That chain broke in streaming and broke completely in AI. The answer is not better reporting — it is on-chain routing. Every generation event triggers a payment event. No middleman required.</p>
-          </blockquote>
-          <figcaption>— Jason Colapietro, Founder &amp; CEO, Suede Labs AI</figcaption>
-        </figure>
         <article class="panel panel--author">
           <p class="eyebrow">About the author</p>
           <p><strong><a href="/jason-colapietro/">Jason Colapietro</a></strong> (Johnny Suede) is the founder and CEO of Suede Labs AI. He built the creator-ownership layer for the AI media era: proof of creation, programmable IP, on-chain royalty routing, and agent-accessible licensing. Patent pending USPTO&nbsp;63/947,120.</p>
@@ -165,12 +191,13 @@
         </article>
       </div>
       <aside class="sidebar-nav">
-        <h2>Sequence</h2>
+        <h2>Ownership System</h2>
         <ul>
-          <li><a href="/proof-of-creation/">Create a verifiable origin</a></li>
-          <li><a href="/programmable-ip/">Define rights and rules</a></li>
-          <li><a href="/why-copyright-fails/">Replace reactive enforcement</a></li>
-          <li><a href="https://ip.suedeai.ai/" rel="noopener">Use the live registry</a></li>
+          <li><a href="/creator-ownership/">Start at creator ownership</a></li>
+          <li><a href="/why-copyright-fails/">Understand the copyright gap</a></li>
+          <li><a href="/proof-of-creation/">Establish proof of creation</a></li>
+          <li><a href="/content-provenance/">Preserve content provenance</a></li>
+          <li><a href="/programmable-ip/">Define programmable terms</a></li>
           <li><a href="/contact/">Talk to Suede</a></li>
         </ul>
       </aside>
