@@ -20,7 +20,7 @@ Jason Colapietro argues that content spam is dead as a strategy and that AI agen
 TechBullion · May 25, 2026 · Jason Colapietro's Suede Labs AI Launches iOS Apps, Codex and Claude Skills, and the Musicians Terminal
 URL: https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/
 
-Third-party coverage of Suede Labs' May 2026 product wave: the iOS app line now including Suede: AI Music Generator, Suede Guitar Tuner & Studio, and Suede Studio Voice; Codex and Claude developer skills for AI coding agents; and the Musicians Terminal — a working-musician console for catalog management, rights routing, royalty splits, and licensing decisions. The piece grounds the creator-ownership thesis in shipped product surfaces rather than slideware.
+Third-party coverage of Suede Labs' May 2026 product wave: the iOS app line now including AI Music & Video Generator, Suede Guitar Tuner & Studio, and Suede Voice: Vocal Range Test; Codex and Claude developer skills for AI coding agents; and the Musicians Terminal — a working-musician console for catalog management, rights routing, royalty splits, and licensing decisions. The piece grounds the creator-ownership thesis in shipped product surfaces rather than slideware.
 
 Altcoin Investor · May 9, 2026 · How AI, Blockchain, and On-Chain IP Are Changing Creator Ownership
 URL: https://altcoininvestor.com/ai-blockchain-on-chain-ip-creator-ownership/

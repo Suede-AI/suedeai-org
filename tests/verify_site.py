@@ -278,6 +278,9 @@ def main() -> int:
         "suede-studio-inspiration",
         "Suede Agents: AI That Earns",
         "suede-agents-ai-that-earns",
+        # Former App Store name of id6765461286; the store listing is
+        # "AI Music & Video Generator" (itunes lookup, 2026-09-07).
+        "Suede: AI Music Generator",
         "24 production x402 paid endpoints",
         "24 production x402 endpoints",
         "24 live x402 paid endpoints",
@@ -310,6 +313,11 @@ def main() -> int:
         assert_contains("index.html", home_html, "Talk to Suede", failures)
         assert_contains("index.html", home_html, "Jason Colapietro", failures)
         assert_contains("index.html", home_html, 'href="https://suedeai.ai/"', failures)
+        # Amazon shelf additions of 2026-09-04 must be on the visible books list
+        assert_contains("index.html", home_html, 'href="https://www.amazon.com/dp/B0HHTMJWB4"', failures)
+        assert_contains("index.html", home_html, 'href="https://www.amazon.com/dp/B0HHTF3LG1"', failures)
+        # Organization node carries a city-level PostalAddress (Florida record, West Palm Beach)
+        assert_contains("index.html", home_html, '"@type": "PostalAddress", "addressLocality": "West Palm Beach", "addressRegion": "FL", "addressCountry": "US"', failures)
         # Root SEO presence — restored after the "Creative rails" redesign
         assert_contains("index.html", home_html, '<link rel="canonical" href="https://suedeai.org/"', failures)
         assert_contains("index.html", home_html, '<link rel="icon" href="/favicon.ico?v=3" sizes="any">', failures)
@@ -370,6 +378,12 @@ def main() -> int:
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://johnnysuede.com/"', failures)
+        # Book JSON-LD for the two titles published 2026-09-04
+        assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#book-the-claude-code-bible"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://www.amazon.com/dp/B0HHTMJWB4"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#book-codex-in-production"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://www.amazon.com/dp/B0HHTF3LG1"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"datePublished": "2026-09-04"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, f'<meta property="og:image" content="{FOUNDER_OG_IMAGE_URL}">', failures)
         assert_contains("jason-colapietro/index.html", founder_html, '<meta property="og:image:width" content="1200">', failures)
         assert_contains("jason-colapietro/index.html", founder_html, '<meta property="og:image:height" content="630">', failures)
