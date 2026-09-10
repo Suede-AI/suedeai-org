@@ -598,13 +598,16 @@ def main() -> int:
                 failures,
             )
 
-    optimized_pages = [
-        "why-copyright-fails/index.html",
-        "programmable-ip/index.html",
-        "royalties/index.html",
-    ]
+    # Each optimized page carries its own last-modified date. A single shared
+    # literal made it impossible to update one page without retouching the other
+    # two just to keep this assertion green, so the date is pinned per page.
+    optimized_pages = {
+        "why-copyright-fails/index.html": "2026-09-09",
+        "programmable-ip/index.html": "2026-09-08",
+        "royalties/index.html": "2026-09-08",
+    }
 
-    for file_name in optimized_pages:
+    for file_name, expected_modified in optimized_pages.items():
         path = ROOT / file_name
         if not path.exists():
             continue
@@ -619,8 +622,12 @@ def main() -> int:
             failures.append(
                 f"{file_name}: meta description length {len(description_match.group(1))} is outside 145-160 characters"
             )
-        assert_contains(file_name, html, 'content="2026-09-08T00:00:00Z"', failures)
-        assert_contains(file_name, html, '"dateModified":"2026-09-08"', failures)
+        assert_contains(
+            file_name, html, f'content="{expected_modified}T00:00:00Z"', failures
+        )
+        assert_contains(
+            file_name, html, f'"dateModified":"{expected_modified}"', failures
+        )
 
     # Form expectations match the current Vercel-API-only flow. The PHP shared-hosting
     # fallback was removed; book and contact submit directly to /api/book/ and /api/contact/.

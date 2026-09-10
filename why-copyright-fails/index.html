@@ -21,7 +21,7 @@
   <meta property="og:type" content="article">
   <meta property="article:author" content="Jason Colapietro">
   <meta property="article:published_time" content="2026-06-11T00:00:00Z">
-  <meta property="article:modified_time" content="2026-09-08T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-09T00:00:00Z">
   <meta property="og:site_name" content="Suede">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
@@ -45,11 +45,12 @@
     {"@type":"BreadcrumbList","itemListElement":[
       {"@type":"ListItem","position":1,"name":"Suede","item":"https://suedeai.org/"},
       {"@type":"ListItem","position":2,"name":"Why Copyright Alone Falls Short","item":"https://suedeai.org/why-copyright-fails/"}
-    ]}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who owns AI-generated content?", "acceptedAnswer": {"@type": "Answer", "text": "Ownership turns on how much human authorship went into the work. The U.S. Copyright Office has said material generated purely by a machine, without human creative control, is not copyrightable, while human-authored contributions inside an AI-assisted work can be. This is jurisdictional and still moving, so treat it as a legal question rather than a settled rule."}}, {"@type": "Question", "name": "Can you copyright AI art?", "acceptedAnswer": {"@type": "Answer", "text": "In the United States the copyrightable part is the human contribution. Prompts alone have generally not been treated as sufficient authorship, while human selection, arrangement, and modification can be. Registration asks you to disclaim purely machine-generated material. Other countries answer this differently, and the rules are still developing."}}, {"@type": "Question", "name": "Does copyright cover AI music?", "acceptedAnswer": {"@type": "Answer", "text": "The same authorship test applies: human-authored elements can be protected, purely machine-generated output generally is not. Separately, a track can raise voice and likeness questions that copyright does not address at all. Those sit under right of publicity and contract law, which is a different body of rules entirely."}}, {"@type": "Question", "name": "Do you have to register a copyright online for it to exist?", "acceptedAnswer": {"@type": "Answer", "text": "No. In the United States copyright generally attaches when an eligible original work is fixed in a tangible medium. Registration does not create the right. The U.S. Copyright Office does note that registration creates a public record and adds enforcement benefits, including the ability to bring an infringement suit."}}, {"@type": "Question", "name": "What is C2PA, and how does it relate to copyright?", "acceptedAnswer": {"@type": "Answer", "text": "C2PA is an open technical standard for attaching tamper-evident provenance to media: who made a file, with what tools, and what has happened to it since. It records history; it does not grant or prove legal ownership. Provenance and copyright answer different questions and are strongest used together."}}, {"@type": "Question", "name": "What are Content Credentials?", "acceptedAnswer": {"@type": "Answer", "text": "Content Credentials are the reader-facing name for provenance metadata built on the C2PA standard, surfaced as an indicator you can inspect on an image, video, or audio file. They tell a viewer where a file came from. They can also be stripped, so a missing credential proves nothing on its own."}}]}
   ]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Why Copyright Alone Falls Short for AI Media","description":"Copyright still protects human-authored work, but it does not make provenance, permissions, attribution, or payments machine-readable. See the missing layer.","mainEntityOfPage":"https://suedeai.org/why-copyright-fails/","url":"https://suedeai.org/why-copyright-fails/","author":{"@id":"https://suedeai.ai/founder#person"},"publisher":{"@id":"https://suedeai.ai/#organization"},"image":"https://suedeai.org/assets/img/og-suede.png","datePublished":"2026-06-11","dateModified":"2026-09-08","citation":["https://www.copyright.gov/what-is-copyright/","https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf","https://c2pa.org/specifications/specifications/2.2/explainer/Explainer.html"]}
+  {"@context":"https://schema.org","@type":"Article","headline":"Why Copyright Alone Falls Short for AI Media","description":"Copyright still protects human-authored work, but it does not make provenance, permissions, attribution, or payments machine-readable. See the missing layer.","mainEntityOfPage":"https://suedeai.org/why-copyright-fails/","url":"https://suedeai.org/why-copyright-fails/","author":{"@id":"https://suedeai.ai/founder#person"},"publisher":{"@id":"https://suedeai.ai/#organization"},"image":"https://suedeai.org/assets/img/og-suede.png","datePublished":"2026-06-11","dateModified":"2026-09-09","citation":["https://www.copyright.gov/what-is-copyright/","https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf","https://c2pa.org/specifications/specifications/2.2/explainer/Explainer.html"]}
   </script>
 <script type="application/ld+json">
 {
@@ -229,6 +230,46 @@
           <a class="button button--ghost" href="https://suedeai.ai/" rel="noopener">Visit suedeai.ai</a>
         </div>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Copyright vs Provenance</span>
+        <h2>What copyright does, and what provenance does</h2>
+      </div>
+      <p>The two are often argued about as if one replaces the other. They answer different questions, and a working ownership system needs both.</p>
+      <div class="cmp-scroll">
+        <table class="cmp">
+          <caption>Copyright compared with content provenance</caption>
+          <thead>
+            <tr><th scope="col">Dimension</th><th scope="col">Copyright</th><th scope="col">Provenance (C2PA)</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Question it answers</th><td>Who holds exclusive rights in the work</td><td>Where this specific file came from</td></tr>
+            <tr><th scope="row">How it is created</th><td>Fixing an original human-authored work in a tangible medium</td><td>Attaching signed metadata at capture or export</td></tr>
+            <tr><th scope="row">What it establishes</th><td>A legal claim you can enforce</td><td>A recorded, tamper-evident history</td></tr>
+            <tr><th scope="row">Machine-readable</th><td>No</td><td>Yes</td></tr>
+            <tr><th scope="row">Travels with the file</th><td>No</td><td>Yes, until it is stripped</td></tr>
+            <tr><th scope="row">Covers voice and likeness</th><td>No</td><td>No — it records, it does not protect</td></tr>
+            <tr><th scope="row">Relied on by</th><td>Courts and licensees</td><td>Verification tools, platforms, and agents</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Copyright and AI: common questions</h2>
+      </div>
+      <div class="faq-list">
+          <div class="faq-item"><h3>Who owns AI-generated content?</h3><p>Ownership turns on how much human authorship went into the work. The U.S. Copyright Office has said material generated purely by a machine, without human creative control, is not copyrightable, while human-authored contributions inside an AI-assisted work can be. This is jurisdictional and still moving, so treat it as a legal question rather than a settled rule.</p></div>
+          <div class="faq-item"><h3>Can you copyright AI art?</h3><p>In the United States the copyrightable part is the human contribution. Prompts alone have generally not been treated as sufficient authorship, while human selection, arrangement, and modification can be. Registration asks you to disclaim purely machine-generated material. Other countries answer this differently, and the rules are still developing.</p></div>
+          <div class="faq-item"><h3>Does copyright cover AI music?</h3><p>The same authorship test applies: human-authored elements can be protected, purely machine-generated output generally is not. Separately, a track can raise voice and likeness questions that copyright does not address at all. Those sit under right of publicity and contract law, which is a different body of rules entirely.</p></div>
+          <div class="faq-item"><h3>Do you have to register a copyright online for it to exist?</h3><p>No. In the United States copyright generally attaches when an eligible original work is fixed in a tangible medium. Registration does not create the right. The U.S. Copyright Office does note that registration creates a public record and adds enforcement benefits, including the ability to bring an infringement suit.</p></div>
+          <div class="faq-item"><h3>What is C2PA, and how does it relate to copyright?</h3><p>C2PA is an open technical standard for attaching tamper-evident provenance to media: who made a file, with what tools, and what has happened to it since. It records history; it does not grant or prove legal ownership. Provenance and copyright answer different questions and are strongest used together.</p></div>
+          <div class="faq-item"><h3>What are Content Credentials?</h3><p>Content Credentials are the reader-facing name for provenance metadata built on the C2PA standard, surfaced as an indicator you can inspect on an image, video, or audio file. They tell a viewer where a file came from. They can also be stripped, so a missing credential proves nothing on its own.</p></div>
+        </div>
     </section>
   </main>
   <footer class="site-footer">

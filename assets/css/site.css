@@ -1152,3 +1152,16 @@ button[aria-disabled="true"] {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Comparison table + FAQ (why-copyright-fails and siblings) */
+.cmp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--hairline); border-radius: 12px; background: var(--ink-panel); margin-block: 1.5rem; }
+.cmp { width: 100%; border-collapse: collapse; min-width: 620px; font-size: 0.95rem; }
+.cmp caption { text-align: left; padding: 0.9rem 1.1rem; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.cmp th, .cmp td { padding: 0.8rem 1.1rem; text-align: left; vertical-align: top; border-top: 1px solid var(--hairline); }
+.cmp thead th { border-top: 0; background: var(--ink-control); color: var(--text-primary); font-weight: 600; white-space: nowrap; }
+.cmp tbody th { color: var(--text-primary); font-weight: 600; white-space: nowrap; }
+.cmp td { color: var(--text-muted); }
+.faq-list { display: grid; gap: 0.75rem; margin-top: 1.25rem; }
+.faq-item { border: 1px solid var(--hairline); border-radius: 12px; background: var(--ink-panel); padding: 1rem 1.15rem; }
+.faq-item h3 { margin: 0 0 0.45rem; font-size: 1.02rem; color: var(--text-primary); }
+.faq-item p { margin: 0; color: var(--text-muted); max-width: 70ch; }
