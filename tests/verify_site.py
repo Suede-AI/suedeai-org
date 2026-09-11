@@ -549,7 +549,7 @@ def main() -> int:
             assert_contains(file_name, read_text(path), "Talk to Suede", failures)
 
     concept_expectations = {
-        "proof-of-creation/index.html": "Proof of creation makes authorship, provenance, and creator rights verifiable",
+        "proof-of-creation/index.html": "A proof-of-creation record connects a specific digital file",
         "why-copyright-fails/index.html": "Copyright remains essential for eligible human-authored work.",
         "royalties/index.html": "AI royalties are payments tied to a licensed or otherwise compensated use",
         "programmable-ip/index.html": "Programmable IP is creative work paired with verifiable ownership data",
@@ -561,6 +561,23 @@ def main() -> int:
         path = ROOT / file_name
         if path.exists():
             assert_contains(file_name, read_text(path), sentence, failures)
+
+    proof_page = ROOT / "proof-of-creation" / "index.html"
+    if proof_page.exists():
+        proof_html = read_text(proof_page)
+        for fragment in [
+            "Proof of Creation for AI Media: What It Proves | Suede",
+            "A cryptographic fingerprint identifies the exact bytes in a file.",
+            "does not independently prove human authorship, copyright ownership, originality, consent",
+            "The registry does not issue or verify licenses and it does not route payments.",
+            "source files, drafts, session history, and version exports",
+            "prove origin, define permission, and route payment",
+            "copyright alone falls short as an operational system",
+            'href="/programmable-ip/"',
+            'href="/royalties/"',
+            'href="/why-copyright-fails/"',
+        ]:
+            assert_contains("proof-of-creation/index.html", proof_html, fragment, failures)
 
     wedge_expectations = {
         "creator-ownership/index.html": "Creator ownership becomes more important as AI makes production easier.",
@@ -600,8 +617,9 @@ def main() -> int:
 
     # Each optimized page carries its own last-modified date. A single shared
     # literal made it impossible to update one page without retouching the other
-    # two just to keep this assertion green, so the date is pinned per page.
+    # optimized pages just to keep this assertion green, so the date is pinned per page.
     optimized_pages = {
+        "proof-of-creation/index.html": "2026-09-11",
         "why-copyright-fails/index.html": "2026-09-09",
         "programmable-ip/index.html": "2026-09-08",
         "royalties/index.html": "2026-09-08",
