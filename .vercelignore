@@ -1,0 +1,11 @@
+# Markdown is internal by default.
+#
+# With no .vercelignore, every tracked .md deployed as a static asset and served
+# at 200: implementation plans and design specs under docs/superpowers/, a
+# Supabase/Vercel/Namecheap deployment runbook, and a funnel checklist. robots.txt
+# allows every crawler except /api/, and the files carried no X-Robots-Tag, so all
+# of it was publicly crawlable and indexable.
+#
+# The accomplishments record is the one markdown file meant to be public.
+*.md
+!docs/accomplishments.md
