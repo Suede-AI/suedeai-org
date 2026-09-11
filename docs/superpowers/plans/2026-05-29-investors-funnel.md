@@ -12,7 +12,7 @@
 
 **Branch assumption:** Work on `feat/investors-funnel` (already created off `main`, holds the spec commit). Do NOT touch `index.html`, `jason-colapietro/index.html`, `api/_shared.js`, `api/contact.js`, `api/book.js`.
 
-**Repo root for all paths below:** `/Users/jason/Documents/Ramboed/suedeai-org`
+**Repo root for all paths below:** `~/Documents/Ramboed/suedeai-org`
 
 ---
 

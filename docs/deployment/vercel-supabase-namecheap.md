@@ -16,7 +16,7 @@ In Supabase SQL editor, run:
 \i supabase/schema.sql
 ```
 
-If your SQL editor does not support `\i`, paste the contents of [schema.sql](/Users/jason/Documents/CodexXcampaign/SEO Webisite/supabase/schema.sql) directly.
+If your SQL editor does not support `\i`, paste the contents of [schema.sql](../../supabase/schema.sql) directly.
 
 ## 2. Add Vercel Environment Variables
 
@@ -34,9 +34,9 @@ Optional but recommended:
 - `CONTACT_EMAIL_FROM`
 - `CONTACT_NOTIFY_TO`
 
-Use [.env.example](/Users/jason/Documents/CodexXcampaign/SEO Webisite/.env.example) as the reference.
+Use [.env.example](../../.env.example) as the reference.
 
-For Supabase capture, use the publishable key with the insert-only RLS policies from [schema.sql](/Users/jason/Documents/CodexXcampaign/SEO Webisite/supabase/schema.sql). Do not use the service-role key in Vercel for this website.
+For Supabase capture, use the publishable key with the insert-only RLS policies from [schema.sql](../../supabase/schema.sql). Do not use the service-role key in Vercel for this website.
 
 Use `info@suedeai.ai` as the send-from address for reader preview delivery and contact notifications.
 
