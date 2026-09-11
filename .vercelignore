@@ -9,3 +9,21 @@
 # The accomplishments record is the one markdown file meant to be public.
 *.md
 !docs/accomplishments.md
+
+# Never a page: agent and session config, CI workflows, tests, build scripts,
+# database schemas. All of these answered 200 on 2026-09-11 (record-audit.py in
+# suede-seo). This project runs no build command, so excluding scripts/ and
+# tests/ from the upload changes nothing about what gets built.
+.claude/
+.codex/
+.github/
+tests/
+test/
+scripts/
+supabase/
+*.sql
+*.py
+*.sh
+*.test.js
+*.test.mjs
+requirements*.txt
