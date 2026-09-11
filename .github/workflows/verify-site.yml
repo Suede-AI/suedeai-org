@@ -3,6 +3,15 @@ name: verify-site
 on:
   push:
     branches: [main]
+    # Scoped to paths .vercelignore keeps out of the deployment, so a change to
+    # them cannot alter what suedeai.org serves. docs/accomplishments.md is
+    # deliberately NOT listed: it is still deployed, so it must still trigger a
+    # build. Pull requests always run the full job regardless.
+    paths-ignore:
+      - 'docs/superpowers/**'
+      - 'docs/deployment/**'
+      - 'README.md'
+      - 'READER_PREVIEW_FUNNEL_CHECKLIST.md'
   pull_request:
   workflow_dispatch:
 
