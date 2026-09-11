@@ -4,6 +4,7 @@ import re
 import sys
 import json
 import struct
+import xml.etree.ElementTree as ET
 
 from pypdf import PdfReader
 
@@ -89,6 +90,16 @@ PAGES = {
     "book-a-call/index.html": "/book-a-call/",
 }
 
+PAGE_DATE_MODIFIED = {
+    "jason-colapietro/index.html": ("/jason-colapietro/", "ProfilePage", "2026-09-09"),
+    "investors/index.html": ("/investors/", "WebPage", "2026-09-07"),
+    "book/index.html": ("/book/", "WebPage", "2026-09-05"),
+    "sharp-excerpt/index.html": ("/sharp-excerpt/", "WebPage", "2026-09-04"),
+    "full-preview/index.html": ("/full-preview/", "WebPage", "2026-09-04"),
+    "book-a-call/index.html": ("/book-a-call/", "ContactPage", "2026-08-27"),
+    "voice/support/index.html": ("/voice/support/", "WebPage", "2026-08-27"),
+}
+
 PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
 
 
@@ -120,10 +131,12 @@ def json_ld_nodes(html_text: str) -> list[dict]:
     )
     for script in scripts:
         payload = json.loads(script)
-        if isinstance(payload, dict) and isinstance(payload.get("@graph"), list):
-            nodes.extend(node for node in payload["@graph"] if isinstance(node, dict))
-        elif isinstance(payload, dict):
-            nodes.append(payload)
+        payloads = payload if isinstance(payload, list) else [payload]
+        for item in payloads:
+            if isinstance(item, dict) and isinstance(item.get("@graph"), list):
+                nodes.extend(node for node in item["@graph"] if isinstance(node, dict))
+            elif isinstance(item, dict):
+                nodes.append(item)
     return nodes
 
 
@@ -368,6 +381,31 @@ def main() -> int:
         assert_contains(file_name, html, 'type="application/ld+json"', failures)
         assert_contains(file_name, html, MAIN_SITE_URL, failures)
         assert_schema_is_rendered(file_name, html, failures)
+
+    for file_name, (route, page_type, expected_modified) in PAGE_DATE_MODIFIED.items():
+        path = ROOT / file_name
+        if not path.exists():
+            failures.append(f"{file_name}: file does not exist")
+            continue
+        try:
+            nodes = json_ld_nodes(read_text(path))
+        except json.JSONDecodeError as error:
+            failures.append(f"{file_name}: JSON-LD does not parse ({error})")
+            continue
+        canonical = f"{SITE_URL}{route}"
+        page_nodes = [
+            node
+            for node in nodes
+            if node_has_type(node, page_type) and node.get("url") == canonical
+        ]
+        if len(page_nodes) != 1:
+            failures.append(
+                f"{file_name}: expected exactly one {page_type} JSON-LD node for {canonical}"
+            )
+        elif page_nodes[0].get("dateModified") != expected_modified:
+            failures.append(
+                f"{file_name}: {page_type} dateModified must be {expected_modified}"
+            )
 
     founder_path = ROOT / "jason-colapietro" / "index.html"
     if founder_path.exists():
@@ -892,6 +930,25 @@ def main() -> int:
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/full-preview/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/investors/</loc>", failures)
         assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/book-a-call/</loc>", failures)
+        try:
+            sitemap_root = ET.fromstring(sitemap_text)
+        except ET.ParseError as error:
+            failures.append(f"sitemap.xml: XML does not parse ({error})")
+        else:
+            namespace = {"sitemap": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+            sitemap_dates = {
+                url.findtext("sitemap:loc", default="", namespaces=namespace): url.findtext(
+                    "sitemap:lastmod", default="", namespaces=namespace
+                )
+                for url in sitemap_root.findall("sitemap:url", namespace)
+            }
+            for file_name, (route, _page_type, expected_modified) in PAGE_DATE_MODIFIED.items():
+                canonical = f"{SITE_URL}{route}"
+                if sitemap_dates.get(canonical) != expected_modified:
+                    failures.append(
+                        f"sitemap.xml: {canonical} lastmod must match {file_name} "
+                        f"dateModified ({expected_modified})"
+                    )
 
     if failures:
         print("FAIL: site verification failed")
