@@ -1,9 +1,11 @@
 from pathlib import Path
 from html import unescape as html_unescape
+import hashlib
 import re
 import sys
 import json
 import struct
+from urllib.parse import unquote
 
 from pypdf import PdfReader
 
@@ -33,10 +35,84 @@ CANONICAL_ORGANIZATION_SAME_AS = [
     "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
     "https://t.me/SUEDEAI",
     "https://linktr.ee/suedelabsai",
-    "https://www.crunchbase.com/organization/suede-labs-ai",
     "https://www.linkedin.com/company/suede-labs",
     "https://www.wikidata.org/wiki/Q141169484",
 ]
+RETIRED_TOKEN_LENGTH = 15
+RETIRED_TOKEN_SHA256 = "3ae7a42b9a56f4041cc3d72682d561783d20597a5806d3870feaf4f23aa25e69"
+RETIRED_TOKEN_ROLLING_32 = 3674665812
+ROLLING_BASE = 31
+
+
+def code_point(digits: str, radix: int) -> str:
+    value = int(digits, radix)
+    return chr(value) if value <= 0x10FFFF else " "
+
+
+def decode_once(value: str) -> str:
+    decoded = re.sub(
+        r"\\u\{([0-9a-f]{1,6})\}",
+        lambda match: code_point(match.group(1), 16),
+        value,
+        flags=re.IGNORECASE,
+    )
+    decoded = re.sub(
+        r"\\u([0-9a-f]{4})",
+        lambda match: code_point(match.group(1), 16),
+        decoded,
+        flags=re.IGNORECASE,
+    )
+    decoded = re.sub(
+        r"\\x([0-9a-f]{2})",
+        lambda match: code_point(match.group(1), 16),
+        decoded,
+        flags=re.IGNORECASE,
+    )
+    decoded = re.sub(
+        r"\\([0-9a-f]{1,6})[ \t\r\n\f]?",
+        lambda match: code_point(match.group(1), 16),
+        decoded,
+        flags=re.IGNORECASE,
+    )
+    return unquote(html_unescape(decoded))
+
+
+def decode_escapes(value: str) -> str:
+    decoded = value
+    for _ in range(4):
+        next_value = decode_once(decoded)
+        if next_value == decoded:
+            break
+        decoded = next_value
+    return decoded
+
+
+def compact_signal(value: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", value.lower())
+
+
+def normalized_signal_variants(value: str) -> set[str]:
+    decoded = decode_escapes(value)
+    without_markup = re.sub(r"<!--[\s\S]*?-->|<[^>]*>", " ", decoded)
+    return {compact_signal(decoded), compact_signal(without_markup)}
+
+
+def rolling_fingerprint(value: str) -> int:
+    fingerprint = 0
+    for character in value:
+        fingerprint = ((fingerprint * ROLLING_BASE) + ord(character)) & 0xFFFFFFFF
+    return fingerprint
+
+
+def contains_retired_entity(value: str) -> bool:
+    for normalized in normalized_signal_variants(value):
+        for offset in range(len(normalized) - RETIRED_TOKEN_LENGTH + 1):
+            candidate = normalized[offset : offset + RETIRED_TOKEN_LENGTH]
+            if rolling_fingerprint(candidate) != RETIRED_TOKEN_ROLLING_32:
+                continue
+            if hashlib.sha256(candidate.encode("utf-8")).hexdigest() == RETIRED_TOKEN_SHA256:
+                return True
+    return False
 
 LEGACY_REDIRECTS = {
     "/home/": "/",
@@ -256,6 +332,16 @@ def assert_schema_is_rendered(file_name: str, html_text: str, failures: list[str
 
 def main() -> int:
     failures: list[str] = []
+    expected_guard_fixture = "alphabetagamma"
+    for fixture in [
+        "Alpha%20Beta%20Gamma",
+        "Alpha&#32;Beta&#x20;Gamma",
+        r"Alpha\u0020Beta\x20Gamma",
+        r"\41 lpha\20 Beta\20 Gamma",
+        "<span>Alpha</span><b>Beta</b>Gamma",
+    ]:
+        if expected_guard_fixture not in normalized_signal_variants(fixture):
+            failures.append(f"retired-entity normalization missed neutral fixture {fixture!r}")
     stale_founder_url_pattern = r'"@id"\s*:\s*"https://suedeai\.ai/founder#person"[\s\S]{0,2000}?"url"\s*:\s*"https://suedeai\.org/jason-colapietro/"'
     # Phrases that must NEVER appear on a public surface. The book-count entries
     # below are stale-claim guards, not claims. Amazon is the canonical total of
@@ -286,8 +372,6 @@ def main() -> int:
         "24 live x402 paid endpoints",
         "24 production paid endpoints",
         "24 agent-payable x402 endpoints",
-        " ".join(("Suede", "Web", "Systems")),
-        "".join(("suede", "web", "systems")) + ".ai",
         "-".join(("full", "stack")) + " GEO",
         "-".join(("full", "stack")) + " AI visibility",
     ]
@@ -467,6 +551,9 @@ def main() -> int:
                 f"{relative_path}: founder person @id uses supporting profile URL instead of https://suedeai.ai/founder"
             )
         lower_html_text = " ".join(html_text.lower().split())
+        if contains_retired_entity(html_text):
+            relative_path = html_path.relative_to(ROOT).as_posix()
+            failures.append(f"{relative_path}: retired entity signal")
         for phrase in public_regression_phrases:
             if phrase.lower() in lower_html_text:
                 relative_path = html_path.relative_to(ROOT).as_posix()
@@ -490,6 +577,9 @@ def main() -> int:
         if text_path.exists():
             text = read_text(text_path)
             lower_text = " ".join(text.lower().split())
+            if contains_retired_entity(text):
+                relative_path = text_path.relative_to(ROOT).as_posix()
+                failures.append(f"{relative_path}: retired entity signal")
             for phrase in public_regression_phrases:
                 if phrase.lower() in lower_text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
