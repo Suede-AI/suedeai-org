@@ -5,6 +5,7 @@ import re
 import sys
 import json
 import struct
+import unicodedata
 from urllib.parse import unquote
 
 from pypdf import PdfReader
@@ -88,7 +89,7 @@ def decode_escapes(value: str) -> str:
 
 
 def compact_signal(value: str) -> str:
-    return re.sub(r"[^a-z0-9]", "", value.lower())
+    return re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFKD", value).lower())
 
 
 def normalized_signal_variants(value: str) -> set[str]:
@@ -339,6 +340,7 @@ def main() -> int:
         r"Alpha\u0020Beta\x20Gamma",
         r"\41 lpha\20 Beta\20 Gamma",
         "<span>Alpha</span><b>Beta</b>Gamma",
+        "Ａｌｐｈａ Ｂｅｔａ Ｇａｍｍａ",
     ]:
         if expected_guard_fixture not in normalized_signal_variants(fixture):
             failures.append(f"retired-entity normalization missed neutral fixture {fixture!r}")
