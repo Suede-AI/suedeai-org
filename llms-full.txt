@@ -121,7 +121,7 @@ WHY COPYRIGHT ALONE FALLS SHORT (https://suedeai.org/why-copyright-fails/)
 Copyright remains essential for eligible human-authored work. It does not by itself make asset identity, provenance, permissions, attribution, usage events, or payment instructions machine-readable.
 
 PROOF OF CREATION (https://suedeai.org/proof-of-creation/)
-Proof of creation records evidence connecting a creator, work, version, and creation event. It is not a substitute for Copyright Office registration, contracts, or a legal determination of ownership.
+Proof of creation records an exact file fingerprint, a signed creator claim, contributors, and a timestamp. It strengthens a provenance record but does not determine authorship, copyright ownership, originality, consent, or permission.
 
 CONTENT PROVENANCE (https://suedeai.org/content-provenance/)
 Content provenance records source history and derivative context. Tamper-evident provenance can support decisions without proving that every assertion is true or that the signer owns every right.
