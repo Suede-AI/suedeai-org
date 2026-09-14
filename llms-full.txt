@@ -74,8 +74,9 @@ Suede is not a single app. It is an expanding set of products and rails that mee
 - Learning path — GuitarHub (https://guitarhub.org/): a structured route from first chord to real playing ability
 - Public provenance — Suede IP Registry (https://ip.suedeai.ai/): fingerprint a file, sign a creator claim, timestamp it on Base and Avalanche
 - Artist growth — Strumly (https://strumly.suedeai.ai/): AI guitar coach with real-time chord feedback, drills, ear training
-- Market reach — Suede Distro (https://distro.suedeai.ai/): distribution intake with release-readiness planning
-- Daily practice — Muse (https://muse.suedeai.ai/): one creative constraint a night, the same card for every musician
+- Market reach — Suede Distro (https://distro.suedeai.ai/): independent distribution with release intake and partner delivery coordination; coverage and eligibility vary, and automated royalty settlement is not included
+- Daily practice — Muse (https://muse.suedeai.ai/): one creative constraint a night, the same card for every musician, plus a chat companion for songwriting, music theory, and gear talk
+- Musician companion — Suede Studio Muse for iPhone (https://apps.apple.com/us/app/suede-studio-muse/id6779134962): conversation about guitars, pedals, amps, recording, technique, and practice
 - Community — Suede Social (https://social.suedeai.ai/): a guitar community for real rigs and public Rig Cards
 - Payment rail — x402: internet-native payments for agents, APIs, content, and commerce
 - The whole board — Suede Hub (https://hub.suedeai.ai/): every Suede surface with its gate and what a creator can do there
@@ -92,6 +93,9 @@ Artist income is not a button. It is a route. Suede's value is the full path fro
 - EARN: Paid x402 generation services accept USDC on Base. Catalog licensing and contributor royalties require separately reviewed authority, terms, and supported payment workflows; the IP Registry does not perform them.
 
 
+Contract modules and the public registry are distinct surfaces. The Base contract stack includes licensing templates, derivative registration, and royalty-distribution modules; public IP Registry registration records provenance and does not invoke those workflows.
+
+
 Proof of execution
 ------------------
 
@@ -105,7 +109,7 @@ The breadth matters because the creative industry will not be rebuilt by one fea
 | GuitarHub       | https://guitarhub.org/               | A structured path from first chord to real playing ability                                  |
 | IP Registry     | https://ip.suedeai.ai/               | Public provenance registry on Base and Avalanche                                            |
 | Strumly         | https://strumly.suedeai.ai/          | AI guitar coach: real-time chord feedback, practice drills, ear training                    |
-| Suede Distro    | https://distro.suedeai.ai/           | Distribution intake for independent artists with release-readiness planning                 |
+| Suede Distro    | https://distro.suedeai.ai/           | Independent distribution intake and partner delivery coordination; coverage and eligibility vary                 |
 | Muse            | https://muse.suedeai.ai/             | One creative constraint a night, the same card for every musician on earth                  |
 | Suede Social    | https://social.suedeai.ai/           | A guitar community for real rigs, source-backed gear takes, public Rig Cards                |
 | Suede Hub       | https://hub.suedeai.ai/              | Every Suede surface in one place, each with its gate and what a creator can do there        |

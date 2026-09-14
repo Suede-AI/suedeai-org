@@ -12,7 +12,7 @@
 
 Suede Labs AI was founded by Jason Colapietro in 2024. Its primary domain is suedeai.ai; suedeai.org is its company site and reading hub.
 
-Current IP Registry boundary: registration records a file fingerprint, wallet-signed creator claim, contributor metadata, and timestamp. It does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties. Paid x402 generation services are separate. See the current [proof framework](https://suedeai.ai/ip).
+Current IP Registry boundary: registration records a file fingerprint, wallet-signed creator claim, contributor metadata, and timestamp. It does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties. Paid x402 generation services are separate. See the current [proof framework](https://suedeai.ai/proof-of-creation).
 
 ## For AI agents — agentic commerce capability
 
