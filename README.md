@@ -32,6 +32,7 @@ Upload all files and folders as-is to the web root for `suedeai.org`.
 
 - the site deploys to Vercel as a static site with serverless functions in `api/`
 - the book, call, contact, and investor forms post to `/api/book/`, `/api/book-call/`, `/api/contact/`, and `/api/investors/`
+- every handler runs `api/_spam-gate.js` after the honeypot: a page stamp (`form_ts`, set by `assets/js/site.js`), the `Origin` header, and content signals (letter soup, spam-kit phrases, markup, link count, gambling vocabulary) add up to a score; 5 or more is answered with the normal success response and nothing stored or emailed, 3 to 4 is delivered with a `[review]` subject prefix and the signals listed, and dropped submissions are logged as `[spam-gate] dropped` in the function logs. `FORM_ALLOWED_ORIGINS` (comma-separated) overrides the accepted origins
 - the reader funnel resolves through `/sharp-excerpt/`, `/full-preview/`, and the stable PDF asset path
 - the reader-preview email (`api/book.js`) includes a "Book a Call" CTA linking to `/book-a-call/`
 - the abridged PDF is hosted at `assets/files/stake-your-claim-condensed-preview.pdf`
