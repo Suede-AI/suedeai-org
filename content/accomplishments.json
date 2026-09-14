@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06",
+  "updated": "2026-09-14",
   "source": "https://seo.suedeai.ai/evidence",
   "title": "Accomplishments, with the record behind them.",
   "intro": "The work and recognition of Jason Colapietro and Suede Labs AI: businesses built, software shipped, books published, and contributions accepted. Each entry carries its date or reporting period and links to the underlying record.",
@@ -50,9 +50,9 @@
     {
       "id": "open-source",
       "category": "Engineering",
-      "date": "As of September 2026",
-      "title": "41 merged pull requests. 38 external repositories.",
-      "body": "The public record includes 26 substantive code or documentation contributions and 15 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v6; it is not included in the merged-PR count.",
+      "date": "Public record checked September 14, 2026",
+      "title": "48 merged pull requests. 43 external repositories.",
+      "body": "The public record includes 27 substantive code or documentation contributions and 21 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v6; it is not included in the merged-PR count.",
       "links": [
         {
           "label": "Complete upstream record",
@@ -157,11 +157,11 @@
       "id": "coverage",
       "category": "Press & essays",
       "date": "December 2025–July 2026",
-      "title": "Eight feature placements across four outlets",
+      "title": "Nine feature placements across four outlets",
       "body": "TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede Labs AI. The record includes the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.",
       "links": [
         {
-          "label": "All eight placements",
+          "label": "All nine placements",
           "url": "https://suedeai.ai/press"
         },
         {

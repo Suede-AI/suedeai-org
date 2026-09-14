@@ -87,9 +87,9 @@ Path to monetization
 Artist income is not a button. It is a route. Suede's value is the full path from creative act to economic outcome.
 
 - GROWTH: Strumly and iOS apps build artist capability and engagement.
-- PROOF: Suede AI attaches rights, provenance, ownership, and licensing logic.
+- PROOF: The IP Registry records a file fingerprint, wallet-signed creator claim, contributor metadata, and timestamp. Records are public evidence; registration issues no licenses and routes no royalties.
 - LAUNCH: Launchpad gives creative projects a native route to demand.
-- EARN: Vaults, x402, royalties, and distribution create monetization routes.
+- EARN: Paid x402 generation services accept USDC on Base. Catalog licensing and contributor royalties require separately reviewed authority, terms, and supported payment workflows; the IP Registry does not perform them.
 
 
 Proof of execution
@@ -121,7 +121,7 @@ WHY COPYRIGHT ALONE FALLS SHORT (https://suedeai.org/why-copyright-fails/)
 Copyright remains essential for eligible human-authored work. It does not by itself make asset identity, provenance, permissions, attribution, usage events, or payment instructions machine-readable.
 
 PROOF OF CREATION (https://suedeai.org/proof-of-creation/)
-Proof of creation records evidence connecting a creator, work, version, and creation event. It is not a substitute for Copyright Office registration, contracts, or a legal determination of ownership.
+Proof of creation records evidence connecting a creator claim, work, version, and recorded event. A public record does not independently establish authorship or legal ownership. It is not a substitute for Copyright Office registration, contracts, or a legal determination of ownership.
 
 CONTENT PROVENANCE (https://suedeai.org/content-provenance/)
 Content provenance records source history and derivative context. Tamper-evident provenance can support decisions without proving that every assertion is true or that the signer owns every right.
@@ -200,7 +200,7 @@ Embedded structured data on HTML pages:
 - JSON-LD: Organization (Suede Labs), Person (Jason Colapietro), WebSite, plus per-page entities (WebPage, ProfilePage, Book, ContactPage)
 
 <!-- accomplishments:start -->
-## Accomplishments — updated 2026-09-06
+## Accomplishments — updated 2026-09-14
 
 Built, scaled, and exited businesses
 Before Suede Labs AI
@@ -218,9 +218,9 @@ September 4, 2026
 JC Investment Group LLC became a member of Google Cloud Partner Advantage on September 4, 2026. This membership is a separate milestone from the Google Cloud account-team relationship that began in 2025.
 Company membership record: https://jcinvestmentgroup.ventures/press#standing
 
-41 merged pull requests. 38 external repositories.
-As of September 2026
-The public record includes 26 substantive code or documentation contributions and 15 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v6; it is not included in the merged-PR count.
+48 merged pull requests. 43 external repositories.
+Public record checked September 14, 2026
+The public record includes 27 substantive code or documentation contributions and 21 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v6; it is not included in the merged-PR count.
 Complete upstream record: https://seo.suedeai.ai/evidence#open-source
 Jest #16296: https://github.com/jestjs/jest/pull/16296
 Adobe React Spectrum #10426: https://github.com/adobe/react-spectrum/pull/10426
@@ -255,10 +255,10 @@ Affiliation record: https://seo.suedeai.ai/evidence#credentials
 FAU research announcement: https://business.fau.edu/newsroom/press-releases/2025/tcu-entrepreneurship-rankings-college-business-research.php
 1909: https://www.weare1909.org/
 
-Eight feature placements across four outlets
+Nine feature placements across four outlets
 December 2025–July 2026
 TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede Labs AI. The record includes the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.
-All eight placements: https://suedeai.ai/press
+All nine placements: https://suedeai.ai/press
 Avalanche Build Games coverage: https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/
 Education coverage: https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/
 
