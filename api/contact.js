@@ -10,6 +10,7 @@ const {
   sendJson,
   wantsJson,
 } = require("./_shared");
+const { assessSubmission, logDrop, reviewNote, reviewPrefix } = require("./_spam-gate");
 
 module.exports = async (req, res) => {
   if (!allowPostOnly(req, res)) {
@@ -18,8 +19,13 @@ module.exports = async (req, res) => {
 
   const fields = getRequestFields(req);
 
-  // Honeypot: a hidden field humans never fill. If present, succeed without storing.
-  if (normalizeText(fields.company_url)) {
+  // Honeypot: a hidden field humans never fill. Everything else is scored by
+  // the spam gate. Either way a bot gets the same success answer a person
+  // gets, and nothing is stored or emailed.
+  const honeypot = Boolean(normalizeText(fields.company_url));
+  const gate = assessSubmission({ form: "contact", fields, headers: req.headers });
+  if (honeypot || gate.verdict === "drop") {
+    logDrop(honeypot ? { ...gate, reasons: ["honeypot", ...gate.reasons] } : gate, fields);
     if (wantsJson(req)) {
       sendJson(res, 200, { ok: true, redirectTo: "/contact/thanks/" });
       return;
@@ -74,8 +80,8 @@ module.exports = async (req, res) => {
     const emailResult = await sendEmail({
       from: sender,
       to: [notifyTo],
-      subject: `New suedeai.org contact${topic ? `: ${topic}` : ""}`,
-      text: `Name: ${name}\nEmail: ${email}\nTopic: ${topic || "(none)"}\n\n${message}`,
+      subject: `${reviewPrefix(gate)}New suedeai.org contact${topic ? `: ${topic}` : ""}`,
+      text: `Name: ${name}\nEmail: ${email}\nTopic: ${topic || "(none)"}\n\n${message}${reviewNote(gate)}`,
       reply_to: email,
     });
 

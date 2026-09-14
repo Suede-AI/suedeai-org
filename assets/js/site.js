@@ -34,6 +34,15 @@ if (toggle && nav) {
 }
 
 document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
+  // Stamped at load, read by api/_spam-gate.js. A POST that never loaded the
+  // page has no stamp; one sent seconds after load did not involve typing.
+  // The hidden input rides along on the native fallback submit as well.
+  const stamp = document.createElement("input");
+  stamp.type = "hidden";
+  stamp.name = "form_ts";
+  stamp.value = Date.now().toString(36);
+  form.appendChild(stamp);
+
   form.addEventListener("submit", async (event) => {
     const endpoint = form.getAttribute("data-api-endpoint");
     if (!endpoint) {

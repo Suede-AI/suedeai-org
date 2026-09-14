@@ -10,6 +10,7 @@ const {
   sendJson,
   wantsJson,
 } = require("./_shared");
+const { assessSubmission, logDrop, reviewNote, reviewPrefix } = require("./_spam-gate");
 
 const SOURCE = "suedeai.org/investors";
 const SUCCESS_REDIRECT = "/investors/thanks/";
@@ -46,8 +47,13 @@ module.exports = async (req, res) => {
 
   const fields = getRequestFields(req);
 
-  // Honeypot: a hidden field humans never fill. If present, succeed without storing.
-  if (normalizeText(fields.company_url)) {
+  // Honeypot: a hidden field humans never fill. Everything else is scored by
+  // the spam gate. Either way a bot gets the same success answer a person
+  // gets, and nothing is stored or emailed.
+  const honeypot = Boolean(normalizeText(fields.company_url));
+  const gate = assessSubmission({ form: "investors", fields, headers: req.headers });
+  if (honeypot || gate.verdict === "drop") {
+    logDrop(honeypot ? { ...gate, reasons: ["honeypot", ...gate.reasons] } : gate, fields);
     if (wantsJson(req)) {
       sendJson(res, 200, { ok: true, redirectTo: SUCCESS_REDIRECT });
       return;
@@ -135,8 +141,8 @@ module.exports = async (req, res) => {
     await sendEmail({
       from: sender,
       to: [notifyTo],
-      subject: `New investor lead: ${firm}${checkSize ? ` [${checkSize}]` : ""}`,
-      text: summary,
+      subject: `${reviewPrefix(gate)}New investor lead: ${firm}${checkSize ? ` [${checkSize}]` : ""}`,
+      text: summary + reviewNote(gate),
       reply_to: email,
     });
   }

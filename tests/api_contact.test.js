@@ -8,8 +8,19 @@ process.env.SUPABASE_PUBLISHABLE_KEY = "test-key";
 
 const handler = require("../api/contact.js");
 
-function makeReq(body) {
-  return { method: "POST", headers: { accept: "application/json" }, body };
+// A submission from the page carries the load stamp site.js adds and the
+// Origin header every browser sends on POST. Without them the spam gate
+// scores the request as a direct POST.
+function fromPage(body) {
+  return { form_ts: (Date.now() - 30_000).toString(36), ...body };
+}
+
+function makeReq(body, headers = {}) {
+  return {
+    method: "POST",
+    headers: { accept: "application/json", origin: "https://suedeai.org", ...headers },
+    body,
+  };
 }
 
 function makeRes() {
@@ -61,12 +72,14 @@ test("valid message inserts into contact_inquiries", async () => {
   const calls = stubFetch();
   const res = makeRes();
   await handler(
-    makeReq({
-      name: "Pat",
-      email: "pat@example.com",
-      topic: "General",
-      message: "Hello there",
-    }),
+    makeReq(
+      fromPage({
+        name: "Pat",
+        email: "pat@example.com",
+        topic: "General",
+        message: "Hello there",
+      })
+    ),
     res
   );
   assert.strictEqual(res.statusCode, 200);
@@ -75,4 +88,48 @@ test("valid message inserts into contact_inquiries", async () => {
   const result = JSON.parse(res.body);
   assert.strictEqual(result.ok, true);
   assert.strictEqual(result.redirectTo, "/contact/thanks/");
+});
+
+test("a spam-kit template without the page stamp gets the success answer and no insert", async () => {
+  const calls = stubFetch();
+  const res = makeRes();
+  const warnings = [];
+  const originalWarn = console.warn;
+  console.warn = (...args) => warnings.push(args);
+  try {
+    await handler(
+      makeReq(
+        {
+          name: "Thomas Davis",
+          email: "feroz0520@gmail.com",
+          message: "Hi there! I'd like to hear more about email updates. Please let me know when I am subscribed.",
+        },
+        { origin: "" }
+      ),
+      res
+    );
+  } finally {
+    console.warn = originalWarn;
+  }
+  assert.strictEqual(res.statusCode, 200);
+  assert.strictEqual(calls.length, 0, "dropped submissions never reach Supabase");
+  assert.deepStrictEqual(JSON.parse(res.body), { ok: true, redirectTo: "/contact/thanks/" });
+  assert.strictEqual(warnings.length, 1);
+  assert.strictEqual(warnings[0][0], "[spam-gate] dropped");
+  assert.ok(warnings[0][1].reasons.includes("template"));
+});
+
+test("a person with scripts off is still delivered", async () => {
+  const calls = stubFetch();
+  const res = makeRes();
+  await handler(
+    makeReq({
+      name: "Pat",
+      email: "pat@example.com",
+      message: "Do you work with independent podcasters?",
+    }),
+    res
+  );
+  assert.strictEqual(res.statusCode, 200);
+  assert.strictEqual(calls.length, 1, "no-js alone must not block a person");
 });
