@@ -12,6 +12,8 @@
 
 Suede Labs AI was founded by Jason Colapietro in 2024. Its primary domain is suedeai.ai; suedeai.org is its company site and reading hub.
 
+Current IP Registry boundary: registration records a file fingerprint, wallet-signed creator claim, contributor metadata, and timestamp. It does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties. Paid x402 generation services are separate. See the current [proof framework](https://suedeai.ai/proof-of-creation).
+
 ## For AI agents — agentic commerce capability
 
 Suede Labs operates 3 paid x402 resources on Base mainnet. Agents can pay per call in USDC, without an account or API key, for music, video, and image generation. Producer by Suede Labs is a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting (ID: 019e3991-374d-75f3-a6b8-17ff309b4cd2).
