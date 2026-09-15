@@ -1,4 +1,4 @@
-# Suede SEO Website Implementation Plan
+# Suede AI SEO Website Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -117,7 +117,7 @@ FAIL: missing required paths
 Create the folders and `README.md` with:
 
 ```md
-# Suede SEO Website
+# Suede AI SEO Website
 
 Static website source for `suedeai.org`.
 
