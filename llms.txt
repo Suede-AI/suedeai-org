@@ -1,4 +1,6 @@
-# Suede Labs AI
+# Suede AI
+
+Suede AI is the primary public name. Suede Labs AI is an established alternate name for the same company founded by Jason Colapietro.
 
 > Suede Labs is building the creative rails for the AI era: creator ownership, proof of creation, programmable IP, provenance, royalties, payments, distribution, and monetization infrastructure for artists, rights holders, and AI agents.
 
