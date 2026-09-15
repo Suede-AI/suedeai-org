@@ -533,6 +533,11 @@ def main() -> int:
         if not people:
             failures.append(f"{relative_path}: missing Person JSON-LD node")
         for organization in organizations:
+            if organization.get("@id") == CANONICAL_ORGANIZATION_ID:
+                if organization.get("name") != "Suede AI":
+                    failures.append(f"{relative_path}: canonical company name must be Suede AI")
+                if "Suede Labs AI" not in organization.get("alternateName", []):
+                    failures.append(f"{relative_path}: canonical company must retain Suede Labs AI as alternateName")
             organization_same_as = same_as_urls(organization)
             if UNRELATED_PERSON_WIKIDATA in organization_same_as:
                 failures.append(

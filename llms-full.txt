@@ -1,6 +1,8 @@
 Suede Labs AI
 =============
 
+Suede AI is the primary public name. Suede Labs AI is an established alternate name for the same company founded by Jason Colapietro.
+
 URL: https://suedeai.org
 Type: Creative-rails infrastructure company for the AI era
 Founder: Jason Colapietro (Founder and CEO, Suede Labs AI; publishes under the pen name Johnny Suede)
