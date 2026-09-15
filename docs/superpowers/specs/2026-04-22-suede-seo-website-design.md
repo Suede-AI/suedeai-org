@@ -1,4 +1,4 @@
-# Suede SEO Website Design
+# Suede AI SEO Website Design
 
 Date: 2026-04-22
 Project: suedeai.org

@@ -1,4 +1,4 @@
-# Suede SEO Website
+# Suede AI SEO Website
 
 > **[Suede Labs AI](https://suedeai.ai) · By [Jason Colapietro](https://suedeai.ai/founder) · Live at [suedeai.org](https://suedeai.org)**
 

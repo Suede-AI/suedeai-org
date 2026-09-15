@@ -362,7 +362,7 @@ def main() -> int:
         "three published books",
         "Suede Studio Guitar",
         "suede-studio-guitar",
-        "Suede Studio Inspiration",
+        "Suede AI Studio Inspiration",
         "suede-studio-inspiration",
         "Suede Agents: AI That Earns",
         "suede-agents-ai-that-earns",

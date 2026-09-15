@@ -706,7 +706,7 @@ Expected: FAIL — `investors/index.html: file does not exist`.
           <tbody>
             <tr><td><a href="https://suedeai.ai/" rel="noopener">Suede AI</a></td><td>Ownership infrastructure: proof-of-creation, programmable IP, creator rights, provenance.</td></tr>
             <tr><td><a href="https://app.suedeai.ai/" rel="noopener">Suede App</a></td><td>Working product: rights passports, licensing, royalties, vaults, workflows.</td></tr>
-            <tr><td><a href="https://strumly.suedeai.ai/" rel="noopener">Strumly + iOS</a></td><td>Artist-growth and empowerment products; the iOS Suede Studio line.</td></tr>
+            <tr><td><a href="https://strumly.suedeai.ai/" rel="noopener">Strumly + iOS</a></td><td>Artist-growth and empowerment products; the iOS Suede AI Studio line.</td></tr>
             <tr><td><a href="https://launch.suedeai.ai/" rel="noopener">Launchpad</a></td><td>Demand formation, activation, and fundability for creative projects.</td></tr>
             <tr><td><a href="https://app.suedeai.ai/.well-known/x402.json" rel="noopener">Vaults + x402</a></td><td>Royalty participation and agent-native, per-call USDC payments on Base.</td></tr>
             <tr><td><a href="https://distro.suedeai.ai/" rel="noopener">Distribution</a></td><td>Bridge from registered, owned work to audience reach and revenue.</td></tr>
