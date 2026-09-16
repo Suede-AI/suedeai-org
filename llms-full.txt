@@ -14,41 +14,60 @@ Suede Labs is building the creative rails for the AI era. The thesis is straight
 Recent press
 ------------
 
+Business Insider · September 16, 2026 · Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort
+URL: https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662
+
+Business Insider carries the opening of Suede Labs AI’s five-business SEO, AEO, and GEO cohort, the optional AI workflow and employee-training engagements run through Suede AI Agent Studio, and the free website audits open through September 20, 2026.
+
+TechBullion · September 13, 2026 · Suede Opens Its Widely Anticipated SEO and AI Cohort
+URL: https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/
+
+TechBullion covers Jason Colapietro opening Suede Labs AI’s next SEO and AI cohort, with transparent managed workflows in Suede AI Agent Studio, a free public audit, and an evidence-first approach to search visibility and AI operations.
+
+Indie Hackers · July 3, 2026 · In the Age of Infinite Content, Spam Is Instant Death
+URL: https://www.indiehackers.com/post/in-the-age-of-infinite-content-spam-is-instant-death-4ca5Qi4vTHZ8aB3muBVK
+
+Jason Colapietro on Indie Hackers: Google's new SEO guidance confirms the Suede thesis. IP credibility is the new ranking signal, and AI agents need proof before they trust your business.
+
 Programming Insider · July 6, 2026 · In the Age of Infinite Content, Spam Is Instant Death
 URL: https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/
 
-Jason Colapietro argues that content spam is dead as a strategy and that AI agents now need proof, not volume. Suede Labs AI was built on the premise that provenance and reputation, not keyword output, are what make a business legible to agents.
+Jason Colapietro argues that Google's SEO guidance killed content spam as a strategy and exposed a harder problem: AI agents now need proof, not volume. Suede Labs AI was built on the premise that provenance and reputation, not keyword output, are what make a business legible to agents.
 
-TechBullion · May 25, 2026 · Jason Colapietro's Suede Labs AI Launches iOS Apps, Codex and Claude Skills, and the Musicians Terminal
+TechBullion · July 2, 2026 · Suede Labs AI Opens IP Visibility Audit for Brands, Creators, and Founder-Led Companies
+URL: https://techbullion.com/suede-labs-ai-opens-ip-visibility-audit-for-brands-creators-and-founder-led-companies/
+
+TechBullion covers Suede's IP Visibility Audit, which examines how a company's work, expertise, offers, and intellectual property appear across search results, founder profiles, websites, and AI answers.
+
+TechBullion · May 25, 2026 · Suede Labs AI Releases iOS Apps, Codex Skills & Musicians Terminal
 URL: https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/
 
-Third-party coverage of Suede Labs' May 2026 product wave: the iOS app line now including AI Music & Video Generator, Suede Guitar Tuner & Studio, and Suede Voice: Vocal Range Test; Codex and Claude developer skills for AI coding agents; and the Musicians Terminal — a working-musician console for catalog management, rights routing, royalty splits, and licensing decisions. The piece grounds the creator-ownership thesis in shipped product surfaces rather than slideware.
+TechBullion covers Suede Labs' May 2026 launches: an iOS app line (Inspiration, Guitar, Voice), Codex and Claude developer skills, and the Musicians Terminal, concrete product surfaces for AI-native creator ownership.
 
 Altcoin Investor · May 9, 2026 · How AI, Blockchain, and On-Chain IP Are Changing Creator Ownership
 URL: https://altcoininvestor.com/ai-blockchain-on-chain-ip-creator-ownership/
 
-Coverage of Suede Labs AI's creator-first positioning in on-chain IP: rights passports, royalty routing, sync metadata, vaults, and multi-chain ownership infrastructure.
+Altcoin Investor covers Suede Labs AI's creator-first positioning in on-chain IP, rights passports, royalty routing, sync metadata, vaults, and multi-chain ownership infrastructure.
 
 TechBullion · February 27, 2026 · Suede Labs Advances in the Avalanche Build Games With Massive Infrastructure Play
 URL: https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/
 
-Coverage of Suede Labs advancing in the Avalanche Build Games with a full-stack on-chain IP and rights registry that lets creators register, protect, and monetize work through smart contracts.
+TechBullion covers Suede Labs advancing in the Avalanche Build Games with a full-stack on-chain IP and rights registry that lets creators register, protect, and monetize work through smart contracts.
 
 TechBullion · February 9, 2026 · Best Suno Alternatives in 2026: Suede Labs and Top Competitors
 URL: https://techbullion.com/best-suno-alternatives-in-2026-suede-labs-and-top-competitors/
 
-TechBullion names Suede Labs the leading alternative for 2026, citing creator ownership infrastructure with distribution, personalized models, real-time royalties, and blockchain-based IP protection.
+TechBullion names Suede Labs the leading Suno alternative for 2026, creator ownership infrastructure with distribution, personalized models, real-time royalties, and blockchain-based IP protection.
 
 TechBullion · January 7, 2026 · Suede Labs Brings AI-Powered Creative Tools to Students
 URL: https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/
 
-Coverage of Suede Labs' self-funded education deployments bringing AI-powered creative tools and IP-first thinking to students in African classrooms.
+TechBullion covers Suede Labs' self-funded education deployments bringing AI-powered creative tools and IP-first thinking to students in African classrooms.
 
-TechBullion · December 15, 2025 · Suede Labs Launches a Comprehensive On-Chain IP Authentication System
+TechBullion · December 15, 2025 · Suede Labs Launches A Comprehensive On-Chain IP Authentication System
 URL: https://techbullion.com/suede-labs-launches-a-comprehensive-on-chain-ip-authentication-system/
 
-Coverage of the launch of Suede Labs' on-chain IP registry, provenance layer, licensing, and monetization rails.
-
+TechBullion covers the launch of Suede Labs' on-chain IP registry, provenance layer, licensing, and monetization rails.
 
 The Suede Labs thesis
 ---------------------
@@ -206,7 +225,7 @@ Embedded structured data on HTML pages:
 - JSON-LD: Organization (Suede Labs), Person (Jason Colapietro), WebSite, plus per-page entities (WebPage, ProfilePage, Book, ContactPage)
 
 <!-- accomplishments:start -->
-## Accomplishments — updated 2026-09-14
+## Accomplishments — updated 2026-09-16
 
 Built, scaled, and exited businesses
 Before Suede Labs AI
@@ -261,12 +280,13 @@ Affiliation record: https://seo.suedeai.ai/evidence#credentials
 FAU research announcement: https://business.fau.edu/newsroom/press-releases/2025/tcu-entrepreneurship-rankings-college-business-research.php
 1909: https://www.weare1909.org/
 
-Nine feature placements across four outlets
-December 2025–July 2026
-TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede Labs AI. The record includes the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.
-All nine placements: https://suedeai.ai/press
+Eleven feature placements across five outlets
+December 2025–September 2026
+Business Insider, TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede Labs AI. The record includes the September 2026 SEO and AI cohort carried by Business Insider, the on-chain IP authentication launch, the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, the IP visibility audit, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.
+All eleven placements: https://suedeai.ai/press
+Business Insider: Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort: https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662
+TechBullion: Suede Opens Its Widely Anticipated SEO and AI Cohort: https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/
 Avalanche Build Games coverage: https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/
-Education coverage: https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/
 
 Mario Nawfal posts and Crypto Roundtable AMA
 January & September 2025
