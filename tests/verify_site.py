@@ -169,6 +169,21 @@ PAGES = {
 PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
 
 
+# The retired iOS name is still the live Google Play title for xyz.suedeai.app,
+# so the accomplishments record names it there legitimately. Mask only those two
+# exact Play contexts before the stale-phrase scan; every other use still fails.
+LIVE_PLAY_LISTING_CONTEXTS = (
+    "Suede: AI Music Generator, and Suede AI Agents: Directory are live on Google Play",
+    "Suede: AI Music Generator on Google Play",
+)
+
+
+def allow_live_play_listing(value: str) -> str:
+    for context in LIVE_PLAY_LISTING_CONTEXTS:
+        value = value.replace(context, "")
+    return value
+
+
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
@@ -366,8 +381,12 @@ def main() -> int:
         "suede-studio-inspiration",
         "Suede Agents: AI That Earns",
         "suede-agents-ai-that-earns",
-        # Former App Store name of id6765461286; the store listing is
-        # "AI Music & Video Generator" (itunes lookup, 2026-09-07).
+        # Former App Store name of id6765461286. The iOS listing has since been
+        # renamed again (itunes lookup, 2026-09-16: "Suede AI Generator"), so
+        # any iOS use of this name is stale. The GOOGLE PLAY listing
+        # xyz.suedeai.app is still published under this exact title (fetched
+        # 2026-09-16, HTTP 200), so allow_live_play_listing() exempts the two
+        # Play contexts below and nothing else.
         "Suede: AI Music Generator",
         "24 production x402 paid endpoints",
         "24 production x402 endpoints",
@@ -557,7 +576,7 @@ def main() -> int:
             failures.append(
                 f"{relative_path}: founder person @id uses supporting profile URL instead of https://suedeai.ai/founder"
             )
-        lower_html_text = " ".join(html_text.lower().split())
+        lower_html_text = " ".join(allow_live_play_listing(html_text).lower().split())
         if contains_retired_entity(html_text):
             relative_path = html_path.relative_to(ROOT).as_posix()
             failures.append(f"{relative_path}: retired entity signal")
@@ -583,7 +602,7 @@ def main() -> int:
     for text_path in [ROOT / "llms.txt", ROOT / "llms-full.txt"]:
         if text_path.exists():
             text = read_text(text_path)
-            lower_text = " ".join(text.lower().split())
+            lower_text = " ".join(allow_live_play_listing(text).lower().split())
             if contains_retired_entity(text):
                 relative_path = text_path.relative_to(ROOT).as_posix()
                 failures.append(f"{relative_path}: retired entity signal")
