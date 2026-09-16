@@ -283,7 +283,7 @@ The Signal Chain at guitar.solutions: https://guitar.solutions
 The Screenshot, source edition: https://github.com/JasonColapietro/suede-geo-book
 
 More than 30 sites, and a published app family
-Jason builds and operates the Suede estate across creative software, music practice, AI agent tools, and developer infrastructure: Suede AI Social, Strumly, Suede Muse, Suede AI Agent Studio, the Suede AI IP Registry, Suede AI Studio, Suede AI Distro, Suede Scan, Agentix, and Suede DNA, among more than 30 live sites. Eight apps are published under Jason Colapietro’s Apple developer account. Eighteen owned brand domains carry a single canonical entity, entered at jasoncolapietro.com. The wider company portfolio includes FretPulse under its separate FretPulse LLC seller account.
+Jason builds and operates the Suede estate across creative software, music practice, AI agent tools, and developer infrastructure: Suede AI Social, Strumly, Suede Muse, Suede AI Agent Studio, the Suede AI IP Registry, Suede AI Studio, Suede AI Distro, Suede Scan, Agentix, and Suede DNA, among more than 30 live sites. Nine apps are published under Jason Colapietro’s Apple developer account. Eighteen owned brand domains carry a single canonical entity, entered at jasoncolapietro.com. The wider company portfolio includes FretPulse under its separate FretPulse LLC seller account.
 Explore the product estate: https://hub.suedeai.ai/
 Apple developer catalog: https://apps.apple.com/us/developer/jason-colapietro/id1895958699
 Company portfolio: https://jcinvestmentgroup.ventures/portfolio
@@ -341,7 +341,7 @@ View the archived screenshots: https://seo.suedeai.ai/evidence#elon-timeline
 Google's Web Guide calls Suede Labs AI highly rated
 Asked to review Suede Labs AI, Google's Web Guide, the AI-organized results layer inside Google Search, opens by calling the company highly rated by users, earning a 5/5 rating from verified reviews for its creator-ownership infrastructure, and cites the two App Store listings it drew that from. Like the Gemini captures, this is a dated response from a Google search surface, not a rating Google issued or a permanent placement.
 The capture and the quote: https://seo.suedeai.ai/evidence#google-web-guide
-AI Music & Video Generator on the App Store: https://apps.apple.com/us/app/ai-music-video-generator/id6765461286
+Suede AI Generator on the App Store: https://apps.apple.com/us/app/suede-ai-generator/id6765461286
 Suede Social: Guitar Forum: https://apps.apple.com/us/app/suede-social-guitar-forum/id6770668793
 
 Gemini names Suede alongside Suno and Udio
@@ -359,7 +359,7 @@ Archived directory record: https://seo.suedeai.ai/evidence#directory
 Live music category: https://aiagentsdirectory.com/category/music
 
 Wikidata and Crunchbase entries, plus an Apple-hosted developer page
-Third-party records describe Jason independently of anything Suede publishes: a Wikidata item, a Crunchbase founder profile, and Apple’s developer page listing eight shipped apps under his name. One person carries two public names, Jason Colapietro and Johnny Suede, and every surface states the linkage rather than letting them drift into separate records.
+Third-party records describe Jason independently of anything Suede publishes: a Wikidata item, a Crunchbase founder profile, and Apple’s developer page listing nine shipped apps under his name. One person carries two public names, Jason Colapietro and Johnny Suede, and every surface states the linkage rather than letting them drift into separate records.
 Wikidata Q140235755: https://www.wikidata.org/wiki/Q140235755
 Crunchbase profile: https://www.crunchbase.com/person/jason-colapietro-d83e
 Apple developer page: https://apps.apple.com/us/developer/jason-colapietro/id1895958699
