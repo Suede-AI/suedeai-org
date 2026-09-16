@@ -71,7 +71,7 @@
     {
       "id": "open-source",
       "category": "Engineering",
-      "date": "As of September 2026",
+      "date": "Public record checked September 14, 2026",
       "title": "48 merged pull requests. 43 external repositories.",
       "body": "The public record includes 27 substantive code or documentation contributions and 21 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v6; it is not included in the merged-PR count.",
       "links": [
