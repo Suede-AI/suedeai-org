@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14",
+  "updated": "2026-09-16",
   "source": "https://seo.suedeai.ai/evidence",
   "title": "Accomplishments, with the record behind them.",
   "intro": "The work and recognition of Jason Colapietro and Suede Labs AI: businesses built, software shipped, books published, and contributions accepted. Each entry carries its date or reporting period and links to the underlying record.",
@@ -156,21 +156,25 @@
     {
       "id": "coverage",
       "category": "Press & essays",
-      "date": "December 2025–July 2026",
-      "title": "Nine feature placements across four outlets",
-      "body": "TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede Labs AI. The record includes the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.",
+      "date": "December 2025–September 2026",
+      "title": "Eleven feature placements across five outlets",
+      "body": "Business Insider, TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede Labs AI. The record includes the September 2026 SEO and AI cohort carried by Business Insider, the on-chain IP authentication launch, the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, the IP visibility audit, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.",
       "links": [
         {
-          "label": "All nine placements",
+          "label": "All eleven placements",
           "url": "https://suedeai.ai/press"
+        },
+        {
+          "label": "Business Insider: Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort",
+          "url": "https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662"
+        },
+        {
+          "label": "TechBullion: Suede Opens Its Widely Anticipated SEO and AI Cohort",
+          "url": "https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/"
         },
         {
           "label": "Avalanche Build Games coverage",
           "url": "https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/"
-        },
-        {
-          "label": "Education coverage",
-          "url": "https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/"
         }
       ]
     },
