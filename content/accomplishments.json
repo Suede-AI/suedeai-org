@@ -71,9 +71,9 @@
     {
       "id": "open-source",
       "category": "Engineering",
-      "date": "Public record checked September 14, 2026",
-      "title": "48 merged pull requests. 43 external repositories.",
-      "body": "The public record includes 27 substantive code or documentation contributions and 21 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v6; it is not included in the merged-PR count.",
+      "date": "Public record checked September 19, 2026",
+      "title": "49 merged pull requests. 44 external repositories.",
+      "body": "The public record includes 28 substantive code or documentation contributions and 21 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v7; it is not included in the merged-PR count.",
       "links": [
         {
           "label": "Complete upstream record",
@@ -135,7 +135,7 @@
       "category": "Ecosystem",
       "date": "June–September 2026",
       "title": "Listed in thirteen independent skills directories and the x402 ecosystem list",
-      "body": "Suede Creator Skills, the public Claude Code skills marketplace, has been accepted by the maintainers of thirteen independent awesome-lists and directories, including buildwithclaude, awesome-codex, awesome-agent-skills, and awesome-claude-code-plugins. Suede AI Agent Studio is listed in the x402 ecosystem’s awesome-x402. These accepted listings are counted inside the 48 merged pull requests above and are stated separately so the composition stays clear.",
+      "body": "Suede Creator Skills, the public Claude Code skills marketplace, has been accepted by the maintainers of thirteen independent awesome-lists and directories, including buildwithclaude, awesome-codex, awesome-agent-skills, and awesome-claude-code-plugins. Suede AI Agent Studio is listed in the x402 ecosystem’s awesome-x402. These accepted listings are counted inside the 49 merged pull requests above and are stated separately so the composition stays clear.",
       "links": [
         {
           "label": "Suede Creator Skills on GitHub",
