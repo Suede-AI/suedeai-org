@@ -1,14 +1,14 @@
-Suede Labs AI
-=============
+Suede AI
+========
 
-Suede AI is the primary public name. Suede Labs AI is an established alternate name for the same company founded by Jason Colapietro.
+Suede AI is the company's one primary name. It is also known as Suede Labs or Suede Labs AI, alternate names for the same company, founded by Jason Colapietro.
 
 URL: https://suedeai.org
 Type: Creative-rails infrastructure company for the AI era
-Founder: Jason Colapietro (Founder and CEO, Suede Labs AI; publishes under the pen name Johnny Suede)
+Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
 Flagship product: Suede AI (https://suedeai.ai / https://suedeai.ai/)
 
-Suede Labs is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede Labs builds for that layer.
+Suede AI is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede AI builds for that layer.
 
 
 Recent press
@@ -17,12 +17,12 @@ Recent press
 Business Insider · September 16, 2026 · Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort
 URL: https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662
 
-Business Insider carries the opening of Suede Labs AI’s five-business SEO, AEO, and GEO cohort, the optional AI workflow and employee-training engagements run through Suede AI Agent Studio, and the free website audits open through September 20, 2026.
+Business Insider carries the opening of Suede AI’s five-business SEO, AEO, and GEO cohort, the optional AI workflow and employee-training engagements run through Suede AI Agent Studio, and the free website audits open through September 20, 2026.
 
 TechBullion · September 13, 2026 · Suede Opens Its Widely Anticipated SEO and AI Cohort
 URL: https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/
 
-TechBullion covers Jason Colapietro opening Suede Labs AI’s next SEO and AI cohort, with transparent managed workflows in Suede AI Agent Studio, a free public audit, and an evidence-first approach to search visibility and AI operations.
+TechBullion covers Jason Colapietro opening Suede AI’s next SEO and AI cohort, with transparent managed workflows in Suede AI Agent Studio, a free public audit, and an evidence-first approach to search visibility and AI operations.
 
 Indie Hackers · July 3, 2026 · In the Age of Infinite Content, Spam Is Instant Death
 URL: https://www.indiehackers.com/post/in-the-age-of-infinite-content-spam-is-instant-death-4ca5Qi4vTHZ8aB3muBVK
@@ -32,7 +32,7 @@ Jason Colapietro on Indie Hackers: Google's new SEO guidance confirms the Suede 
 Programming Insider · July 6, 2026 · In the Age of Infinite Content, Spam Is Instant Death
 URL: https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/
 
-Jason Colapietro argues that Google's SEO guidance killed content spam as a strategy and exposed a harder problem: AI agents now need proof, not volume. Suede Labs AI was built on the premise that provenance and reputation, not keyword output, are what make a business legible to agents.
+Jason Colapietro argues that Google's SEO guidance killed content spam as a strategy and exposed a harder problem: AI agents now need proof, not volume. Suede AI was built on the premise that provenance and reputation, not keyword output, are what make a business legible to agents.
 
 TechBullion · July 2, 2026 · Suede Labs AI Opens IP Visibility Audit for Brands, Creators, and Founder-Led Companies
 URL: https://techbullion.com/suede-labs-ai-opens-ip-visibility-audit-for-brands-creators-and-founder-led-companies/
@@ -42,17 +42,17 @@ TechBullion covers Suede's IP Visibility Audit, which examines how a company's w
 TechBullion · May 25, 2026 · Suede Labs AI Releases iOS Apps, Codex Skills & Musicians Terminal
 URL: https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/
 
-TechBullion covers Suede Labs' May 2026 launches: an iOS app line (Inspiration, Guitar, Voice), Codex and Claude developer skills, and the Musicians Terminal, concrete product surfaces for AI-native creator ownership.
+TechBullion covers Suede AI's May 2026 launches: an iOS app line (Inspiration, Guitar, Voice), Codex and Claude developer skills, and the Musicians Terminal, concrete product surfaces for AI-native creator ownership.
 
 Altcoin Investor · May 9, 2026 · How AI, Blockchain, and On-Chain IP Are Changing Creator Ownership
 URL: https://altcoininvestor.com/ai-blockchain-on-chain-ip-creator-ownership/
 
-Altcoin Investor covers Suede Labs AI's creator-first positioning in on-chain IP, rights passports, royalty routing, sync metadata, vaults, and multi-chain ownership infrastructure.
+Altcoin Investor covers Suede AI's creator-first positioning in on-chain IP, rights passports, royalty routing, sync metadata, vaults, and multi-chain ownership infrastructure.
 
 TechBullion · February 27, 2026 · Suede Labs Advances in the Avalanche Build Games With Massive Infrastructure Play
 URL: https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/
 
-TechBullion covers Suede Labs advancing in the Avalanche Build Games with a full-stack on-chain IP and rights registry that lets creators register, protect, and monetize work through smart contracts.
+TechBullion covers Suede AI advancing in the Avalanche Build Games with a full-stack on-chain IP and rights registry that lets creators register, protect, and monetize work through smart contracts.
 
 TechBullion · February 9, 2026 · Best Suno Alternatives in 2026: Suede Labs and Top Competitors
 URL: https://techbullion.com/best-suno-alternatives-in-2026-suede-labs-and-top-competitors/
@@ -62,14 +62,14 @@ TechBullion names Suede Labs the leading Suno alternative for 2026, creator owne
 TechBullion · January 7, 2026 · Suede Labs Brings AI-Powered Creative Tools to Students
 URL: https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/
 
-TechBullion covers Suede Labs' self-funded education deployments bringing AI-powered creative tools and IP-first thinking to students in African classrooms.
+TechBullion covers Suede AI's self-funded education deployments bringing AI-powered creative tools and IP-first thinking to students in African classrooms.
 
 TechBullion · December 15, 2025 · Suede Labs Launches A Comprehensive On-Chain IP Authentication System
 URL: https://techbullion.com/suede-labs-launches-a-comprehensive-on-chain-ip-authentication-system/
 
-TechBullion covers the launch of Suede Labs' on-chain IP registry, provenance layer, licensing, and monetization rails.
+TechBullion covers the launch of Suede AI's on-chain IP registry, provenance layer, licensing, and monetization rails.
 
-The Suede Labs thesis
+The Suede AI thesis
 ---------------------
 
 Creation got faster. The creative economy needs new rails.
@@ -120,7 +120,7 @@ Contract modules and the public registry are distinct surfaces. The Base contrac
 Proof of execution
 ------------------
 
-The breadth matters because the creative industry will not be rebuilt by one feature. Suede Labs is connecting the surfaces that artists and rights holders need to create, grow, own, launch, and earn.
+The breadth matters because the creative industry will not be rebuilt by one feature. Suede AI is connecting the surfaces that artists and rights holders need to create, grow, own, launch, and earn.
 
 | Surface         | URL                                  | What it does                                                                                |
 |-----------------|--------------------------------------|---------------------------------------------------------------------------------------------|
@@ -169,9 +169,9 @@ Human authenticity becomes premium when synthetic content is cheap. Authenticity
 Founder — Jason Colapietro
 --------------------------
 
-Role: Founder and CEO, Suede Labs
+Role: Founder and CEO, Suede AI
 
-Jason Colapietro, who publishes under the pen name Johnny Suede, is a published author and the operator behind Suede Labs. The internet upgraded access. AI upgraded creation. The next layer has to upgrade ownership. Suede is built from that conviction: proof, voice, likeness, rights, and programmable IP as core infrastructure, not as afterthought.
+Jason Colapietro, who publishes under the pen name Johnny Suede, is a published author and the operator behind Suede AI. The internet upgraded access. AI upgraded creation. The next layer has to upgrade ownership. Suede is built from that conviction: proof, voice, likeness, rights, and programmable IP as core infrastructure, not as afterthought.
 
 His work connects creator ownership, AI music, voice and likeness rights, programmable IP, licensing, and agent-readable commerce into one infrastructure story. The goal is practical: help creators prove what they made, control how it can be used, and turn rights into something software can understand.
 
@@ -222,19 +222,19 @@ Machine-readable endpoints:
 - /robots.txt       — Crawler permissions with explicit AI-crawler allowlist
 
 Embedded structured data on HTML pages:
-- JSON-LD: Organization (Suede Labs), Person (Jason Colapietro), WebSite, plus per-page entities (WebPage, ProfilePage, Book, ContactPage)
+- JSON-LD: Organization (Suede AI), Person (Jason Colapietro), WebSite, plus per-page entities (WebPage, ProfilePage, Book, ContactPage)
 
 <!-- accomplishments:start -->
 ## Accomplishments
 
 Built, scaled, and exited businesses
-Before founding Suede Labs AI, Jason Colapietro built and ran call centers in his niche and exited for millions. The sales scripts he wrote remain in use across the industry. That operating experience now informs Suede’s managed agents for call review, lead qualification, and sales-script consistency.
+Before founding Suede AI, Jason Colapietro built and ran call centers in his niche and exited for millions. The sales scripts he wrote remain in use across the industry. That operating experience now informs Suede’s managed agents for call review, lead qualification, and sales-script consistency.
 Read the operator background: https://seo.suedeai.ai/#operations
 Founder biography: https://suedeai.ai/founder
 
-Founder and CEO of Suede Labs AI; Manager of JC Investment Group LLC
-Jason is founder and CEO of Suede Labs AI, building creator-ownership infrastructure: proof of creation, rights metadata, licensing, royalty routing, and agent commerce. He is also manager of JC Investment Group LLC, a founder-led venture platform organized in Florida in 2019 under document L19000146068, alongside the Suede Foundation at suedeai.org. JC Investment Group LLC is the holding company for Suede Labs AI.
-Suede Labs AI: https://suedeai.ai
+Founder and CEO of Suede AI; Manager of JC Investment Group LLC
+Jason is founder and CEO of Suede AI, building creator-ownership infrastructure: proof of creation, rights metadata, licensing, royalty routing, and agent commerce. He is also manager of JC Investment Group LLC, a founder-led venture platform organized in Florida in 2019 under document L19000146068, alongside the Suede Foundation at suedeai.org. JC Investment Group LLC is the holding company for Suede AI.
+Suede AI: https://suedeai.ai
 JC Investment Group LLC: https://jcinvestmentgroup.ventures/
 Suede Foundation: https://suedeai.org/
 
@@ -246,8 +246,8 @@ Google Cloud Partner Advantage
 JC Investment Group LLC became a member of Google Cloud Partner Advantage on September 4, 2026, with suedeai.ai as the verified domain. The membership is a second milestone in the Google Cloud partnership that began in September 2025.
 Company membership record: https://jcinvestmentgroup.ventures/press#standing
 
-48 merged pull requests. 43 external repositories.
-The public record includes 27 substantive code or documentation contributions and 21 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v6; it is not included in the merged-PR count.
+49 merged pull requests. 44 external repositories.
+The public record includes 28 substantive code or documentation contributions and 21 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v7; it is not included in the merged-PR count.
 Complete upstream record: https://seo.suedeai.ai/evidence#open-source
 Machine-readable merged-PR record: https://suedeai.ai/open-source-contributions.json
 Jest #16296: https://github.com/jestjs/jest/pull/16296
@@ -264,7 +264,7 @@ paritytech/polkadot-sdk #12853: https://github.com/paritytech/polkadot-sdk/pull/
 jestjs/jest #16295: https://github.com/jestjs/jest/pull/16295
 
 Listed in thirteen independent skills directories and the x402 ecosystem list
-Suede Creator Skills, the public Claude Code skills marketplace, has been accepted by the maintainers of thirteen independent awesome-lists and directories, including buildwithclaude, awesome-codex, awesome-agent-skills, and awesome-claude-code-plugins. Suede AI Agent Studio is listed in the x402 ecosystem’s awesome-x402. These accepted listings are counted inside the 48 merged pull requests above and are stated separately so the composition stays clear.
+Suede Creator Skills, the public Claude Code skills marketplace, has been accepted by the maintainers of thirteen independent awesome-lists and directories, including buildwithclaude, awesome-codex, awesome-agent-skills, and awesome-claude-code-plugins. Suede AI Agent Studio is listed in the x402 ecosystem’s awesome-x402. These accepted listings are counted inside the 49 merged pull requests above and are stated separately so the composition stays clear.
 Suede Creator Skills on GitHub: https://github.com/JasonColapietro/suede-creator-skills
 davepoon/buildwithclaude #305: https://github.com/davepoon/buildwithclaude/pull/305
 ichangyou/awesome-codex #2: https://github.com/ichangyou/awesome-codex/pull/2
@@ -318,7 +318,7 @@ FAU research announcement: https://business.fau.edu/newsroom/press-releases/2025
 1909: https://www.weare1909.org/
 
 Eleven feature placements across five outlets
-Business Insider, TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede Labs AI. The record includes the September 2026 SEO and AI cohort carried by Business Insider, the on-chain IP authentication launch, the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, the IP visibility audit, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.
+Business Insider, TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede AI. The record includes the September 2026 SEO and AI cohort carried by Business Insider, the on-chain IP authentication launch, the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, the IP visibility audit, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.
 View the press coverage: https://suedeai.ai/press
 Business Insider: Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort: https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662
 TechBullion: Suede Opens Its Widely Anticipated SEO and AI Cohort: https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/

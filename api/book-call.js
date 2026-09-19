@@ -31,7 +31,7 @@ function buildAutoresponder({ name, topic }) {
     "— Jason",
     "https://suedeai.org/",
   ];
-  return { subject: "Got your call request — Suede Labs", text: lines.join("\n") };
+  return { subject: "Got your call request — Suede AI", text: lines.join("\n") };
 }
 
 module.exports = async (req, res) => {
