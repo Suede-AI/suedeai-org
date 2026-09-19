@@ -228,13 +228,13 @@ Embedded structured data on HTML pages:
 ## Accomplishments
 
 Built, scaled, and exited businesses
-Before founding Suede Labs AI, Jason Colapietro built and ran call centers in his niche and exited for millions. The sales scripts he wrote remain in use across the industry. That operating experience now informs Suede’s managed agents for call review, lead qualification, and sales-script consistency.
+Before founding Suede AI, Jason Colapietro built and ran call centers in his niche and exited for millions. The sales scripts he wrote remain in use across the industry. That operating experience now informs Suede’s managed agents for call review, lead qualification, and sales-script consistency.
 Read the operator background: https://seo.suedeai.ai/#operations
 Founder biography: https://suedeai.ai/founder
 
-Founder and CEO of Suede Labs AI; Manager of JC Investment Group LLC
-Jason is founder and CEO of Suede Labs AI, building creator-ownership infrastructure: proof of creation, rights metadata, licensing, royalty routing, and agent commerce. He is also manager of JC Investment Group LLC, a founder-led venture platform organized in Florida in 2019 under document L19000146068, alongside the Suede Foundation at suedeai.org. JC Investment Group LLC is the holding company for Suede Labs AI.
-Suede Labs AI: https://suedeai.ai
+Founder and CEO of Suede AI; Manager of JC Investment Group LLC
+Jason is founder and CEO of Suede AI, building creator-ownership infrastructure: proof of creation, rights metadata, licensing, royalty routing, and agent commerce. He is also manager of JC Investment Group LLC, a founder-led venture platform organized in Florida in 2019 under document L19000146068, alongside the Suede Foundation at suedeai.org. JC Investment Group LLC is the holding company for Suede AI.
+Suede AI: https://suedeai.ai
 JC Investment Group LLC: https://jcinvestmentgroup.ventures/
 Suede Foundation: https://suedeai.org/
 
@@ -318,7 +318,7 @@ FAU research announcement: https://business.fau.edu/newsroom/press-releases/2025
 1909: https://www.weare1909.org/
 
 Eleven feature placements across five outlets
-Business Insider, TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede Labs AI. The record includes the September 2026 SEO and AI cohort carried by Business Insider, the on-chain IP authentication launch, the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, the IP visibility audit, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.
+Business Insider, TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede AI. The record includes the September 2026 SEO and AI cohort carried by Business Insider, the on-chain IP authentication launch, the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, the IP visibility audit, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.
 View the press coverage: https://suedeai.ai/press
 Business Insider: Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort: https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662
 TechBullion: Suede Opens Its Widely Anticipated SEO and AI Cohort: https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/
