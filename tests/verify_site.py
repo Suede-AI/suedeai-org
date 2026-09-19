@@ -410,11 +410,11 @@ def main() -> int:
     home_path = ROOT / "index.html"
     if home_path.exists():
         home_html = read_text(home_path)
-        # New "Creative rails for the AI era" content strings — root is now the Suede Labs investor thesis page
+        # New "Creative rails for the AI era" content strings — root is now the Suede AI investor thesis page
         assert_contains("index.html", home_html, "Creative rails for the", failures)
         assert_contains("index.html", home_html, "AI era.", failures)
         assert_contains("index.html", home_html, "Suede Labs", failures)
-        assert_contains("index.html", home_html, "Suede Labs investor thesis", failures)
+        assert_contains("index.html", home_html, "Suede AI investor thesis", failures)
         assert_contains("index.html", home_html, "Talk to Suede", failures)
         assert_contains("index.html", home_html, "Jason Colapietro", failures)
         assert_contains("index.html", home_html, 'href="https://suedeai.ai/"', failures)
