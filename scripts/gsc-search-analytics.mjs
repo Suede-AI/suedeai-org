@@ -20,6 +20,9 @@
 //     --start 2026-08-22 --end 2026-09-18 \
 //     --compare-start 2026-03-01 --compare-end 2026-04-30
 //
+// In comparison mode the ranges need not be equal in length: metrics are
+// reported per-day so a 28-day window and a 61-day baseline compare honestly.
+//
 // Credentials, in precedence order:
 //   GSC_SERVICE_ACCOUNT_JSON  the key file's contents, inline (use this in CI)
 //   GOOGLE_APPLICATION_CREDENTIALS  path to the key file on disk
@@ -29,11 +32,27 @@
 import { createSign } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const API_ROOT = "https://www.googleapis.com/webmasters/v3";
 const SCOPE = "https://www.googleapis.com/auth/webmasters.readonly";
 const REPO_ROOT = resolve(import.meta.dirname, "..");
+// Comparison fetches both sides in full and applies the display limit only
+// after sorting. Fetching the current side at --limit would drop any page
+// ranked below it, and the merge would then report that page as vanished
+// purely because it was never fetched — manufacturing the exact signal this
+// command exists to find.
+const COMPARISON_FETCH_LIMIT = 5000;
+
+const isIsoDate = (value) =>
+  /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`));
+
+// Inclusive: 2026-03-01..2026-03-01 is one day.
+function dayCount(start, end) {
+  const ms = Date.parse(`${end}T00:00:00Z`) - Date.parse(`${start}T00:00:00Z`);
+  return Math.floor(ms / 86400000) + 1;
+}
 
 function parseArgs(argv) {
   const args = { dimension: "page", limit: 25 };
@@ -156,7 +175,11 @@ async function query(token, site, start, end, dimension, limit) {
   return result.rows ?? [];
 }
 
-function compare(current, baseline, limit) {
+// Ranges of different lengths cannot be compared on totals. The documented
+// question is a rate ("~60/day against ~33/day"), and a 28-day window against a
+// 61-day baseline would show every row collapsing even at an unchanged daily
+// rate, confirming a decline that had not happened. Deltas are per-day.
+function compare(current, baseline, currentDays, baselineDays) {
   const base = new Map(baseline.map((row) => [row.keys[0], row]));
   const seen = new Set();
   const merged = [];
@@ -170,7 +193,6 @@ function compare(current, baseline, limit) {
       impressions: row.impressions,
       wasImpressions: was?.impressions ?? 0,
       clicks: row.clicks,
-      wasClicks: was?.clicks ?? 0,
     });
   }
   // Pages that vanished entirely are the whole point of the comparison, so they
@@ -178,34 +200,32 @@ function compare(current, baseline, limit) {
   for (const row of baseline) {
     const key = row.keys[0];
     if (seen.has(key)) continue;
-    merged.push({
-      key,
-      impressions: 0,
-      wasImpressions: row.impressions,
-      clicks: 0,
-      wasClicks: row.clicks,
-    });
+    merged.push({ key, impressions: 0, wasImpressions: row.impressions, clicks: 0 });
   }
 
   return merged
-    .map((row) => ({ ...row, delta: row.impressions - row.wasImpressions }))
-    .sort((a, b) => a.delta - b.delta)
-    .slice(0, limit);
+    .map((row) => {
+      const perDay = row.impressions / currentDays;
+      const wasPerDay = row.wasImpressions / baselineDays;
+      return { ...row, perDay, wasPerDay, delta: perDay - wasPerDay };
+    })
+    .sort((a, b) => a.delta - b.delta);
 }
 
 function table(rows, withBaseline) {
   const width = Math.min(72, Math.max(20, ...rows.map((r) => r.key.length)));
+  const rate = (value) => value.toFixed(1);
   const head = withBaseline
-    ? `${"page".padEnd(width)}  ${"impr".padStart(8)}  ${"was".padStart(8)}  ${"delta".padStart(8)}  ${"clicks".padStart(7)}`
+    ? `${"page".padEnd(width)}  ${"impr/day".padStart(9)}  ${"was/day".padStart(9)}  ${"delta/day".padStart(10)}  ${"clicks".padStart(7)}`
     : `${"page".padEnd(width)}  ${"impr".padStart(8)}  ${"clicks".padStart(7)}`;
   console.log(head);
   console.log("-".repeat(head.length));
   for (const row of rows) {
     const key = row.key.length > width ? `${row.key.slice(0, width - 1)}…` : row.key.padEnd(width);
     if (withBaseline) {
-      const delta = row.delta > 0 ? `+${row.delta}` : String(row.delta);
+      const delta = row.delta > 0 ? `+${rate(row.delta)}` : rate(row.delta);
       console.log(
-        `${key}  ${String(row.impressions).padStart(8)}  ${String(row.wasImpressions).padStart(8)}  ${delta.padStart(8)}  ${String(row.clicks).padStart(7)}`,
+        `${key}  ${rate(row.perDay).padStart(9)}  ${rate(row.wasPerDay).padStart(9)}  ${delta.padStart(10)}  ${String(row.clicks).padStart(7)}`,
       );
     } else {
       console.log(`${key}  ${String(row.impressions).padStart(8)}  ${String(row.clicks).padStart(7)}`);
@@ -236,6 +256,23 @@ async function main() {
       console.error("--compare-start and --compare-end must be given together.");
       return 1;
     }
+    for (const flag of ["start", "end", "compare-start", "compare-end"]) {
+      if (args[flag] !== undefined && !isIsoDate(args[flag])) {
+        console.error(`--${flag} must be YYYY-MM-DD, got ${JSON.stringify(args[flag])}`);
+        return 1;
+      }
+    }
+    // Two non-overlapping ranges share no date keys, so every baseline day
+    // reads as vanished and every current day as new — the output is entirely
+    // artefact. Aligning days by offset would answer a different question than
+    // this command asks, so refuse instead.
+    if (args["compare-start"] && args.dimension === "date") {
+      console.error(
+        "--dimension date cannot be compared across ranges: the two periods share no date " +
+          "keys, so every row would be an artefact. Compare by page or query instead.",
+      );
+      return 1;
+    }
   }
 
   const token = await accessToken(loadCredentials());
@@ -260,21 +297,41 @@ async function main() {
   const start = args.start ?? fallback.start;
   const end = args.end ?? fallback.end;
 
-  const rows = await query(token, site, start, end, args.dimension, limit);
-  const baseline =
-    args["compare-start"] && args["compare-end"]
-      ? await query(token, site, args["compare-start"], args["compare-end"], args.dimension, 1000)
-      : null;
+  const comparing = Boolean(args["compare-start"]);
+  const fetchLimit = comparing ? COMPARISON_FETCH_LIMIT : limit;
 
-  const result = baseline ? compare(rows, baseline, limit) : rows.map((r) => ({ key: r.keys[0], ...r }));
+  const rows = await query(token, site, start, end, args.dimension, fetchLimit);
+  const baseline = comparing
+    ? await query(token, site, args["compare-start"], args["compare-end"], args.dimension, fetchLimit)
+    : null;
+
+  // Say so rather than silently reporting a truncated set as complete.
+  for (const [label, set] of [["current", rows], ["baseline", baseline ?? []]]) {
+    if (set.length === COMPARISON_FETCH_LIMIT) {
+      console.error(
+        `WARNING: the ${label} range returned ${COMPARISON_FETCH_LIMIT} rows, the fetch cap. ` +
+          "Results may be truncated; narrow the range or the dimension.",
+      );
+    }
+  }
+
+  const result = comparing
+    ? compare(rows, baseline, dayCount(start, end), dayCount(args["compare-start"], args["compare-end"])).slice(0, limit)
+    : rows.map((r) => ({ key: r.keys[0], ...r }));
 
   if (args.json) {
     console.log(JSON.stringify({ site, start, end, rows: result }, null, 2));
     return 0;
   }
 
-  console.log(`${site}  ${start} to ${end}  (dimension: ${args.dimension})`);
-  if (baseline) console.log(`baseline: ${args["compare-start"]} to ${args["compare-end"]}, sorted by largest loss`);
+  console.log(`${site}  ${start} to ${end}  (${dayCount(start, end)}d, dimension: ${args.dimension})`);
+  if (comparing) {
+    const baselineDays = dayCount(args["compare-start"], args["compare-end"]);
+    console.log(
+      `baseline: ${args["compare-start"]} to ${args["compare-end"]} (${baselineDays}d). ` +
+        "Rates are per-day so the unequal ranges compare; sorted by largest daily loss.",
+    );
+  }
   console.log("");
   if (result.length === 0) {
     console.log("No rows. Either the range has no data, or the property is the wrong identifier.");
@@ -284,10 +341,16 @@ async function main() {
   return 0;
 }
 
-main().then(
-  (code) => process.exit(code),
-  (error) => {
-    console.error(`FAIL: ${error.message}`);
-    process.exit(1);
-  },
-);
+// Exported for tests/gsc_search_analytics.test.js; the CLI still runs when this
+// file is the entry point.
+export { compare, dayCount, isIsoDate, COMPARISON_FETCH_LIMIT };
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().then(
+    (code) => process.exit(code),
+    (error) => {
+      console.error(`FAIL: ${error.message}`);
+      process.exit(1);
+    },
+  );
+}

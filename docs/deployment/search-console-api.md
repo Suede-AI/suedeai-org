@@ -90,14 +90,31 @@ node scripts/gsc-search-analytics.mjs \
   --compare-start 2026-03-01 --compare-end 2026-04-30
 ```
 
-Pages that stopped appearing entirely are kept in the output with `impr 0`, and
-sort to the top — they are the likeliest explanation for a sitewide impressions
-drop.
+Three things about how the comparison is computed, because each one would
+otherwise produce output that looks like a decline when there isn't one:
 
-Other dimensions: `--dimension query|country|device|date`. Raw output:
-`--json`. Default window is the 28 days ending 3 days ago, because Search
-Console finalises data on a 2–3 day lag and an end date of today reports a
-trough that is collection latency rather than a real decline.
+- **Rates are per-day, not totals.** The default 28-day window against a
+  Mar–Apr baseline compares 28 days with 61. Subtracting totals would show
+  every row collapsing even at an unchanged daily rate. Columns are `impr/day`
+  and `was/day`, and sorting is by daily delta.
+- **Both ranges are fetched in full** before `--limit` is applied. Limiting the
+  fetch would drop any page ranked below the cutoff in the current range, and
+  the merge would then report that page as vanished purely because it was never
+  fetched. If either range hits the 5000-row fetch cap, the script warns that
+  results may be truncated rather than presenting them as complete.
+- **Pages that genuinely vanished are kept** at `0.0`, and sort to the top —
+  they are the likeliest explanation for a sitewide drop.
+
+Other dimensions: `--dimension query|country|device|date`. `--dimension date`
+is refused in comparison mode: two non-overlapping ranges share no date keys,
+so every row would be an artefact of the merge rather than a comparison.
+
+Raw output: `--json`. Default window is the 28 days ending 3 days ago, because
+Search Console finalises data on a 2–3 day lag and an end date of today reports
+a trough that is collection latency rather than a real decline.
+
+`tests/gsc_search_analytics.test.js` guards the first two behaviours; both were
+real bugs caught in review on #109.
 
 ## Reading the result
 
