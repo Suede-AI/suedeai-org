@@ -573,8 +573,10 @@ h3 {
 .site-footer p {
   color: var(--text-muted);
 }
-/* Every Suede property, priority-ordered, on every page. Modelled on
-   .site-footer__legal below so it inherits the same hairline and rhythm. */
+/* Every Suede property, priority-ordered, on every page, and the internal
+   pages that sit outside the header nav. Both are modelled on
+   .site-footer__legal below so they inherit the same hairline and rhythm. */
+.site-footer__explore,
 .site-footer__ecosystem {
   display: flex;
   flex-wrap: wrap;
@@ -589,10 +591,13 @@ h3 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+.site-footer__explore a,
 .site-footer__ecosystem a {
   color: var(--text-muted);
   text-decoration: none;
 }
+.site-footer__explore a:hover,
+.site-footer__explore a:focus-visible,
 .site-footer__ecosystem a:hover,
 .site-footer__ecosystem a:focus-visible {
   color: var(--registry-cyan);

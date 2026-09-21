@@ -145,6 +145,41 @@ NOINDEX_PAGES = [
     "welcome-back/index.html",
 ]
 
+# Pages that sit outside the header nav. Before the footer carried them, each
+# had two to eight inbound internal links and Search Console parked them under
+# "Discovered - currently not indexed" (10 URLs) and "Crawled - currently not
+# indexed" (5 URLs). Every page's footer must link all of them, so the guard is
+# on the whole set: dropping one silently re-orphans that page. It checks the
+# links, not the markup around them, because the home page carries its own
+# footer under styles.css (.site-footer__topics) while the other 29 share
+# assets/css/site.css (.site-footer__explore).
+FOOTER_LINKED_PAGES = [
+    "/about/",
+    "/creator-ownership/",
+    "/human-authenticity-layer/",
+    "/agentic-commerce/",
+    "/ai-voice-protection/",
+    "/ai-likeness-protection/",
+    "/investors/",
+    "/book-a-call/",
+    "/sharp-excerpt/",
+    "/full-preview/",
+    "/voice/terms/",
+    "/voice/privacy/",
+]
+
+# Machine-readable feeds and records that answer 200 but are not pages. Left
+# bare they get crawled and then filed under "Crawled - currently not indexed",
+# which is a critical Search Console bucket. noindex classifies them correctly;
+# follow keeps the links inside them crawlable.
+NOINDEX_ASSET_PATHS = [
+    "/llms.txt",
+    "/llms-full.txt",
+    "/docs/accomplishments.md",
+    "/content/(.*)\\.json",
+    "/LICENSE",
+]
+
 PAGES = {
     "index.html": "/",
     "proof-of-creation/index.html": "/proof-of-creation/",
@@ -973,6 +1008,22 @@ def main() -> int:
                     f"vercel.json: {PREVIEW_PDF_PATH} must send Link: {expected_link}"
                 )
 
+        header_map = {
+            rule.get("source"): {
+                header.get("key", "").lower(): header.get("value")
+                for header in rule.get("headers", [])
+            }
+            for rule in config.get("headers", [])
+        }
+        for source in NOINDEX_ASSET_PATHS:
+            headers = header_map.get(source)
+            if headers is None:
+                failures.append(f"vercel.json: missing header rule for {source}")
+            elif headers.get("x-robots-tag") != "noindex, follow":
+                failures.append(
+                    f"vercel.json: {source} must send X-Robots-Tag: noindex, follow"
+                )
+
     for file_name in NOINDEX_PAGES:
         path = ROOT / file_name
         if path.exists():
@@ -982,6 +1033,19 @@ def main() -> int:
                 '<meta name="robots" content="noindex, follow">',
                 failures,
             )
+
+    noindex_page_paths = {f"/{name.rsplit('/', 1)[0]}/" for name in NOINDEX_PAGES}
+    # Every page the site serves, not just the ones PAGES names, so a new page
+    # cannot ship without the footer that carries the site's internal linking.
+    for path in sorted(ROOT.rglob("*.html")):
+        file_name = path.relative_to(ROOT).as_posix()
+        footer = re.search(r"<footer\b.*?</footer>", read_text(path), re.DOTALL)
+        if not footer:
+            failures.append(f"{file_name}: has no <footer>")
+            continue
+        for link in FOOTER_LINKED_PAGES:
+            if f'<a href="{link}">' not in footer.group(0):
+                failures.append(f"{file_name}: footer does not link {link}")
 
     if robots.exists():
         robots_text = read_text(robots)
@@ -1001,13 +1065,35 @@ def main() -> int:
 
     if sitemap.exists():
         sitemap_text = read_text(sitemap)
-        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/</loc>", failures)
-        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/book/</loc>", failures)
-        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/agentic-commerce/</loc>", failures)
-        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/sharp-excerpt/</loc>", failures)
-        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/full-preview/</loc>", failures)
-        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/investors/</loc>", failures)
-        assert_contains("sitemap.xml", sitemap_text, "<loc>https://suedeai.org/book-a-call/</loc>", failures)
+        for route in PAGES.values():
+            assert_contains(
+                "sitemap.xml", sitemap_text, f"<loc>{SITE_URL}{route}</loc>", failures
+            )
+
+        # Every submitted URL must answer 200 and be indexable. A <loc> that
+        # redirects lands in Search Console's "Page with redirect" bucket, and a
+        # noindexed or unserved one wastes crawl budget the site does not have.
+        entries = re.findall(
+            r"<url>\s*<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>", sitemap_text
+        )
+        if len(entries) != sitemap_text.count("<url>"):
+            failures.append(
+                "sitemap.xml: every <url> needs a <loc> followed by a <lastmod>"
+            )
+        for loc, lastmod in entries:
+            if not loc.startswith(SITE_URL):
+                failures.append(f"sitemap.xml: {loc} is not on {SITE_URL}")
+                continue
+            route = loc[len(SITE_URL):]
+            if route in LEGACY_REDIRECTS:
+                failures.append(f"sitemap.xml: {loc} is a redirect source, not a page")
+            if route in noindex_page_paths:
+                failures.append(f"sitemap.xml: {loc} is noindexed and must not be listed")
+            served = ROOT / (route.strip("/") + "/index.html" if route != "/" else "index.html")
+            if not served.exists():
+                failures.append(f"sitemap.xml: {loc} has no page in the repository")
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod):
+                failures.append(f"sitemap.xml: {loc} has a malformed lastmod {lastmod!r}")
 
     if failures:
         print("FAIL: site verification failed")
