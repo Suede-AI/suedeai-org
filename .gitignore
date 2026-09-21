@@ -4,3 +4,8 @@
 .env.local
 .vercel/
 .vercel
+
+# Service-account keys. The Search Console key (docs/deployment/search-console-api.md)
+# belongs outside the working tree entirely; these patterns are a second line of defence.
+*service-account*.json
+gsc-*.json
