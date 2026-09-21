@@ -148,9 +148,12 @@ NOINDEX_PAGES = [
 # Pages that sit outside the header nav. Before the footer carried them, each
 # had two to eight inbound internal links and Search Console parked them under
 # "Discovered - currently not indexed" (10 URLs) and "Crawled - currently not
-# indexed" (5 URLs). The footer gives every one a sitewide inbound link, so the
-# guard is on the whole set: dropping one silently re-orphans that page.
-FOOTER_EXPLORE_LINKS = [
+# indexed" (5 URLs). Every page's footer must link all of them, so the guard is
+# on the whole set: dropping one silently re-orphans that page. It checks the
+# links, not the markup around them, because the home page carries its own
+# footer under styles.css (.site-footer__topics) while the other 29 share
+# assets/css/site.css (.site-footer__explore).
+FOOTER_LINKED_PAGES = [
     "/about/",
     "/creator-ownership/",
     "/human-authenticity-layer/",
@@ -1036,12 +1039,13 @@ def main() -> int:
     # cannot ship without the footer that carries the site's internal linking.
     for path in sorted(ROOT.rglob("*.html")):
         file_name = path.relative_to(ROOT).as_posix()
-        html = read_text(path)
-        if 'class="site-footer__explore"' not in html:
-            failures.append(f"{file_name}: footer is missing the explore nav")
+        footer = re.search(r"<footer\b.*?</footer>", read_text(path), re.DOTALL)
+        if not footer:
+            failures.append(f"{file_name}: has no <footer>")
             continue
-        for link in FOOTER_EXPLORE_LINKS:
-            assert_contains(file_name, html, f'<a href="{link}">', failures)
+        for link in FOOTER_LINKED_PAGES:
+            if f'<a href="{link}">' not in footer.group(0):
+                failures.append(f"{file_name}: footer does not link {link}")
 
     if robots.exists():
         robots_text = read_text(robots)
