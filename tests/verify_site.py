@@ -475,8 +475,9 @@ def main() -> int:
         assert_contains("index.html", home_html, '"@type": "Organization"', failures)
         assert_contains("index.html", home_html, '"@type": "Person"', failures)
         assert_contains("index.html", home_html, '"@id": "https://suedeai.ai/founder#person"', failures)
-        assert_contains("index.html", home_html, '"url": "https://suedeai.ai/founder"', failures)
-        assert_contains("index.html", home_html, '"https://suedeai.org/jason-colapietro/"', failures)
+        # Canonical Person (fix brief 2026-09-23): url is the entity home, jasoncolapietro.com.
+        assert_contains("index.html", home_html, '"url": "https://jasoncolapietro.com/"', failures)
+        assert_contains("index.html", home_html, 'href="/jason-colapietro/"', failures)
 
     h1_pattern = r"<h1\b[^>]*>.*?</h1>"
     h1_flags = re.IGNORECASE | re.DOTALL
@@ -513,8 +514,8 @@ def main() -> int:
     if founder_path.exists():
         founder_html = read_text(founder_path)
         assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#person"', failures)
-        assert_contains("jason-colapietro/index.html", founder_html, '"alternateName": ["Johnny Suede"]', failures)
-        assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://suedeai.ai/founder"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"alternateName": "Johnny Suede"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://jasoncolapietro.com/"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://johnnysuede.com/"', failures)
