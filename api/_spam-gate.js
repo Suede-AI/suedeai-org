@@ -20,7 +20,10 @@
 //   too-fast   form_ts younger than the form's minimum: nobody types a name,
 //              an address and a message in under three seconds.
 //   origin     browsers send Origin on every POST; a request without one, or
-//              from another host, did not come from the page.
+//              from another host, did not come from the page. A handler that
+//              is posted to cross-site on purpose (the investors form on
+//              suedeai.ai) passes those origins as extraOrigins, which are
+//              accepted even when FORM_ALLOWED_ORIGINS replaces the defaults.
 //   gibberish  a name, topic or most of a message made of letter soup.
 //   template   a phrase from a known form-spam kit.
 //   html       markup in a message. Real people do not write <a href>.
@@ -38,6 +41,8 @@ const DEFAULT_ALLOWED_ORIGINS = [
   "https://suedeai.org",
   "https://www.suedeai.org",
   "https://suedeai-org.vercel.app",
+  "https://suedeai.ai",
+  "https://www.suedeai.ai",
 ];
 
 // Lowercased, apostrophes normalised, whitespace collapsed before matching.
@@ -160,7 +165,14 @@ function originOf(headers) {
   }
 }
 
-function assessSubmission({ form, fields = {}, headers = {}, now = Date.now(), minMs = DEFAULT_MIN_MS }) {
+function assessSubmission({
+  form,
+  fields = {},
+  headers = {},
+  now = Date.now(),
+  minMs = DEFAULT_MIN_MS,
+  extraOrigins = [],
+}) {
   const reasons = [];
   let score = 0;
   const add = (points, reason) => {
@@ -181,7 +193,7 @@ function assessSubmission({ form, fields = {}, headers = {}, now = Date.now(), m
   }
 
   const origin = originOf(headers);
-  if (!origin || !allowedOrigins().includes(origin)) {
+  if (!origin || !(allowedOrigins().includes(origin) || extraOrigins.includes(origin))) {
     add(2, "origin");
   }
 
@@ -252,6 +264,7 @@ function reviewNote(assessment) {
 }
 
 module.exports = {
+  DEFAULT_ALLOWED_ORIGINS,
   DROP_AT,
   REVIEW_AT,
   assessSubmission,

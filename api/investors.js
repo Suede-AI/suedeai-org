@@ -11,9 +11,22 @@ const {
   wantsJson,
 } = require("./_shared");
 const { assessSubmission, logDrop, reviewNote, reviewPrefix } = require("./_spam-gate");
+const { applyCors, handlePreflight } = require("./_cors");
 
-const SOURCE = "suedeai.org/investors";
+const DEFAULT_SOURCE = "suedeai.org/investors";
+// The form posts here from both sites. Anything else a client sends in
+// `source` is ignored and recorded as the default.
+const ALLOWED_SOURCES = [DEFAULT_SOURCE, "suedeai.ai/investors"];
+// Origins allowed to call this endpoint cross-site (CORS) and never scored as
+// foreign by the spam gate, even when FORM_ALLOWED_ORIGINS overrides the
+// gate's defaults.
+const CROSS_SITE_ORIGINS = ["https://suedeai.ai", "https://www.suedeai.ai"];
 const SUCCESS_REDIRECT = "/investors/thanks/";
+
+function resolveSource(fields) {
+  const requested = normalizeText(fields.source).toLowerCase();
+  return ALLOWED_SOURCES.includes(requested) ? requested : DEFAULT_SOURCE;
+}
 
 function buildIntent(fields) {
   const parts = [];
@@ -41,6 +54,13 @@ function buildAutoresponder({ name, deckUrl, calendarUrl }) {
 }
 
 module.exports = async (req, res) => {
+  if (handlePreflight(req, res, CROSS_SITE_ORIGINS)) {
+    return;
+  }
+  // Before allowPostOnly so the 405 carries the header too: every answer to an
+  // allowed origin must, or the calling page cannot read it.
+  applyCors(req, res, CROSS_SITE_ORIGINS);
+
   if (!allowPostOnly(req, res)) {
     return;
   }
@@ -51,7 +71,12 @@ module.exports = async (req, res) => {
   // the spam gate. Either way a bot gets the same success answer a person
   // gets, and nothing is stored or emailed.
   const honeypot = Boolean(normalizeText(fields.company_url));
-  const gate = assessSubmission({ form: "investors", fields, headers: req.headers });
+  const gate = assessSubmission({
+    form: "investors",
+    fields,
+    headers: req.headers,
+    extraOrigins: CROSS_SITE_ORIGINS,
+  });
   if (honeypot || gate.verdict === "drop") {
     logDrop(honeypot ? { ...gate, reasons: ["honeypot", ...gate.reasons] } : gate, fields);
     if (wantsJson(req)) {
@@ -75,6 +100,7 @@ module.exports = async (req, res) => {
   const consentMarketing = Boolean(normalizeText(fields.consent));
   const utmSource = normalizeText(fields.utm_source);
   const utmCampaign = normalizeText(fields.utm_campaign);
+  const source = resolveSource(fields);
 
   if (!name || !firm || !email || !isValidEmail(email)) {
     const errorMessage = "Name, email, and firm are required.";
@@ -89,7 +115,7 @@ module.exports = async (req, res) => {
   }
 
   const table = process.env.SUPABASE_INVESTOR_TABLE || "investor_leads";
-  const result = await insertRow(table, {
+  const row = {
     name,
     email,
     firm,
@@ -101,11 +127,23 @@ module.exports = async (req, res) => {
     website,
     message,
     consent_marketing: consentMarketing,
-    source: SOURCE,
+    source,
     utm_source: utmSource,
     utm_campaign: utmCampaign,
     submitted_at: new Date().toISOString(),
-  });
+  };
+  let result = await insertRow(table, row);
+  let storedSource = source;
+
+  // The table's insert policy pins `source` to an allowlist. Until the policy
+  // that admits "suedeai.ai/investors" is applied (supabase/schema.sql), an
+  // insert with it is refused as 401/403. Store the lead under the default
+  // source rather than lose it; the email still names where it came from.
+  if (!result.ok && source !== DEFAULT_SOURCE && (result.status === 401 || result.status === 403)) {
+    console.warn("[investors] source rejected by insert policy, stored as default", { source });
+    storedSource = DEFAULT_SOURCE;
+    result = await insertRow(table, { ...row, source: DEFAULT_SOURCE });
+  }
 
   if (!result.ok) {
     if (wantsJson(req)) {
@@ -132,6 +170,7 @@ module.exports = async (req, res) => {
       `Timeline: ${timeline || "(none)"}`,
       `Intent: ${intent || "(none)"}`,
       `Website: ${website || "(none)"}`,
+      `Source: ${source}${storedSource !== source ? ` (stored as ${storedSource})` : ""}`,
       `UTM: ${utmSource || "-"} / ${utmCampaign || "-"}`,
       `Consent: ${consentMarketing ? "yes" : "no"}`,
       "",

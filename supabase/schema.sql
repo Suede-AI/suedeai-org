@@ -94,7 +94,9 @@ create policy "investor_leads_insert_anon"
   for insert
   to anon, authenticated
   with check (
-    source = 'suedeai.org/investors'
+    -- MUST match ALLOWED_SOURCES in api/investors.js. suedeai.ai/investors is
+    -- the same form hosted on suedeai.ai, posting here cross-origin.
+    source in ('suedeai.org/investors', 'suedeai.ai/investors')
     and name is not null
     and email is not null
     and firm is not null
@@ -105,7 +107,7 @@ revoke all on public.investor_leads from anon, authenticated;
 grant insert on public.investor_leads to anon, authenticated;
 
 comment on table public.investor_leads is
-  'Marketing site lead-capture form (suedeai.org/investors): visitor-submitted investor interest requests. Insert-only via anon key from the public website form.';
+  'Marketing site lead-capture form (suedeai.org/investors and suedeai.ai/investors, both posting to suedeai.org/api/investors/): visitor-submitted investor interest requests. Insert-only via anon key from the public website form.';
 
 create table if not exists public.call_requests (
   id bigint generated always as identity primary key,
