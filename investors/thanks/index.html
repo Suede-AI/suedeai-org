@@ -18,9 +18,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0c1127">
+  <script>document.documentElement.classList.add("js")</script>
   <link rel="stylesheet" href="/assets/css/site.css?v=20260921">
-  <link rel="stylesheet" href="/assets/css/investors.css?v=20260828">
+  <link rel="stylesheet" href="/assets/css/investors.css?v=20260930">
   <script defer src="/assets/js/site.js?v=20260914"></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","name":"Request Received","url":"https://suedeai.org/investors/thanks/","description":"Confirmation page for Suede AI investor materials requests."}
@@ -29,32 +31,56 @@
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suedeai.org/"},{"@type":"ListItem","position":2,"name":"Investors","item":"https://suedeai.org/investors/"},{"@type":"ListItem","position":3,"name":"Request Received","item":"https://suedeai.org/investors/thanks/"}]}
   </script>
 </head>
-<body>
+<body class="inv-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="smark" viewBox="70 70 260 260">
+      <g fill="none" stroke="currentColor" stroke-linecap="round">
+        <path stroke-width="16.45" d="M86.40 202.96A113.10 113.10 0 0 1 282.03 122.32"/>
+        <path stroke-width="16.45" d="M312.50 196.24A113.10 113.10 0 0 1 116.87 276.88"/>
+        <path stroke-width="17.15" d="M113.44 203.02A86.08 86.08 0 0 1 262.12 140.59"/>
+        <path stroke-width="17.15" d="M285.46 196.18A86.08 86.08 0 0 1 136.78 258.61"/>
+        <path stroke-width="16.4" d="M141.49 203.35A58.08 58.08 0 0 1 242.36 160.46"/>
+        <path stroke-width="16.4" d="M257.41 195.85A58.08 58.08 0 0 1 156.54 238.74"/>
+      </g>
+      <path fill="currentColor" d="M140.00 188.90H250.00V211.90H140.00Z"/>
+    </symbol>
+  </svg>
 <header class="site-header">
     <div class="site-header__inner">
-      <a class="brand" href="/"><span class="brand__name">Suede AI</span><span class="brand__tag">Investors</span></a>
+      <a class="brand" href="/"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#smark"/></svg><span class="brand__name">Suede AI</span><span class="brand__tag">Investors</span></a>
       <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
         <a href="/jason-colapietro/">Founder</a>
-        <a href="/investors/">Investors</a>
+        <a class="site-nav__cta" href="/investors/">Investors</a>
       </nav>
     </div>
   </header>
-  <main id="main-content" class="site-shell success-hero inv">
-    <div class="inv__inner inv__band">
-      <p class="inv__eyebrow">Suede AI — Investors</p>
-      <h1 class="inv__h1">Thank you. Your request is in.</h1>
-      <p class="inv__lede">We've recorded your request and the Suede team will follow up directly. You can book an intro call or open the investor materials now.</p>
-      <div class="inv__cta-row">
-        <a class="inv__btn inv__btn--primary" href="/api/investor-link/?target=call">Book an intro call</a>
-        <a class="inv__btn inv__btn--ghost" href="/api/investor-link/?target=deck">View the materials</a>
+  <main id="main-content" class="inv inv-thanks">
+    <div class="inv-wrap">
+      <div class="inv-thanks__copy">
+        <nav aria-label="Breadcrumb" class="inv-eyebrow inv-crumbs"><a href="/" class="inv-ix">Home</a> · <a href="/investors/" class="inv-ix">Investors</a> · <span aria-current="page">Request Received</span></nav>
+        <h1 class="inv-h1 inv-stack">Thank you. <em>Your request is in.</em></h1>
+        <p class="inv-lede">We've recorded your request and the Suede team will follow up directly. You can book an intro call or open the investor materials now.</p>
+        <div class="inv-cta-row">
+          <a class="inv-btn inv-btn--primary" href="/api/investor-link/?target=call">Book an intro call <span class="inv-btn__arr" aria-hidden="true">&rarr;</span></a>
+          <a class="inv-btn inv-btn--ghost" href="/api/investor-link/?target=deck">View the materials</a>
+        </div>
+        <ol class="inv-thanks__steps">
+          <li class="is-done"><span>01 · Done</span>Request recorded.</li>
+          <li><span>02 · Next</span>The Suede team follows up directly.</li>
+          <li><span>03 · Then</span>An intro call with the founder.</li>
+        </ol>
+        <ul class="inv-thanks__links" aria-label="Keep reading">
+          <li><a href="/proof-of-creation/">Proof of creation</a></li>
+          <li><a href="/programmable-ip/">Programmable IP</a></li>
+          <li><a href="/book/">Stake Your Claim</a></li>
+          <li><a href="https://suedeai.ai/" rel="noopener">suedeai.ai</a></li>
+        </ul>
       </div>
-      <div class="inv__strip">
-        <a href="/proof-of-creation/">Proof of creation</a>
-        <a href="/programmable-ip/">Programmable IP</a>
-        <a href="/book/">Stake Your Claim</a>
-        <a href="https://suedeai.ai/" rel="noopener">suedeai.ai</a>
+      <div class="inv-thanks__mark" aria-hidden="true">
+        <span class="inv-pulse"></span><span class="inv-pulse"></span><span class="inv-pulse"></span>
+        <svg focusable="false"><use href="#smark"/></svg>
       </div>
     </div>
   </main>
