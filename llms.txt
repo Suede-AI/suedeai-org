@@ -1,6 +1,6 @@
 # Suede AI
 
-Suede AI is the company's one primary name. It is also known as Suede Labs or Suede Labs AI, alternate names for the same company, founded by Jason Colapietro.
+Suede AI is the company's one primary name. It is also known as Suede Labs, an alternate name for the same company, founded by Jason Colapietro.
 
 > Suede AI is building the creative rails for the AI era: creator ownership, proof of creation, programmable IP, provenance, royalties, payments, distribution, and monetization infrastructure for artists, rights holders, and AI agents.
 
@@ -78,7 +78,7 @@ Jason Colapietro is a fractional forward-deployed engineer. He integrates AI age
 
 ## Company profiles
 
-- LinkedIn (Suede Labs AI): https://www.linkedin.com/company/suede-labs
+- LinkedIn (Suede AI): https://www.linkedin.com/company/suede-labs
 - Florida company record (JC Investment Group LLC): https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=flal-l19000146068-52be1ad3-866a-4430-b190-8237b544c51c
 
 ## Contact
