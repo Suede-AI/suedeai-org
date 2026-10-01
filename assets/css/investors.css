@@ -1029,6 +1029,9 @@
   overflow: hidden;
   background: var(--hairline);
 }
+.inv-signals li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
 .inv-signals li {
   padding: 1.6rem 1.7rem;
   background: var(--ground);
