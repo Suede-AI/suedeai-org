@@ -1095,6 +1095,50 @@ def main() -> int:
             if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod):
                 failures.append(f"sitemap.xml: {loc} has a malformed lastmod {lastmod!r}")
 
+    # Meta keywords are a per-page target map, not a ranking signal. One owner
+    # page per head term, 3-10 page-specific terms (2-3 on legal/contact/support
+    # pages), the lead term named in the <title>, and no retired brand or terms
+    # that another Suede property owns.
+    keyword_head_owners = {
+        "proof of creation": "proof-of-creation/index.html",
+        "programmable ip": "programmable-ip/index.html",
+        "creator ownership": "creator-ownership/index.html",
+    }
+    keyword_forbidden = ("vocal range test", "suede labs", "angel investing")
+    keyword_short_pages = {
+        "privacy/index.html", "terms/index.html", "refund-policy/index.html",
+        "contact/index.html", "book-a-call/index.html", "voice/privacy/index.html",
+        "voice/terms/index.html", "voice/support/index.html",
+    }
+    for html_path in sorted(ROOT.rglob("index.html")):
+        rel = html_path.relative_to(ROOT).as_posix()
+        if rel.startswith(("docs/", "node_modules/", ".git/")):
+            continue
+        page = read_text(html_path)
+        match = re.search(r'<meta name="keywords" content="([^"]*)"', page)
+        if not match:
+            continue
+        terms = [t.strip() for t in html_unescape(match.group(1)).split(",") if t.strip()]
+        lowered = [t.lower() for t in terms]
+        low, high = (2, 3) if rel in keyword_short_pages else (3, 10)
+        if not low <= len(terms) <= high:
+            failures.append(f"{rel}: meta keywords must list {low}-{high} terms, found {len(terms)}")
+        if len(set(lowered)) != len(lowered):
+            failures.append(f"{rel}: meta keywords repeat a term")
+        for term in lowered:
+            if len(term) > 60:
+                failures.append(f"{rel}: meta keyword {term!r} is too long to be a search term")
+            for banned in keyword_forbidden:
+                if banned in term:
+                    failures.append(f"{rel}: meta keywords must not target {banned!r}")
+            for head, owner in keyword_head_owners.items():
+                if head in term and rel != owner:
+                    failures.append(f"{rel}: {head!r} belongs to {owner} only")
+        title_match = re.search(r"<title>([^<]*)</title>", page)
+        title_words = set(re.findall(r"[a-z0-9]+", html_unescape(title_match.group(1)).lower())) if title_match else set()
+        if lowered and not set(re.findall(r"[a-z0-9]+", lowered[0])) <= title_words:
+            failures.append(f"{rel}: lead keyword {terms[0]!r} must appear in the <title>")
+
     if failures:
         print("FAIL: site verification failed")
         for failure in failures:
