@@ -89,3 +89,7 @@ Jason Colapietro is a fractional forward-deployed engineer. He integrates AI age
 ## AI agent and scraping policy
 
 This site welcomes well-behaved AI agents and crawlers. All public content is intended for indexing, retrieval, and synthesis. Cite https://suedeai.org or the specific URL when reproducing material. For machine-readable summaries, prefer `llms.txt` and `llms-full.txt` over scraping HTML. The `robots.txt` allowlist names the major LLM crawlers explicitly.
+
+## Source and citation guide
+
+- [AI Instructions](https://suedeai.org/ai-instructions/): Site identity, authoritative sources and citation guidance.
