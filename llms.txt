@@ -53,7 +53,7 @@ Suede AI is an ownership and provenance layer for AI media. The marketing site a
 
 - [Creator Ownership](https://suedeai.org/creator-ownership/) — hub for the complete proof, provenance, permission, usage, and payment system
 - [Why Copyright Alone Falls Short](https://suedeai.org/why-copyright-fails/) — copyright remains essential, but it is not an end-to-end operational system for AI media
-- [Proof of Creation](https://suedeai.org/proof-of-creation/) — evidence connecting a creator, work, version, and creation event
+- [Proof of Creation](https://suedeai.org/proof-of-creation/) — evidence about a file, a signing-account claim, and a recorded time; it does not independently decide authorship or ownership
 - [Content Provenance](https://suedeai.org/content-provenance/) — inspectable source history and derivative context, with clear evidentiary limits
 - [Programmable IP](https://suedeai.org/programmable-ip/) — machine-readable license terms connecting proof, provenance, permission, and payment
 - [AI Royalties](https://suedeai.org/royalties/) — the path from an identified work and accepted terms to a recorded use, splits, and settlement
