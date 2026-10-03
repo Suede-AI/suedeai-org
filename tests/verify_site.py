@@ -590,8 +590,8 @@ def main() -> int:
             if organization.get("@id") == CANONICAL_ORGANIZATION_ID:
                 if organization.get("name") != "Suede AI":
                     failures.append(f"{relative_path}: canonical company name must be Suede AI")
-                if any("suede labs ai" in str(name).lower() for name in organization.get("alternateName", [])):
-                    failures.append(f"{relative_path}: canonical company must not list the retired Suede Labs AI name as alternateName")
+                if "Suede Labs AI" not in organization.get("alternateName", []):
+                    failures.append(f"{relative_path}: canonical company must retain Suede Labs AI as company context")
             organization_same_as = same_as_urls(organization)
             if UNRELATED_PERSON_WIKIDATA in organization_same_as:
                 failures.append(
@@ -700,7 +700,7 @@ def main() -> int:
             assert_contains(file_name, read_text(path), "Talk to Suede", failures)
 
     concept_expectations = {
-        "proof-of-creation/index.html": "Proof of creation makes authorship, provenance, and creator rights verifiable",
+        "proof-of-creation/index.html": "Proof of creation preserves evidence connecting a file, a claim, and a recorded time",
         "why-copyright-fails/index.html": "Copyright remains essential for eligible human-authored work.",
         "royalties/index.html": "AI royalties are payments tied to a licensed or otherwise compensated use",
         "programmable-ip/index.html": "Programmable IP is creative work paired with verifiable ownership data",
