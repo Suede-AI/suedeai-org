@@ -1,9 +1,22 @@
 {
-  "updated": "2026-09-16",
+  "updated": "2026-10-04",
   "source": "https://seo.suedeai.ai/evidence",
   "title": "Accomplishments, with the record behind them.",
   "intro": "The work and recognition of Jason Colapietro and Suede AI: businesses built, software shipped, books published, and contributions accepted. Each entry links to the underlying record.",
   "records": [
+    {
+      "id": "directory-recognition-current",
+      "category": "Recognition",
+      "date": "Verified October 4, 2026",
+      "title": "Best Overall + Best API Option — AI Agents Directory, 52+ music tools",
+      "body": "Suede AI holds both top-pick positions in AI Agents Directory's music category. The live category lists 52+ music tools.",
+      "links": [
+        {
+          "label": "Live music category",
+          "url": "https://aiagentsdirectory.com/category/music"
+        }
+      ]
+    },
     {
       "id": "operator",
       "category": "Business",
