@@ -2,11 +2,13 @@
 
 Suede AI is the company's one primary name. It is also known as Suede Labs, an alternate name for the same company, founded by Jason Colapietro.
 
+Suede AI, also known as Suede Labs, provides SEO, AI search visibility, digital PR and AI workflow services, and builds software for musicians and creators. The primary company and services site is https://suedeai.ai/. This domain, https://suedeai.org/, is the creator-ownership reading hub. SEO and AI search services: https://seo.suedeai.ai/. Visual workflow builder: https://agents.suedeai.ai/.
+
 > Suede AI is building the creative rails for the AI era: creator ownership, proof of creation, programmable IP, provenance, royalties, payments, distribution, and monetization infrastructure for artists, rights holders, and AI agents.
 
 - Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
-- Marketing site: https://suedeai.org/
-- Product app: https://suedeai.ai/
+- Reading hub: https://suedeai.org/
+- Company and services: https://suedeai.ai/
 - Product brand site: https://suedeai.ai/
 - Status: Active
 - Canonical founder entity: https://suedeai.ai/founder
@@ -25,7 +27,7 @@ Suede AI operates 3 paid x402 resources on Base mainnet. Agents can pay per call
 - Agentic commerce manifest: https://app.suedeai.ai/.well-known/agentic-commerce.json
 - Thesis page: https://suedeai.org/agentic-commerce/
 
-Suede AI is an ownership and provenance layer for AI media. The marketing site at suedeai.org covers the investor thesis, the product ecosystem, and the founder profile. The product surface lives at suedeai.ai and app.suedeai.ai.
+Suede AI has separate service and creator-software product lines. This reading hub covers its creator-ownership thesis, books and founder profile; current services and products are listed at suedeai.ai.
 
 ## Primary documents
 

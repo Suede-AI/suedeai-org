@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://suedeai.org/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://suedeai.org/assets/img/founder-jason-colapietro.png</image:loc><image:title>Jason Colapietro (Johnny Suede) — Founder and CEO of Suede AI</image:title><image:caption>Jason Colapietro, founder and CEO of Suede AI</image:caption></image:image>
@@ -114,7 +114,7 @@
   </url>
   <url>
     <loc>https://suedeai.org/about/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
