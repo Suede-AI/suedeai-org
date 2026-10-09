@@ -45,6 +45,11 @@ RETIRED_TOKEN_ROLLING_32 = 3674665812
 ROLLING_BASE = 31
 
 
+# Pages that canonicalize elsewhere. Empty: the founder and investor pages are
+# unique, self-canonical pages on suedeai.org.
+EXTERNAL_CANONICALS: dict = {}
+
+
 def code_point(digits: str, radix: int) -> str:
     value = int(digits, radix)
     return chr(value) if value <= 0x10FFFF else " "
@@ -210,6 +215,8 @@ PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
 LIVE_PLAY_LISTING_CONTEXTS = (
     "Suede: AI Music Generator, and Suede AI Agents: Directory are live on Google Play",
     "Suede: AI Music Generator on Google Play",
+    "Suede: AI Music Generator: https://play.google.com/store/apps/details?id=xyz.suedeai.app",
+    'details?id=xyz.suedeai.app">Suede: AI Music Generator</a>',
 )
 
 
@@ -489,6 +496,8 @@ def main() -> int:
 
         html = read_text(path)
         canonical = f"{SITE_URL}{route}"
+        # Deliberate cross-domain canonicals (duplicate-content consolidation).
+        canonical = EXTERNAL_CANONICALS.get(file_name, canonical)
 
         assert_regex(file_name, html, r"<title>.+</title>", failures)
         # Allow multi-line/whitespace-formatted description tags so the regex works against
