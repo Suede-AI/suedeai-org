@@ -204,6 +204,11 @@ PAGES = {
     "contact/index.html": "/contact/",
     "investors/index.html": "/investors/",
     "book-a-call/index.html": "/book-a-call/",
+    "research/index.html": "/research/",
+    "research/voiceprint/index.html": "/research/voiceprint/",
+    "research/provenance/index.html": "/research/provenance/",
+    "research/hardware/index.html": "/research/hardware/",
+    "research/notes/index.html": "/research/notes/",
 }
 
 PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
