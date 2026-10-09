@@ -166,6 +166,21 @@ AI likeness protection starts with ownership, consent, and proof — not just ta
 HUMAN AUTHENTICITY LAYER (https://suedeai.org/human-authenticity-layer/)
 Human authenticity becomes premium when synthetic content is cheap. Authenticity is an ownership signal, not a watermark.
 
+RESEARCH (https://suedeai.org/research/)
+Applied AI research from Jason Colapietro, documented in patent applications and developed inside Suede AI. A research direction earns a page when it has a filing, a prototype, or a live deployment.
+
+VOICEPRINT (https://suedeai.org/research/voiceprint/)
+Biometric voice authentication. USPTO provisional patent application 63/947,120.
+
+PROVENANCE RESEARCH (https://suedeai.org/research/provenance/)
+How to attach origin to a creative work so that it survives copying, editing and model ingestion.
+
+HARDWARE LAYER (https://suedeai.org/research/hardware/)
+SuedeMic, SuedeVault and Sing&Sign: capturing proof at the point of creation.
+
+RESEARCH NOTES (https://suedeai.org/research/notes/)
+Short public notes on consent and model ingestion.
+
 Founder — Jason Colapietro
 --------------------------
 

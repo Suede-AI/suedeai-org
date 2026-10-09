@@ -62,6 +62,11 @@ Suede AI is an ownership and provenance layer for AI media. The reading hub at s
 - [Human Authenticity Layer](https://suedeai.org/human-authenticity-layer/) — why authenticity becomes premium when synthetic content is cheap
 - [Investor Brief](https://suedeai.org/investors/) — request investor materials and learn about the Suede AI raise for creator ownership and programmable IP infrastructure
 - [Jason Colapietro](https://suedeai.org/jason-colapietro/) — founder profile
+- [Research](https://suedeai.org/research/) — applied AI research from Jason Colapietro on identity, provenance and hardware, documented in patent applications
+- [VoicePrint](https://suedeai.org/research/voiceprint/) — biometric voice authentication, USPTO provisional patent application 63/947,120
+- [Provenance Research](https://suedeai.org/research/provenance/) — attaching origin to a creative work so it survives copying, editing and model ingestion
+- [Hardware Layer](https://suedeai.org/research/hardware/) — SuedeMic, SuedeVault and Sing&Sign: capturing proof at the point of creation
+- [Research Notes](https://suedeai.org/research/notes/) — short public notes on consent and model ingestion
 
 ## Founder
 
