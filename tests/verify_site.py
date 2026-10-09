@@ -216,6 +216,8 @@ PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
 LIVE_PLAY_LISTING_CONTEXTS = (
     "Suede: AI Music Generator, and Suede AI Agents: Directory are live on Google Play",
     "Suede: AI Music Generator on Google Play",
+    "Suede: AI Music Generator: https://play.google.com/store/apps/details?id=xyz.suedeai.app",
+    'details?id=xyz.suedeai.app">Suede: AI Music Generator</a>',
 )
 
 
