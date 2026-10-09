@@ -45,10 +45,9 @@ RETIRED_TOKEN_ROLLING_32 = 3674665812
 ROLLING_BASE = 31
 
 
-EXTERNAL_CANONICALS = {
-    "jason-colapietro/index.html": "https://jasoncolapietro.com/accomplishments/",
-    "investors/index.html": "https://suedeai.ai/investors",
-}
+# Pages that canonicalize elsewhere. Empty: the founder and investor pages are
+# unique, self-canonical pages on suedeai.org.
+EXTERNAL_CANONICALS: dict = {}
 
 
 def code_point(digits: str, radix: int) -> str:
