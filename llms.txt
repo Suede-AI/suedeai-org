@@ -5,31 +5,31 @@ Suede AI is the company's one primary name. It is also known as Suede Labs, an a
 > Suede AI is building the creative rails for the AI era: creator ownership, proof of creation, programmable IP, provenance, royalties, payments, distribution, and monetization infrastructure for artists, rights holders, and AI agents.
 
 - Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
-- Marketing site: https://suedeai.org/
-- Product app: https://suedeai.ai/
+- Company and practice home: https://suedeai.ai/
+- Reading hub and investor site: https://suedeai.org/
 - Product brand site: https://suedeai.ai/
 - Status: Active
 - Canonical founder entity: https://suedeai.ai/founder
 - Supporting founder profile: https://suedeai.org/jason-colapietro/
 
-Suede AI was founded by Jason Colapietro in 2024. Its primary domain is suedeai.ai; suedeai.org is its company site and reading hub.
+Suede AI was founded by Jason Colapietro in 2024. Its primary domain is suedeai.ai; suedeai.ai is the company and practice home, and suedeai.org is its reading hub and investor site.
 
 Current IP Registry boundary: registration records a file fingerprint, wallet-signed creator claim, contributor metadata, and timestamp. It does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties. Paid x402 generation services are separate. See the current [proof framework](https://suedeai.ai/proof-of-creation).
 
 ## For AI agents — agentic commerce capability
 
-Suede AI operates 3 paid x402 resources on Base mainnet. Agents can pay per call in USDC, without an account or API key, for music, video, and image generation. Producer by Suede Labs is a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting (ID: 019e3991-374d-75f3-a6b8-17ff309b4cd2).
+Suede AI operates 3 paid x402 resources on Base mainnet. Agents can pay per call in USDC, without an account or API key, for music, video, and image generation. Producer by Suede AI is a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting (ID: 019e3991-374d-75f3-a6b8-17ff309b4cd2).
 
 - x402 endpoint catalog: https://app.suedeai.ai/.well-known/x402.json
 - ACP agent card: https://app.suedeai.ai/.well-known/agent-card.json
 - Agentic commerce manifest: https://app.suedeai.ai/.well-known/agentic-commerce.json
 - Thesis page: https://suedeai.org/agentic-commerce/
 
-Suede AI is an ownership and provenance layer for AI media. The marketing site at suedeai.org covers the investor thesis, the product ecosystem, and the founder profile. The product surface lives at suedeai.ai and app.suedeai.ai.
+Suede AI is an ownership and provenance layer for AI media. The reading hub at suedeai.org covers the investor thesis, the product ecosystem, and the founder profile. The company home is suedeai.ai, and the product app lives at app.suedeai.ai.
 
 ## Primary documents
 
-- [Marketing site (HTML)](https://suedeai.org/): Suede AI investor thesis, ecosystem map, founder profile
+- [Reading hub and investor site (HTML)](https://suedeai.org/): Suede AI investor thesis, ecosystem map, founder profile
 - [llms-full.txt](https://suedeai.org/llms-full.txt): full plain-text content for LLM ingestion
 - [sitemap.xml](https://suedeai.org/sitemap.xml): XML sitemap
 - [Stake Your Claim (book preview)](https://suedeai.org/book/): Jason Colapietro's thesis on AI ownership, authorship, agents, provenance, and durable creative rights

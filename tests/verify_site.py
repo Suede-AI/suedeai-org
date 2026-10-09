@@ -45,6 +45,12 @@ RETIRED_TOKEN_ROLLING_32 = 3674665812
 ROLLING_BASE = 31
 
 
+EXTERNAL_CANONICALS = {
+    "jason-colapietro/index.html": "https://jasoncolapietro.com/accomplishments/",
+    "investors/index.html": "https://suedeai.ai/investors",
+}
+
+
 def code_point(digits: str, radix: int) -> str:
     value = int(digits, radix)
     return chr(value) if value <= 0x10FFFF else " "
@@ -489,6 +495,8 @@ def main() -> int:
 
         html = read_text(path)
         canonical = f"{SITE_URL}{route}"
+        # Deliberate cross-domain canonicals (duplicate-content consolidation).
+        canonical = EXTERNAL_CANONICALS.get(file_name, canonical)
 
         assert_regex(file_name, html, r"<title>.+</title>", failures)
         # Allow multi-line/whitespace-formatted description tags so the regex works against
