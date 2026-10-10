@@ -339,6 +339,19 @@
       ]
     },
     {
+      "id": "claude-startups",
+      "category": "Startup program",
+      "date": "October 8, 2026",
+      "title": "Accepted into Anthropic’s Claude Startups program",
+      "body": "Suede AI was accepted into Anthropic’s Claude Startups program (October 2026).",
+      "links": [
+        {
+          "label": "Claude for Startups program",
+          "url": "https://www.anthropic.com/startups"
+        }
+      ]
+    },
+    {
       "id": "community",
       "category": "Education & community",
       "date": "Published affiliation record",
