@@ -284,8 +284,8 @@ zeroclaw-labs/zeroclaw #9846: https://github.com/zeroclaw-labs/zeroclaw/pull/984
 paritytech/polkadot-sdk #12853: https://github.com/paritytech/polkadot-sdk/pull/12853
 jestjs/jest #16295: https://github.com/jestjs/jest/pull/16295
 
-Listed in thirteen independent skills directories and the x402 ecosystem list
-Suede Creator Skills, the public Claude Code skills marketplace, has been accepted by the maintainers of thirteen independent awesome-lists and directories, including buildwithclaude, awesome-codex, awesome-agent-skills, and awesome-claude-code-plugins. Suede AI Agent Studio is listed in the x402 ecosystem’s awesome-x402. These accepted listings are counted inside the 54 merged pull requests above and are stated separately so the composition stays clear.
+Listed in fifteen independent skills directories and the x402 ecosystem list
+Suede Creator Skills, the public Claude Code skills marketplace, has been accepted by the maintainers of fifteen independent awesome-lists and directories, including buildwithclaude, awesome-codex, awesome-agent-skills, and awesome-claude-code-plugins. Suede AI Agent Studio is listed in the x402 ecosystem’s awesome-x402. These accepted listings are counted inside the 54 merged pull requests above and are stated separately so the composition stays clear.
 Suede Creator Skills on GitHub: https://github.com/JasonColapietro/suede-creator-skills
 davepoon/buildwithclaude #305: https://github.com/davepoon/buildwithclaude/pull/305
 ichangyou/awesome-codex #2: https://github.com/ichangyou/awesome-codex/pull/2
