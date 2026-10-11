@@ -93,7 +93,8 @@ Suede is not a single app. It is an expanding set of products and rails that mee
 - Agent commerce — Suede AI Agent Studio (https://agents.suedeai.ai/): build and publish AI agents; settled x402 calls route to the builder's wallet
 - AI search visibility — Suede GEO (https://seo.suedeai.ai/): full-stack generative engine optimization, dated captures, repaired pages
 - Learning path — GuitarHub (https://guitarhub.org/): a structured route from first chord to real playing ability
-- Public provenance — Suede AI IP Registry (https://ip.suedeai.ai/): fingerprint a file, sign a creator claim, timestamp it on Base and Avalanche
+- Public provenance — Suede AI IP Registry (https://registry.suedeai.ai/): fingerprint a file, sign a creator claim, timestamp it on Base and Avalanche
+- Developer docs — Suede AI Developer Docs (https://docs.suedeai.ai/): programmable IP, creator ownership, provenance, licensing, and x402 agent-commerce APIs
 - Artist growth — Strumly (https://strumly.suedeai.ai/): AI guitar coach with real-time chord feedback, drills, ear training
 - Market reach — Suede AI Distro (https://distro.suedeai.ai/): independent distribution with release intake and partner delivery coordination; coverage and eligibility vary, and automated royalty settlement is not included
 - Daily practice — Muse (https://muse.suedeai.ai/): one creative constraint a night, the same card for every musician, plus a chat companion for songwriting, music theory, and gear talk
@@ -128,7 +129,7 @@ The breadth matters because the creative industry will not be rebuilt by one fea
 | Agent Studio    | https://agents.suedeai.ai/           | Build and publish AI agents; settled x402 calls route to the builder's wallet               |
 | Suede GEO       | https://seo.suedeai.ai/              | Full-stack generative engine optimization: captures, repaired pages, a record engines quote |
 | GuitarHub       | https://guitarhub.org/               | A structured path from first chord to real playing ability                                  |
-| IP Registry     | https://ip.suedeai.ai/               | Public provenance registry on Base and Avalanche                                            |
+| IP Registry     | https://registry.suedeai.ai/               | Public provenance registry on Base and Avalanche                                            |
 | Strumly         | https://strumly.suedeai.ai/          | AI guitar coach: real-time chord feedback, practice drills, ear training                    |
 | Suede AI Distro    | https://distro.suedeai.ai/           | Independent distribution intake and partner delivery coordination; coverage and eligibility vary                 |
 | Muse            | https://muse.suedeai.ai/             | One creative constraint a night, the same card for every musician on earth                  |
@@ -189,6 +190,10 @@ Role: Founder and CEO, Suede AI
 Jason Colapietro, who publishes under the pen name Johnny Suede, is a published author and the operator behind Suede AI. The internet upgraded access. AI upgraded creation. The next layer has to upgrade ownership. Suede is built from that conviction: proof, voice, likeness, rights, and programmable IP as core infrastructure, not as afterthought.
 
 His work connects creator ownership, AI music, voice and likeness rights, programmable IP, licensing, and agent-readable commerce into one infrastructure story. The goal is practical: help creators prove what they made, control how it can be used, and turn rights into something software can understand.
+
+Writing and audio:
+- Claude Code Field Notes (https://claude.suedeai.ai/): six lessons from operating 20+ live software surfaces with Claude Code and AI coding agents
+- AI Suede Podcast (https://podcast.suedeai.ai/): creator ownership, music IP, programmable media, and solo founder shipping
 
 Public profiles:
 - Founder profile (Suede): https://suedeai.org/jason-colapietro/
