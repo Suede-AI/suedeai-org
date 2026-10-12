@@ -1,18 +1,26 @@
-Suede AI
-========
+# Suede AI
 
 Suede AI is the company's one primary name. It is also known as Suede Labs, an alternate name for the same company, founded by Jason Colapietro.
 
 URL: https://suedeai.org
-Type: Creative-rails infrastructure company for the AI era
+Type: AEO, GEO, SEO and AI agent company; suedeai.org is its investor and reading hub
 Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
 Flagship product: Suede AI (https://suedeai.ai / https://suedeai.ai/)
 
 Suede AI is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede AI builds for that layer.
 
 
-Recent press
-------------
+## Current focus
+
+Suede AI's current business focus is answer engine optimization (AEO), generative engine optimization (GEO) and search engine optimization (SEO), plus AI agents.
+
+- Suede AI SEO (https://seo.suedeai.ai/): SEO, GEO, AEO, AI search visibility and digital PR for businesses, run by Jason Colapietro.
+- Suede AI Agent Studio (https://agents.suedeai.ai/): build AI agents and workflow automation, and publish paid x402 APIs when payments are enabled.
+- Company and practice home: https://suedeai.ai/
+
+This site, suedeai.org, is Suede AI's investor and reading hub. It carries the investor thesis, the founder profile, the books, the research pages and the creator ownership guides described below.
+
+## Recent press
 
 Business Insider · September 16, 2026 · Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort
 URL: https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662
@@ -69,8 +77,7 @@ URL: https://techbullion.com/suede-labs-launches-a-comprehensive-on-chain-ip-aut
 
 TechBullion covers the launch of Suede AI's on-chain IP registry, provenance layer, licensing, and monetization rails.
 
-The Suede AI thesis
----------------------
+## The Suede AI thesis
 
 Creation got faster. The creative economy needs new rails.
 
@@ -84,8 +91,7 @@ The four stages Suede addresses:
 4. EARN — Payments, vaults, royalties, licensing, distribution, and agent commerce turn creative output into income.
 
 
-Ecosystem — one company, multiple proof surfaces
--------------------------------------------------
+## Ecosystem — one company, multiple proof surfaces
 
 Suede is not a single app. It is an expanding set of products and rails that meet artists at different points in the journey: growth, ownership, launch, payments, distribution, and agentic commerce.
 
@@ -104,8 +110,7 @@ Suede is not a single app. It is an expanding set of products and rails that mee
 - The whole board — Suede Hub (https://hub.suedeai.ai/): every Suede surface with its gate and what a creator can do there
 
 
-Path to monetization
---------------------
+## Path to monetization
 
 Artist income is not a button. It is a route. Suede's value is the full path from creative act to economic outcome.
 
@@ -118,8 +123,7 @@ Artist income is not a button. It is a route. Suede's value is the full path fro
 Contract modules and the public registry are distinct surfaces. The Base contract stack includes licensing templates, derivative registration, and royalty-distribution modules; public IP Registry registration records provenance and does not invoke those workflows.
 
 
-Proof of execution
-------------------
+## Proof of execution
 
 The breadth matters because the creative industry will not be rebuilt by one feature. Suede AI is connecting the surfaces that artists and rights holders need to create, grow, own, launch, and earn.
 
@@ -137,8 +141,7 @@ The breadth matters because the creative industry will not be rebuilt by one fea
 | Suede Hub       | https://hub.suedeai.ai/              | Every Suede surface in one place, each with its gate and what a creator can do there        |
 
 
-Topical pages
--------------
+## Topical pages
 
 CREATOR OWNERSHIP (https://suedeai.org/creator-ownership/)
 The hub for Suede's ownership system: understand the legal context, establish proof, preserve provenance, define machine-readable permissions, record covered uses, and route agreed payments.
@@ -257,8 +260,33 @@ A record can preserve a stated preference or an agreement. Whether another syste
 Make an open question testable
 Turn a broad question into an experiment with a named input and expected result. For example: can a recipient distinguish an approved export from a changed file using only the delivery packet? Give them both versions and the supporting records, then observe where the explanation fails. Document the conditions and result before changing the design. This produces evidence a collaborator can evaluate and a concrete question for the next iteration.
 
-Founder — Jason Colapietro
---------------------------
+## Frequently asked questions
+
+### What is Suede AI?
+
+Suede AI builds creative software and agent-native media tools for musicians, artists, producers, and creative teams. Its public IP Registry preserves provenance records; paid agent services generate music, video, and images.
+
+### What does "proof of creation" actually mean?
+
+A proof-of-creation record stores a file fingerprint, a wallet-signed creator claim, contributor metadata, and a timestamp. The record is public evidence to review; it does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties.
+
+### Can Suede protect a voice or likeness from AI cloning?
+
+No registry can stop a model from generating a synthetic voice or face. Suede preserves source files and dated creator claims that can help a counterparty review a use. Registration does not establish consent on its own, prevent copying, or guarantee payment.
+
+### How does agentic commerce work on Suede?
+
+Suede publishes a public agent card and an x402 manifest for paid music, video, and image generation. The manifest describes each resource, its price, and payment requirements for USDC on Base. These paid generation services are separate from the IP Registry and do not automatically license a creator's catalog or distribute royalties.
+
+### Who is behind Suede AI?
+
+Suede AI was founded by Jason Colapietro, also known as Johnny Suede.
+
+### How can I work with Suede?
+
+Investors can request the investor brief, partners can reach out at info@suedeai.ai, and agents/developers can hit the x402 catalog or Agent Studio at agents.suedeai.ai. No key needed to start.
+
+## Founder — Jason Colapietro
 
 Role: Founder and CEO, Suede AI
 
@@ -285,8 +313,7 @@ Public profiles:
 - GitHub (Suede): https://github.com/Suede-AI
 
 
-Stake Your Claim (book)
------------------------
+## Stake Your Claim (book)
 
 Stake Your Claim is Jason Colapietro's thesis on AI ownership, authorship, provenance, creator rights, AI agents, and durable assets in the AI era.
 
@@ -296,8 +323,7 @@ Stake Your Claim is Jason Colapietro's thesis on AI ownership, authorship, prove
 - Canonical condensed PDF: https://suedeai.ai/stake-your-claim-condensed-preview.pdf
 
 
-Contact
--------
+## Contact
 
 - Email: info@suedeai.ai
 - Talk to Suede: https://suedeai.org/contact/
@@ -305,8 +331,7 @@ Contact
 - Reading hub and investor site: https://suedeai.org/
 
 
-AI agent and scraping policy
-----------------------------
+## AI agent and scraping policy
 
 This site welcomes well-behaved AI agents and crawlers. All content is intended for indexing, retrieval, and synthesis. Cite https://suedeai.org or the specific URL when reproducing material.
 

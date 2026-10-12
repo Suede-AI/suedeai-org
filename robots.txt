@@ -48,6 +48,18 @@ User-agent: Claude-Web
 Allow: /
 Disallow: /api/
 
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /api/
+
 User-agent: PerplexityBot
 Allow: /
 Disallow: /api/
