@@ -9,10 +9,10 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/site.webmanifest">
   <title>Provenance Research for Creative Works | Suede AI</title>
-  <meta name="description" content="How to attach origin to a creative work so that it survives copying, editing and model ingestion.">
+  <meta name="description" content="Creative provenance research: exact files, version history, signed claims and a practical handoff, with links to the current Suede AI IP Registry.">
   <link rel="canonical" href="https://suedeai.org/research/provenance/">
   <meta property="og:title" content="Provenance Research for Creative Works | Suede AI">
-  <meta property="og:description" content="How to attach origin to a creative work so that it survives copying, editing and model ingestion.">
+  <meta property="og:description" content="Creative provenance research: exact files, version history, signed claims and a practical handoff, with links to the current Suede AI IP Registry.">
   <meta property="og:image" content="https://suedeai.org/assets/img/og-suede.png?v=20260919">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Provenance Research for Creative Works | Suede AI">
-  <meta name="twitter:description" content="How to attach origin to a creative work so that it survives copying, editing and model ingestion.">
+  <meta name="twitter:description" content="Creative provenance research: exact files, version history, signed claims and a practical handoff, with links to the current Suede AI IP Registry.">
   <meta name="twitter:image" content="https://suedeai.org/assets/img/og-suede.png?v=20260919">
   <meta name="twitter:site" content="@AISUEDE">
   <meta name="author" content="Jason Colapietro">
@@ -43,7 +43,7 @@
       "@id": "https://suedeai.org/research/provenance/#webpage",
       "url": "https://suedeai.org/research/provenance/",
       "name": "Provenance research",
-      "description": "How to attach origin to a creative work so that it survives copying, editing and model ingestion.",
+      "description": "Creative provenance research: exact files, version history, signed claims and a practical handoff, with links to the current Suede AI IP Registry.",
       "author": {
         "@id": "https://suedeai.ai/founder#person"
       },
@@ -104,19 +104,32 @@
       </nav>
       <span class="eyebrow">Research</span>
       <h1>Provenance research</h1>
-      <p class="lede">How to attach origin to a creative work so that it survives copying, editing and model ingestion.</p>
+      <p class="lede">Creative provenance connects an exact file to its recorded history and the claims made about it. The useful design problem is keeping those records understandable as the work changes hands and versions.</p>
       <p class="byline">By <a href="/jason-colapietro/">Jason Colapietro</a> (Johnny Suede) · Founder &amp; CEO of Suede AI</p>
     </section>
     <div class="page-layout">
       <div class="content-stack">
         <article class="panel">
-          <h2>Registry design</h2>
-          <p>Six contracts on Base: registration, licensing, derivatives, groups, royalty distribution and NFT issuance. The research question was how to keep them composable without a central authority.</p>
+          <h2>Begin with the exact file</h2>
+          <p>A fingerprint identifies a particular sequence of bytes. If a musician re-exports a recording, changes embedded metadata or produces a different mix, the resulting file may have a different fingerprint. Keep the original export and identify later versions deliberately. The practical question is not only whether a file has a record, but whether the record you are looking at belongs to the file you actually received.</p>
         </article>
         <article class="panel">
-          <h2>Derivative tracking</h2>
-          <p>A derivative is a claim about lineage. The Derivative Registry records the claim and the parent&#x27;s terms so that royalties flow up the tree automatically.</p>
+          <h2>Keep claims distinct from the file history</h2>
+          <p>A provenance record can state who submitted a claim, which file it refers to and when the record was made. Contributor descriptions and permission documents add context. Keep those assertions identifiable so a reader can distinguish an observed file match from a statement supplied by a participant. This makes a record easier to review when information is corrected or two parties describe the same work differently.</p>
         </article>
+        <article class="panel">
+          <h2>Follow one work through several versions</h2>
+          <p>Consider a demo, a final master and an instrumental export. Give each file a clear name, preserve the corresponding fingerprint where one has been recorded, and document the relationship between versions. A collaborator should be able to identify which version a credit, approval or delivery note refers to. A lineage record is useful when it makes that relationship inspectable; it should not silently transfer assumptions from one file to another.</p>
+        </article>
+        <article class="panel">
+          <h2>Preserve a usable handoff</h2>
+          <p>A practical handoff contains the exact delivered file, credits, the relevant record link and the agreements needed for the intended use. Store the files and supporting documents together, with private material shared through the appropriate channel. The recipient should be able to answer three questions: is this the expected file, where did the attached claims come from, and which document describes the intended use?</p>
+        </article>
+        <article class="panel">
+          <h2>From research to the current registry</h2>
+          <p>Suede AI IP Registry provides the public registration workflow described in its documentation: a file fingerprint, wallet-signed claim, contributor information and timestamp. License agreements and payment arrangements remain separate records. For a wider technical perspective, the C2PA explainer describes how Content Credentials communicate provenance information. Use the current product documentation for operating steps and the research pages for the design questions behind them.</p>
+        </article>
+        <article class="panel"><h2>Sources and current documentation</h2><ul><li><a href="https://registry.suedeai.ai/docs/how-registration-works">How Suede AI IP Registry registration works</a></li><li><a href="https://spec.c2pa.org/specifications/specifications/2.2/explainer/Explainer.html">C2PA Content Credentials explainer</a></li></ul></article>
         <article class="panel">
           <h2>Continue</h2>
           <ul>
@@ -124,7 +137,7 @@
           <li><a href="/research/voiceprint/">VoicePrint</a></li>
           <li><a href="/research/hardware/">Hardware layer</a></li>
           <li><a href="/research/notes/">Research notes</a></li>
-          <li><a href="https://jasonsuedeart.com/how-it-works/">How provenance works for creators</a></li>
+          <li><a href="https://registry.suedeai.ai/docs/how-registration-works">How provenance works for creators</a></li>
           <li><a href="https://registry.suedeai.ai/">Suede AI IP Registry: the ID and trust layer for music</a></li>
           </ul>
         </article>
