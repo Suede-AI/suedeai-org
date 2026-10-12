@@ -168,19 +168,94 @@ HUMAN AUTHENTICITY LAYER (https://suedeai.org/human-authenticity-layer/)
 Human authenticity becomes premium when synthetic content is cheap. Authenticity is an ownership signal, not a watermark.
 
 RESEARCH (https://suedeai.org/research/)
-Applied AI research from Jason Colapietro, documented in patent applications and developed inside Suede AI. A research direction earns a page when it has a filing, a prototype, or a live deployment.
+The research questions behind Suede AI's work on voice identity, creative provenance and capture hardware, with a clear path from an idea to inspectable evidence.
 
-VOICEPRINT (https://suedeai.org/research/voiceprint/)
-Biometric voice authentication. USPTO provisional patent application 63/947,120.
+Three questions, three kinds of evidence
+Voice research asks how a person can be associated with a recording. Provenance research asks how a particular file and the claims attached to it can be traced through a workflow. Hardware research asks whether useful evidence can be recorded at capture time. These questions are related, but they need different demonstrations. A voice comparison, a signed file record and a microphone prototype each establish a different part of the story.
 
-PROVENANCE RESEARCH (https://suedeai.org/research/provenance/)
-How to attach origin to a creative work so that it survives copying, editing and model ingestion.
+Read the status with the claim
+A filing documents an application. A prototype demonstrates an implementation under stated conditions. A live product provides a workflow people can use. When reviewing a research page, look for which of these supports the statement being made, then follow the relevant record or product documentation. The public founder record identifies the provisional patent application reference; the linked registry documentation describes the current registration workflow.
 
-HARDWARE LAYER (https://suedeai.org/research/hardware/)
-SuedeMic, SuedeVault and Sing&Sign: capturing proof at the point of creation.
+A practical example: one recording, several questions
+Imagine a musician records a vocal, edits the take and sends a final mix to a collaborator. The original capture, the edited vocal and the mix are different files. A useful record would connect those versions, identify who supplied them, and keep any permission for the collaborator's use alongside the delivery. An identity signal alone cannot describe the edits; a file fingerprint alone cannot state the agreed use. Research becomes useful when those records can be connected without treating them as interchangeable.
 
-RESEARCH NOTES (https://suedeai.org/research/notes/)
-Short public notes on consent and model ingestion.
+What makes an evaluation useful
+A reproducible evaluation should state the input, software or device version, test conditions, expected behavior and observed result. It should include a case where the system ought to reject or flag the input. For a file record, change the bytes and check what happens. For a voice experiment, distinguish a fresh recording from a replay. These are evaluation questions, not published performance results for the projects listed here.
+
+Choose the relevant research page
+Start with VoicePrint for the identity question, provenance for file history and claims, and hardware for evidence at the point of capture. Research notes address the information that a consent or model-use record needs to carry. If your immediate goal is to prepare a work for registration, use the IP Registry's current documentation rather than inferring a product procedure from a research proposal.
+
+RESEARCH / VOICEPRINT (https://suedeai.org/research/voiceprint/)
+VoicePrint explores the relationship between a voice sample, a person and a record of consent. The public filing reference is USPTO provisional patent application 63/947,120.
+
+The question being studied
+A recording can contain a recognizable voice without establishing who supplied the file or what that person agreed to. VoicePrint's research question is how a voice-related signal could be associated with a credential and an explicit action. The important distinction is between a comparison result and the larger workflow that uses it: a similarity score is one observation, while identity, intent and permission each need their own evidence.
+
+Separate enrollment from later use
+An evaluation needs to describe how an initial sample is collected and bound to a record, then how a later sample is compared against it. Record the capture conditions, the action being requested and the version of the comparison method. Keep the authorization decision separate from the raw comparison result so the reason for accepting, rejecting or escalating a request can be inspected later.
+
+Test the difficult cases explicitly
+Useful test cases include a fresh sample, a replay of an earlier recording, background noise, a different microphone and an input that belongs to another participant. A research report should identify which cases were actually tested, how the decision threshold was selected and what errors occurred. No accuracy percentage or spoof-resistance claim is published on this page; the cases listed here describe what a meaningful evaluation needs to examine.
+
+Connect the result to a specific action
+For a consent workflow, the record should identify the exact work, the requested use and the decision presented to the person. Preserve the version of that request with the response. Otherwise, even a correctly matched sample can leave the central question unanswered: what action did the person intend to authorize? This is why the voice question is linked to the separate provenance and consent research pages.
+
+Public record and technical context
+The cited provisional application is a filing, not an issued patent or a certification of performance. Authentication design also needs to account for the requirements of its intended environment. NIST's digital identity guidance is a useful reference for understanding the distinction between biometric comparisons and authenticators; it should not be read as endorsement or certification of this research.
+
+RESEARCH / PROVENANCE (https://suedeai.org/research/provenance/)
+Creative provenance connects an exact file to its recorded history and the claims made about it. The useful design problem is keeping those records understandable as the work changes hands and versions.
+
+Begin with the exact file
+A fingerprint identifies a particular sequence of bytes. If a musician re-exports a recording, changes embedded metadata or produces a different mix, the resulting file may have a different fingerprint. Keep the original export and identify later versions deliberately. The practical question is not only whether a file has a record, but whether the record you are looking at belongs to the file you actually received.
+
+Keep claims distinct from the file history
+A provenance record can state who submitted a claim, which file it refers to and when the record was made. Contributor descriptions and permission documents add context. Keep those assertions identifiable so a reader can distinguish an observed file match from a statement supplied by a participant. This makes a record easier to review when information is corrected or two parties describe the same work differently.
+
+Follow one work through several versions
+Consider a demo, a final master and an instrumental export. Give each file a clear name, preserve the corresponding fingerprint where one has been recorded, and document the relationship between versions. A collaborator should be able to identify which version a credit, approval or delivery note refers to. A lineage record is useful when it makes that relationship inspectable; it should not silently transfer assumptions from one file to another.
+
+Preserve a usable handoff
+A practical handoff contains the exact delivered file, credits, the relevant record link and the agreements needed for the intended use. Store the files and supporting documents together, with private material shared through the appropriate channel. The recipient should be able to answer three questions: is this the expected file, where did the attached claims come from, and which document describes the intended use?
+
+From research to the current registry
+Suede AI IP Registry provides the public registration workflow described in its documentation: a file fingerprint, wallet-signed claim, contributor information and timestamp. License agreements and payment arrangements remain separate records. For a wider technical perspective, the C2PA explainer describes how Content Credentials communicate provenance information. Use the current product documentation for operating steps and the research pages for the design questions behind them.
+
+RESEARCH / HARDWARE (https://suedeai.org/research/hardware/)
+SuedeMic, SuedeVault and Sing&Sign are hardware research directions around recording evidence at the point of creation. Public specifications remain in development.
+
+Why the capture point matters
+A file can pass through recording software, editing tools, exports and messaging services before a collaborator sees it. Capture hardware raises an earlier question: what evidence can be associated with the recording when it is first made? The research aim is to reduce uncertainty about that first step while preserving a useful connection to later versions. The full chain still needs to account for what happens after capture.
+
+Define what the device would attest to
+A credible device record needs a specific meaning. It might identify the device, a capture event and the bytes produced by that event. It must also describe how the record is bound to those bytes and how a verifier checks it. Avoid treating a device's presence as an explanation of authorship, consent or every later edit. Those questions require additional records and a workflow that connects them.
+
+Design the failure cases before the demonstration
+An evaluation plan should examine an interrupted recording, a changed export, unavailable connectivity, an incorrect device clock and a lost or replaced device. For each case, state what evidence is retained and how an incomplete result is presented. A useful prototype demonstration includes at least one of these exceptions so reviewers can see the recovery behavior instead of only a successful recording.
+
+Make the evidence useful to a musician
+The recording process should leave a file and a record that can travel with the project. A musician needs to know which export the record describes, what information will be shared and how to preserve the original. The handoff should remain intelligible to a collaborator who does not own the same device. These usability questions belong alongside capture quality, reliability and verification in an evaluation.
+
+Current public status
+The hardware direction is in development, with specifications held pending the filing process. This page sets out the problem and evaluation questions; it is not a product specification or a shipping announcement. The VoicePrint page covers the related identity research, and the provenance page explains how an exact file and its subsequent versions can be documented. The public registry documentation describes the workflow available for preparing a work today.
+
+RESEARCH / NOTES (https://suedeai.org/research/notes/)
+Working questions about consent records, changing creative files and the evidence needed to describe how AI tools were used.
+
+A consent record needs an object and an action
+‘Permission granted’ is difficult to interpret without knowing what was presented and what use was requested. A useful record identifies the work, the person or organization involved, the proposed action, the response and the version of the terms shown. The research question is how to preserve that context so a later reviewer can understand the decision without reconstructing an entire conversation.
+
+Changed files create a versioning question
+A contributor may approve one mix while a later export contains a new vocal, edit or sample. A record tied only to a project title can hide that distinction. Preserve the approved file and identify the later version separately. A useful workflow should make it apparent when a prior approval belongs to a different version and when another decision is needed. The provenance page develops the file-history side of this problem.
+
+Document model use as part of the process
+For AI-assisted work, save enough information to explain the contribution: the tool used, the input materials, the outputs selected and the subsequent edits. Keep relevant permission records with the source materials. This gives collaborators a more useful account than a single label such as ‘AI-made’ or ‘human-made,’ which can hide a mixed process. It also helps the creator describe the work accurately when preparing a release.
+
+A record and an enforcement mechanism are different
+A record can preserve a stated preference or an agreement. Whether another system observes it depends on that system's behavior and the arrangement between the parties. Research should therefore test both the representation of the decision and the point where it is checked. Record what the receiving system actually does with the information instead of assuming that publishing a preference causes every downstream user to follow it.
+
+Make an open question testable
+Turn a broad question into an experiment with a named input and expected result. For example: can a recipient distinguish an approved export from a changed file using only the delivery packet? Give them both versions and the supporting records, then observe where the explanation fails. Document the conditions and result before changing the design. This produces evidence a collaborator can evaluate and a concrete question for the next iteration.
 
 Founder — Jason Colapietro
 --------------------------

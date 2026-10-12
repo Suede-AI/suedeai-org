@@ -9,10 +9,10 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/site.webmanifest">
   <title>The Hardware Layer: SuedeMic and SuedeVault | Suede AI</title>
-  <meta name="description" content="SuedeMic, SuedeVault and Sing&amp;Sign: capturing proof at the point of creation.">
+  <meta name="description" content="SuedeMic, SuedeVault and Sing&amp;Sign hardware research: capture-time evidence, verification questions and the current development status.">
   <link rel="canonical" href="https://suedeai.org/research/hardware/">
   <meta property="og:title" content="The Hardware Layer: SuedeMic and SuedeVault | Suede AI">
-  <meta property="og:description" content="SuedeMic, SuedeVault and Sing&amp;Sign: capturing proof at the point of creation.">
+  <meta property="og:description" content="SuedeMic, SuedeVault and Sing&amp;Sign hardware research: capture-time evidence, verification questions and the current development status.">
   <meta property="og:image" content="https://suedeai.org/assets/img/og-suede.png?v=20260919">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Hardware Layer: SuedeMic and SuedeVault | Suede AI">
-  <meta name="twitter:description" content="SuedeMic, SuedeVault and Sing&amp;Sign: capturing proof at the point of creation.">
+  <meta name="twitter:description" content="SuedeMic, SuedeVault and Sing&amp;Sign hardware research: capture-time evidence, verification questions and the current development status.">
   <meta name="twitter:image" content="https://suedeai.org/assets/img/og-suede.png?v=20260919">
   <meta name="twitter:site" content="@AISUEDE">
   <meta name="author" content="Jason Colapietro">
@@ -43,7 +43,7 @@
       "@id": "https://suedeai.org/research/hardware/#webpage",
       "url": "https://suedeai.org/research/hardware/",
       "name": "The hardware layer",
-      "description": "SuedeMic, SuedeVault and Sing&Sign: capturing proof at the point of creation.",
+      "description": "SuedeMic, SuedeVault and Sing&Sign hardware research: capture-time evidence, verification questions and the current development status.",
       "author": {
         "@id": "https://suedeai.ai/founder#person"
       },
@@ -104,19 +104,32 @@
       </nav>
       <span class="eyebrow">Research</span>
       <h1>The hardware layer</h1>
-      <p class="lede">SuedeMic, SuedeVault and Sing&amp;Sign: capturing proof at the point of creation.</p>
+      <p class="lede">SuedeMic, SuedeVault and Sing&amp;Sign are hardware research directions around recording evidence at the point of creation. Public specifications remain in development.</p>
       <p class="byline">By <a href="/jason-colapietro/">Jason Colapietro</a> (Johnny Suede) · Founder &amp; CEO of Suede AI</p>
     </section>
     <div class="page-layout">
       <div class="content-stack">
         <article class="panel">
-          <h2>Why hardware</h2>
-          <p>Software proof starts after the file exists. Hardware proof starts when the sound does. Capturing the credential at the microphone closes the gap where a recording could be swapped.</p>
+          <h2>Why the capture point matters</h2>
+          <p>A file can pass through recording software, editing tools, exports and messaging services before a collaborator sees it. Capture hardware raises an earlier question: what evidence can be associated with the recording when it is first made? The research aim is to reduce uncertainty about that first step while preserving a useful connection to later versions. The full chain still needs to account for what happens after capture.</p>
         </article>
         <article class="panel">
-          <h2>Status</h2>
-          <p>In development. Specifications are held until the provisional filings convert.</p>
+          <h2>Define what the device would attest to</h2>
+          <p>A credible device record needs a specific meaning. It might identify the device, a capture event and the bytes produced by that event. It must also describe how the record is bound to those bytes and how a verifier checks it. Avoid treating a device&#x27;s presence as an explanation of authorship, consent or every later edit. Those questions require additional records and a workflow that connects them.</p>
         </article>
+        <article class="panel">
+          <h2>Design the failure cases before the demonstration</h2>
+          <p>An evaluation plan should examine an interrupted recording, a changed export, unavailable connectivity, an incorrect device clock and a lost or replaced device. For each case, state what evidence is retained and how an incomplete result is presented. A useful prototype demonstration includes at least one of these exceptions so reviewers can see the recovery behavior instead of only a successful recording.</p>
+        </article>
+        <article class="panel">
+          <h2>Make the evidence useful to a musician</h2>
+          <p>The recording process should leave a file and a record that can travel with the project. A musician needs to know which export the record describes, what information will be shared and how to preserve the original. The handoff should remain intelligible to a collaborator who does not own the same device. These usability questions belong alongside capture quality, reliability and verification in an evaluation.</p>
+        </article>
+        <article class="panel">
+          <h2>Current public status</h2>
+          <p>The hardware direction is in development, with specifications held pending the filing process. This page sets out the problem and evaluation questions; it is not a product specification or a shipping announcement. The VoicePrint page covers the related identity research, and the provenance page explains how an exact file and its subsequent versions can be documented. The public registry documentation describes the workflow available for preparing a work today.</p>
+        </article>
+        <article class="panel"><h2>Sources and current documentation</h2><ul><li><a href="https://registry.suedeai.ai/docs/preparing-your-work">Preparing a work for the current registry</a></li></ul></article>
         <article class="panel">
           <h2>Continue</h2>
           <ul>

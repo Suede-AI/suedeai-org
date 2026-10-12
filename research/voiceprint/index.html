@@ -9,10 +9,10 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/site.webmanifest">
   <title>VoicePrint Voice Authentication | Suede AI Research</title>
-  <meta name="description" content="Biometric voice authentication. USPTO provisional patent application 63/947,120.">
+  <meta name="description" content="VoicePrint research: voice samples, credentials, consent records, evaluation questions and the public provisional patent application reference.">
   <link rel="canonical" href="https://suedeai.org/research/voiceprint/">
   <meta property="og:title" content="VoicePrint Voice Authentication | Suede AI Research">
-  <meta property="og:description" content="Biometric voice authentication. USPTO provisional patent application 63/947,120.">
+  <meta property="og:description" content="VoicePrint research: voice samples, credentials, consent records, evaluation questions and the public provisional patent application reference.">
   <meta property="og:image" content="https://suedeai.org/assets/img/og-suede.png?v=20260919">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VoicePrint Voice Authentication | Suede AI Research">
-  <meta name="twitter:description" content="Biometric voice authentication. USPTO provisional patent application 63/947,120.">
+  <meta name="twitter:description" content="VoicePrint research: voice samples, credentials, consent records, evaluation questions and the public provisional patent application reference.">
   <meta name="twitter:image" content="https://suedeai.org/assets/img/og-suede.png?v=20260919">
   <meta name="twitter:site" content="@AISUEDE">
   <meta name="author" content="Jason Colapietro">
@@ -43,7 +43,7 @@
       "@id": "https://suedeai.org/research/voiceprint/#webpage",
       "url": "https://suedeai.org/research/voiceprint/",
       "name": "VoicePrint",
-      "description": "Biometric voice authentication. USPTO provisional patent application 63/947,120.",
+      "description": "VoicePrint research: voice samples, credentials, consent records, evaluation questions and the public provisional patent application reference.",
       "author": {
         "@id": "https://suedeai.ai/founder#person"
       },
@@ -104,23 +104,32 @@
       </nav>
       <span class="eyebrow">Research</span>
       <h1>VoicePrint</h1>
-      <p class="lede">Biometric voice authentication. USPTO provisional patent application 63/947,120.</p>
+      <p class="lede">VoicePrint explores the relationship between a voice sample, a person and a record of consent. The public filing reference is USPTO provisional patent application 63/947,120.</p>
       <p class="byline">By <a href="/jason-colapietro/">Jason Colapietro</a> (Johnny Suede) · Founder &amp; CEO of Suede AI</p>
     </section>
     <div class="page-layout">
       <div class="content-stack">
         <article class="panel">
-          <h2>The question</h2>
-          <p>Can a human voice serve as a verifiable credential for authorship and consent, in a world where voices are cloned in seconds?</p>
+          <h2>The question being studied</h2>
+          <p>A recording can contain a recognizable voice without establishing who supplied the file or what that person agreed to. VoicePrint&#x27;s research question is how a voice-related signal could be associated with a credential and an explicit action. The important distinction is between a comparison result and the larger workflow that uses it: a similarity score is one observation, while identity, intent and permission each need their own evidence.</p>
         </article>
         <article class="panel">
-          <h2>The approach</h2>
-          <p>Bind a voice sample to a credential at registration, verify liveness at use, and record the verification in the provenance layer so that every downstream license can point back to a consenting human.</p>
+          <h2>Separate enrollment from later use</h2>
+          <p>An evaluation needs to describe how an initial sample is collected and bound to a record, then how a later sample is compared against it. Record the capture conditions, the action being requested and the version of the comparison method. Keep the authorization decision separate from the raw comparison result so the reason for accepting, rejecting or escalating a request can be inspected later.</p>
         </article>
         <article class="panel">
-          <h2>Status</h2>
-          <p>Filed. Integrated with the Suede identity stack. The hardware path (SuedeMic, Sing&amp;Sign) captures at the source so the credential is attached before the file ever leaves the device.</p>
+          <h2>Test the difficult cases explicitly</h2>
+          <p>Useful test cases include a fresh sample, a replay of an earlier recording, background noise, a different microphone and an input that belongs to another participant. A research report should identify which cases were actually tested, how the decision threshold was selected and what errors occurred. No accuracy percentage or spoof-resistance claim is published on this page; the cases listed here describe what a meaningful evaluation needs to examine.</p>
         </article>
+        <article class="panel">
+          <h2>Connect the result to a specific action</h2>
+          <p>For a consent workflow, the record should identify the exact work, the requested use and the decision presented to the person. Preserve the version of that request with the response. Otherwise, even a correctly matched sample can leave the central question unanswered: what action did the person intend to authorize? This is why the voice question is linked to the separate provenance and consent research pages.</p>
+        </article>
+        <article class="panel">
+          <h2>Public record and technical context</h2>
+          <p>The cited provisional application is a filing, not an issued patent or a certification of performance. Authentication design also needs to account for the requirements of its intended environment. NIST&#x27;s digital identity guidance is a useful reference for understanding the distinction between biometric comparisons and authenticators; it should not be read as endorsement or certification of this research.</p>
+        </article>
+        <article class="panel"><h2>Sources and current documentation</h2><ul><li><a href="https://pages.nist.gov/800-63-4/sp800-63b.html">NIST digital identity and authentication guidance</a></li><li><a href="https://jasoncolapietro.com/patents/">Public filing record on the founder site</a></li></ul></article>
         <article class="panel">
           <h2>Continue</h2>
           <ul>
