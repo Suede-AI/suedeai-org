@@ -655,6 +655,21 @@ def main() -> int:
                     f"{relative_path}: The Guitar Without a Number points to the Human Authenticity ASIN"
                 )
 
+    # Ruled 2026-10-13 (#133): Suede surfaces leave patents off entirely. Every
+    # deployed text surface is checked, including the one public Markdown file
+    # and the content snapshots served under /content/.
+    patent_pattern = re.compile(r"\bpatent|\bUSPTO\b|\b63/9\d{2},\d{3}\b", re.IGNORECASE)
+    patent_surfaces = [
+        *ROOT.rglob("*.html"),
+        ROOT / "llms.txt",
+        ROOT / "llms-full.txt",
+        ROOT / "docs" / "accomplishments.md",
+        *(ROOT / "content").glob("*.json"),
+    ]
+    for path in patent_surfaces:
+        if path.exists() and patent_pattern.search(read_text(path)):
+            failures.append(f"{path.relative_to(ROOT).as_posix()}: mentions a patent; patents are left off Suede surfaces")
+
     for text_path in [ROOT / "llms.txt", ROOT / "llms-full.txt"]:
         if text_path.exists():
             text = read_text(text_path)
