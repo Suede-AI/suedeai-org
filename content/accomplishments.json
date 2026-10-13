@@ -313,19 +313,6 @@
       ]
     },
     {
-      "id": "patent",
-      "category": "Filing",
-      "date": "Published filing disclosure",
-      "title": "Provisional patent application 63/947,120",
-      "body": "USPTO provisional application 63/947,120, on file, covers the Suede provenance system. The filing is an application, not a granted patent.",
-      "links": [
-        {
-          "label": "Read the filing disclosure",
-          "url": "https://seo.suedeai.ai/evidence#credentials"
-        }
-      ]
-    },
-    {
       "id": "stripe",
       "category": "Startup program",
       "date": "July 2026",
