@@ -669,6 +669,21 @@ def main() -> int:
     for path in patent_surfaces:
         if path.exists() and patent_pattern.search(read_text(path)):
             failures.append(f"{path.relative_to(ROOT).as_posix()}: mentions a patent; patents are left off Suede surfaces")
+    # The book PDFs deploy too. The condensed preview reproduces the published
+    # Stake Your Claim author bio ("He holds multiple provisional patents"),
+    # rendered outside this repo, so that one occurrence is allowed until the
+    # preview is regenerated without it. Anything beyond it fails.
+    pdf_patent_allowances = {"assets/files/stake-your-claim-condensed-preview.pdf": ["provisional patents"]}
+    for pdf_path in sorted((ROOT / "assets" / "files").glob("*.pdf")):
+        relative_pdf = pdf_path.relative_to(ROOT).as_posix()
+        pdf_body = " ".join((page.extract_text() or "") for page in PdfReader(str(pdf_path)).pages)
+        pdf_body = re.sub(r"\s+", " ", re.sub(r"(\w)[­‐]\s+(\w)", r"\1\2", pdf_body))
+        allowed = list(pdf_patent_allowances.get(relative_pdf, []))
+        for match in re.finditer(r"provisional patents|\bpatent|\bUSPTO\b|\b63/9\d{2},\d{3}\b", pdf_body, re.IGNORECASE):
+            if match.group(0).lower() in allowed:
+                allowed.remove(match.group(0).lower())
+                continue
+            failures.append(f"{relative_pdf}: mentions a patent ({match.group(0)!r}); patents are left off Suede surfaces")
 
     for text_path in [ROOT / "llms.txt", ROOT / "llms-full.txt"]:
         if text_path.exists():
