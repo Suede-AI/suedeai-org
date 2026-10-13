@@ -177,7 +177,7 @@ Three questions, three kinds of evidence
 Voice research asks how a person can be associated with a recording. Provenance research asks how a particular file and the claims attached to it can be traced through a workflow. Hardware research asks whether useful evidence can be recorded at capture time. These questions are related, but they need different demonstrations. A voice comparison, a signed file record and a microphone prototype each establish a different part of the story.
 
 Read the status with the claim
-A prototype demonstrates an implementation under stated conditions. A live product provides a workflow people can use. When reviewing a research page, look for which of these supports the statement being made, then follow the relevant record or product documentation. The linked registry documentation describes the current registration workflow.
+A filing documents an application. A prototype demonstrates an implementation under stated conditions. A live product provides a workflow people can use. When reviewing a research page, look for which of these supports the statement being made, then follow the relevant record or product documentation. The public founder record identifies the provisional patent application reference; the linked registry documentation describes the current registration workflow.
 
 A practical example: one recording, several questions
 Imagine a musician records a vocal, edits the take and sends a final mix to a collaborator. The original capture, the edited vocal and the mix are different files. A useful record would connect those versions, identify who supplied them, and keep any permission for the collaborator's use alongside the delivery. An identity signal alone cannot describe the edits; a file fingerprint alone cannot state the agreed use. Research becomes useful when those records can be connected without treating them as interchangeable.
@@ -189,7 +189,7 @@ Choose the relevant research page
 Start with VoicePrint for the identity question, provenance for file history and claims, and hardware for evidence at the point of capture. Research notes address the information that a consent or model-use record needs to carry. If your immediate goal is to prepare a work for registration, use the IP Registry's current documentation rather than inferring a product procedure from a research proposal.
 
 RESEARCH / VOICEPRINT (https://suedeai.org/research/voiceprint/)
-VoicePrint explores the relationship between a voice sample, a person and a record of consent.
+VoicePrint explores the relationship between a voice sample, a person and a record of consent. The public filing reference is USPTO provisional patent application 63/947,120.
 
 The question being studied
 A recording can contain a recognizable voice without establishing who supplied the file or what that person agreed to. VoicePrint's research question is how a voice-related signal could be associated with a credential and an explicit action. The important distinction is between a comparison result and the larger workflow that uses it: a similarity score is one observation, while identity, intent and permission each need their own evidence.
@@ -203,8 +203,8 @@ Useful test cases include a fresh sample, a replay of an earlier recording, back
 Connect the result to a specific action
 For a consent workflow, the record should identify the exact work, the requested use and the decision presented to the person. Preserve the version of that request with the response. Otherwise, even a correctly matched sample can leave the central question unanswered: what action did the person intend to authorize? This is why the voice question is linked to the separate provenance and consent research pages.
 
-Technical context
-Authentication design needs to account for the requirements of its intended environment. NIST's digital identity guidance is a useful reference for understanding the distinction between biometric comparisons and authenticators; it should not be read as endorsement or certification of this research.
+Public record and technical context
+The cited provisional application is a filing, not an issued patent or a certification of performance. Authentication design also needs to account for the requirements of its intended environment. NIST's digital identity guidance is a useful reference for understanding the distinction between biometric comparisons and authenticators; it should not be read as endorsement or certification of this research.
 
 RESEARCH / PROVENANCE (https://suedeai.org/research/provenance/)
 Creative provenance connects an exact file to its recorded history and the claims made about it. The useful design problem is keeping those records understandable as the work changes hands and versions.
@@ -240,7 +240,7 @@ Make the evidence useful to a musician
 The recording process should leave a file and a record that can travel with the project. A musician needs to know which export the record describes, what information will be shared and how to preserve the original. The handoff should remain intelligible to a collaborator who does not own the same device. These usability questions belong alongside capture quality, reliability and verification in an evaluation.
 
 Current public status
-The hardware direction is in development, with specifications not yet published. This page sets out the problem and evaluation questions; it is not a product specification or a shipping announcement. The VoicePrint page covers the related identity research, and the provenance page explains how an exact file and its subsequent versions can be documented. The public registry documentation describes the workflow available for preparing a work today.
+The hardware direction is in development, with specifications held pending the filing process. This page sets out the problem and evaluation questions; it is not a product specification or a shipping announcement. The VoicePrint page covers the related identity research, and the provenance page explains how an exact file and its subsequent versions can be documented. The public registry documentation describes the workflow available for preparing a work today.
 
 RESEARCH / NOTES (https://suedeai.org/research/notes/)
 Working questions about consent records, changing creative files and the evidence needed to describe how AI tools were used.
@@ -432,6 +432,10 @@ Suede AI Agent Studio lets a builder draw an agent as a node graph and launch it
 Suede AI Agent Studio: https://agents.suedeai.ai
 Agentix: https://agentix.suedeai.ai
 x402-foundation/x402 #3180: https://github.com/x402-foundation/x402/pull/3180
+
+Five provisional patent applications
+Five USPTO provisional patent applications are on file: 63/946,189, 63/946,192, 63/946,212, 63/946,217 and 63/947,120, with filing receipts issued in January 2026.
+Read the filing disclosure: https://seo.suedeai.ai/evidence#credentials
 
 Admitted to Stripe Startups
 Suede was admitted to Stripe Startups in July 2026, alongside the ongoing Google Cloud relationship and the company’s work on creative software and agent commerce.

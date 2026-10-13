@@ -313,6 +313,19 @@
       ]
     },
     {
+      "id": "patent",
+      "category": "Filing",
+      "date": "Published filing disclosure",
+      "title": "Five provisional patent applications",
+      "body": "Five USPTO provisional patent applications are on file: 63/946,189, 63/946,192, 63/946,212, 63/946,217 and 63/947,120, with filing receipts issued in January 2026.",
+      "links": [
+        {
+          "label": "Read the filing disclosure",
+          "url": "https://seo.suedeai.ai/evidence#credentials"
+        }
+      ]
+    },
+    {
       "id": "stripe",
       "category": "Startup program",
       "date": "July 2026",
