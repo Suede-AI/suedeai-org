@@ -2078,6 +2078,45 @@ h3 {
   grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.72fr);
   align-items: start;
 }
+.thesis-figure {
+  grid-column: 1 / -1;
+  margin-top: clamp(6px, 2vw, 24px);
+  overflow: hidden;
+  border: var(--border-width) solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--ink-panel);
+}
+.thesis-figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1600 / 893;
+  object-fit: cover;
+  background: var(--ink-control);
+}
+.thesis-figure figcaption {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: clamp(12px, 4vw, 48px);
+  padding: 18px clamp(18px, 3vw, 28px) 20px;
+  border-top: var(--border-width) solid var(--hairline);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+.thesis-figure__label {
+  color: var(--registry-cyan);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+@media (max-width: 680px) {
+  .thesis-figure figcaption {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
 .skills-copy {
   max-width: 760px;
 }
