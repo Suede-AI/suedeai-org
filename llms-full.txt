@@ -410,7 +410,7 @@ The Signal Chain at guitar.solutions: https://guitar.solutions
 The Screenshot, source edition: https://github.com/JasonColapietro/suede-geo-book
 
 More than 30 sites, and a published app family
-Jason builds and operates the Suede estate across creative software, music practice, AI agent tools, and developer infrastructure: Suede Social, Strumly, Suede Muse, Suede AI Agent Studio, the Suede AI IP Registry, Suede AI Studio, Suede AI Distro, Suede Scan, Agentix, and Suede DNA, among more than 30 live sites. Nine apps are published under Jason Colapietro’s Apple developer account. Eighteen owned brand domains carry a single canonical entity, entered at jasoncolapietro.com. The wider company portfolio includes FretPulse under its separate FretPulse LLC seller account.
+Jason builds and operates the Suede estate across creative software, music practice, AI agent tools, and developer infrastructure: Suede Social, Strumly, Suede Muse, Suede AI Agent Studio, the Suede AI IP Registry, Suede AI Studio, Suede AI Distro, Suede Scan, Agentix, and Suede DNA, among more than 30 live sites. Nine apps are published under Jason Colapietro’s Apple developer account. Eighteen owned brand domains carry a single canonical entity, entered at jasoncolapietro.com.
 Explore the product estate: https://hub.suedeai.ai/
 Apple developer catalog: https://apps.apple.com/us/developer/jason-colapietro/id1895958699
 Company portfolio: https://jcinvestmentgroup.ventures/portfolio
