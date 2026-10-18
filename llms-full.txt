@@ -12,8 +12,9 @@ Suede AI is building the creative rails for the AI era. The thesis is straightfo
 
 ## Current focus
 
-Suede AI's current business focus is answer engine optimization (AEO), generative engine optimization (GEO) and search engine optimization (SEO), plus AI agents.
+Suede AI's current business focus is web development and software engineering for businesses, alongside answer engine optimization (AEO), generative engine optimization (GEO) and search engine optimization (SEO), plus AI agents.
 
+- Web development and software engineering (https://suedeai.org/#engineering): websites, web apps, APIs, payment integrations, iOS apps and AI agents, built in the client's own repository and stack, with tests and code review before release. Jason Colapietro builds and runs more than 20 live software surfaces and nine iOS apps, and has 54 pull requests merged across 46 external repositories, including Jest, Adobe React Spectrum, Backstage and Hardhat. Start at https://suedeai.org/contact/ or https://suedeai.org/book-a-call/
 - Suede AI SEO (https://seo.suedeai.ai/): SEO, GEO, AEO, AI search visibility and digital PR for businesses, run by Jason Colapietro.
 - Suede AI Agent Studio (https://agents.suedeai.ai/): build AI agents and workflow automation, and publish paid x402 APIs when payments are enabled.
 - Company and practice home: https://suedeai.ai/
@@ -409,7 +410,7 @@ The Signal Chain at guitar.solutions: https://guitar.solutions
 The Screenshot, source edition: https://github.com/JasonColapietro/suede-geo-book
 
 More than 30 sites, and a published app family
-Jason builds and operates the Suede estate across creative software, music practice, AI agent tools, and developer infrastructure: Suede Social, Strumly, Suede Muse, Suede AI Agent Studio, the Suede AI IP Registry, Suede AI Studio, Suede AI Distro, Suede Scan, Agentix, and Suede DNA, among more than 30 live sites. Nine apps are published under Jason Colapietro’s Apple developer account. Eighteen owned brand domains carry a single canonical entity, entered at jasoncolapietro.com. The wider company portfolio includes FretPulse under its separate FretPulse LLC seller account.
+Jason builds and operates the Suede estate across creative software, music practice, AI agent tools, and developer infrastructure: Suede Social, Strumly, Suede Muse, Suede AI Agent Studio, the Suede AI IP Registry, Suede AI Studio, Suede AI Distro, Suede Scan, Agentix, and Suede DNA, among more than 30 live sites. Nine apps are published under Jason Colapietro’s Apple developer account. Eighteen owned brand domains carry a single canonical entity, entered at jasoncolapietro.com.
 Explore the product estate: https://hub.suedeai.ai/
 Apple developer catalog: https://apps.apple.com/us/developer/jason-colapietro/id1895958699
 Company portfolio: https://jcinvestmentgroup.ventures/portfolio

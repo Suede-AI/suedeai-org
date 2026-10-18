@@ -17,6 +17,22 @@ function nodes(file) {
   });
 }
 const pages = htmlFiles(root);
+test('public copy, metadata and structured data exclude the unrelated guitar app', () => {
+  const files = [...pages, ...['llms.txt', 'llms-full.txt', 'content/accomplishments.json', 'docs/accomplishments.md'].map(file => path.join(root, file))];
+  for (const file of files) {
+    const content = fs.readFileSync(file, 'utf8');
+    assert.doesNotMatch(content, /FretPulse\s+LLC|6766649729|fretpulse\.io/i, path.relative(root, file));
+  }
+});
+test('both app catalogs preserve the nine Suede apps and the correct tuner identity', () => {
+  const expectedIds = ['6765461286', '6767552764', '6767763231', '6779134962', '6778880737', '6778286160', '6770668793', '6785347610', '6806770875'].sort();
+  for (const file of ['index.html', 'investors/index.html']) {
+    const html = fs.readFileSync(path.join(root, file), 'utf8');
+    const appIds = [...new Set([...html.matchAll(/https:\/\/apps\.apple\.com\/[a-z]{2}\/app\/[^"\s]+\/id(\d+)/g)].map(match => match[1]))].sort();
+    assert.deepEqual(appIds, expectedIds, file);
+    assert.match(html, /href="https:\/\/fretpulse\.suedeai\.ai\/"[^>]*>Suede Guitar Tuner &amp; Studio<\/a>/, file);
+  }
+});
 test('each standalone JSON-LD document declares its own schema context', () => {
   for (const file of pages) {
     for (const match of fs.readFileSync(file, 'utf8').matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {

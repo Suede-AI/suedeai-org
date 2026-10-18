@@ -1782,6 +1782,13 @@ h1 {
   font-weight: 560;
   line-height: 1.28;
 }
+.hero-intro {
+  max-width: 44ch;
+  margin-top: 18px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
 .hero-line {
   max-width: 38ch;
   margin-top: 14px;
@@ -2102,6 +2109,17 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
+}
+.engineering-note {
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+#engineering .skills-list {
+  margin-top: 6px;
+}
+#engineering .skills-list li:first-child {
+  border-top: 0;
 }
 .skills-install {
   overflow: hidden;
@@ -2454,6 +2472,23 @@ h3 {
 }
 @media (max-width: 1400px) {
   .section-rail {
+    display: none;
+  }
+}
+/* Header nav priority: drop deep-section links before the header clips.
+   Every hidden section stays reachable from the section rail, the page and the footer. */
+@media (max-width: 1439px) {
+  .nav-links .nav-extra {
+    display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .nav-links .nav-more {
+    display: none;
+  }
+}
+@media (max-width: 960px) {
+  .nav-links .nav-min {
     display: none;
   }
 }
