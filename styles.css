@@ -2475,6 +2475,23 @@ h3 {
     display: none;
   }
 }
+/* Header nav priority: drop deep-section links before the header clips.
+   Every hidden section stays reachable from the section rail, the page and the footer. */
+@media (max-width: 1439px) {
+  .nav-links .nav-extra {
+    display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .nav-links .nav-more {
+    display: none;
+  }
+}
+@media (max-width: 960px) {
+  .nav-links .nav-min {
+    display: none;
+  }
+}
 @media (max-width: 1180px) {
   .hero {
     background:
