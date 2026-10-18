@@ -387,7 +387,7 @@ h1 {
 .hero-facts dt {
   margin-bottom: 10px;
   color: var(--text-muted);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   font-weight: 600;
 }
 .hero-facts dd {
@@ -1050,7 +1050,7 @@ h3 {
   .header-action {
     min-height: 34px;
     padding: 0 11px;
-    font-size: 0.68rem;
+    font-size: 0.6875rem;
   }
 
   .hero {
@@ -1111,7 +1111,7 @@ h3 {
 
   .hero-terminal pre,
   .terminal-panel pre {
-    font-size: 0.68rem;
+    font-size: 0.6875rem;
   }
 
   .site-footer {
@@ -1275,7 +1275,7 @@ a.eco-card {
 }
 .eco-tag {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1289,7 +1289,7 @@ a.eco-card {
   border: var(--border-width) solid var(--verified-emerald);
   border-radius: 3px;
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1370,7 +1370,7 @@ a.eco-card {
   display: block;
   margin-top: 2px;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2690,4 +2690,58 @@ h3 {
 .review-badge--footer {
   grid-column: 1 / -1;
   margin-top: 4px;
+}
+/* Credential rows read as running text: flex on the <dd> dropped the spaces
+   between its text nodes and links ("community-curatedawesome-x402directory"). */
+.cred-row dd {
+  display: block;
+  align-self: center;
+}
+
+/* FAQ answers hold a readable measure instead of spanning the full shell. */
+.faq-item h3,
+.faq-item p {
+  max-width: 72ch;
+}
+
+/* Shared accomplishments record, re-skinned for the paper homepage. */
+#accomplishments h2 {
+  max-width: 20ch;
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+#accomplishments .accomplishment {
+  border-top-color: rgba(36, 36, 36, 0.14);
+}
+#accomplishments .accomplishment p,
+#accomplishments .accomplishments-intro {
+  color: var(--text-muted);
+}
+#accomplishments .accomplishments-kicker,
+#accomplishments .accomplishment-meta {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+#accomplishments .accomplishments-partner {
+  background: #fdfcf7;
+  border-color: rgba(36, 36, 36, 0.1);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+}
+
+/* Browser surfaces carry the paper palette too. */
+::selection {
+  background: var(--paper-green);
+  color: #242424;
+}
+html {
+  scrollbar-color: rgba(36, 36, 36, 0.32) var(--paper);
+  accent-color: var(--paper-green);
+}
+input,
+textarea {
+  caret-color: currentColor;
 }

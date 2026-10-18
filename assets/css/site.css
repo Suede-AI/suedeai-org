@@ -491,7 +491,7 @@ h3 {
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 28px;
   align-items: end;
-  margin: 18px 0 26px;
+  margin-block: 18px 26px;
   padding: 30px;
   border: 1px solid var(--hairline);
   border-radius: var(--radius-lg);
@@ -1170,3 +1170,98 @@ button[aria-disabled="true"] {
 .faq-item { border: 1px solid var(--hairline); border-radius: 12px; background: var(--ink-panel); padding: 1rem 1.15rem; }
 .faq-item h3 { margin: 0 0 0.45rem; font-size: 1.02rem; color: var(--text-primary); }
 .faq-item p { margin: 0; color: var(--text-muted); max-width: 70ch; }
+
+/* Buttons placed inside link-styled containers keep their own label colour;
+   the inherited proof-sky link colour fails contrast on the red fill. */
+.panel a.button,
+.keyword-card a.button,
+.content-stack a.button {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.panel a.button:hover,
+.keyword-card a.button:hover,
+.content-stack a.button:hover {
+  color: var(--text-primary);
+}
+
+/* The booking link that opens every footer sits on the same shell as the
+   rows below it instead of the viewport edge. */
+.site-footer > p:first-child {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  padding: 22px 0 0;
+}
+.site-footer > p:first-child a {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.site-footer > p:first-child a::after {
+  content: " \2192";
+  color: var(--registry-cyan);
+}
+.site-footer > p:first-child a:hover,
+.site-footer > p:first-child a:focus-visible {
+  color: var(--registry-cyan);
+}
+
+/* Shared accomplishments record, re-skinned for the dark article system. */
+#accomplishments h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+#accomplishments .accomplishment {
+  border-top-color: var(--hairline);
+}
+#accomplishments .accomplishment p,
+#accomplishments .accomplishments-intro,
+#accomplishments .accomplishments-capture p {
+  color: var(--text-muted);
+}
+#accomplishments .accomplishment h3,
+#accomplishments .accomplishments-visuals h3 {
+  color: var(--text-primary);
+}
+#accomplishments .accomplishments-kicker,
+#accomplishments .accomplishment-meta {
+  color: var(--registry-cyan);
+  font-family: var(--font-mono);
+}
+#accomplishments a {
+  color: var(--proof-sky);
+}
+#accomplishments a:hover {
+  color: var(--registry-cyan);
+}
+#accomplishments .accomplishments-partner {
+  background: var(--ink-control);
+  border-color: var(--hairline-cyan);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+}
+#accomplishments .accomplishments-partner span span {
+  color: var(--text-muted);
+}
+#accomplishments .accomplishments-capture > a {
+  border-color: var(--hairline);
+  border-radius: var(--radius-lg);
+}
+
+/* Browser surfaces carry the terminal palette too. */
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: var(--text-primary);
+}
+html {
+  scrollbar-color: #253246 var(--ink-deep);
+  accent-color: var(--registry-cyan);
+}
+input,
+textarea {
+  caret-color: var(--registry-cyan);
+}
