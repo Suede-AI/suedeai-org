@@ -162,7 +162,7 @@ function buildReaderPreviewEmail({ name }) {
         &nbsp;&nbsp;·&nbsp;&nbsp;
         <a href="https://suedeai.ai" style="color:#22d3ee;text-decoration:none;font-weight:600;">suedeai.ai</a>
       </p>
-      <p style="margin:0;font-size:11px;color:#2a3542;line-height:1.6;">Creator ownership infrastructure for the AI media era.<br>You&rsquo;re receiving this because you requested the preview.</p>
+      <p style="margin:0;font-size:11px;color:#2a3542;line-height:1.6;">Suede AI builds AI agent platforms businesses use to run their work, and white-labels them for agencies. Founded 2024 by engineer Jason Colapietro.<br>You&rsquo;re receiving this because you requested the preview.</p>
     </td></tr>
 
   </table>

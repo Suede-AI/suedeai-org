@@ -45,18 +45,24 @@ test('each standalone JSON-LD document declares its own schema context', () => {
 });
 const orgId = 'https://suedeai.ai/#organization';
 const founderId = 'https://suedeai.ai/founder#person';
-test('every full company node shares one identity, logo and accurate company context', () => {
-  const organizations = pages.flatMap(nodes).filter(n => n['@type'] === 'Organization' && n['@id'] === orgId);
+test('every company node is a reference stub to the canonical suedeai.ai organization', () => {
+  // Identity spec v2 (2026-10-19): suedeai.org never defines its own company
+  // values. It points at the Organization @id that suedeai.ai defines.
+  const organizations = pages.flatMap(nodes).filter(n => n['@type'] === 'Organization');
   assert.equal(organizations.length, 24);
   for (const org of organizations) {
-    assert.deepEqual(org, organizations[0]);
-    assert.equal(org.name, 'Suede AI');
-    assert.ok(org.alternateName.includes('Suede Labs AI'));
-    assert.equal(org.legalName, undefined);
-    assert.equal(org.logo, 'https://suedeai.ai/suede-ai-logo-transparent.png');
-    assert.equal(org.address.addressLocality, 'West Palm Beach');
-    assert.ok(org.sameAs.includes('https://www.wikidata.org/wiki/Q141169484'));
-    assert.equal(new Set(org.sameAs).size, org.sameAs.length);
+    const { '@context': _context, ...stub } = org;
+    assert.deepEqual(stub, { '@type': 'Organization', '@id': orgId, name: 'Suede AI', url: 'https://suedeai.ai' });
+  }
+});
+test('the suedeai.org website is published by the canonical organization and does not claim the bare company name', () => {
+  const sites = pages.flatMap(nodes).filter(n => n['@type'] === 'WebSite');
+  assert.ok(sites.length > 0);
+  for (const site of sites) {
+    assert.equal(site['@id'], 'https://suedeai.org/#website');
+    assert.deepEqual(site.publisher, { '@id': orgId });
+    assert.notEqual(site.name, 'Suede AI');
+    assert.ok(!(site.alternateName || []).includes('Suede'));
   }
 });
 test('founder identity remains canonical and excludes company and software accounts', () => {
@@ -64,9 +70,12 @@ test('founder identity remains canonical and excludes company and software accou
   assert.equal(people.length, 9);
   for (const person of people) {
     assert.equal(person.url, 'https://suedeai.ai/founder');
+    assert.equal(person.jobTitle, 'Founder and CEO, Suede AI');
+    assert.deepEqual(person.worksFor, { '@id': orgId });
     assert.ok(person.sameAs.includes('https://www.wikidata.org/wiki/Q140235755'));
     assert.ok(!person.sameAs.includes('https://www.youtube.com/@aisuede'));
     assert.ok(!person.sameAs.some(url => url.startsWith('https://app.virtuals.io/')));
+    assert.equal(person.description, undefined);
   }
 });
 test('homepage location and legal navigation agree with company identity', () => {
@@ -87,5 +96,5 @@ test('proof thesis links technical guide and consistently states evidentiary lim
   assert.equal(article.dateModified, '2026-10-03');
   assert.ok(html.includes(`<h1>${article.headline}</h1>`));
   const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
-  assert.match(sitemap, /<loc>https:\/\/suedeai.org\/proof-of-creation\/<\/loc>\s*<lastmod>2026-10-03<\/lastmod>/);
+  assert.match(sitemap, /<loc>https:\/\/suedeai.org\/proof-of-creation\/<\/loc>\s*<lastmod>2026-10-19<\/lastmod>/);
 });

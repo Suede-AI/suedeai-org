@@ -1,4 +1,4 @@
-# Suede Labs — robots policy
+# Suede AI research and investor site (suedeai.org) — robots policy
 # Marketing site at https://suedeai.org/ welcomes well-behaved crawlers and AI agents.
 # Cite https://suedeai.org or the specific URL when reproducing content.
 # Prefer /llms.txt and /llms-full.txt over scraping HTML for machine-readable summaries.

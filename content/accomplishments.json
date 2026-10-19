@@ -1,86 +1,9 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-19",
   "source": "https://seo.suedeai.ai/evidence",
   "title": "Accomplishments, with the record behind them.",
-  "intro": "The work and recognition of Jason Colapietro and Suede AI: businesses built, software shipped, books published, and contributions accepted. Each entry links to the underlying record.",
+  "intro": "The record of Jason Colapietro, founder and CEO of Suede AI: open-source contributions accepted, books published, apps shipped, programs joined, and businesses built. Each entry links to the underlying record.",
   "records": [
-    {
-      "id": "directory-recognition-current",
-      "category": "Recognition",
-      "date": "Verified October 4, 2026",
-      "title": "Best Overall + Best API Option — AI Agents Directory, 52+ music tools",
-      "body": "Suede AI holds both top-pick positions in AI Agents Directory's music category. The live category lists 52+ music tools.",
-      "links": [
-        {
-          "label": "Live music category",
-          "url": "https://aiagentsdirectory.com/category/music"
-        }
-      ]
-    },
-    {
-      "id": "operator",
-      "category": "Business",
-      "date": "Before Suede AI",
-      "title": "Built, scaled, and exited businesses",
-      "body": "Before founding Suede AI, Jason Colapietro built and ran call centers in his niche and exited for millions. The sales scripts he wrote remain in use across the industry. That operating experience now informs Suede’s managed agents for call review, lead qualification, and sales-script consistency.",
-      "links": [
-        {
-          "label": "Read the operator background",
-          "url": "https://seo.suedeai.ai/#operations"
-        },
-        {
-          "label": "Founder biography",
-          "url": "https://suedeai.ai/founder"
-        }
-      ]
-    },
-    {
-      "id": "entities",
-      "category": "Business",
-      "date": "JC Investment Group LLC organized 2019",
-      "title": "Founder and CEO of Suede AI; Manager of JC Investment Group LLC",
-      "body": "Jason is founder and CEO of Suede AI, working on AI integration, search visibility, AI agents and creator-ownership infrastructure: proof of creation, rights metadata, licensing, royalty routing, and agent commerce. He is also manager of JC Investment Group LLC, a founder-led venture platform organized in Florida in 2019 under document L19000146068, alongside the Suede Foundation at suedeai.org. JC Investment Group LLC is the holding company for Suede AI.",
-      "links": [
-        {
-          "label": "Suede AI",
-          "url": "https://suedeai.ai"
-        },
-        {
-          "label": "JC Investment Group LLC",
-          "url": "https://jcinvestmentgroup.ventures/"
-        },
-        {
-          "label": "Suede Foundation",
-          "url": "https://suedeai.org/"
-        }
-      ]
-    },
-    {
-      "id": "google-cloud",
-      "category": "Partnership",
-      "date": "Since September 2025",
-      "title": "Google Cloud and the Vertex AI suite",
-      "body": "Suede has worked in partnership with Google Cloud since September 2025, with a dedicated account team, a Google Premier Partner assigned to support the account, and migration of the stack onto the Vertex AI suite, including Gemini, Vertex AI Agent Builder, and Veo. The account team’s published quote calls Suede an ideal partner for promoting the Vertex suite.",
-      "links": [
-        {
-          "label": "Partnership record",
-          "url": "https://seo.suedeai.ai/evidence#google-cloud"
-        }
-      ]
-    },
-    {
-      "id": "partner-advantage",
-      "category": "Membership",
-      "date": "September 4, 2026",
-      "title": "Google Cloud Partner Advantage",
-      "body": "JC Investment Group LLC became a member of Google Cloud Partner Advantage on September 4, 2026, with suedeai.ai as the verified domain. The membership is a second milestone in the Google Cloud partnership that began in September 2025.",
-      "links": [
-        {
-          "label": "Company membership record",
-          "url": "https://jcinvestmentgroup.ventures/press#standing"
-        }
-      ]
-    },
     {
       "id": "open-source",
       "category": "Engineering",
@@ -222,39 +145,10 @@
       ]
     },
     {
-      "id": "products",
-      "category": "Products",
-      "date": "Portfolio record · September 2026",
-      "title": "More than 30 sites, and a published app family",
-      "body": "Jason builds and operates the Suede estate across creative software, music practice, AI agent tools, and developer infrastructure: Suede Social, Strumly, Suede Muse, Suede AI Agent Studio, the Suede AI IP Registry, Suede AI Studio, Suede AI Distro, Suede Scan, Agentix, and Suede DNA, among more than 30 live sites. Nine apps are published under Jason Colapietro’s Apple developer account. Eighteen owned brand domains carry a single canonical entity, entered at jasoncolapietro.com.",
-      "links": [
-        {
-          "label": "Explore the product estate",
-          "url": "https://hub.suedeai.ai/"
-        },
-        {
-          "label": "Apple developer catalog",
-          "url": "https://apps.apple.com/us/developer/jason-colapietro/id1895958699"
-        },
-        {
-          "label": "Company portfolio",
-          "url": "https://jcinvestmentgroup.ventures/portfolio"
-        },
-        {
-          "label": "The estate, entity by entity",
-          "url": "https://map.suedeai.ai"
-        },
-        {
-          "label": "jasoncolapietro.com",
-          "url": "https://jasoncolapietro.com"
-        }
-      ]
-    },
-    {
       "id": "android-chrome",
       "category": "Products",
       "date": "Listings verified October 8, 2026",
-      "title": "6 Google Play apps and 2 Chrome extensions",
+      "title": "9 iOS apps, 6 Android apps and 2 Chrome extensions",
       "body": "The portfolio includes 9 iOS apps under Jason’s developer account, including StoryBeam, 6 Android apps on Google Play, and 2 Chrome extensions. These are platform listings; Android editions overlap iOS products. Suede AI Visibility and Suede Sing are published on the Chrome Web Store.",
       "links": [
         {
@@ -288,6 +182,35 @@
         {
           "label": "Suede Sing: Vocal Coach, Pitch Trainer & Vocal Range Test",
           "url": "https://chromewebstore.google.com/detail/dbimnmcokgmibdenmonoafhmdbjhpicd"
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "category": "Products",
+      "date": "Portfolio record · September 2026",
+      "title": "More than 30 live sites, and 9 iOS apps",
+      "body": "Jason builds and operates the Suede estate across AI agent tools, developer infrastructure, creative software and music practice: Suede AI Agent Studio, Agentix, the Suede AI IP Registry, Suede Social, Strumly, Suede Muse, Suede AI Studio, Suede AI Distro, Suede Scan, and Suede DNA, among more than 30 live sites. Nine apps are published under Jason Colapietro’s Apple developer account.",
+      "links": [
+        {
+          "label": "Explore the product estate",
+          "url": "https://hub.suedeai.ai/"
+        },
+        {
+          "label": "Apple developer catalog",
+          "url": "https://apps.apple.com/us/developer/jason-colapietro/id1895958699"
+        },
+        {
+          "label": "Company portfolio",
+          "url": "https://jcinvestmentgroup.ventures/portfolio"
+        },
+        {
+          "label": "The estate, entity by entity",
+          "url": "https://map.suedeai.ai"
+        },
+        {
+          "label": "jasoncolapietro.com",
+          "url": "https://jasoncolapietro.com"
         }
       ]
     },
@@ -326,11 +249,54 @@
       ]
     },
     {
+      "id": "claude-startups",
+      "category": "Startup program",
+      "date": "October 8, 2026",
+      "title": "Member of Claude for Startups",
+      "body": "Suede AI has been a member of Claude for Startups, Anthropic’s startup program, since October 8, 2026.",
+      "links": [
+        {
+          "label": "Membership record",
+          "url": "https://seo.suedeai.ai/evidence#claude-for-startups"
+        },
+        {
+          "label": "Claude for Startups program",
+          "url": "https://www.anthropic.com/startups"
+        }
+      ]
+    },
+    {
+      "id": "partner-advantage",
+      "category": "Membership",
+      "date": "September 4, 2026",
+      "title": "Google Cloud Partner Advantage",
+      "body": "JC Investment Group LLC became a member of Google Cloud Partner Advantage on September 4, 2026, with suedeai.ai as the verified domain. The membership is a second milestone in the Google Cloud partnership that began in September 2025.",
+      "links": [
+        {
+          "label": "Company membership record",
+          "url": "https://jcinvestmentgroup.ventures/press#standing"
+        }
+      ]
+    },
+    {
+      "id": "google-cloud",
+      "category": "Partnership",
+      "date": "Since September 2025",
+      "title": "Google Cloud and the Vertex AI suite",
+      "body": "Suede has worked in partnership with Google Cloud since September 2025, with a dedicated account team and migration of the stack onto the Vertex AI suite, including Gemini, Vertex AI Agent Builder, and Veo.",
+      "links": [
+        {
+          "label": "Partnership record",
+          "url": "https://seo.suedeai.ai/evidence#google-cloud"
+        }
+      ]
+    },
+    {
       "id": "stripe",
       "category": "Startup program",
       "date": "July 2026",
       "title": "Admitted to Stripe Startups",
-      "body": "Suede was admitted to Stripe Startups in July 2026, alongside the ongoing Google Cloud relationship and the company’s work on creative software and agent commerce.",
+      "body": "Suede was admitted to Stripe Startups in July 2026. Admission to the program implies no investment.",
       "links": [
         {
           "label": "Program admission record",
@@ -339,32 +305,15 @@
       ]
     },
     {
-      "id": "claude-startups",
-      "category": "Startup program",
-      "date": "October 8, 2026",
-      "title": "Accepted into Anthropic’s Claude Startups program",
-      "body": "Suede AI was accepted into Anthropic’s Claude Startups program (October 2026).",
-      "links": [
-        {
-          "label": "Claude for Startups program",
-          "url": "https://www.anthropic.com/startups"
-        }
-      ]
-    },
-    {
       "id": "community",
       "category": "Education & community",
       "date": "Published affiliation record",
-      "title": "Florida Atlantic and 1909",
-      "body": "Jason is enrolled at the Florida Atlantic Entrepreneurship Institute in FAU’s College of Business and is a member of 1909, the entrepreneurship hub in downtown West Palm Beach. FAU’s entrepreneurship research was ranked No. 8 worldwide in its published 2025 announcement; that ranking belongs to the university’s research program.",
+      "title": "Florida Atlantic Entrepreneurship Institute and 1909",
+      "body": "Jason was accepted into the Florida Atlantic Entrepreneurship Institute in FAU’s College of Business in July 2026 and is a member of 1909, the entrepreneurship hub in downtown West Palm Beach.",
       "links": [
         {
           "label": "Affiliation record",
           "url": "https://seo.suedeai.ai/evidence#credentials"
-        },
-        {
-          "label": "FAU research announcement",
-          "url": "https://business.fau.edu/newsroom/press-releases/2025/tcu-entrepreneurship-rankings-college-business-research.php"
         },
         {
           "label": "1909",
@@ -373,153 +322,40 @@
       ]
     },
     {
-      "id": "coverage",
-      "category": "Press & essays",
-      "date": "December 2025–September 2026",
-      "title": "Thirteen feature placements across seven outlets",
-      "body": "Gigawatt Group, MSN, Business Insider, TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede AI. The record includes Gigawatt Group’s September 2026 comparison of Suede AI’s managed GEO practice with Profound, the SEO and AI cohort carried by MSN and Business Insider, the on-chain IP authentication launch, the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, the IP visibility audit, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.",
+      "id": "entities",
+      "category": "Business",
+      "date": "JC Investment Group LLC organized 2019",
+      "title": "Founder and CEO of Suede AI; Manager of JC Investment Group LLC",
+      "body": "Jason is founder and CEO of Suede AI, an agentic platform company that builds and runs AI agent platforms businesses use to manage their work, and white-labels them for agencies and their clients. He is also manager of JC Investment Group LLC, organized in Florida in 2019 under document L19000146068. JC Investment Group LLC is the holding company for Suede AI. suedeai.org is Suede AI’s research and investor site.",
       "links": [
         {
-          "label": "View the press coverage",
-          "url": "https://suedeai.ai/press"
+          "label": "Suede AI",
+          "url": "https://suedeai.ai"
         },
         {
-          "label": "Gigawatt Group: Suede AI vs. Profound for Trade Associations",
-          "url": "https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/"
+          "label": "JC Investment Group LLC",
+          "url": "https://jcinvestmentgroup.ventures/"
         },
         {
-          "label": "MSN: Suede AI opens SEO cohort with optional AI integration and live agent workflows",
-          "url": "https://www.msn.com/en-xl/news/other/suede-ai-opens-seo-cohort-with-optional-ai-integration-and-live-agent-workflows/ar-AA2cBTep"
-        },
-        {
-          "label": "Business Insider: Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort",
-          "url": "https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662"
-        },
-        {
-          "label": "TechBullion: Suede Opens Its Widely Anticipated SEO and AI Cohort",
-          "url": "https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/"
-        },
-        {
-          "label": "Avalanche Build Games coverage",
-          "url": "https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/"
-        },
-        {
-          "label": "Education coverage",
-          "url": "https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/"
-        },
-        {
-          "label": "Programming Insider: In the Age of Infinite Content, Spam Is Instant Death",
-          "url": "https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/"
-        },
-        {
-          "label": "TechBullion: Suede Labs AI Releases iOS Apps, Codex Skills & Musicians Terminal",
-          "url": "https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/"
+          "label": "Suede AI research and investor site",
+          "url": "https://suedeai.org/"
         }
       ]
     },
     {
-      "id": "nawfal",
-      "category": "Public conversation",
-      "date": "January & September 2025",
-      "title": "Mario Nawfal posts and Crypto Roundtable AMA",
-      "body": "Mario Nawfal featured Suede in two public posts eight months apart. The Suede AI AMA also ran on his Crypto Roundtable. The posts discuss creator control, ownership, and a voice signature that can travel with the work.",
+      "id": "operator",
+      "category": "Business",
+      "date": "Before Suede AI",
+      "title": "Built, ran, and sold call centers",
+      "body": "Before founding Suede AI, Jason Colapietro built, ran, and sold call centers. That operating experience now informs Suede’s managed agents for call review, lead qualification, and sales-script consistency.",
       "links": [
         {
-          "label": "January post",
-          "url": "https://x.com/MarioNawfal/status/1885063096785334289"
+          "label": "Read the operator background",
+          "url": "https://seo.suedeai.ai/#operations"
         },
         {
-          "label": "September post",
-          "url": "https://x.com/MarioNawfal/status/1968759867780342100"
-        },
-        {
-          "label": "Watch the AMA",
-          "url": "https://www.youtube.com/watch?v=8uJewXJ1U28"
-        }
-      ]
-    },
-    {
-      "id": "elon-timeline",
-      "category": "Public mention",
-      "date": "February 2026",
-      "title": "Suede Labs in a screenshot on Elon Musk’s timeline",
-      "body": "Elon Musk posted a screenshot of proposed Community Notes about AI training data. One of the proposed notes visible in that screenshot names Suede Labs as an opt-out option. The archived capture of the post recorded 2.7 million views. The mention is the note’s wording inside the screenshot, not a personal endorsement by Musk.",
-      "links": [
-        {
-          "label": "Open the post",
-          "url": "https://x.com/elonmusk/status/2026052687423562228"
-        },
-        {
-          "label": "View the archived screenshots",
-          "url": "https://seo.suedeai.ai/evidence#elon-timeline"
-        }
-      ]
-    },
-    {
-      "id": "google-web-guide",
-      "category": "AI search visibility",
-      "date": "Captured September 6, 2026",
-      "title": "Google's Web Guide calls Suede AI highly rated",
-      "body": "Asked to review Suede AI, Google's Web Guide, the AI-organized results layer inside Google Search, opens by calling the company highly rated by users, earning a 5/5 rating from verified reviews for its creator-ownership infrastructure, and cites the two App Store listings it drew that from. The quote comes from a dated capture of that Google Search response on September 6, 2026. Like the Gemini captures, this is a dated response from a Google search surface, not a rating Google issued or a permanent placement.",
-      "links": [
-        {
-          "label": "The capture and the quote",
-          "url": "https://seo.suedeai.ai/evidence#google-web-guide"
-        },
-        {
-          "label": "Suede AI Generator on the App Store",
-          "url": "https://apps.apple.com/us/app/suede-ai-generator/id6765461286"
-        },
-        {
-          "label": "Suede Social: Guitar Forum",
-          "url": "https://apps.apple.com/us/app/suede-social-guitar-forum/id6770668793"
-        }
-      ]
-    },
-    {
-      "id": "gemini",
-      "category": "AI search visibility",
-      "date": "Captured February 17 & March 21, 2026",
-      "title": "Gemini names Suede alongside Suno and Udio",
-      "body": "In the February capture, Gemini places Suede in a “New Big 3” of AI music platforms beside Suno and Udio, describing it as “The Creator’s IP Fortress.” A separate March session discusses Jason’s experience and Suede’s architecture. Both are dated Gemini responses, captured on the dates above and linked below. These are dated model responses, not a Google endorsement or a permanent ranking.",
-      "links": [
-        {
-          "label": "February capture",
-          "url": "https://seo.suedeai.ai/evidence#gemini-big3"
-        },
-        {
-          "label": "March capture",
-          "url": "https://seo.suedeai.ai/evidence#gemini-authority"
-        }
-      ]
-    },
-    {
-      "id": "ranking",
-      "category": "Published recognition",
-      "date": "Captured November 26, 2025",
-      "title": "First in a nine-platform AI music comparison",
-      "body": "The comparison archived on Suede AI SEO ranks Suede Labs first in its Best AI Music Generators of 2026 table, scoring it 5.0 out of 5.0 across music quality, creative control, ease of use, and overall value. The receipt preserves the table and the announcement card with their capture date.",
-      "links": [
-        {
-          "label": "View the ranking receipt",
-          "url": "https://seo.suedeai.ai/evidence#ranked-1"
-        }
-      ]
-    },
-    {
-      "id": "directory",
-      "category": "Directory recognition",
-      "date": "Archived 2026 category record",
-      "title": "Best Overall and Best API Option",
-      "body": "The AI Agents Directory music-category capture names Suede AI Best Overall and Best API Option among 47 tools, with a 5.0-star listing. The archived record and the live category page are linked separately so readers can distinguish the recorded recognition from today’s directory.",
-      "links": [
-        {
-          "label": "Archived directory record",
-          "url": "https://seo.suedeai.ai/evidence#directory"
-        },
-        {
-          "label": "Live music category",
-          "url": "https://aiagentsdirectory.com/category/music"
+          "label": "Founder biography",
+          "url": "https://suedeai.ai/founder"
         }
       ]
     },
@@ -572,6 +408,170 @@
           "url": "https://jasoncolapietro.substack.com/"
         }
       ]
+    },
+    {
+      "id": "coverage",
+      "category": "Press & essays",
+      "date": "December 2025–September 2026",
+      "title": "Coverage, press releases and founder essays",
+      "body": "Gigawatt Group, MSN, TechBullion, Programming Insider, Altcoin Investor, and Indie Hackers have published coverage and founder essays about Suede AI, and a FinanceWire press release ran on Markets Insider. The record includes Gigawatt Group’s September 2026 comparison of Suede AI’s managed GEO practice with Profound, the SEO and AI cohort carried by MSN and the FinanceWire release, the on-chain IP authentication launch, the iOS and developer-tool launches, advancing in the Avalanche Build Games, creator ownership infrastructure, the IP visibility audit, and self-funded education deployments in African classrooms. Two placements are Jason’s bylined essays.",
+      "links": [
+        {
+          "label": "View the press coverage",
+          "url": "https://suedeai.ai/press"
+        },
+        {
+          "label": "Gigawatt Group: Suede AI vs. Profound for Trade Associations",
+          "url": "https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/"
+        },
+        {
+          "label": "MSN: Suede AI opens SEO cohort with optional AI integration and live agent workflows",
+          "url": "https://www.msn.com/en-xl/news/other/suede-ai-opens-seo-cohort-with-optional-ai-integration-and-live-agent-workflows/ar-AA2cBTep"
+        },
+        {
+          "label": "Markets Insider (FinanceWire press release): “Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort”",
+          "url": "https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662"
+        },
+        {
+          "label": "TechBullion: Suede Opens Its Widely Anticipated SEO and AI Cohort",
+          "url": "https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/"
+        },
+        {
+          "label": "Avalanche Build Games coverage",
+          "url": "https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/"
+        },
+        {
+          "label": "Education coverage",
+          "url": "https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/"
+        },
+        {
+          "label": "Programming Insider: In the Age of Infinite Content, Spam Is Instant Death",
+          "url": "https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/"
+        },
+        {
+          "label": "TechBullion: Suede Labs AI Releases iOS Apps, Codex Skills & Musicians Terminal",
+          "url": "https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/"
+        }
+      ]
+    },
+    {
+      "id": "nawfal",
+      "category": "Public conversation",
+      "date": "January & September 2025",
+      "title": "Mario Nawfal posts and Crypto Roundtable AMA",
+      "body": "Mario Nawfal featured Suede in two public posts eight months apart. The Suede AI AMA also ran on his Crypto Roundtable. The posts discuss creator control, ownership, and a voice signature that can travel with the work.",
+      "links": [
+        {
+          "label": "January post",
+          "url": "https://x.com/MarioNawfal/status/1885063096785334289"
+        },
+        {
+          "label": "September post",
+          "url": "https://x.com/MarioNawfal/status/1968759867780342100"
+        },
+        {
+          "label": "Watch the AMA",
+          "url": "https://www.youtube.com/watch?v=8uJewXJ1U28"
+        }
+      ]
+    },
+    {
+      "id": "elon-timeline",
+      "category": "Public mention",
+      "date": "February 2026",
+      "title": "Named in a proposed Community Note",
+      "body": "Suede Labs was named as an opt-out option in a proposed Community Note shown in a screenshot Elon Musk posted. The mention is the note’s wording inside the screenshot, not an endorsement.",
+      "links": [
+        {
+          "label": "Open the post",
+          "url": "https://x.com/elonmusk/status/2026052687423562228"
+        },
+        {
+          "label": "View the archived screenshots",
+          "url": "https://seo.suedeai.ai/evidence#elon-timeline"
+        }
+      ]
+    },
+    {
+      "id": "directory-recognition-current",
+      "category": "Recognition",
+      "date": "Verified October 4, 2026",
+      "title": "Best Overall + Best API Option — AI Agents Directory, 52+ music tools",
+      "body": "Suede AI holds both top-pick positions in AI Agents Directory's music category. The live category lists 52+ music tools.",
+      "links": [
+        {
+          "label": "Live music category",
+          "url": "https://aiagentsdirectory.com/category/music"
+        }
+      ]
+    },
+    {
+      "id": "directory",
+      "category": "Directory recognition",
+      "date": "Archived 2026 category record",
+      "title": "Best Overall and Best API Option",
+      "body": "The AI Agents Directory music-category capture names Suede AI Best Overall and Best API Option among 47 tools, with a 5.0-star listing. The archived record and the live category page are linked separately so readers can distinguish the recorded recognition from today’s directory.",
+      "links": [
+        {
+          "label": "Archived directory record",
+          "url": "https://seo.suedeai.ai/evidence#directory"
+        },
+        {
+          "label": "Live music category",
+          "url": "https://aiagentsdirectory.com/category/music"
+        }
+      ]
+    },
+    {
+      "id": "ranking",
+      "category": "Published recognition",
+      "date": "Captured November 26, 2025",
+      "title": "First in a nine-platform AI music comparison",
+      "body": "The comparison archived on Suede AI SEO ranks Suede Labs first in its Best AI Music Generators of 2026 table, scoring it 5.0 out of 5.0 across music quality, creative control, ease of use, and overall value. The receipt preserves the table and the announcement card with their capture date.",
+      "links": [
+        {
+          "label": "View the ranking receipt",
+          "url": "https://seo.suedeai.ai/evidence#ranked-1"
+        }
+      ]
+    },
+    {
+      "id": "google-web-guide",
+      "category": "AI search visibility",
+      "date": "Captured September 6, 2026",
+      "title": "Dated Google Web Guide capture, September 6, 2026",
+      "body": "Asked to review Suede AI, Google’s Web Guide, the AI-organized results layer inside Google Search, opened its answer by describing the company as highly rated by users and cited two App Store listings. Dated model output, not an endorsement or a ranking Google issued.",
+      "links": [
+        {
+          "label": "The capture and the quote",
+          "url": "https://seo.suedeai.ai/evidence#google-web-guide"
+        },
+        {
+          "label": "Suede AI Generator on the App Store",
+          "url": "https://apps.apple.com/us/app/suede-ai-generator/id6765461286"
+        },
+        {
+          "label": "Suede Social: Guitar Forum",
+          "url": "https://apps.apple.com/us/app/suede-social-guitar-forum/id6770668793"
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "category": "AI search visibility",
+      "date": "Captured February 17 & March 21, 2026",
+      "title": "Dated Gemini captures, February and March 2026",
+      "body": "In a February capture, Gemini placed Suede beside Suno and Udio in a list of AI music platforms; a separate March session discusses Jason’s experience and Suede’s architecture. Dated model output, not an endorsement or a ranking Google issued.",
+      "links": [
+        {
+          "label": "February capture",
+          "url": "https://seo.suedeai.ai/evidence#gemini-big3"
+        },
+        {
+          "label": "March capture",
+          "url": "https://seo.suedeai.ai/evidence#gemini-authority"
+        }
+      ]
     }
   ],
   "visuals": {
@@ -595,8 +595,8 @@
         "image": "/accomplishment-assets/google-web-guide-suede-review.webp",
         "width": 921,
         "height": 2000,
-        "alt": "Google Web Guide result for the search Suede labs ai review, opening with Suede Labs AI is highly rated by users, earning a 5/5 rating from verified reviews, above an App Store Reviews and Feedback section citing two apps.apple.com listings",
-        "caption": "Google’s AI-organized results, captured 6 September 2026, with the two App Store listings it cited.",
+        "alt": "Dated capture of a Google Web Guide result for the search Suede labs ai review, citing two apps.apple.com listings",
+        "caption": "Google’s AI-organized results, captured 6 September 2026, with the two App Store listings it cited. Dated model output, not an endorsement or a ranking Google issued.",
         "url": "https://seo.suedeai.ai/evidence#google-web-guide",
         "linkLabel": "Read the receipt"
       },
