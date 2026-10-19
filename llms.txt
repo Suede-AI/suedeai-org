@@ -1,103 +1,117 @@
-# Suede AI
+# Suede AI Research and Investor Site (suedeai.org)
 
-Suede AI is the company's one primary name. It is also known as Suede Labs, an alternate name for the same company, founded by Jason Colapietro.
+> Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.
 
-> Suede AI is building the creative rails for the AI era: creator ownership, proof of creation, programmable IP, provenance, royalties, payments, distribution, and monetization infrastructure for artists, rights holders, and AI agents.
+suedeai.org is Suede AI's research and investor site: the founder's record, the investor brief, the books, and research on creator ownership and provenance. The company and its agent platforms live at https://suedeai.ai/.
 
+## Entity
+
+Suede AI's official sites are suedeai.ai, suedeai.org and their subdomains. It was founded in 2024 by Jason Colapietro.
+
+- Company: Suede AI (earlier materials use the name Suede Labs)
+- Company home: https://suedeai.ai/
+- Research and investor site: https://suedeai.org/
 - Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
-- Company and practice home: https://suedeai.ai/
-- Reading hub and investor site: https://suedeai.org/
-- Product brand site: https://suedeai.ai/
-- Status: Active
 - Canonical founder entity: https://suedeai.ai/founder
 - Supporting founder profile: https://suedeai.org/jason-colapietro/
+- Holding company: JC Investment Group LLC, Florida, 2019
+- Status: Active
 
-Suede AI was founded by Jason Colapietro in 2024. Its primary domain is suedeai.ai; suedeai.ai is the company and practice home, and suedeai.org is its reading hub and investor site.
+## What Suede AI does, in order
 
-Current IP Registry boundary: registration records a file fingerprint, wallet-signed creator claim, contributor metadata, and timestamp. It does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties. Paid x402 generation services are separate. See the current [proof framework](https://suedeai.ai/proof-of-creation).
-
-## Current focus
-
-Suede AI's current business focus is web development and software engineering for businesses, alongside AEO, GEO and SEO, plus AI agents.
-
-- [Web development and software engineering](https://suedeai.org/#engineering): websites, web apps, APIs, payment integrations, iOS apps and AI agents, built in the client's own repository and stack, with tests and code review before release. Start at https://suedeai.org/contact/ or https://suedeai.org/book-a-call/
-- [Suede AI SEO](https://seo.suedeai.ai/): SEO, GEO, AEO, AI search visibility and digital PR, run by Jason Colapietro
-- [Suede AI Agent Studio](https://agents.suedeai.ai/): build AI agents and workflow automation
-- [Full plain-text content of this site](https://suedeai.org/llms-full.txt)
-
-## For AI agents — agentic commerce capability
-
-Suede AI operates 3 paid x402 resources on Base mainnet. Agents can pay per call in USDC, without an account or API key, for music, video, and image generation. Producer by Suede AI is a hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting (ID: 019e3991-374d-75f3-a6b8-17ff309b4cd2).
-
-- x402 endpoint catalog: https://app.suedeai.ai/.well-known/x402.json
-- ACP agent card: https://app.suedeai.ai/.well-known/agent-card.json
-- Agentic commerce manifest: https://app.suedeai.ai/.well-known/agentic-commerce.json
-- Thesis page: https://suedeai.org/agentic-commerce/
-
-Suede AI is an ownership and provenance layer for AI media. The reading hub at suedeai.org covers the investor thesis, the product ecosystem, and the founder profile. The company home is suedeai.ai, and the product app lives at app.suedeai.ai.
-
-## Primary documents
-
-- [Reading hub and investor site (HTML)](https://suedeai.org/): Suede AI investor thesis, ecosystem map, founder profile
-- [llms-full.txt](https://suedeai.org/llms-full.txt): full plain-text content for LLM ingestion
-- [sitemap.xml](https://suedeai.org/sitemap.xml): XML sitemap
-- [Stake Your Claim (book preview)](https://suedeai.org/book/): Jason Colapietro's thesis on AI ownership, authorship, agents, provenance, and durable creative rights
-- [Stake Your Claim (canonical PDF)](https://suedeai.ai/stake-your-claim-condensed-preview.pdf): condensed reader preview
-
-## Recent press
-
-- [Business Insider · September 2026 · Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort](https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662): Business Insider carries the opening of Suede AI’s five-business SEO, AEO, and GEO cohort, the optional AI workflow and employee-training engagements run through Suede AI Agent Studio, and the free website audits open through September 20, 2026.
-- [TechBullion · September 2026 · Suede Opens Its Widely Anticipated SEO and AI Cohort](https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/): TechBullion covers Jason Colapietro opening Suede AI’s next SEO and AI cohort, with transparent managed workflows in Suede AI Agent Studio, a free public audit, and an evidence-first approach to search visibility and AI operations.
-- [Indie Hackers · July 2026 · In the Age of Infinite Content, Spam Is Instant Death](https://www.indiehackers.com/post/in-the-age-of-infinite-content-spam-is-instant-death-4ca5Qi4vTHZ8aB3muBVK): Jason Colapietro on Indie Hackers: Google's new SEO guidance confirms the Suede thesis. IP credibility is the new ranking signal, and AI agents need proof before they trust your business.
-- [Programming Insider · July 2026 · In the Age of Infinite Content, Spam Is Instant Death](https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/): Jason Colapietro argues that Google's SEO guidance killed content spam as a strategy and exposed a harder problem: AI agents now need proof, not volume. Suede AI was built on the premise that provenance and reputation, not keyword output, are what make a business legible to agents.
-- [TechBullion · July 2026 · Suede Labs AI Opens IP Visibility Audit for Brands, Creators, and Founder-Led Companies](https://techbullion.com/suede-labs-ai-opens-ip-visibility-audit-for-brands-creators-and-founder-led-companies/): TechBullion covers Suede's IP Visibility Audit, which examines how a company's work, expertise, offers, and intellectual property appear across search results, founder profiles, websites, and AI answers.
-- [TechBullion · May 2026 · Suede Labs AI Releases iOS Apps, Codex Skills & Musicians Terminal](https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/): TechBullion covers Suede AI's May 2026 launches: an iOS app line (Inspiration, Guitar, Voice), Codex and Claude developer skills, and the Musicians Terminal, concrete product surfaces for AI-native creator ownership.
-- [Altcoin Investor · May 2026 · How AI, Blockchain, and On-Chain IP Are Changing Creator Ownership](https://altcoininvestor.com/ai-blockchain-on-chain-ip-creator-ownership/): Altcoin Investor covers Suede AI's creator-first positioning in on-chain IP, rights passports, royalty routing, sync metadata, vaults, and multi-chain ownership infrastructure.
-- [TechBullion · February 2026 · Suede Labs Advances in the Avalanche Build Games With Massive Infrastructure Play](https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/): TechBullion covers Suede AI advancing in the Avalanche Build Games with a full-stack on-chain IP and rights registry that lets creators register, protect, and monetize work through smart contracts.
-- [TechBullion · February 2026 · Best Suno Alternatives in 2026: Suede Labs and Top Competitors](https://techbullion.com/best-suno-alternatives-in-2026-suede-labs-and-top-competitors/): TechBullion names Suede Labs the leading Suno alternative for 2026, creator ownership infrastructure with distribution, personalized models, real-time royalties, and blockchain-based IP protection.
-- [TechBullion · January 2026 · Suede Labs Brings AI-Powered Creative Tools to Students](https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/): TechBullion covers Suede AI's self-funded education deployments bringing AI-powered creative tools and IP-first thinking to students in African classrooms.
-- [TechBullion · December 2025 · Suede Labs Launches A Comprehensive On-Chain IP Authentication System](https://techbullion.com/suede-labs-launches-a-comprehensive-on-chain-ip-authentication-system/): TechBullion covers the launch of Suede AI's on-chain IP registry, provenance layer, licensing, and monetization rails.
-
-## Topical pages
-
-- [Creator Ownership](https://suedeai.org/creator-ownership/) — hub for the complete proof, provenance, permission, usage, and payment system
-- [Why Copyright Alone Falls Short](https://suedeai.org/why-copyright-fails/) — copyright remains essential, but it is not an end-to-end operational system for AI media
-- [Proof of Creation](https://suedeai.org/proof-of-creation/) — evidence about a file, a signing-account claim, and a recorded time; it does not independently decide authorship or ownership
-- [Content Provenance](https://suedeai.org/content-provenance/) — inspectable source history and derivative context, with clear evidentiary limits
-- [Programmable IP](https://suedeai.org/programmable-ip/) — machine-readable license terms connecting proof, provenance, permission, and payment
-- [AI Royalties](https://suedeai.org/royalties/) — the path from an identified work and accepted terms to a recorded use, splits, and settlement
-- [AI Voice Protection](https://suedeai.org/ai-voice-protection/) — voice as a rights problem, not just a detection problem
-- [AI Likeness Protection](https://suedeai.org/ai-likeness-protection/) — likeness rights grounded in ownership, consent, and proof
-- [Human Authenticity Layer](https://suedeai.org/human-authenticity-layer/) — why authenticity becomes premium when synthetic content is cheap
-- [Investor Brief](https://suedeai.org/investors/) — request investor materials and learn about the Suede AI raise for creator ownership and programmable IP infrastructure
-- [Jason Colapietro](https://suedeai.org/jason-colapietro/) — founder profile
-- [Research](https://suedeai.org/research/) — applied AI research from Jason Colapietro on identity, provenance and hardware, documented in patent applications
-- [VoicePrint](https://suedeai.org/research/voiceprint/) — voice identity research, evaluation questions and provisional application 63/947,120
-- [Provenance Research](https://suedeai.org/research/provenance/) — exact-file records, version history, claims and current registry documentation
-- [Hardware Layer](https://suedeai.org/research/hardware/) — SuedeMic, SuedeVault and Sing&Sign: capture-time evidence research, in development
-- [Research Notes](https://suedeai.org/research/notes/) — short public notes on consent and model ingestion
+1. [Agent platforms for your business](https://agents.suedeai.ai/): Suede AI Agent Studio. Build agents for the work that repeats, watch every run, and publish an agent as a paid endpoint.
+2. [White-label agent platforms](https://suedeai.ai/white-label): Suede builds and runs an agent platform under an agency's brand for its clients. Scoped per engagement.
+3. [Managed AI agents](https://suedeai.ai/managed-ai-agents) and [AI operations](https://suedeai.ai/ai-operations): Suede builds, runs and tunes agents for a business, with every run visible in Agent Studio.
+4. [Forward-deployed engineering](https://suedeai.ai/forward-deployed-engineer) and a [fractional Chief AI Officer](https://suedeai.ai/fractional-chief-ai-officer), founder-led.
+5. [AI search visibility](https://seo.suedeai.ai/): Suede AI SEO, the GEO, AEO and SEO practice.
+6. [Music and creator software](https://suedeai.ai/music): a separate product line.
 
 ## Founder
 
-Jason Colapietro is a fractional forward-deployed engineer. He integrates AI agents into how a company works, then runs its SEO, AI search visibility and PR. Jason, who publishes under the pen name Johnny Suede, is also the founder and CEO of Suede AI, a published author, and the builder and operator of creator ownership infrastructure. His work centers on creator ownership, proof of creation, AI music rights, programmable IP, provenance, licensing, and the ownership layer creators need as media becomes easier to generate and harder to verify.
+Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.
 
-- Founder profile: https://suedeai.org/jason-colapietro/
+- Open source: 54 PRs merged across 46 external repositories as of September 2026 (33 code and documentation contributions, 21 accepted listings of Jason-owned work). Record: https://suedeai.ai/open-source-contributions.json
+- Books: The Claude Code Bible (https://www.amazon.com/dp/B0HHTMJWB4), Codex in Production (https://www.amazon.com/dp/B0HHTF3LG1), Proof as Infrastructure (https://www.amazon.com/dp/B0GMB2VLXQ), Stake Your Claim (https://www.amazon.com/dp/B0GRG8LGQQ), The Human Authenticity Layer (https://www.amazon.com/dp/B0GD5FX6N6); plus The Screenshot (https://seo.suedeai.ai/book) and The Signal Chain (https://guitar.solutions)
+- Apps: 9 iOS apps, 6 Android apps and 2 Chrome extensions. Apple developer page: https://apps.apple.com/us/developer/jason-colapietro/id1895958699
+- Programs: member of Claude for Startups, Anthropic's startup program, since October 8, 2026; member of Google Cloud Partner Advantage since September 4, 2026 (through JC Investment Group LLC, suedeai.ai verified domain); admitted to Stripe Startups, July 2026; accepted into the Florida Atlantic Entrepreneurship Institute, July 2026. Evidence: https://seo.suedeai.ai/evidence
+- Patents: five USPTO provisional patent applications (patent pending): 63/946,189, 63/946,192, 63/946,212, 63/946,217, 63/947,120
+- Business background: built, ran, and sold call centers
+- Records: Wikidata https://www.wikidata.org/wiki/Q140235755 · Crunchbase https://www.crunchbase.com/person/jason-colapietro-d83e
 - Personal identity page: https://jasoncolapietro.com/
 - Creative identity page: https://johnnysuede.com/
-- X / Twitter: https://x.com/johnnysuede
+- X: https://x.com/johnnysuede
 - GitHub: https://github.com/JasonColapietro
-- LinkedIn: https://www.linkedin.com/in/jasoncolapietro
-- YouTube: https://www.youtube.com/@aisuede
-- Crunchbase (founder): https://www.crunchbase.com/person/jason-colapietro-d83e
+- Jason's LinkedIn: https://www.linkedin.com/in/jasoncolapietro
+- YouTube: https://www.youtube.com/@johnnysuede
 
 ## Company profiles
 
-- LinkedIn (Suede AI): https://www.linkedin.com/company/suede-labs
+- Suede AI on LinkedIn: https://www.linkedin.com/company/suede-labs
+- Suede AI on YouTube: https://www.youtube.com/@aisuede
+- Suede AI on X: https://x.com/AISUEDE
+- Suede AI on GitHub: https://github.com/Suede-AI
+- Crunchbase (company): https://www.crunchbase.com/organization/suede-labs-ai
 - Florida company record (JC Investment Group LLC): https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=flal-l19000146068-52be1ad3-866a-4430-b190-8237b544c51c
+
+## Primary documents
+
+- [Research and investor site (HTML)](https://suedeai.org/): company summary, the founder's record, offers, ecosystem map, research
+- [Investor brief](https://suedeai.org/investors/): request investor materials; Suede AI is raising a pre-seed on a SAFE, its first equity round
+- [Jason Colapietro](https://suedeai.org/jason-colapietro/): supporting founder profile; the canonical founder page is https://suedeai.ai/founder
+- [llms-full.txt](https://suedeai.org/llms-full.txt): full plain-text content for LLM ingestion
+- [sitemap.xml](https://suedeai.org/sitemap.xml): XML sitemap
+- [Stake Your Claim (book preview)](https://suedeai.org/book/): Jason Colapietro's book on AI ownership, authorship, agents, provenance, and durable creative rights
+- [Stake Your Claim (canonical PDF)](https://suedeai.ai/stake-your-claim-condensed-preview.pdf): condensed reader preview
+
+## For AI agents
+
+Suede AI Agent Studio publishes agents as paid x402 endpoints settling in USDC on Base. Separately, the music and creator product line operates 3 paid x402 resources for music, video, and image generation.
+
+- Agent Studio: https://agents.suedeai.ai/
+- x402 endpoint catalog: https://app.suedeai.ai/.well-known/x402.json
+- ACP agent card: https://app.suedeai.ai/.well-known/agent-card.json
+- Agentic commerce research: https://suedeai.org/agentic-commerce/
+
+## Research (secondary)
+
+Research on creator ownership and provenance, kept here as secondary reading. Current IP Registry boundary: registration records a file fingerprint, wallet-signed creator claim, contributor metadata, and timestamp. It does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties. See the current [proof framework](https://suedeai.ai/proof-of-creation).
+
+- [Creator Ownership](https://suedeai.org/creator-ownership/): hub for the complete proof, provenance, permission, usage, and payment system
+- [Why Copyright Alone Falls Short](https://suedeai.org/why-copyright-fails/): copyright remains essential, but it is not an end-to-end operational system for AI media
+- [Proof of Creation](https://suedeai.org/proof-of-creation/): evidence about a file, a signing-account claim, and a recorded time; it does not independently decide authorship or ownership
+- [Content Provenance](https://suedeai.org/content-provenance/): inspectable source history and derivative context, with clear evidentiary limits
+- [Programmable IP](https://suedeai.org/programmable-ip/): machine-readable license terms connecting proof, provenance, permission, and payment
+- [AI Royalties](https://suedeai.org/royalties/): the path from an identified work and accepted terms to a recorded use, splits, and settlement
+- [AI Voice Protection](https://suedeai.org/ai-voice-protection/): voice as a rights problem, not just a detection problem
+- [AI Likeness Protection](https://suedeai.org/ai-likeness-protection/): likeness rights grounded in ownership, consent, and proof
+- [Human Authenticity Layer](https://suedeai.org/human-authenticity-layer/): why authenticity becomes premium when synthetic content is cheap
+- [Agentic Commerce](https://suedeai.org/agentic-commerce/): how agents discover terms and pay with ACP and x402
+- [Research](https://suedeai.org/research/): applied AI research from Jason Colapietro on identity, provenance and hardware, documented in patent applications
+- [VoicePrint](https://suedeai.org/research/voiceprint/): voice identity research, evaluation questions and provisional application 63/947,120
+- [Provenance Research](https://suedeai.org/research/provenance/): exact-file records, version history, claims and current registry documentation
+- [Hardware Layer](https://suedeai.org/research/hardware/): SuedeMic, SuedeVault and Sing&Sign: capture-time evidence research, in development
+- [Research Notes](https://suedeai.org/research/notes/): short public notes on consent and model ingestion
+
+## Recent press
+
+- [MSN · September 2026 · Suede AI opens SEO cohort with optional AI integration and live agent workflows](https://www.msn.com/en-xl/news/other/suede-ai-opens-seo-cohort-with-optional-ai-integration-and-live-agent-workflows/ar-AA2cBTep)
+- [Markets Insider (FinanceWire press release) · September 2026 · "Award-Winning Developer Jason Colapietro Opens Suede Labs AI’s Long-Awaited SEO Cohort"](https://markets.businessinsider.com/news/currencies/award-winning-developer-jason-colapietro-opens-suede-labs-ai-s-long-awaited-seo-cohort-1036549662): press release on the opening of Suede AI's SEO, AEO, and GEO cohort and the optional AI workflow engagements run through Suede AI Agent Studio.
+- [TechBullion · September 2026 · Suede Opens Its Widely Anticipated SEO and AI Cohort](https://techbullion.com/suede-opens-its-widely-anticipated-seo-and-ai-cohort/): TechBullion covers Jason Colapietro opening Suede AI’s next SEO and AI cohort, with transparent managed workflows in Suede AI Agent Studio.
+- [Indie Hackers · July 2026 · In the Age of Infinite Content, Spam Is Instant Death](https://www.indiehackers.com/post/in-the-age-of-infinite-content-spam-is-instant-death-4ca5Qi4vTHZ8aB3muBVK): Jason Colapietro's essay on why AI agents need proof before they trust a business.
+- [Programming Insider · July 2026 · In the Age of Infinite Content, Spam Is Instant Death](https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/): the same essay, on Programming Insider.
+- [TechBullion · May 2026 · Suede Labs AI Releases iOS Apps, Codex Skills & Musicians Terminal](https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/): TechBullion covers Suede AI's May 2026 iOS app line, Codex and Claude developer skills, and the Musicians Terminal.
+- Earlier coverage of the music and creator product line: [Altcoin Investor, May 2026](https://altcoininvestor.com/ai-blockchain-on-chain-ip-creator-ownership/) · [TechBullion, February 2026](https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/) · [TechBullion, February 2026](https://techbullion.com/best-suno-alternatives-in-2026-suede-labs-and-top-competitors/) · [TechBullion, January 2026](https://techbullion.com/suede-labs-brings-ai-powered-creative-tools-to-students-the-quiet-revolution-in-africas-classrooms/) · [TechBullion, December 2025](https://techbullion.com/suede-labs-launches-a-comprehensive-on-chain-ip-authentication-system/)
+
+## Token
+
+$SUEDE is a LayerZero omnichain token on Solana and Base. It is not equity in Suede AI; an earlier token sale was not an investment in the company.
 
 ## Contact
 
-- Email: info@suedeai.ai
+- General: info@suedeai.ai
+- Press: press@suedeai.ai
+- Phone: +1 (561) 401-0518
+- Book a call: https://calendar.app.google/8FyvYAspZaQFFP5eA
 - Talk to Suede: https://suedeai.org/contact/
 
 ## AI agent and scraping policy

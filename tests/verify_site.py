@@ -27,25 +27,52 @@ FOUNDER_OG_IMAGE_URL = f"{SITE_URL}/assets/img/og-jason-colapietro.png"
 FAVICON_MAX_BYTES = 12_000
 FAVICON_REQUIRED_SIZES = [(16, 16), (32, 32), (48, 48)]
 CANONICAL_ORGANIZATION_ID = "https://suedeai.ai/#organization"
-CANONICAL_ORGANIZATION_SAME_AS = [
-    "https://suedeai.org/",
-    "https://x.com/AISUEDE",
-    "https://github.com/Suede-AI",
-    "https://www.youtube.com/@aisuede",
-    "https://www.instagram.com/suedeai/",
-    "https://www.instagram.com/suedesingapp/",
-    "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
-    "https://t.me/SUEDEAI",
-    "https://linktr.ee/suedelabsai",
-    "https://www.crunchbase.com/organization/suede-labs-ai",
-    "https://www.linkedin.com/company/suede-labs",
-    "https://www.wikidata.org/wiki/Q141169484",
-    "https://pitchbook.com/profiles/company/937217-71",
-    "https://clutch.co/profile/suede-ai-seo",
-    "https://www.f6s.com/suede-ai",
-    "https://www.tiktok.com/@suedeaiseo",
-    "https://discord.gg/6WZEnnkPH4",
+CANONICAL_PERSON_ID = "https://suedeai.ai/founder#person"
+# Identity spec v2 (2026-10-19). suedeai.org is a satellite of suedeai.ai: it
+# never defines its own Organization or Person values. It references the two
+# canonical @ids with a stub, and the Person stub carries only the verified
+# sameAs list. The full nodes live on suedeai.ai.
+ORGANIZATION_STUB = {
+    "@type": "Organization",
+    "@id": CANONICAL_ORGANIZATION_ID,
+    "name": "Suede AI",
+    "url": "https://suedeai.ai",
+}
+PERSON_STUB_KEYS = {"@context", "@type", "@id", "name", "url", "jobTitle", "worksFor", "sameAs"}
+PERSON_SAME_AS = [
+    "https://www.wikidata.org/wiki/Q140235755",
+    "https://www.crunchbase.com/person/jason-colapietro-d83e",
+    "https://apps.apple.com/us/developer/jason-colapietro/id1895958699",
+    "https://github.com/JasonColapietro",
+    "https://www.linkedin.com/in/jasoncolapietro",
+    "https://x.com/johnnysuede",
+    "https://www.youtube.com/@johnnysuede",
+    "https://jasoncolapietro.substack.com",
+    "https://jasoncolapietro.com",
+    "https://johnnysuede.com",
 ]
+# Canonical copy from the identity spec, pasted verbatim on the pages that
+# describe the company or the founder.
+COMPANY_ONE_LINER = (
+    "Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, "
+    "Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels "
+    "them for agencies and their clients."
+)
+FOUNDER_ONE_LINER = (
+    "Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged "
+    "across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and "
+    "the Polkadot SDK; he has written five books on Amazon Kindle, including The Claude Code Bible and Codex in "
+    "Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen "
+    "name Johnny Suede."
+)
+OFFICIAL_DOMAINS_LINE = (
+    "Suede AI's official sites are suedeai.ai, suedeai.org and their subdomains. It was founded in 2024 by "
+    "Jason Colapietro."
+)
+HOME_TITLE = "Suede AI Research &amp; Investor Brief | Jason Colapietro"
+# Token valuation figures may appear only on the token-specific pages.
+TOKEN_VALUATION_PAGES = {"investors/index.html"}
+TOKEN_VALUATION_PHRASES = ["fully diluted", "$23.9", "$28m", "$30m", "fdv"]
 RETIRED_TOKEN_LENGTH = 15
 RETIRED_TOKEN_SHA256 = "3ae7a42b9a56f4041cc3d72682d561783d20597a5806d3870feaf4f23aa25e69"
 RETIRED_TOKEN_ROLLING_32 = 3674665812
@@ -449,6 +476,32 @@ def main() -> int:
         "24 agent-payable x402 endpoints",
         "-".join(("full", "stack")) + " GEO",
         "-".join(("full", "stack")) + " AI visibility",
+        # Identity spec v2 (2026-10-19), section 6. The Markets Insider item is
+        # listed only as "Markets Insider (FinanceWire press release)".
+        "Suede Foundation",
+        "exited for millions",
+        "multimillion-dollar",
+        "remain in use across the industry",
+        "Anthropic partner",
+        "Claude partner",
+        "patented",
+        "top 15",
+        "featured on Elon Musk",
+        "5/5 rating from verified reviews",
+        "5/5 from verified reviews",
+        "Business Insider",
+        "info@suedeai.org",
+        "social.suedeai.ai",
+        "Creative rails for the AI era",
+        "web development and software engineering company",
+        "seo.suedeai.ai/ai-operations",
+        "seo.suedeai.ai/managed-ai-agents",
+        "seo.suedeai.ai/forward-deployed-engineer",
+        "seo.suedeai.ai/ai-integration",
+        "seo.suedeai.ai/ai-workflow-automation",
+        "24 holdings",
+        "8 live on App Store",
+        "8 iOS apps",
     ]
     dead_asins = [
         "B0GMBBWHMQ",
@@ -468,9 +521,23 @@ def main() -> int:
     home_path = ROOT / "index.html"
     if home_path.exists():
         home_html = read_text(home_path)
-        # New "Creative rails for the AI era" content strings — root is now the Suede AI investor thesis page
-        assert_contains("index.html", home_html, "Creative rails for the", failures)
-        assert_contains("index.html", home_html, "AI era.", failures)
+        # Identity spec v2: the root is Suede AI's research and investor site,
+        # founder-first, and it must not compete with suedeai.ai for "Suede AI".
+        assert_contains("index.html", home_html, f"<title>{HOME_TITLE}</title>", failures)
+        assert_contains("index.html", home_html, "AI agent platforms businesses run on.", failures)
+        assert_contains("index.html", home_html, COMPANY_ONE_LINER, failures)
+        assert_contains("index.html", home_html, FOUNDER_ONE_LINER, failures)
+        assert_contains("index.html", home_html, OFFICIAL_DOMAINS_LINE, failures)
+        assert_contains("index.html", home_html, "research and investor site", failures)
+        assert_contains("index.html", home_html, 'href="https://suedeai.ai/white-label"', failures)
+        # The founder leads the page: the founder section comes straight after the hero.
+        section_tags = re.findall(r"<section\b[^>]*>", home_html)
+        hero_index = next((i for i, tag in enumerate(section_tags) if 'class="hero' in tag), None)
+        if hero_index is None or hero_index + 1 >= len(section_tags) or 'id="founder"' not in section_tags[hero_index + 1]:
+            failures.append("index.html: the founder section must follow the hero")
+        # Token information lives in one short section near the bottom, after the research.
+        if home_html.find('id="token"') < home_html.find('id="research"'):
+            failures.append("index.html: the $SUEDE section must sit below the research section")
         assert_contains("index.html", home_html, "Suede Labs", failures)
         assert_contains("index.html", home_html, "Suede AI investor thesis", failures)
         assert_contains("index.html", home_html, "Talk to Suede", failures)
@@ -479,8 +546,6 @@ def main() -> int:
         # Amazon shelf additions of 2026-09-04 must be on the visible books list
         assert_contains("index.html", home_html, 'href="https://www.amazon.com/dp/B0HHTMJWB4"', failures)
         assert_contains("index.html", home_html, 'href="https://www.amazon.com/dp/B0HHTF3LG1"', failures)
-        # Organization node carries a city-level PostalAddress (Florida record, West Palm Beach)
-        assert_contains("index.html", home_html, '"@type": "PostalAddress", "addressLocality": "West Palm Beach", "addressRegion": "FL", "addressCountry": "US"', failures)
         # Root SEO presence — restored after the "Creative rails" redesign
         assert_contains("index.html", home_html, '<link rel="canonical" href="https://suedeai.org/"', failures)
         assert_contains("index.html", home_html, '<link rel="icon" href="/favicon.ico?v=3" sizes="any">', failures)
@@ -494,7 +559,7 @@ def main() -> int:
         assert_contains("index.html", home_html, 'property="og:url"', failures)
         assert_contains("index.html", home_html, 'name="twitter:card"', failures)
         assert_contains("index.html", home_html, 'type="application/ld+json"', failures)
-        # JSON-LD must include Organization (Suede Labs) and Person (Jason Colapietro)
+        # JSON-LD references the Organization (Suede AI) and Person (Jason Colapietro) by @id
         assert_contains("index.html", home_html, '"@type": "Organization"', failures)
         assert_contains("index.html", home_html, '"@type": "Person"', failures)
         assert_contains("index.html", home_html, '"@id": "https://suedeai.ai/founder#person"', failures)
@@ -538,7 +603,9 @@ def main() -> int:
     if founder_path.exists():
         founder_html = read_text(founder_path)
         assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#person"', failures)
-        assert_contains("jason-colapietro/index.html", founder_html, '"alternateName": ["Johnny Suede"]', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, '"jobTitle": "Founder and CEO, Suede AI"', failures)
+        assert_contains("jason-colapietro/index.html", founder_html, FOUNDER_ONE_LINER, failures)
+        assert_contains("jason-colapietro/index.html", founder_html, COMPANY_ONE_LINER, failures)
         assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
@@ -577,46 +644,18 @@ def main() -> int:
         nodes = json_ld_nodes(read_text(schema_path))
         organizations = [node for node in nodes if node_has_type(node, "Organization")]
         people = [node for node in nodes if node_has_type(node, "Person")]
-        if not organizations:
-            failures.append(f"{relative_path}: missing Organization JSON-LD node")
-        if schema_path == home_path:
-            canonical_organizations = [
-                organization
-                for organization in organizations
-                if organization.get("@id") == CANONICAL_ORGANIZATION_ID
-            ]
-            if len(canonical_organizations) != 1:
-                failures.append(
-                    f"{relative_path}: expected exactly one Organization JSON-LD node with @id {CANONICAL_ORGANIZATION_ID}"
-                )
-            else:
-                raw_same_as = canonical_organizations[0].get("sameAs")
-                valid_same_as_list = (
-                    isinstance(raw_same_as, list)
-                    and all(isinstance(url, str) for url in raw_same_as)
-                    and len(raw_same_as) == len(set(raw_same_as))
-                )
-                if not valid_same_as_list:
-                    failures.append(
-                        f"{relative_path}: Organization sameAs must be a unique list of URL strings"
-                    )
-                organization_same_as = same_as_urls(canonical_organizations[0])
-                if valid_same_as_list and raw_same_as != CANONICAL_ORGANIZATION_SAME_AS:
-                    canonical_same_as = set(CANONICAL_ORGANIZATION_SAME_AS)
-                    missing = sorted(canonical_same_as - organization_same_as)
-                    unexpected = sorted(organization_same_as - canonical_same_as)
-                    failures.append(
-                        f"{relative_path}: Organization sameAs differs from the canonical entity set; "
-                        f"missing={missing}, unexpected={unexpected}, order_matches=False"
-                    )
+        canonical_organizations = [
+            organization
+            for organization in organizations
+            if organization.get("@id") == CANONICAL_ORGANIZATION_ID
+        ]
+        if len(canonical_organizations) != 1:
+            failures.append(
+                f"{relative_path}: expected exactly one Organization JSON-LD node with @id {CANONICAL_ORGANIZATION_ID}"
+            )
         if not people:
             failures.append(f"{relative_path}: missing Person JSON-LD node")
         for organization in organizations:
-            if organization.get("@id") == CANONICAL_ORGANIZATION_ID:
-                if organization.get("name") != "Suede AI":
-                    failures.append(f"{relative_path}: canonical company name must be Suede AI")
-                if "Suede Labs AI" not in organization.get("alternateName", []):
-                    failures.append(f"{relative_path}: canonical company must retain Suede Labs AI as company context")
             organization_same_as = same_as_urls(organization)
             if UNRELATED_PERSON_WIKIDATA in organization_same_as:
                 failures.append(
@@ -628,6 +667,48 @@ def main() -> int:
                 )
         if people and not any(FOUNDER_WIKIDATA in same_as_urls(person) for person in people):
             failures.append(f"{relative_path}: Person sameAs is missing founder Wikidata {FOUNDER_WIKIDATA}")
+
+    # Identity spec v2, section 4: satellites reference the canonical
+    # Organization and Person by @id and never define different values.
+    for html_path in sorted(ROOT.rglob("*.html")):
+        relative_path = html_path.relative_to(ROOT).as_posix()
+        html_text = read_text(html_path)
+        try:
+            nodes = json_ld_nodes(html_text)
+        except json.JSONDecodeError:
+            continue
+        for node in nodes:
+            stripped = {key: value for key, value in node.items() if key != "@context"}
+            if node_has_type(node, "Organization"):
+                if stripped != ORGANIZATION_STUB:
+                    failures.append(
+                        f"{relative_path}: Organization node must be the stub {ORGANIZATION_STUB}, found {sorted(stripped)}"
+                    )
+            if node_has_type(node, "Person") and node.get("@id") == CANONICAL_PERSON_ID:
+                extra = set(node) - PERSON_STUB_KEYS
+                if extra:
+                    failures.append(f"{relative_path}: Person stub defines extra properties {sorted(extra)}")
+                if node.get("sameAs") != PERSON_SAME_AS:
+                    failures.append(f"{relative_path}: Person sameAs must be the verified list from the identity spec")
+                if node.get("jobTitle") != "Founder and CEO, Suede AI":
+                    failures.append(f"{relative_path}: Person jobTitle must be 'Founder and CEO, Suede AI'")
+                if node.get("url") != "https://suedeai.ai/founder":
+                    failures.append(f"{relative_path}: Person url must be https://suedeai.ai/founder")
+            if node_has_type(node, "WebSite"):
+                if node.get("publisher") != {"@id": CANONICAL_ORGANIZATION_ID}:
+                    failures.append(f"{relative_path}: WebSite publisher must reference {CANONICAL_ORGANIZATION_ID}")
+                if node.get("name") == "Suede AI":
+                    failures.append(f"{relative_path}: WebSite name must not compete with suedeai.ai for 'Suede AI'")
+        for script in re.findall(
+            r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html_text, re.IGNORECASE | re.DOTALL
+        ):
+            if re.search(r'"alternateName"\s*:\s*(\[[^\]]*)?"Suede"', script):
+                failures.append(f"{relative_path}: JSON-LD must not use the bare alternateName 'Suede'")
+        lower_page = html_text.lower()
+        if relative_path not in TOKEN_VALUATION_PAGES:
+            for phrase in TOKEN_VALUATION_PHRASES:
+                if phrase in lower_page:
+                    failures.append(f"{relative_path}: token valuation phrase '{phrase}' outside the token pages")
 
     for html_path in ROOT.rglob("*.html"):
         html_text = read_text(html_path)
@@ -692,6 +773,10 @@ def main() -> int:
         llms_text = read_text(llms_path)
         assert_contains("llms.txt", llms_text, "Canonical founder entity: https://suedeai.ai/founder", failures)
         assert_contains("llms.txt", llms_text, "Supporting founder profile: https://suedeai.org/jason-colapietro/", failures)
+        assert_contains("llms.txt", llms_text, COMPANY_ONE_LINER, failures)
+        assert_contains("llms.txt", llms_text, FOUNDER_ONE_LINER, failures)
+        assert_contains("llms.txt", llms_text, OFFICIAL_DOMAINS_LINE, failures)
+        assert_contains("llms.txt", llms_text, "https://suedeai.ai/white-label", failures)
 
     for machine_path in [llms_path, ROOT / "llms-full.txt"]:
         if not machine_path.exists():

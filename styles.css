@@ -2115,11 +2115,43 @@ h3 {
   color: var(--text-muted);
   font-size: 0.98rem;
 }
-#engineering .skills-list {
+#platform .skills-list {
   margin-top: 6px;
 }
-#engineering .skills-list li:first-child {
+#platform .skills-list li:first-child {
   border-top: 0;
+}
+#platform .skills-proof-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+#platform .skills-proof-card h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* Founder record ledger under the founder band (homepage) */
+.founder-record {
+  margin-top: clamp(40px, 5vw, 64px);
+}
+#founder .founder-record article {
+  border: 1px solid rgba(36, 36, 36, 0.1);
+  background: color-mix(in srgb, var(--paper-warm) 52%, transparent);
+  box-shadow: var(--shadow-tight);
+}
+#founder .founder-record span {
+  color: var(--rights-red-bright);
+}
+#founder .founder-record h3 {
+  color: var(--text-primary);
+}
+#founder .founder-record p {
+  color: var(--text-muted);
+}
+.hero-terminal pre a {
+  text-decoration: none;
+}
+.hero-terminal pre a:hover {
+  text-decoration: underline;
 }
 .skills-install {
   overflow: hidden;

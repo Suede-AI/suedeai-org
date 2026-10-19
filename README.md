@@ -1,8 +1,8 @@
-# Suede AI SEO Website
+# Suede AI Research and Investor Site
 
 > **[Suede AI](https://suedeai.ai) · By [Jason Colapietro](https://suedeai.ai/founder) · Live at [suedeai.org](https://suedeai.org)**
 
-Static website source for `suedeai.org`.
+Static website source for `suedeai.org`, Suede AI's research and investor site. Suede AI is an agentic platform company; the company and its agent platforms live at `suedeai.ai`. Copy, schema and entity rules follow the identity spec of 2026-10-19: company and founder descriptions use the canonical one-liners verbatim, and every JSON-LD Organization or founder Person node is a stub that references `https://suedeai.ai/#organization` and `https://suedeai.ai/founder#person` (enforced by `tests/verify_site.py` and `tests/discovery_entities.test.js`).
 
 ## Structure
 
