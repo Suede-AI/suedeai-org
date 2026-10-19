@@ -455,6 +455,10 @@ def main() -> int:
     ]
     dead_urls = [
         "https://www.amazon.com/author/johnnysuede",
+        # Story's docs host serves an expired TLS certificate (since 2026-08-24)
+        # and story.foundation now redirects to the Data Foundation. Cite the
+        # protocol-core-v1 source on GitHub instead.
+        "https://docs.story.foundation",
     ]
     guitar_wrong_asin_patterns = [
         r'href="https://www\.amazon\.com/dp/B0GD5FX6N6"[^>]*>The Guitar Without a Number',
@@ -775,8 +779,8 @@ def main() -> int:
     # two just to keep this assertion green, so the date is pinned per page.
     optimized_pages = {
         "why-copyright-fails/index.html": "2026-09-09",
-        "programmable-ip/index.html": "2026-09-08",
-        "royalties/index.html": "2026-09-08",
+        "programmable-ip/index.html": "2026-10-18",
+        "royalties/index.html": "2026-10-18",
     }
 
     for file_name, expected_modified in optimized_pages.items():
