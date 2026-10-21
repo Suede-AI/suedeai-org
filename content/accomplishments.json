@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-21",
   "source": "https://seo.suedeai.ai/evidence",
   "title": "Accomplishments, with the record behind them.",
   "intro": "The work and recognition of Jason Colapietro and Suede AI: businesses built, software shipped, books published, and contributions accepted. Each entry links to the underlying record.",
@@ -335,6 +335,23 @@
         {
           "label": "Program admission record",
           "url": "https://seo.suedeai.ai/evidence#credentials"
+        }
+      ]
+    },
+    {
+      "id": "training-credentials",
+      "category": "Personal training",
+      "date": "Verified October 21, 2026",
+      "title": "16 earned training credentials across six providers",
+      "body": "Jason Colapietro has earned six Claude Academy credentials, five Semrush Academy certificates, one HubSpot Academy AEO certificate, two Google Skills completion badges, one Databricks Academy accreditation, and one IBM SkillsBuild badge, Craft Precise Prompts for AI Models. Google Cloud GEAR program membership is recorded separately from the 16 earned personal training credentials.",
+      "links": [
+        {
+          "label": "Training credential gallery",
+          "url": "https://seo.suedeai.ai/evidence#training-credentials"
+        },
+        {
+          "label": "IBM SkillsBuild badge on Credly",
+          "url": "https://www.credly.com/badges/5ddf36c2-fd1e-449d-b388-aa15fb07d242/public_url"
         }
       ]
     },

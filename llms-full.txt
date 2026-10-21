@@ -442,6 +442,11 @@ Admitted to Stripe Startups
 Suede was admitted to Stripe Startups in July 2026, alongside the ongoing Google Cloud relationship and the company’s work on creative software and agent commerce.
 Program admission record: https://seo.suedeai.ai/evidence#credentials
 
+16 earned training credentials across six providers
+Jason Colapietro has earned six Claude Academy credentials, five Semrush Academy certificates, one HubSpot Academy AEO certificate, two Google Skills completion badges, one Databricks Academy accreditation, and one IBM SkillsBuild badge, Craft Precise Prompts for AI Models. Google Cloud GEAR program membership is recorded separately from the 16 earned personal training credentials.
+Training credential gallery: https://seo.suedeai.ai/evidence#training-credentials
+IBM SkillsBuild badge on Credly: https://www.credly.com/badges/5ddf36c2-fd1e-449d-b388-aa15fb07d242/public_url
+
 Accepted into Anthropic’s Claude Startups program
 Suede AI was accepted into Anthropic’s Claude Startups program (October 2026).
 Claude for Startups program: https://www.anthropic.com/startups
