@@ -342,12 +342,24 @@
       "id": "training-credentials",
       "category": "Personal training",
       "date": "Verified October 21, 2026",
-      "title": "16 earned training credentials across six providers",
-      "body": "Jason Colapietro has earned six Claude Academy credentials, five Semrush Academy certificates, one HubSpot Academy AEO certificate, two Google Skills completion badges, one Databricks Academy accreditation, and one IBM SkillsBuild badge, Craft Precise Prompts for AI Models. Google Cloud GEAR program membership is recorded separately from the 16 earned personal training credentials.",
+      "title": "19 course credentials and seven Microsoft Learn achievements",
+      "body": "Jason Colapietro holds nine Claude Academy / Anthropic completion badges, including Claude Platform 101, Claude with Amazon Bedrock and Claude on Google Cloud; five Semrush Academy certificates; HubSpot Academy AEO Fundamentals certification; two Google Skills completion badges; Databricks Academy Generative AI Fundamentals accreditation; and IBM SkillsBuild’s Craft Precise Prompts for AI Models digital credential. His seven Microsoft Learn module achievements cover Azure AI Agents, MCP tools, Foundry IQ, Visual Studio Code, Microsoft 365, agent workflows and Microsoft Agent Framework. Google GEAR program membership is recorded separately.",
       "links": [
         {
-          "label": "Training credential gallery",
+          "label": "All issued credentials and module records",
           "url": "https://seo.suedeai.ai/evidence#training-credentials"
+        },
+        {
+          "label": "Claude with Amazon Bedrock badge",
+          "url": "https://academy.claude.com/verify/c0c651d603539277db22af92ad025031"
+        },
+        {
+          "label": "Claude on Google Cloud badge",
+          "url": "https://academy.claude.com/verify/2de1c5e87909f732f034bf766a1072e1"
+        },
+        {
+          "label": "Microsoft Learn module achievements",
+          "url": "https://learn.microsoft.com/en-us/users/jasoncolapietro-8734/achievements"
         },
         {
           "label": "IBM SkillsBuild badge on Credly",
