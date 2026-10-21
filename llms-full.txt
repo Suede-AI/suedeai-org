@@ -442,13 +442,16 @@ Admitted to Stripe Startups
 Suede was admitted to Stripe Startups in July 2026, alongside the ongoing Google Cloud relationship and the company’s work on creative software and agent commerce.
 Program admission record: https://seo.suedeai.ai/evidence#credentials
 
-19 course credentials and seven Microsoft Learn achievements
-Jason Colapietro holds nine Claude Academy / Anthropic completion badges, including Claude Platform 101, Claude with Amazon Bedrock and Claude on Google Cloud; five Semrush Academy certificates; HubSpot Academy AEO Fundamentals certification; two Google Skills completion badges; Databricks Academy Generative AI Fundamentals accreditation; and IBM SkillsBuild’s Craft Precise Prompts for AI Models digital credential. His seven Microsoft Learn module achievements cover Azure AI Agents, MCP tools, Foundry IQ, Visual Studio Code, Microsoft 365, agent workflows and Microsoft Agent Framework. Google GEAR program membership is recorded separately.
+20 course credentials and 17 Microsoft Learn training achievements
+Jason Colapietro holds nine Claude Academy / Anthropic completion badges, including Claude Platform 101, Claude with Amazon Bedrock and Claude on Google Cloud; five Semrush Academy certificates; HubSpot Academy AEO Fundamentals certification; two Google Skills completion badges; Databricks Academy Generative AI Fundamentals accreditation; IBM SkillsBuild’s Craft Precise Prompts for AI Models digital credential; and Hugging Face’s Fundamentals of Agents certificate (90%). His Microsoft Learn record includes 15 module badges and two learning-path trophies: Develop AI agents on Azure and Develop generative AI apps in Azure. Google GEAR program membership is recorded separately.
 All issued credentials and module records: https://seo.suedeai.ai/evidence#training-credentials
 Claude with Amazon Bedrock badge: https://academy.claude.com/verify/c0c651d603539277db22af92ad025031
 Claude on Google Cloud badge: https://academy.claude.com/verify/2de1c5e87909f732f034bf766a1072e1
 Microsoft Learn module achievements: https://learn.microsoft.com/en-us/users/jasoncolapietro-8734/achievements
 IBM SkillsBuild badge on Credly: https://www.credly.com/badges/5ddf36c2-fd1e-449d-b388-aa15fb07d242/public_url
+Hugging Face Fundamentals of Agents certificate: https://huggingface.co/datasets/agents-course/certificates/resolve/main/certificates/jasoncolapietro/2026-10-22.png
+Develop AI agents on Azure trophy: https://learn.microsoft.com/en-us/users/jasoncolapietro-8734/achievements/print/fe8w79dx
+Develop generative AI apps in Azure trophy: https://learn.microsoft.com/en-us/users/jasoncolapietro-8734/achievements/print/y4nfmner
 
 Accepted into Anthropic’s Claude Startups program
 Suede AI was accepted into Anthropic’s Claude Startups program (October 2026).
