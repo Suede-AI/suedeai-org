@@ -342,8 +342,8 @@
       "id": "training-credentials",
       "category": "Personal training",
       "date": "Verified October 21, 2026",
-      "title": "20 course credentials and 17 Microsoft Learn training achievements",
-      "body": "Jason Colapietro holds nine Claude Academy / Anthropic completion badges, including Claude Platform 101, Claude with Amazon Bedrock and Claude on Google Cloud; five Semrush Academy certificates; HubSpot Academy AEO Fundamentals certification; two Google Skills completion badges; Databricks Academy Generative AI Fundamentals accreditation; IBM SkillsBuild’s Craft Precise Prompts for AI Models digital credential; and Hugging Face’s Fundamentals of Agents certificate (90%). His Microsoft Learn record includes 15 module badges and two learning-path trophies: Develop AI agents on Azure and Develop generative AI apps in Azure. Google GEAR program membership is recorded separately.",
+      "title": "21 course credentials and 17 Microsoft Learn training achievements",
+      "body": "Jason Colapietro holds nine Claude Academy / Anthropic completion badges, including Claude Platform 101, Claude with Amazon Bedrock and Claude on Google Cloud; five Semrush Academy certificates; HubSpot Academy AEO Fundamentals certification; two Google Skills completion badges; Databricks Academy Generative AI Fundamentals accreditation; IBM SkillsBuild’s Craft Precise Prompts for AI Models digital credential; and Hugging Face’s Fundamentals of Agents certificate (90%). His Microsoft Learn record includes 15 module badges and two learning-path trophies: Develop AI agents on Azure and Develop generative AI apps in Azure. AWS Skill Builder records his Amazon Bedrock Getting Started course completion certificate, issued October 21, 2026. Google GEAR program membership is recorded separately.",
       "links": [
         {
           "label": "All issued credentials and module records",
@@ -376,6 +376,14 @@
         {
           "label": "Develop generative AI apps in Azure trophy",
           "url": "https://learn.microsoft.com/en-us/users/jasoncolapietro-8734/achievements/print/y4nfmner"
+        },
+        {
+          "label": "AWS public Skills Profile",
+          "url": "https://skillsprofile.skillbuilder.aws/user/jasoncolapietro/certification-badges"
+        },
+        {
+          "label": "AWS Bedrock course completion record",
+          "url": "https://seo.suedeai.ai/assets/credentials/aws-bedrock-completion.png"
         }
       ]
     },
