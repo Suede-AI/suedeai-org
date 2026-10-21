@@ -12,11 +12,17 @@ Suede AI is building the creative rails for the AI era. The thesis is straightfo
 
 ## Current focus
 
-Suede AI's current business focus is web development and software engineering for businesses, alongside answer engine optimization (AEO), generative engine optimization (GEO) and search engine optimization (SEO), plus AI agents.
+Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.
 
-- Web development and software engineering (https://suedeai.org/#engineering): websites, web apps, APIs, payment integrations, iOS apps and AI agents, built in the client's own repository and stack, with tests and code review before release. Jason Colapietro builds and runs more than 20 live software surfaces and nine iOS apps, and has 54 pull requests merged across 46 external repositories, including Jest, Adobe React Spectrum, Backstage and Hardhat. Start at https://suedeai.org/contact/ or https://suedeai.org/book-a-call/
-- Suede AI SEO (https://seo.suedeai.ai/): SEO, GEO, AEO, AI search visibility and digital PR for businesses, run by Jason Colapietro.
-- Suede AI Agent Studio (https://agents.suedeai.ai/): build AI agents and workflow automation, and publish paid x402 APIs when payments are enabled.
+What Suede AI does, in order:
+
+- [Agent platforms for your business](https://agents.suedeai.ai): Suede AI Agent Studio: build agents for the work that repeats, watch every run, publish an agent as a paid endpoint.
+- [White-label agent platforms](https://suedeai.ai/white-label): Suede builds and runs an agent platform under an agency's brand for its clients. Scoped per engagement.
+- [Managed AI agents and AI operations](https://suedeai.ai/managed-ai-agents): Suede builds, runs and tunes agents for a business; every run visible in Agent Studio. AI operations: https://suedeai.ai/ai-operations
+- [Forward-deployed engineering and fractional Chief AI Officer](https://suedeai.ai/forward-deployed-engineer): Founder-led: Jason Colapietro inside your operation, or leading your AI program. Fractional Chief AI Officer: https://suedeai.ai/fractional-chief-ai-officer
+- [AI search visibility](https://seo.suedeai.ai): Suede AI SEO, the GEO, AEO and SEO practice at seo.suedeai.ai.
+- [Music and creator software](https://suedeai.ai/music): A separate product line of music and creator apps.
+- Engineering projects (https://suedeai.org/#engineering): websites, web apps, APIs, payment integrations, iOS apps and AI agents, built in the client's own repository and stack, with tests and code review before release. Jason Colapietro builds and runs more than 20 live software surfaces and nine iOS apps, and has 54 pull requests merged across 46 external repositories, including Jest, Adobe React Spectrum, Backstage and Hardhat. Start at https://suedeai.org/contact/ or https://suedeai.org/book-a-call/
 - Company and practice home: https://suedeai.ai/
 
 This site, suedeai.org, is Suede AI's investor and reading hub. It carries the investor thesis, the founder profile, the books, the research pages and the creator ownership guides described below.
@@ -190,7 +196,7 @@ Choose the relevant research page
 Start with VoicePrint for the identity question, provenance for file history and claims, and hardware for evidence at the point of capture. Research notes address the information that a consent or model-use record needs to carry. If your immediate goal is to prepare a work for registration, use the IP Registry's current documentation rather than inferring a product procedure from a research proposal.
 
 RESEARCH / VOICEPRINT (https://suedeai.org/research/voiceprint/)
-VoicePrint explores the relationship between a voice sample, a person and a record of consent. The public filing reference is USPTO provisional patent application 63/947,120.
+VoicePrint explores the relationship between a voice sample, a person and a record of consent. The public filing reference is USPTO provisional patent application 63/947,120, one of five on file: 63/946,189, 63/946,192, 63/946,212, 63/946,217 and 63/947,120 (filing receipts January 2026).
 
 The question being studied
 A recording can contain a recognizable voice without establishing who supplied the file or what that person agreed to. VoicePrint's research question is how a voice-related signal could be associated with a credential and an explicit action. The important distinction is between a comparison result and the larger workflow that uses it: a similarity score is one observation, while identity, intent and permission each need their own evidence.

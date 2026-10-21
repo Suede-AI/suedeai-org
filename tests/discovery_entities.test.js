@@ -89,3 +89,55 @@ test('proof thesis links technical guide and consistently states evidentiary lim
   const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
   assert.match(sitemap, /<loc>https:\/\/suedeai.org\/proof-of-creation\/<\/loc>\s*<lastmod>2026-10-03<\/lastmod>/);
 });
+
+// Identity canon v2 (2026-10-19), Suede-AI-App suede-home/src/lib/identity-canon.ts:
+// the company and founder one-liners are quoted, never paraphrased, and the
+// founder's sameAs is the verified list only (no pages of his own sites).
+const COMPANY_ONE_LINER = 'Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.';
+const FOUNDER_ONE_LINER = 'Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.';
+const CANONICAL_PERSON_SAME_AS = [
+  'https://www.wikidata.org/wiki/Q140235755',
+  'https://www.crunchbase.com/person/jason-colapietro-d83e',
+  'https://apps.apple.com/us/developer/jason-colapietro/id1895958699',
+  'https://github.com/JasonColapietro',
+  'https://www.linkedin.com/in/jasoncolapietro',
+  'https://x.com/johnnysuede',
+  'https://www.youtube.com/@johnnysuede',
+  'https://jasoncolapietro.substack.com',
+  'https://jasoncolapietro.com',
+  'https://johnnysuede.com',
+];
+test('company and founder nodes quote identity canon v2', () => {
+  const all = pages.flatMap(nodes);
+  for (const org of all.filter(n => n['@type'] === 'Organization' && n['@id'] === orgId && n.description)) {
+    assert.equal(org.description, COMPANY_ONE_LINER);
+  }
+  const people = all.filter(n => n['@type'] === 'Person' && n['@id'] === founderId);
+  assert.ok(people.length > 0);
+  for (const person of people) {
+    if (person.description) assert.equal(person.description, FOUNDER_ONE_LINER);
+    if (person.jobTitle) assert.equal(person.jobTitle, 'Founder and CEO, Suede AI');
+    assert.deepEqual(person.sameAs, CANONICAL_PERSON_SAME_AS);
+  }
+  for (const file of ['llms.txt', 'llms-full.txt']) {
+    const text = fs.readFileSync(path.join(root, file), 'utf8');
+    assert.ok(text.includes(COMPANY_ONE_LINER), file);
+    assert.doesNotMatch(text, /web development and software engineering company|current business focus is web development/i, file);
+  }
+});
+test('the founder lists seven works and no catalog note as a book', () => {
+  const books = pages.flatMap(nodes).filter(n => n['@type'] === 'Book');
+  assert.ok(!books.some(b => /Guitar Without a Number/.test(b.name)));
+  for (const file of pages) {
+    const html = fs.readFileSync(file, 'utf8');
+    assert.doesNotMatch(html, /Eight titles are listed/, path.relative(root, file));
+  }
+});
+test('every patent mention on llms.txt lists all five provisional applications', () => {
+  const text = fs.readFileSync(path.join(root, 'llms.txt'), 'utf8');
+  for (const line of text.split('\n').filter(l => /patent/i.test(l))) {
+    for (const serial of ['63/946,189', '63/946,192', '63/946,212', '63/946,217', '63/947,120']) {
+      assert.ok(line.includes(serial), `${serial} missing from: ${line.slice(0, 80)}`);
+    }
+  }
+});

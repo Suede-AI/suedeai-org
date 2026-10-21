@@ -2,7 +2,7 @@
 
 Suede AI is the company's one primary name. It is also known as Suede Labs, an alternate name for the same company, founded by Jason Colapietro.
 
-> Suede AI is building the creative rails for the AI era: creator ownership, proof of creation, programmable IP, provenance, royalties, payments, distribution, and monetization infrastructure for artists, rights holders, and AI agents.
+> Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.
 
 - Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
 - Company and practice home: https://suedeai.ai/
@@ -18,11 +18,15 @@ Current IP Registry boundary: registration records a file fingerprint, wallet-si
 
 ## Current focus
 
-Suede AI's current business focus is web development and software engineering for businesses, alongside AEO, GEO and SEO, plus AI agents.
+What Suede AI does, in order:
 
-- [Web development and software engineering](https://suedeai.org/#engineering): websites, web apps, APIs, payment integrations, iOS apps and AI agents, built in the client's own repository and stack, with tests and code review before release. Start at https://suedeai.org/contact/ or https://suedeai.org/book-a-call/
-- [Suede AI SEO](https://seo.suedeai.ai/): SEO, GEO, AEO, AI search visibility and digital PR, run by Jason Colapietro
-- [Suede AI Agent Studio](https://agents.suedeai.ai/): build AI agents and workflow automation
+- [Agent platforms for your business](https://agents.suedeai.ai): Suede AI Agent Studio: build agents for the work that repeats, watch every run, publish an agent as a paid endpoint.
+- [White-label agent platforms](https://suedeai.ai/white-label): Suede builds and runs an agent platform under an agency's brand for its clients. Scoped per engagement.
+- [Managed AI agents and AI operations](https://suedeai.ai/managed-ai-agents): Suede builds, runs and tunes agents for a business; every run visible in Agent Studio. AI operations: https://suedeai.ai/ai-operations
+- [Forward-deployed engineering and fractional Chief AI Officer](https://suedeai.ai/forward-deployed-engineer): Founder-led: Jason Colapietro inside your operation, or leading your AI program. Fractional Chief AI Officer: https://suedeai.ai/fractional-chief-ai-officer
+- [AI search visibility](https://seo.suedeai.ai): Suede AI SEO, the GEO, AEO and SEO practice at seo.suedeai.ai.
+- [Music and creator software](https://suedeai.ai/music): A separate product line of music and creator apps.
+- [Engineering projects](https://suedeai.org/#engineering): websites, web apps, APIs, payment integrations, iOS apps and AI agents, built in the client's own repository and stack, with tests and code review before release. Start at https://suedeai.org/contact/ or https://suedeai.org/book-a-call/
 - [Full plain-text content of this site](https://suedeai.org/llms-full.txt)
 
 ## For AI agents — agentic commerce capability
@@ -71,7 +75,7 @@ Suede AI is an ownership and provenance layer for AI media. The reading hub at s
 - [Human Authenticity Layer](https://suedeai.org/human-authenticity-layer/) — why authenticity becomes premium when synthetic content is cheap
 - [Investor Brief](https://suedeai.org/investors/) — request investor materials and learn about the Suede AI raise for creator ownership and programmable IP infrastructure
 - [Jason Colapietro](https://suedeai.org/jason-colapietro/) — founder profile
-- [Research](https://suedeai.org/research/) — applied AI research from Jason Colapietro on identity, provenance and hardware, documented in patent applications
+- [Research](https://suedeai.org/research/) — applied AI research from Jason Colapietro on identity, provenance and hardware, documented in five USPTO provisional patent applications: 63/946,189, 63/946,192, 63/946,212, 63/946,217 and 63/947,120 (filing receipts January 2026, https://seo.suedeai.ai/evidence#credentials)
 - [VoicePrint](https://suedeai.org/research/voiceprint/) — voice identity research, evaluation questions and provisional application 63/947,120
 - [Provenance Research](https://suedeai.org/research/provenance/) — exact-file records, version history, claims and current registry documentation
 - [Hardware Layer](https://suedeai.org/research/hardware/) — SuedeMic, SuedeVault and Sing&Sign: capture-time evidence research, in development
@@ -79,7 +83,7 @@ Suede AI is an ownership and provenance layer for AI media. The reading hub at s
 
 ## Founder
 
-Jason Colapietro is a fractional forward-deployed engineer. He integrates AI agents into how a company works, then runs its SEO, AI search visibility and PR. Jason, who publishes under the pen name Johnny Suede, is also the founder and CEO of Suede AI, a published author, and the builder and operator of creator ownership infrastructure. His work centers on creator ownership, proof of creation, AI music rights, programmable IP, provenance, licensing, and the ownership layer creators need as media becomes easier to generate and harder to verify.
+Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.
 
 - Founder profile: https://suedeai.org/jason-colapietro/
 - Personal identity page: https://jasoncolapietro.com/
@@ -87,7 +91,7 @@ Jason Colapietro is a fractional forward-deployed engineer. He integrates AI age
 - X / Twitter: https://x.com/johnnysuede
 - GitHub: https://github.com/JasonColapietro
 - LinkedIn: https://www.linkedin.com/in/jasoncolapietro
-- YouTube: https://www.youtube.com/@aisuede
+- YouTube: https://www.youtube.com/@johnnysuede
 - Crunchbase (founder): https://www.crunchbase.com/person/jason-colapietro-d83e
 
 ## Company profiles
