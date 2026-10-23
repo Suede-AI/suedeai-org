@@ -32,8 +32,9 @@ Upload all files and folders as-is to the web root for `suedeai.org`.
 
 - the site deploys to Vercel as a static site with serverless functions in `api/`
 - the book, call, contact, and investor forms post to `/api/book/`, `/api/book-call/`, `/api/contact/`, and `/api/investors/`
-- every handler runs `api/_spam-gate.js` after the honeypot: a page stamp (`form_ts`, set by `assets/js/site.js`), the `Origin` header, and content signals (letter soup, spam-kit phrases, markup, link count, gambling vocabulary) add up to a score; 5 or more is answered with the normal success response and nothing stored or emailed, 3 to 4 is delivered with a `[review]` subject prefix and the signals listed, and dropped submissions are logged as `[spam-gate] dropped` in the function logs. `FORM_ALLOWED_ORIGINS` (comma-separated) overrides the accepted origins
+- every handler runs `api/_spam-gate.js` after the honeypot: a page stamp (`form_ts`, set by `assets/js/site.js`), the `Origin` header, and content signals (letter soup, spam-kit phrases, markup, link count, gambling vocabulary) add up to a score; 5 or more is answered with the normal success response and nothing stored or emailed here (the submission still goes to the lead intake hub, flagged `suspectedSpam`), 3 to 4 is delivered with a `[review]` subject prefix and the signals listed, and dropped submissions are logged as `[spam-gate] dropped` in the function logs. `FORM_ALLOWED_ORIGINS` (comma-separated) overrides the accepted origins
 - `/api/investors/` also takes the investor form hosted on `suedeai.ai/investors/`: it answers CORS preflights and sets `Access-Control-Allow-Origin` for exactly `https://suedeai.ai` and `https://www.suedeai.ai` (`api/_cors.js`), the spam gate never scores those two origins as foreign even when `FORM_ALLOWED_ORIGINS` is set, and the posted `source` (`suedeai.org/investors` or `suedeai.ai/investors`, anything else falls back to the first) is stored and shown in the lead email. Post to the trailing-slash URL: `/api/investors` 308-redirects, and a redirected preflight fails
+- every handler also forwards each submission, signed, to the Agent Studio lead intake hub (`api/_intake.js`, source id `suedeai-org`; the wire format is `docs/intake/CONTRACT.md` in suede-agent-studio). The Supabase insert runs first and the forward is awaited before the response. The visitor sees success when either Supabase or the hub holds the submission, and an error only when both failed. Honeypot hits and spam-gate drops are forwarded with `suspectedSpam` so the hub's daily digest can rescue a real person a filter caught
 - the reader funnel resolves through `/sharp-excerpt/`, `/full-preview/`, and the stable PDF asset path
 - the reader-preview email (`api/book.js`) includes a "Book a Call" CTA linking to `/book-a-call/`
 - the abridged PDF is hosted at `assets/files/stake-your-claim-condensed-preview.pdf`
@@ -55,6 +56,11 @@ Optional environment variables:
 - `CONTACT_NOTIFY_TO`
 - `CALL_NOTIFY_TO` falls back to `CONTACT_NOTIFY_TO` if unset
 - `RESEND_API_KEY`
+- `BOOK_REPLY_TO` reply-to on the reader-preview email, falls back to the sender
+- `FORM_ALLOWED_ORIGINS` comma-separated origins the spam gate accepts
+- `SUEDE_INTAKE_SOURCE` `suedeai-org`
+- `SUEDE_INTAKE_SECRET` 32+ byte shared secret, the same value as this source's entry in the hub's `INTAKE_SOURCE_SECRETS`; unset, every handler logs `[intake] not configured` and forwards nothing
+- `SUEDE_INTAKE_URL` defaults to `https://agents.suedeai.ai/api/intake/events`
 
 Current send-from recommendation:
 

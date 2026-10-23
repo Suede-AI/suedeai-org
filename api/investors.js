@@ -12,6 +12,15 @@ const {
 } = require("./_shared");
 const { assessSubmission, logDrop, reviewNote, reviewPrefix } = require("./_spam-gate");
 const { applyCors, handlePreflight } = require("./_cors");
+const {
+  attributionFrom,
+  buildIntakeEvent,
+  forwardToIntake,
+  newEventId,
+  settleCapture,
+  spamDetails,
+  spamFlag,
+} = require("./_intake");
 
 const DEFAULT_SOURCE = "suedeai.org/investors";
 // The form posts here from both sites. Anything else a client sends in
@@ -66,26 +75,9 @@ module.exports = async (req, res) => {
   }
 
   const fields = getRequestFields(req);
-
-  // Honeypot: a hidden field humans never fill. Everything else is scored by
-  // the spam gate. Either way a bot gets the same success answer a person
-  // gets, and nothing is stored or emailed.
-  const honeypot = Boolean(normalizeText(fields.company_url));
-  const gate = assessSubmission({
-    form: "investors",
-    fields,
-    headers: req.headers,
-    extraOrigins: CROSS_SITE_ORIGINS,
-  });
-  if (honeypot || gate.verdict === "drop") {
-    logDrop(honeypot ? { ...gate, reasons: ["honeypot", ...gate.reasons] } : gate, fields);
-    if (wantsJson(req)) {
-      sendJson(res, 200, { ok: true, redirectTo: SUCCESS_REDIRECT });
-      return;
-    }
-    redirect(res, SUCCESS_REDIRECT);
-    return;
-  }
+  // One id per submission, made before any write (see newEventId).
+  const eventId = newEventId("investors");
+  const submittedAt = new Date().toISOString();
 
   const name = normalizeText(fields.name);
   const email = normalizeText(fields.email);
@@ -101,6 +93,64 @@ module.exports = async (req, res) => {
   const utmSource = normalizeText(fields.utm_source);
   const utmCampaign = normalizeText(fields.utm_campaign);
   const source = resolveSource(fields);
+
+  const honeypot = Boolean(normalizeText(fields.company_url));
+  const gate = assessSubmission({
+    form: "investors",
+    fields,
+    headers: req.headers,
+    extraOrigins: CROSS_SITE_ORIGINS,
+  });
+
+  // The property is the site the person was on: suedeai.ai for the form
+  // hosted there, suedeai.org otherwise.
+  const intakeEvent = ({ stored, storedSource, suspectedSpam }) =>
+    buildIntakeEvent({
+      id: eventId,
+      kind: "lead",
+      property: source.split("/")[0],
+      occurredAt: submittedAt,
+      summary: `${reviewPrefix(gate)}Investor inquiry: ${[firm, name].filter(Boolean).join(", ") || email || "unknown"}${
+        checkSize ? ` [${checkSize}]` : ""
+      }`,
+      email,
+      name,
+      details: {
+        form: "investors",
+        firm,
+        role,
+        investor_type: investorType,
+        check_size: checkSize,
+        timeline,
+        intent,
+        website,
+        message,
+        consent_marketing: consentMarketing,
+        source,
+        stored_source: stored && storedSource && storedSource !== source ? storedSource : "",
+        utm_source: utmSource,
+        utm_campaign: utmCampaign,
+        stored_in_supabase: stored,
+        ...spamDetails(honeypot, gate),
+      },
+      attribution: attributionFrom(fields),
+      suspectedSpam,
+    });
+
+  // Honeypot: a hidden field humans never fill. Everything else is scored by
+  // the spam gate. Either way a bot gets the same success answer a person
+  // gets and nothing is stored or emailed here; the submission goes to the
+  // intake hub flagged as suspected spam, for its daily digest.
+  if (honeypot || gate.verdict === "drop") {
+    logDrop(honeypot ? { ...gate, reasons: ["honeypot", ...gate.reasons] } : gate, fields);
+    await forwardToIntake(intakeEvent({ stored: false, suspectedSpam: spamFlag(honeypot, gate) }));
+    if (wantsJson(req)) {
+      sendJson(res, 200, { ok: true, redirectTo: SUCCESS_REDIRECT });
+      return;
+    }
+    redirect(res, SUCCESS_REDIRECT);
+    return;
+  }
 
   if (!name || !firm || !email || !isValidEmail(email)) {
     const errorMessage = "Name, email, and firm are required.";
@@ -130,7 +180,7 @@ module.exports = async (req, res) => {
     source,
     utm_source: utmSource,
     utm_campaign: utmCampaign,
-    submitted_at: new Date().toISOString(),
+    submitted_at: submittedAt,
   };
   let result = await insertRow(table, row);
   let storedSource = source;
@@ -145,7 +195,9 @@ module.exports = async (req, res) => {
     result = await insertRow(table, { ...row, source: DEFAULT_SOURCE });
   }
 
-  if (!result.ok) {
+  const forwarded = await forwardToIntake(intakeEvent({ stored: result.ok, storedSource }));
+
+  if (!settleCapture("investors", eventId, result, forwarded)) {
     if (wantsJson(req)) {
       sendJson(res, result.status, result.payload);
       return;
@@ -177,13 +229,20 @@ module.exports = async (req, res) => {
       message || "(no message)",
     ].join("\n");
 
-    await sendEmail({
+    const notifyResult = await sendEmail({
       from: sender,
       to: [notifyTo],
       subject: `${reviewPrefix(gate)}New investor lead: ${firm}${checkSize ? ` [${checkSize}]` : ""}`,
       text: summary + reviewNote(gate),
       reply_to: email,
     });
+
+    if (!notifyResult || !notifyResult.ok) {
+      console.error("[investors] email notification failed", {
+        status: notifyResult && notifyResult.status,
+        payload: notifyResult && notifyResult.payload,
+      });
+    }
   }
 
   if (sender && getEnv("INVESTOR_AUTORESPONDER") === "true") {
@@ -192,13 +251,20 @@ module.exports = async (req, res) => {
       deckUrl: getEnv("INVESTOR_DECK_URL"),
       calendarUrl: getEnv("INVESTOR_CALENDAR_URL"),
     });
-    await sendEmail({
+    const autoResult = await sendEmail({
       from: sender,
       to: [email],
       subject: auto.subject,
       text: auto.text,
       reply_to: notifyTo || sender,
     });
+
+    if (!autoResult || !autoResult.ok) {
+      console.error("[investors] autoresponder failed", {
+        status: autoResult && autoResult.status,
+        payload: autoResult && autoResult.payload,
+      });
+    }
   }
 
   if (wantsJson(req)) {

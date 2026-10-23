@@ -11,7 +11,16 @@ const {
   sendJson,
   wantsJson,
 } = require("./_shared");
-const { assessSubmission, logDrop } = require("./_spam-gate");
+const { assessSubmission, logDrop, reviewPrefix } = require("./_spam-gate");
+const {
+  attributionFrom,
+  buildIntakeEvent,
+  forwardToIntake,
+  newEventId,
+  settleCapture,
+  spamDetails,
+  spamFlag,
+} = require("./_intake");
 
 const SHARP_EXCERPT_URL = "https://suedeai.org/sharp-excerpt/";
 const FULL_PREVIEW_URL = "https://suedeai.org/full-preview/";
@@ -204,14 +213,46 @@ module.exports = async (req, res) => {
   }
 
   const fields = getRequestFields(req);
+  // One id per submission, made before any write (see newEventId).
+  const eventId = newEventId("book");
+  const submittedAt = new Date().toISOString();
+
+  const email = normalizeText(fields.email);
+  const name = normalizeText(fields.name);
+  const context = normalizeText(fields.context);
+
+  const honeypot = Boolean(normalizeText(fields.company_url));
+  const gate = assessSubmission({ form: "book", fields, headers: req.headers, minMs: 1500 });
+
+  // Reader-preview signups had no founder notification at all; the intake hub
+  // now emails one for each.
+  const intakeEvent = ({ stored, suspectedSpam }) =>
+    buildIntakeEvent({
+      id: eventId,
+      kind: "lead",
+      property: "suedeai.org",
+      occurredAt: submittedAt,
+      summary: `${reviewPrefix(gate)}Reader preview signup: ${email || "unknown"}${name ? ` (${name})` : ""}`,
+      email,
+      name,
+      details: {
+        form: "book",
+        context,
+        source: "suedeai.org",
+        stored_in_supabase: stored,
+        ...spamDetails(honeypot, gate),
+      },
+      attribution: attributionFrom(fields),
+      suspectedSpam,
+    });
 
   // Honeypot: a hidden field humans never fill. Everything else is scored by
   // the spam gate. Either way a bot gets the same success answer a person
-  // gets, and nothing is stored or emailed.
-  const honeypot = Boolean(normalizeText(fields.company_url));
-  const gate = assessSubmission({ form: "book", fields, headers: req.headers, minMs: 1500 });
+  // gets and nothing is stored or emailed here; the submission goes to the
+  // intake hub flagged as suspected spam, for its daily digest.
   if (honeypot || gate.verdict === "drop") {
     logDrop(honeypot ? { ...gate, reasons: ["honeypot", ...gate.reasons] } : gate, fields);
+    await forwardToIntake(intakeEvent({ stored: false, suspectedSpam: spamFlag(honeypot, gate) }));
     if (wantsJson(req)) {
       sendJson(res, 200, { ok: true, redirectTo: "/book/thanks/" });
       return;
@@ -219,10 +260,6 @@ module.exports = async (req, res) => {
     redirect(res, "/book/thanks/");
     return;
   }
-
-  const email = normalizeText(fields.email);
-  const name = normalizeText(fields.name);
-  const context = normalizeText(fields.context);
 
   if (!email || !isValidEmail(email)) {
     if (wantsJson(req)) {
@@ -242,10 +279,11 @@ module.exports = async (req, res) => {
     name,
     context,
     source: "suedeai.org",
-    submitted_at: new Date().toISOString(),
+    submitted_at: submittedAt,
   });
+  const forwarded = await forwardToIntake(intakeEvent({ stored: result.ok }));
 
-  if (!result.ok) {
+  if (!settleCapture("book", eventId, result, forwarded)) {
     if (wantsJson(req)) {
       sendJson(res, result.status, result.payload);
       return;

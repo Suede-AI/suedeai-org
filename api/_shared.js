@@ -48,16 +48,30 @@ async function insertRow(table, row) {
     };
   }
 
-  const response = await fetch(`${config.url}/rest/v1/${table}`, {
-    method: "POST",
-    headers: {
-      apikey: config.key,
-      Authorization: `Bearer ${config.key}`,
-      "Content-Type": "application/json",
-      Prefer: "return=minimal",
-    },
-    body: JSON.stringify(row),
-  });
+  let response;
+  try {
+    response = await fetch(`${config.url}/rest/v1/${table}`, {
+      method: "POST",
+      headers: {
+        apikey: config.key,
+        Authorization: `Bearer ${config.key}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify(row),
+    });
+  } catch (error) {
+    // Unreachable is a failed insert like any other, so the handler can still
+    // forward the submission to the intake hub instead of throwing.
+    return {
+      ok: false,
+      status: 502,
+      payload: {
+        error: "Supabase insert failed.",
+        details: error && error.message ? error.message : "network error",
+      },
+    };
+  }
 
   if (!response.ok) {
     const text = await response.text();
@@ -87,14 +101,27 @@ async function sendEmail(payload) {
     };
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${config.apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+  let response;
+  try {
+    response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${config.apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (error) {
+    // A Resend outage must not turn a stored submission into an error page.
+    return {
+      ok: false,
+      status: 502,
+      payload: {
+        error: "Email delivery failed.",
+        details: error && error.message ? error.message : "network error",
+      },
+    };
+  }
 
   if (!response.ok) {
     const text = await response.text();

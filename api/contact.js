@@ -11,6 +11,26 @@ const {
   wantsJson,
 } = require("./_shared");
 const { assessSubmission, logDrop, reviewNote, reviewPrefix } = require("./_spam-gate");
+const {
+  attributionFrom,
+  buildIntakeEvent,
+  forwardToIntake,
+  newEventId,
+  settleCapture,
+  spamDetails,
+  spamFlag,
+} = require("./_intake");
+
+const SOURCE = "suedeai.org";
+const SUCCESS_REDIRECT = "/contact/thanks/";
+
+function sendSuccess(req, res) {
+  if (wantsJson(req)) {
+    sendJson(res, 200, { ok: true, redirectTo: SUCCESS_REDIRECT });
+    return;
+  }
+  redirect(res, SUCCESS_REDIRECT);
+}
 
 module.exports = async (req, res) => {
   if (!allowPostOnly(req, res)) {
@@ -18,26 +38,49 @@ module.exports = async (req, res) => {
   }
 
   const fields = getRequestFields(req);
-
-  // Honeypot: a hidden field humans never fill. Everything else is scored by
-  // the spam gate. Either way a bot gets the same success answer a person
-  // gets, and nothing is stored or emailed.
-  const honeypot = Boolean(normalizeText(fields.company_url));
-  const gate = assessSubmission({ form: "contact", fields, headers: req.headers });
-  if (honeypot || gate.verdict === "drop") {
-    logDrop(honeypot ? { ...gate, reasons: ["honeypot", ...gate.reasons] } : gate, fields);
-    if (wantsJson(req)) {
-      sendJson(res, 200, { ok: true, redirectTo: "/contact/thanks/" });
-      return;
-    }
-    redirect(res, "/contact/thanks/");
-    return;
-  }
+  // One id per submission, made before any write (see newEventId).
+  const eventId = newEventId("contact");
+  const submittedAt = new Date().toISOString();
 
   const name = normalizeText(fields.name);
   const email = normalizeText(fields.email);
   const topic = normalizeText(fields.topic);
   const message = normalizeText(fields.message);
+
+  const honeypot = Boolean(normalizeText(fields.company_url));
+  const gate = assessSubmission({ form: "contact", fields, headers: req.headers });
+
+  const intakeEvent = ({ stored, suspectedSpam }) =>
+    buildIntakeEvent({
+      id: eventId,
+      kind: "lead",
+      property: SOURCE,
+      occurredAt: submittedAt,
+      summary: `${reviewPrefix(gate)}Contact from ${name || email || "unknown"}${topic ? `: ${topic}` : ""}`,
+      email,
+      name,
+      details: {
+        form: "contact",
+        topic,
+        message,
+        source: SOURCE,
+        stored_in_supabase: stored,
+        ...spamDetails(honeypot, gate),
+      },
+      attribution: attributionFrom(fields),
+      suspectedSpam,
+    });
+
+  // Honeypot: a hidden field humans never fill. Everything else is scored by
+  // the spam gate. Either way a bot gets the same success answer a person
+  // gets and nothing is stored or emailed here; the submission goes to the
+  // intake hub flagged as suspected spam, for its daily digest.
+  if (honeypot || gate.verdict === "drop") {
+    logDrop(honeypot ? { ...gate, reasons: ["honeypot", ...gate.reasons] } : gate, fields);
+    await forwardToIntake(intakeEvent({ stored: false, suspectedSpam: spamFlag(honeypot, gate) }));
+    sendSuccess(req, res);
+    return;
+  }
 
   if (!name || !message || !email || !isValidEmail(email)) {
     if (wantsJson(req)) {
@@ -57,11 +100,12 @@ module.exports = async (req, res) => {
     email,
     topic,
     message,
-    source: "suedeai.org",
-    submitted_at: new Date().toISOString(),
+    source: SOURCE,
+    submitted_at: submittedAt,
   });
+  const forwarded = await forwardToIntake(intakeEvent({ stored: result.ok }));
 
-  if (!result.ok) {
+  if (!settleCapture("contact", eventId, result, forwarded)) {
     if (wantsJson(req)) {
       sendJson(res, result.status, result.payload);
       return;
@@ -93,10 +137,5 @@ module.exports = async (req, res) => {
     }
   }
 
-  if (wantsJson(req)) {
-    sendJson(res, 200, { ok: true, redirectTo: "/contact/thanks/" });
-    return;
-  }
-
-  redirect(res, "/contact/thanks/");
+  sendSuccess(req, res);
 };
