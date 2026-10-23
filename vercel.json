@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": true,
+  "functions": {
+    "api/book.js": { "maxDuration": 30 },
+    "api/book-call.js": { "maxDuration": 30 },
+    "api/contact.js": { "maxDuration": 30 },
+    "api/investors.js": { "maxDuration": 30 }
+  },
   "redirects": [
     {
       "source": "/home/",

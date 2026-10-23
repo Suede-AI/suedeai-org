@@ -371,3 +371,104 @@ test("settleCapture: either copy is enough, both failing is logged as lost", asy
   assert.match(outcome.errors[0][0], /^\[contact\] submission lost/);
   assert.deepStrictEqual(outcome.errors[0][1], { id: "contact:abc12345", status: 500, intake: "unreachable" });
 });
+
+// ---- body size ----
+
+const { MAX_BODY_BYTES, fitBody } = require("../api/_intake.js");
+
+function quietWarn(fn) {
+  const original = console.warn;
+  const warnings = [];
+  console.warn = (...args) => warnings.push(args);
+  try {
+    return { result: fn(), warnings };
+  } finally {
+    console.warn = original;
+  }
+}
+
+function bigEvent(fill) {
+  const details = { form: "investors", topic: "Seed round", stored_in_supabase: true };
+  for (let i = 0; i < 9; i += 1) {
+    details[`field_${i}`] = fill;
+  }
+  return buildIntakeEvent({
+    id: "investors:abc12345",
+    kind: "lead",
+    property: "suedeai.org",
+    occurredAt: "2026-10-23T09:14:00.000Z",
+    summary: "Investor inquiry",
+    email: "pat@fund.com",
+    name: "Pat",
+    details,
+  });
+}
+
+test("the hub's body limit is 32 KB", () => {
+  assert.strictEqual(MAX_BODY_BYTES, 32768);
+});
+
+test("an event under the limit is sent byte for byte", () => {
+  const { result, warnings } = quietWarn(() => fitBody(EVENT));
+  assert.strictEqual(result, JSON.stringify(EVENT));
+  assert.strictEqual(warnings.length, 0);
+});
+
+test("nine 2,000-char multibyte fields are trimmed, longest first, to fit 32 KB", () => {
+  const event = bigEvent("漢字".repeat(1000));
+  assert.ok(Buffer.byteLength(JSON.stringify(event), "utf8") > 50_000, "the fixture really is over the limit");
+
+  const { result, warnings } = quietWarn(() => fitBody(event));
+  const bytes = Buffer.byteLength(result, "utf8");
+  assert.ok(bytes <= MAX_BODY_BYTES, `${bytes} bytes`);
+  assert.ok(bytes > MAX_BODY_BYTES - 64, "trims only what it has to");
+
+  const sent = JSON.parse(result);
+  assert.strictEqual(sent.details.topic, "Seed round", "short fields come through whole");
+  assert.strictEqual(sent.details.form, "investors");
+  assert.strictEqual(sent.details.stored_in_supabase, true);
+  const lengths = Object.keys(sent.details)
+    .filter((key) => key.startsWith("field_"))
+    .map((key) => sent.details[key].length);
+  assert.ok(Math.max(...lengths) - Math.min(...lengths) <= 1, `cut to one shared length: ${lengths}`);
+  assert.ok(lengths.every((length) => length > 0));
+  for (const key of ["id", "kind", "property", "occurredAt", "summary", "person"]) {
+    assert.deepStrictEqual(sent[key], event[key]);
+  }
+  assert.strictEqual(warnings[0][0], "[intake] details trimmed to fit the hub's body limit");
+  assert.strictEqual(warnings[0][1].id, event.id);
+});
+
+test("trimming never splits a surrogate pair", () => {
+  const event = bigEvent("🎤".repeat(1000));
+  const { result } = quietWarn(() => fitBody(event));
+  assert.ok(Buffer.byteLength(result, "utf8") <= MAX_BODY_BYTES);
+  for (const value of Object.values(JSON.parse(result).details)) {
+    if (typeof value === "string") {
+      assert.ok(!/[\ud800-\udbff](?![\udc00-\udfff])|(?:^|[^\ud800-\udbff])[\udc00-\udfff]/.test(value));
+    }
+  }
+});
+
+test("characters JSON escapes are counted at their escaped size", () => {
+  const event = bigEvent("\u0001\"".repeat(1000));
+  const { result } = quietWarn(() => fitBody(event));
+  assert.ok(Buffer.byteLength(result, "utf8") <= MAX_BODY_BYTES);
+});
+
+test("forwardToIntake sends and signs the trimmed body", async () => {
+  const event = bigEvent("漢字".repeat(1000));
+  const { calls, fetcher } = hub([202]);
+  const original = console.warn;
+  console.warn = () => {};
+  try {
+    const result = await forwardToIntake(event, ENV, fetcher);
+    assert.deepStrictEqual(result, { ok: true, duplicate: false });
+  } finally {
+    console.warn = original;
+  }
+  const { init } = calls[0];
+  assert.ok(Buffer.byteLength(init.body, "utf8") <= MAX_BODY_BYTES);
+  const timestamp = init.headers["x-suede-intake-timestamp"];
+  assert.strictEqual(init.headers["x-suede-intake-signature"], signIntakeBody(SECRET, timestamp, init.body));
+});

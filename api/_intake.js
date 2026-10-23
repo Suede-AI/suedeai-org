@@ -27,6 +27,8 @@ const DEFAULT_INTAKE_URL = "https://agents.suedeai.ai/api/intake/events";
 const BACKOFF_MS = [0, 400, 1200];
 const ATTEMPT_TIMEOUT_MS = 4000;
 const MIN_SECRET_BYTES = 32;
+// The hub answers 413 to a larger body and the contract says not to retry it.
+const MAX_BODY_BYTES = 32768;
 const NO_RETRY_STATUSES = [400, 401, 413];
 
 // Limits the hub validates. One value over a limit fails the whole event with
@@ -106,7 +108,7 @@ async function forwardToIntake(event, env = process.env, fetcher = globalThis.fe
   }
 
   const url = String(env.SUEDE_INTAKE_URL || "").trim() || DEFAULT_INTAKE_URL;
-  const body = JSON.stringify(event);
+  const body = fitBody(event);
   let lastFailure = "";
 
   for (const delay of BACKOFF_MS) {
@@ -165,6 +167,89 @@ async function forwardToIntake(event, env = process.env, fetcher = globalThis.fe
  */
 function newEventId(prefix) {
   return `${prefix}:${randomUUID()}`;
+}
+
+/** UTF-8 bytes a string takes inside a JSON body, quotes excluded. */
+function jsonBytes(value) {
+  return Buffer.byteLength(JSON.stringify(value), "utf8") - 2;
+}
+
+/**
+ * The longest prefix of `value`, cut on a code point boundary, that takes at
+ * most `maxBytes` inside a JSON body.
+ */
+function clipJsonBytes(value, maxBytes) {
+  if (jsonBytes(value) <= maxBytes) {
+    return value;
+  }
+  let used = 0;
+  let end = 0;
+  for (const char of value) {
+    const size = jsonBytes(char);
+    if (used + size > maxBytes) {
+      break;
+    }
+    used += size;
+    end += char.length;
+  }
+  return value.slice(0, end);
+}
+
+/**
+ * Serializes an event, trimming its longest detail strings until the body
+ * fits the hub's 32 KB limit. Each field stays inside the 2,000-char rule, but
+ * forty of them in a multibyte script can still run past 32 KB, and the hub
+ * refuses the whole event with a 413. The longest strings are cut to one
+ * shared length, so short fields such as the topic come through whole.
+ *
+ * @param {IntakeEvent} event
+ * @returns {string}
+ */
+function fitBody(event) {
+  let body = JSON.stringify(event);
+  let over = Buffer.byteLength(body, "utf8") - MAX_BODY_BYTES;
+  if (over <= 0 || !event.details) {
+    return body;
+  }
+
+  /** @type {Record<string, IntakeDetailValue>} */
+  const details = { ...event.details };
+  while (over > 0) {
+    const strings = Object.keys(details)
+      .filter((key) => typeof details[key] === "string" && details[key] !== "")
+      .map((key) => ({ key, bytes: jsonBytes(details[key]) }))
+      .sort((a, b) => b.bytes - a.bytes);
+    if (!strings.length) {
+      break;
+    }
+
+    // Lowest common cap that removes `over` bytes from the longest strings.
+    let cap = 0;
+    let total = 0;
+    for (let i = 0; i < strings.length; i += 1) {
+      total += strings[i].bytes;
+      const candidate = Math.floor((total - over) / (i + 1));
+      const next = i + 1 < strings.length ? strings[i + 1].bytes : 0;
+      if (candidate >= next) {
+        cap = Math.max(0, candidate);
+        break;
+      }
+    }
+    for (const { key, bytes } of strings) {
+      if (bytes > cap) {
+        details[key] = clipJsonBytes(/** @type {string} */ (details[key]), cap);
+      }
+    }
+
+    body = JSON.stringify({ ...event, details });
+    over = Buffer.byteLength(body, "utf8") - MAX_BODY_BYTES;
+  }
+
+  console.warn("[intake] details trimmed to fit the hub's body limit", {
+    id: event.id,
+    bytes: Buffer.byteLength(body, "utf8"),
+  });
+  return body;
 }
 
 /** @param {unknown} value @returns {string} */
@@ -367,8 +452,10 @@ module.exports = {
   BACKOFF_MS,
   DEFAULT_INTAKE_URL,
   LIMITS,
+  MAX_BODY_BYTES,
   attributionFrom,
   buildIntakeEvent,
+  fitBody,
   forwardToIntake,
   newEventId,
   settleCapture,

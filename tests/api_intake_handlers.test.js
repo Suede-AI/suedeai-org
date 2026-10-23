@@ -397,6 +397,23 @@ test("investors: the insert-policy fallback is stored under the default source a
   assert.ok(run.of("hub")[0].answeredYet === false);
 });
 
+test("investors: nine long multibyte fields are trimmed to the hub's 32 KB limit, not refused", async () => {
+  const long = "投資家からの問い合わせ".repeat(200);
+  const fields = ["firm", "role", "investor_type", "check_size", "timeline", "website", "message", "utm_source", "utm_campaign"];
+  const body = fromPage({ name: "Pat Investor", email: "pat@fund.com" });
+  for (const field of fields) {
+    body[field] = long;
+  }
+  const run = await submit("investors", body);
+  assert.strictEqual(run.res.statusCode, 200, run.res.body);
+  const raw = run.of("hub")[0].init.body;
+  assert.ok(Buffer.byteLength(raw, "utf8") <= 32_768, `${Buffer.byteLength(raw, "utf8")} bytes`);
+  assert.ok(run.warnings.some(([line]) => line === "[intake] details trimmed to fit the hub's body limit"));
+  assert.strictEqual(run.events[0].person.email, "pat@fund.com");
+  assert.ok(run.events[0].details.message.length > 0);
+  assert.strictEqual(JSON.parse(run.of("supabase")[0].init.body).message, long, "Supabase keeps the full text");
+});
+
 // ---- book ----
 
 test("book: the reader still gets the preview email, and the founder now hears about it through the hub", async () => {
@@ -446,5 +463,20 @@ test("with no intake secret the forward is skipped and logged; Supabase alone ca
     assert.strictEqual(lost.res.statusCode, 500, "neither copy exists, so the visitor is told");
   } finally {
     process.env.SUEDE_INTAKE_SECRET = saved;
+  }
+});
+
+// ---- function duration ----
+
+test("each form function may run long enough for a stalled hub and still answer", () => {
+  const { ATTEMPT_TIMEOUT_MS, BACKOFF_MS } = require("../api/_intake.js");
+  const config = JSON.parse(require("node:fs").readFileSync(require("node:path").join(__dirname, "..", "vercel.json"), "utf8"));
+  // Every attempt timing out, plus the backoff between them.
+  const worstForwardMs = BACKOFF_MS.length * ATTEMPT_TIMEOUT_MS + BACKOFF_MS.reduce((sum, ms) => sum + ms, 0);
+  for (const form of Object.keys(FORMS)) {
+    const fn = config.functions && config.functions[`api/${form}.js`];
+    assert.ok(fn, `vercel.json sets functions["api/${form}.js"]`);
+    // Room for the forward plus Supabase, Resend and a cold start.
+    assert.ok(fn.maxDuration * 1000 >= worstForwardMs + 10_000, `api/${form}.js maxDuration ${fn.maxDuration}s`);
   }
 });
