@@ -1,0 +1,190 @@
+{
+  "contractCommit": "b13442a26d5893073f6e06514839b77da4e5a488",
+  "contractPath": "src/lib/intake/contract.ts",
+  "status": "draft-code-conformance-only-activation-held",
+  "detailFields": [
+    "website",
+    "message",
+    "subject",
+    "tool",
+    "consent",
+    "company_id",
+    "ticket_kind",
+    "submitted_email",
+    "submitted_phone",
+    "check",
+    "run_id",
+    "pages",
+    "note",
+    "product",
+    "product_id",
+    "plan",
+    "amount",
+    "currency",
+    "order_id",
+    "booking_id",
+    "service",
+    "scheduled_at",
+    "application_id",
+    "role",
+    "organization",
+    "interest",
+    "email_confirmed",
+    "captured_by",
+    "provider",
+    "user_id",
+    "session_id",
+    "referrer_host"
+  ],
+  "attributionFields": [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+    "referrer",
+    "landing_page",
+    "source",
+    "campaign",
+    "referrer_host"
+  ],
+  "valid": [
+    {
+      "id": "fixture:lead:00000001",
+      "kind": "lead",
+      "property": "seo.suedeai.ai",
+      "occurredAt": "2026-10-25T12:00:00.000Z",
+      "summary": "Synthetic website help request",
+      "person": {
+        "email": "synthetic@example.test"
+      },
+      "details": {
+        "tool": "contact",
+        "consent": "requested-follow-up"
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "unknown-top-level",
+      "event": {
+        "id": "fixture:lead:00000001",
+        "kind": "lead",
+        "property": "seo.suedeai.ai",
+        "occurredAt": "2026-10-25T12:00:00.000Z",
+        "summary": "Synthetic website help request",
+        "person": {
+          "email": "synthetic@example.test"
+        },
+        "details": {
+          "tool": "contact",
+          "consent": "requested-follow-up"
+        },
+        "password": "synthetic-secret"
+      }
+    },
+    {
+      "name": "unknown-detail",
+      "event": {
+        "id": "fixture:lead:00000001",
+        "kind": "lead",
+        "property": "seo.suedeai.ai",
+        "occurredAt": "2026-10-25T12:00:00.000Z",
+        "summary": "Synthetic website help request",
+        "person": {
+          "email": "synthetic@example.test"
+        },
+        "details": {
+          "password": "synthetic-secret"
+        }
+      }
+    },
+    {
+      "name": "nested-detail",
+      "event": {
+        "id": "fixture:lead:00000001",
+        "kind": "lead",
+        "property": "seo.suedeai.ai",
+        "occurredAt": "2026-10-25T12:00:00.000Z",
+        "summary": "Synthetic website help request",
+        "person": {
+          "email": "synthetic@example.test"
+        },
+        "details": {
+          "message": {
+            "nested": "synthetic"
+          }
+        }
+      }
+    },
+    {
+      "name": "unsupported-kind",
+      "event": {
+        "id": "fixture:lead:00000001",
+        "kind": "failure",
+        "property": "seo.suedeai.ai",
+        "occurredAt": "2026-10-25T12:00:00.000Z",
+        "summary": "Synthetic website help request",
+        "person": {
+          "email": "synthetic@example.test"
+        },
+        "details": {
+          "tool": "contact",
+          "consent": "requested-follow-up"
+        }
+      }
+    },
+    {
+      "name": "unknown-attribution",
+      "event": {
+        "id": "fixture:lead:00000001",
+        "kind": "lead",
+        "property": "seo.suedeai.ai",
+        "occurredAt": "2026-10-25T12:00:00.000Z",
+        "summary": "Synthetic website help request",
+        "person": {
+          "email": "synthetic@example.test"
+        },
+        "details": {
+          "tool": "contact",
+          "consent": "requested-follow-up"
+        },
+        "attribution": {
+          "password": "synthetic"
+        }
+      }
+    }
+  ],
+  "signing": {
+    "secret": "synthetic-contract-test-secret-000000000000",
+    "timestamp": "1792929600",
+    "body": "{\"id\":\"fixture:lead:00000001\",\"kind\":\"lead\",\"property\":\"seo.suedeai.ai\",\"occurredAt\":\"2026-10-25T12:00:00.000Z\",\"summary\":\"Synthetic website help request\",\"person\":{\"email\":\"synthetic@example.test\"},\"details\":{\"tool\":\"contact\",\"consent\":\"requested-follow-up\"}}",
+    "signature": "v1=dbcbea421e4e6220ee07246474755abb4722d8802011cc4437602b7acf8b94af"
+  },
+  "acknowledgements": {
+    "accepted": [
+      {
+        "accepted": true,
+        "duplicate": false
+      },
+      {
+        "accepted": true,
+        "duplicate": true
+      }
+    ],
+    "rejected": [
+      {},
+      {
+        "accepted": false,
+        "duplicate": false
+      },
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true,
+        "duplicate": "false"
+      }
+    ]
+  }
+}
