@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { capture, drain, project } = require('../scripts/lib/intake-sender.cjs');
-const config = { enabled: true, contractVersion:'v1-draft-b13442a', secret: 'x'.repeat(32), url: 'https://agents.suedeai.ai/api/intake/events', source: 'org-site' };
+const config = { enabled: true, contractVersion:'v1-draft-0b33f45', secret: 'x'.repeat(32), url: 'https://agents.suedeai.ai/api/intake/events', source: 'org-site' };
 const event = () => project('contact', 'submission-123', { email: 'person@example.com', password: 'secret', message: 'token=secret', topic: 'Hello' }, '2026-10-25T12:00:00Z');
 test('projection excludes body keys and free text; IDs remain stable', () => {
  assert.deepEqual(event(), event()); assert.equal(event().details.subject, undefined);
@@ -62,4 +62,11 @@ test('unapproved stored content blocks before network and preserves record for r
  const store={claim:async()=>[{event:{...event(),details:{service:'contact',message:'secret'}},lease:'test',attempts:0}],settle:async(_,s)=>state=s};
  await drain(config,store,async()=>{sent++;});
  assert.equal(sent,0);assert.equal(state.status,'blocked');
+});
+test('official hub v1 signing fixture reproduced unchanged; tamper differs',()=>{
+ const vector=require('./fixtures/owner-v1-signing.json');
+ const {signBody,validDraftEvent}=require('../scripts/lib/intake-contract-v1.cjs');
+ assert.equal(signBody(vector.secret,vector.timestamp,vector.rawBody),vector.signature);
+ assert.notEqual(signBody(vector.secret,vector.timestamp,vector.rawBody+' '),vector.signature);
+ assert.equal(validDraftEvent(JSON.parse(vector.rawBody)),true);
 });

@@ -1,4 +1,4 @@
-// Prepared against suede-agent-studio b13442a26d5893073f6e06514839b77da4e5a488.
+// Prepared against suede-agent-studio 0b33f45a0bdde87b8e7746666d6200c17d0c4b82.
 // No production imports, environment configuration or scheduler. Storage RPCs
 // are a separate, unprovisioned prerequisite. Never run against customer data.
 const { createHash } = require('node:crypto');
@@ -18,7 +18,7 @@ function project(form, submissionId, fields, occurredAt) {
     details:{ service:form, ...(form === 'investors' ? {consent:fields.consent === true} : {}) } };
 }
 function configured(config) {
-  return config.enabled === true && config.contractVersion === 'v1-draft-b13442a' &&
+  return config.enabled === true && config.contractVersion === 'v1-draft-0b33f45' &&
     config.url === HUB && config.source === 'org-site' &&
     typeof config.secret === 'string' && Buffer.byteLength(config.secret) >= 32;
 }

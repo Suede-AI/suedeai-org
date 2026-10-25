@@ -1,9 +1,11 @@
 # Org intake v1 draft implementation
 
 This supersedes the absence-of-contract dependency in the earlier design. Hub
-artifact `b13442a26d5893073f6e06514839b77da4e5a488`,
-`src/lib/intake/contract.ts`, is normative for this draft only. CONTRACT-v1.md
-has malformed spacing in `v 1=` and example values; code uses `v1=`. Activation
+artifact `0b33f45a0bdde87b8e7746666d6200c17d0c4b82`,
+`docs/intake/CONTRACT-v1.md` and unchanged `src/lib/intake/contract.ts`,
+are pinned for this draft only. Official `docs/intake/CONFORMANCE-v1.md` and
+`fixtures/v1-signing.json` are published at that commit; signature reproduction
+is tested with the unchanged official vector. Activation
 is on hold. Fixture SHA256:
 `2c234a33b0b6d8e42bae8a4aba9f7fcce12580ee9f7816d98b9ea4315047b734`.
 

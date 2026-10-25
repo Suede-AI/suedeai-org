@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "fixtureOnly": true,
+  "secret": "intake-v1-fixture-only-not-a-real-secret-0123456789",
+  "source": "seo-site",
+  "timestamp": "1792929600",
+  "nowMs": 1792929600000,
+  "rawBody": "{\"id\":\"contact:fixture-0001\",\"kind\":\"lead\",\"property\":\"seo.suedeai.ai\",\"occurredAt\":\"2026-10-25T12:00:00Z\",\"summary\":\"Website help request\",\"person\":{\"email\":\"owner@example.com\",\"name\":\"Dana\"},\"details\":{\"website\":\"https://example.com\",\"message\":\"Please contact me\"},\"attribution\":{\"utm_source\":\"website\"}}",
+  "signature": "v1=39417219de35a6a3609633dc009865671fc6d48204605a3dac985940145ad07a",
+  "storedId": "seo-site/contact:fixture-0001"
+}

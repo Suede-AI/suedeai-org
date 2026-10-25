@@ -1,4 +1,4 @@
-// Draft-code conformance only, b13442a26d5893073f6e06514839b77da4e5a488.
+// Draft-code conformance only, 0b33f45a0bdde87b8e7746666d6200c17d0c4b82.
 const {createHmac}=require('node:crypto');
 const DETAILS=new Set('website message subject tool consent company_id ticket_kind submitted_email submitted_phone check run_id pages note product product_id plan amount currency order_id booking_id service scheduled_at application_id role organization interest email_confirmed captured_by provider user_id session_id referrer_host'.split(' '));
 const ATTRIBUTION=new Set('utm_source utm_medium utm_campaign utm_term utm_content referrer landing_page source campaign referrer_host'.split(' '));
