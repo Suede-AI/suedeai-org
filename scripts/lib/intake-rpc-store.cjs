@@ -20,7 +20,7 @@ function createRpcStore(config={}, fetcher=fetch) {
         if (raw.length>700000) throw new Error('Intake storage response oversized');
         return raw?JSON.parse(raw):null;
       })(),new Promise((_,reject)=>{timer=setTimeout(()=>{controller.abort();reject(new Error('Intake storage timeout'));},4000);})]);
-    } finally { clearTimeout(timer); }
+    } finally { clearTimeout(timer); controller.abort(); }
   }
   return {
     // Separate operator seam: worker credentials must not have RPC execution

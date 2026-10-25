@@ -50,7 +50,7 @@ async function bounded(operation, timeoutMs) {
     return await Promise.race([operation(controller.signal), new Promise((_,reject)=>{
       timer=setTimeout(()=>{controller.abort();reject(new Error('Timeout'));},timeoutMs);
     })]);
-  } finally {clearTimeout(timer);}
+  } finally {clearTimeout(timer);controller.abort();}
 }
 async function drain(config, store, fetcher=fetch) {
   if (!configured(config)) return {status:'disabled'};
