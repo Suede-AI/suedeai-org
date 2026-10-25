@@ -36,17 +36,50 @@ test('RPC adapter stays unconfigured and verifies durable/CAS acknowledgments', 
  await assert.rejects(()=>store.capture(event()),/durable/);
  await assert.rejects(()=>store.settle('lease',{status:'complete'}),/conflict/);
 });
-test('restarting worker retains identical event content after wrong-secret repair', async () => {
- const persisted={event:event(),lease:'first-lease',attempts:0}; let state;
- const store={capture:async value=>assert.deepEqual(value,persisted.event),claim:async()=>[persisted],settle:async(_,s)=>{state=s;}};
- const bodies=[];
+test('blocked delivery requires explicit revision-checked repair before claim', async () => {
+ const {createRpcStore}=require('../scripts/lib/intake-rpc-store.cjs');
+ // Persistent RPC fixture models states across fresh worker instances. It does
+ // not prove database transactionality; the production RPCs remain unprovisioned.
+ let row, leaseCounter=0; const bodies=[];
+ const fetchStore=async(url,init)=>{
+  const args=JSON.parse(init.body);let result;
+  switch(url.split('/').pop()) {
+   case 'org_intake_capture_v1':
+    if(row)assert.deepEqual(row.event,args.event);
+    else row={event:args.event,status:'retry',code:'new',revision:0,attempts:0,nextAttemptAt:null};
+    result={durable:true,id:row.event.id};break;
+   case 'org_intake_claim_v1':
+    if(row.status!=='retry')result=[];
+    else {row.lease=`lease-${++leaseCounter}`;row.status='working';row.attempts++;result=[{event:row.event,lease:row.lease,attempts:row.attempts}];}break;
+   case 'org_intake_settle_v1':
+    result={updated:args.lease===row.lease&&row.status==='working'};
+    if(result.updated){Object.assign(row,args.state);row.revision++;}break;
+   case 'org_intake_inventory_v1':
+    result=row.status==='blocked'?[{id:row.event.id,status:row.status,code:row.code,revision:row.revision,attempts:row.attempts,nextAttemptAt:row.nextAttemptAt}]:[];break;
+   case 'org_intake_repair_v1':
+    result={requeued:row.status==='blocked'&&args.id===row.event.id&&args.expectedRevision===row.revision,id:args.id};
+    if(result.requeued){row.status='retry';row.revision++;}break;
+   default:throw new Error('Unexpected RPC');
+  }
+  return new Response(JSON.stringify(result),{status:200});
+ };
+ const storage={storageApproved:true,storageUrl:'https://project.supabase.co',storageKey:'synthetic-only'};
+ const store=createRpcStore(storage,fetchStore);
  await capture(config,store,event());
  await drain(config,store,async(_,i)=>{bodies.push(i.body);return new Response('{}',{status:401});});
- assert.equal(state.status,'blocked');
- // An authorized storage repair clears the persisted block without changing
- // immutable event identity/content; then a fresh worker retries it.
+ assert.equal(row.status,'blocked');
+ // A new worker with corrected secret still cannot claim a blocked event.
+ await drain({...config,secret:'y'.repeat(32)},createRpcStore(storage,fetchStore),async()=>{throw new Error('Blocked row must not send');});
+ assert.equal(row.status,'blocked');assert.equal(bodies.length,1);
+ const operator=createRpcStore({...storage,repairApproved:true},fetchStore);
+ const [blocked]=await operator.inventory();
+ assert.deepEqual(Object.keys(blocked).sort(),['attempts','code','id','nextAttemptAt','revision','status']);
+ await assert.rejects(()=>store.repair(blocked.id,blocked.revision),/not approved/);
+ await assert.rejects(()=>operator.repair(blocked.id,blocked.revision+1),/conflict/);
+ await operator.repair(blocked.id,blocked.revision);
  await drain({...config,secret:'y'.repeat(32)},store,async(_,i)=>{bodies.push(i.body);return new Response('{"accepted":true,"duplicate":true}',{status:202});});
- assert.equal(state.status,'complete'); assert.equal(bodies[0],bodies[1]);
+ assert.equal(row.status,'complete');assert.equal(bodies[0],bodies[1]);
+ await assert.rejects(()=>operator.repair(blocked.id,row.revision),/conflict/);
 });
 test('shared pinned contract fixture valid/invalid/HMAC/ACK conformance',()=>{
  const fixture=require('./fixtures/intake-contract-v1.json');
@@ -89,4 +122,20 @@ test('Retry-After untrusted values cannot escape finite one-day scheduling horiz
   assert.equal(state.status,'retry',header);assert.ok(Number.isFinite(delay)&&delay>=0&&delay<=86400000+1000,header);
   if(header==='120')assert.ok(delay>=120000,header);
  }
+});
+test('operator inventory rejects content-bearing metadata and uses only explicit repair RPC inputs',async()=>{
+ const {createRpcStore}=require('../scripts/lib/intake-rpc-store.cjs');
+ const options={storageApproved:true,repairApproved:true,storageUrl:'https://project.supabase.co',storageKey:'synthetic-only'};
+ const row={id:event().id,status:'blocked',code:'http-401',revision:1,attempts:1,nextAttemptAt:null};
+ for(const bad of [{...row,email:'person@example.com'},{...row,code:'untrusted-secret'},{...row,revision:-1}]) {
+  const operator=createRpcStore(options,async()=>new Response(JSON.stringify([bad]),{status:200}));
+  await assert.rejects(()=>operator.inventory(),/inventory/);
+ }
+ const operator=createRpcStore(options,async(url,init)=>{
+  assert.equal(url.endsWith('/org_intake_repair_v1'),true);
+  assert.deepEqual(JSON.parse(init.body),{id:row.id,expectedRevision:1});
+  return new Response(JSON.stringify({requeued:true,id:row.id}),{status:200});
+ });
+ await operator.repair(row.id,1);
+ await assert.rejects(()=>operator.repair(row.id,-1),/identity/);
 });

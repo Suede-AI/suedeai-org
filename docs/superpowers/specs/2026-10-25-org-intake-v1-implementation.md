@@ -52,6 +52,22 @@ Expected restricted RPCs:
 - `org_intake_settle_v1(lease,state)` performs compare-and-swap against the active
   lease, persists retry schedule/status and returns `{updated:true}`. Completion
   is durable; blocks preserve all original event content for operator repair.
+- Operator-only `org_intake_inventory_v1(afterId,limit)` returns blocked metadata
+  ordered by stable event id after the exclusive cursor, at most ten rows. Only
+  id/status/category code/revision/attempts/nextAttemptAt may be returned; no event
+  body, email, error response or arbitrary error string is exposed.
+- Operator-only `org_intake_repair_v1(id,expectedRevision)` must atomically compare
+  the blocked row revision, reject leased/completed/erased rows or stale revisions,
+  increment revision and set pending/due-now without replacing body or identity.
+  Return `{requeued:true,id}` only after commit. No automatic repair runs. Use a
+  separate operator adapter instance with `repairApproved:true` and separately
+  approved RPC execution rights; worker roles must not have repair/inventory rights.
+
+For wrong-secret recovery, first repair source configuration outside this dormant
+code, list blocked metadata, and explicitly release selected revisions. A fresh
+worker cannot claim blocked rows merely because its credential changed. Payload
+validation failures require operator reconciliation; this repair API deliberately
+does not edit the immutable payload. Unknown/erased content must not be released.
 
 No such RPC definitions exist in current repository schema or live readback.
 The main handlers use `return=minimal` source inserts. Although schema.sql
@@ -71,10 +87,15 @@ No auth capture is introduced. Real notification delivery is not asserted by
 
 ## Verification and remaining work
 Tests cover stable projection/privacy, disabled admission, spam/canary isolation,
-shared draft valid/invalid/HMAC/ACK fixtures, malformed/false ACK, 401 repair with
+shared draft valid/invalid/HMAC/ACK fixtures, malformed/false ACK, 401 block/inventory/explicit revision-checked repair with
 same immutable content, unknown HTTP success, 429/503, stalled fetch, invalid
 stored content, and missing durable/CAS acknowledgements.
 These use local fake persistence/network only; they do not prove actual database
 transactionality, production RPC concurrency, or live grants. Those require
 separate schema approval and adapter integration tests before handler wiring.
 No forwarding activation, purchases/refunds or external messages occurred.
+
+RPC recovery tests model persistent state across fresh adapter/worker instances,
+exclude blocked rows until explicit repair, reject stale revision and completed-row
+repair, and verify unchanged delivery bytes. The fake is protocol evidence only;
+actual SQL atomicity and grant enforcement remain unprovisioned/unverified.
