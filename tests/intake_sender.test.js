@@ -139,3 +139,18 @@ test('operator inventory rejects content-bearing metadata and uses only explicit
  await operator.repair(row.id,1);
  await assert.rejects(()=>operator.repair(row.id,-1),/identity/);
 });
+test('worker aborts unused non-202 response streams after recording failure',async()=>{
+ let signal,state;
+ const store={claim:async()=>[{event:event(),lease:'lease',attempts:0}],settle:async(_,value)=>state=value};
+ await drain(config,store,async(_,init)=>{signal=init.signal;return new Response(new ReadableStream({start(){}}),{status:503});});
+ assert.equal(state.status,'retry');
+ assert.equal(signal.aborted,true);
+});
+test('RPC aborts unused error response streams after failed request',async()=>{
+ const {createRpcStore}=require('../scripts/lib/intake-rpc-store.cjs');let signal;
+ const store=createRpcStore({storageApproved:true,storageUrl:'https://project.supabase.co',storageKey:'synthetic-only'},async(_,init)=>{
+  signal=init.signal;return new Response(new ReadableStream({start(){}}),{status:503});
+ });
+ await assert.rejects(()=>store.capture(event()),/unavailable/);
+ assert.equal(signal.aborted,true);
+});
