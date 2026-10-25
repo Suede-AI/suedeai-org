@@ -2,12 +2,12 @@
 // No production imports, environment configuration or scheduler. Storage RPCs
 // are a separate, unprovisioned prerequisite. Never run against customer data.
 const { createHash } = require('node:crypto');
-const {validDraftEvent, signBody, validAck} = require('./intake-contract-v1.cjs');
+const {validDraftEvent, signBody, validAck, validTimestamp} = require('./intake-contract-v1.cjs');
 const HUB = 'https://agents.suedeai.ai/api/intake/events';
 const FORMS = Object.freeze({ contact:'lead', 'book-call':'booking', book:'lead', investors:'application' });
 function project(form, submissionId, fields, occurredAt) {
   if (!Object.hasOwn(FORMS,form) || !/^[A-Za-z0-9_-]{8,128}$/.test(submissionId)) throw new Error('Invalid capture identity');
-  if (!/^\d{4}-\d\d-\d\dT/.test(occurredAt) || !Number.isFinite(Date.parse(occurredAt))) throw new Error('Invalid capture time');
+  if (!validTimestamp(occurredAt)) throw new Error('Invalid capture time');
   const email = typeof fields.email === 'string' ? fields.email.trim().toLowerCase() : '';
   if (email.length > 320 || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(email)) throw new Error('Invalid contact address');
   // Minimize values as well as keys: no user free text, URLs, name or attribution
@@ -19,7 +19,7 @@ function project(form, submissionId, fields, occurredAt) {
 }
 function configured(config) {
   return config.enabled === true && config.contractVersion === 'v1-draft-0b33f45' &&
-    config.url === HUB && config.source === 'org-site' &&
+    config.url === HUB && config.source === 'suedeai-org' &&
     typeof config.secret === 'string' && Buffer.byteLength(config.secret) >= 32;
 }
 function assertOrgEvent(event) {
@@ -76,8 +76,14 @@ async function drain(config, store, fetcher=fetch) {
           }
         } else if ([400,401,413].includes(response.status)) status='blocked';
         else if (response.status===429) {
-          const value=response.headers.get('retry-after'); const seconds=Number(value);
-          retryAfter=Number.isFinite(seconds)&&seconds>=0 ? seconds*1000 : Math.max(0,Date.parse(value)-Date.now())||0;
+          const value=response.headers.get('retry-after') || '';
+          // Clamp untrusted scheduling hints to a finite 24-hour horizon.
+          // Scientific notation and malformed/negative values are not delta seconds.
+          if (/^\d+$/.test(value)) retryAfter=Math.min(86400,Number(value))*1000;
+          else if (/^[A-Za-z]{3}, /.test(value)) {
+            const target=Date.parse(value);
+            if (Number.isFinite(target)) retryAfter=Math.min(86400000,Math.max(0,target-Date.now()));
+          }
         }
       },Math.max(1,Math.min(config.timeoutMs||4000,4000)));
     } catch { /* Keep failure category only, never response text or PII. */ }

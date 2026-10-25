@@ -15,8 +15,8 @@ capture, and bounded signed worker. No handler or environment reads import it;
 `.vercelignore` excludes scripts from the deployed site. This is real locally
 executable transport/adapter code, not a deployed sender or claim of provisioned
 durability. The independently disabled gate requires literal boolean enabled,
-the exact draft pin, fixed org-site source, fixed hub URL and a 32-byte secret.
-No credential is included or created. Source allocation needs hub-owner approval.
+the exact draft pin, fixed historically assigned suedeai-org source, fixed hub URL and a 32-byte secret.
+No credential is included or created. Source/contract agreement still needs hub-owner approval.
 
 Allowlisted org events contain only email, fixed form/service, fixed summary,
 trusted capture timestamp and stable hash of form plus canonical submission ID.
@@ -30,7 +30,11 @@ This narrows the historical spec's candidate upper bound deliberately.
 Worker refreshes signing time but preserves exact original event content. It
 claims at most ten rows, bounds each network/body/settlement operation to four
 seconds, blocks 400/401/413 for explicit repair, retains unknown/malformed ACKs
-and network failures, uses exponential jitter and respects Retry-After on 429.
+and network failures, uses exponential jitter and accepts numeric delta-seconds or HTTP-date
+Retry-After on 429, clamped to a finite 24-hour scheduling horizon. Malformed
+values use bounded exponential backoff. Extremely distant hints require operator
+review if a longer hold is needed. Strict calendar validation rejects normalized
+impossible dates and out-of-range clock components before projection or capture.
 Only exact 202 accepted/duplicate-boolean acknowledgements complete a record.
 Failure response bodies are never stored or logged. Failed settlements throw;
 the persisted lease must expire and release the same original event for retry.

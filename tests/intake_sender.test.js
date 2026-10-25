@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { capture, drain, project } = require('../scripts/lib/intake-sender.cjs');
-const config = { enabled: true, contractVersion:'v1-draft-0b33f45', secret: 'x'.repeat(32), url: 'https://agents.suedeai.ai/api/intake/events', source: 'org-site' };
+const config = { enabled: true, contractVersion:'v1-draft-0b33f45', secret: 'x'.repeat(32), url: 'https://agents.suedeai.ai/api/intake/events', source: 'suedeai-org' };
 const event = () => project('contact', 'submission-123', { email: 'person@example.com', password: 'secret', message: 'token=secret', topic: 'Hello' }, '2026-10-25T12:00:00Z');
 test('projection excludes body keys and free text; IDs remain stable', () => {
  assert.deepEqual(event(), event()); assert.equal(event().details.subject, undefined);
@@ -69,4 +69,24 @@ test('official hub v1 signing fixture reproduced unchanged; tamper differs',()=>
  assert.equal(signBody(vector.secret,vector.timestamp,vector.rawBody),vector.signature);
  assert.notEqual(signBody(vector.secret,vector.timestamp,vector.rawBody+' '),vector.signature);
  assert.equal(validDraftEvent(JSON.parse(vector.rawBody)),true);
+});
+test('calendar-invalid timestamps are rejected by projection and draft validation',()=>{
+ const {validDraftEvent}=require('../scripts/lib/intake-contract-v1.cjs');
+ for(const occurredAt of ['2026-02-30T12:00:00Z','2025-02-29T12:00:00Z','2026-04-31T12:00:00Z','2026-10-25T24:00:00Z','2026-10-25T12:00:60Z']) {
+  assert.throws(()=>project('contact','submission-123',{email:'person@example.com'},occurredAt),/time/);
+  assert.equal(validDraftEvent({...event(),occurredAt}),false);
+ }
+ for(const occurredAt of ['2024-02-29T12:00:00Z','2026-10-25T12:00:00.123+01:30']) {
+  assert.equal(validDraftEvent(project('contact','submission-123',{email:'person@example.com'},occurredAt)),true);
+ }
+});
+test('Retry-After untrusted values cannot escape finite one-day scheduling horizon',async()=>{
+ for(const header of ['1e99','9'.repeat(500),'garbage','Wed, 01 Jan 9999 00:00:00 GMT','Wed, 01 Jan 2000 00:00:00 GMT','120','-9']) {
+  let state;const before=Date.now();
+  const store={claim:async()=>[{event:event(),lease:'lease',attempts:0}],settle:async(_,s)=>state=s};
+  await drain(config,store,async()=>new Response('{}',{status:429,headers:{'Retry-After':header}}));
+  const delay=Date.parse(state.nextAttemptAt)-before;
+  assert.equal(state.status,'retry',header);assert.ok(Number.isFinite(delay)&&delay>=0&&delay<=86400000+1000,header);
+  if(header==='120')assert.ok(delay>=120000,header);
+ }
 });
