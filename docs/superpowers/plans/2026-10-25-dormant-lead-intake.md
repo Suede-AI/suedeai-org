@@ -19,7 +19,7 @@ No stale branch merge; no Studio edits. Retain genuine signup/payment behavior.
 - A pure policy is not a persistence adapter or durability implementation.
 
 ## Task 1: Contract-neutral policy (prepared)
-Files: `api/_intake-policy.js`, `tests/intake_policy.test.js`.
+Files: `scripts/lib/intake-policy.cjs`, `tests/intake_policy.test.js`.
 Interface: `intakeDisposition(options = {})` returns disabled, discard, enqueue,
 retain with reason, or complete. Requires strict boolean readiness. No env reads,
 network, persistence, payload shaping or handler imports.

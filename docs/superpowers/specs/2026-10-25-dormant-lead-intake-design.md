@@ -75,3 +75,7 @@ replay after process loss, duplicate requests, concurrent claims, wrong secret
 then repair, stalled fetch, malformed success acknowledgement, 429/server faults,
 spam/canary floods, persistence failure and unchanged form success behavior.
 All network and persistence are local fakes; no external messages or customers.
+
+The preparatory policy lives under `scripts/`, which `.vercelignore` excludes,
+so this changes no public API or static endpoint. Future runtime integration
+must deliberately relocate it as part of the reviewed adapter work.

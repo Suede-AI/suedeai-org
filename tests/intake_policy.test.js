@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { intakeDisposition } = require('../api/_intake-policy');
+const { intakeDisposition } = require('../scripts/lib/intake-policy.cjs');
 
 test('disabled and missing prerequisites never admit work', () => {
   for (const options of [{}, { enabled: true }, { enabled: 'true', contractReady: true, durableStoreReady: true }]) {
