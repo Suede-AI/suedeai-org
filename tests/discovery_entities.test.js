@@ -45,6 +45,36 @@ test('each standalone JSON-LD document declares its own schema context', () => {
 });
 const orgId = 'https://suedeai.ai/#organization';
 const founderId = 'https://suedeai.ai/founder#person';
+const practiceId = 'https://seo.suedeai.ai/#organization';
+const practiceProfile = 'https://clutch.co/profile/suede-ai-seo';
+test('Clutch identifies the SEO practice, linked to its parent company', () => {
+  for (const file of pages) {
+    const graph = nodes(file);
+    const company = graph.find(n => n['@type'] === 'Organization' && n['@id'] === orgId);
+    if (!company) continue;
+    assert.ok(!company.sameAs.includes(practiceProfile), path.relative(root, file));
+    assert.ok(company.sameAs.includes('https://suedeai.org/'));
+    const practice = graph.find(n => n['@id'] === practiceId);
+    assert.equal(practice?.['@type'], 'ProfessionalService', path.relative(root, file));
+    assert.equal(practice.url, 'https://seo.suedeai.ai/');
+    assert.deepEqual(practice.sameAs, [practiceProfile]);
+    assert.equal(practice.parentOrganization['@id'], orgId);
+  }
+});
+test('founder ImageObject dimensions match the checked-in PNG', () => {
+  const png = fs.readFileSync(path.join(root, 'assets/img/founder-jason.png'));
+  assert.equal(png.subarray(1, 4).toString(), 'PNG');
+  const dimensions = [png.readUInt32BE(16), png.readUInt32BE(20)];
+  let checked = 0;
+  for (const file of pages) {
+    for (const person of nodes(file).filter(n => n['@id'] === founderId && n.image?.['@type'] === 'ImageObject')) {
+      if (person.image.url !== 'https://suedeai.org/assets/img/founder-jason.png') continue;
+      assert.deepEqual([person.image.width, person.image.height], dimensions, path.relative(root, file));
+      checked++;
+    }
+  }
+  assert.ok(checked > 0);
+});
 test('every full company node shares one identity, logo and accurate company context', () => {
   const organizations = pages.flatMap(nodes).filter(n => n['@type'] === 'Organization' && n['@id'] === orgId);
   assert.equal(organizations.length, 24);
