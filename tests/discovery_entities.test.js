@@ -94,7 +94,7 @@ test('proof thesis links technical guide and consistently states evidentiary lim
 // the company and founder one-liners are quoted, never paraphrased, and the
 // founder's sameAs is the verified list only (no pages of his own sites).
 const COMPANY_ONE_LINER = 'Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.';
-const FOUNDER_ONE_LINER = 'Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.';
+const FOUNDER_ONE_LINER = 'Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.';
 const CANONICAL_PERSON_SAME_AS = [
   'https://www.wikidata.org/wiki/Q140235755',
   'https://www.crunchbase.com/person/jason-colapietro-d83e',
