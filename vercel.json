@@ -113,6 +113,11 @@
       "permanent": true
     },
     {
+      "source": "/wp-content/uploads/2024/12/Suede-Whitepaper.pdf",
+      "destination": "/whitepapers/suede-ai-agent-studio-v0.3.pdf",
+      "permanent": true
+    },
+    {
       "source": "/wp-content/(.*)",
       "destination": "/",
       "permanent": true
