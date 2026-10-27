@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "research/index.html"
+        ],
+        "createdAt": "2026-10-27T07:08:26.781Z",
+        "reason": "Reviewed in browser: detector assumes a white background; inherited dark panel is rgb(9,16,27), body/headings 16.96:1 and links 8.90:1. Existing shared CSS is unchanged."
+      }
+    ]
+  }
+}
