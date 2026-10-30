@@ -2780,3 +2780,17 @@ input,
 textarea {
   caret-color: currentColor;
 }
+
+/* Homepage H1 topic line: names the page's subject in search terms ahead of
+   the display line, styled like the hero kicker so the hero looks unchanged. */
+.hero-title-topic {
+  display: block;
+  width: min(34ch, calc(100vw - 2 * var(--space-gutter)));
+  margin-bottom: 0.9rem;
+  color: var(--text-soft);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
