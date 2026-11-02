@@ -1022,6 +1022,39 @@ button[aria-disabled="true"] {
   margin-top: 1rem;
   justify-content: center;
 }
+/* ---- Page figure: one editorial still per explainer page ---- */
+.page-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--ink-panel);
+  box-shadow: var(--shadow-md);
+}
+.page-figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1600 / 893;
+  object-fit: cover;
+  background: var(--ink-control);
+}
+.page-figure figcaption {
+  display: grid;
+  gap: 6px;
+  padding: 16px 22px 18px;
+  border-top: 1px solid var(--hairline);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.page-figure__label {
+  color: var(--registry-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 @media (max-width: 1100px) {
   .book-hero__copy h1 {
     font-size: 3.2rem;
