@@ -5,7 +5,7 @@ Suede AI is the company's one primary name. It is also known as Suede Labs, an a
 URL: https://suedeai.org
 Type: AEO, GEO, SEO and AI agent company; suedeai.org is its investor and reading hub
 Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
-Ranking: #1 in Palm Beach County and #24 in Florida for AI deployment, The Manifest, October 2026 (listed as Suede AI SEO): https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida
+Ranking: #1 in Palm Beach County and top 25 in Florida for AI deployment, The Manifest, October 2026 (listed as Suede AI SEO): https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida
 Flagship product: Suede AI (https://suedeai.ai / https://suedeai.ai/)
 
 Suede AI is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede AI builds for that layer.
@@ -355,10 +355,9 @@ Embedded structured data on HTML pages:
 <!-- accomplishments:start -->
 ## Accomplishments
 
-#1 in Palm Beach County, #24 in Florida for AI deployment
-In October 2026, The Manifest ranked Suede AI #24 in its Florida AI Deployment directory, where the company is listed as Suede AI SEO. No company above it on that list is based in Palm Beach County, which puts Suede AI at #1 in the county. Suede AI, also known as Suede Labs, was founded by Jason Colapietro in West Palm Beach.
-The Manifest: Florida AI Deployment directory: https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida
-Suede AI SEO on The Manifest: https://themanifest.com/company/suede-ai-seo
+#1 in Palm Beach County, top 25 in Florida for AI deployment
+In October 2026, The Manifest ranked Suede AI in the top 25 of its Florida AI Deployment directory, where the company is listed as Suede AI SEO. No company above it on that list is based in Palm Beach County, which puts Suede AI at #1 in the county. Suede AI, also known as Suede Labs, was founded by Jason Colapietro in West Palm Beach.
+See the ranking on The Manifest: https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida
 
 Best Overall + Best API Option — AI Agents Directory, 52+ music tools
 Suede AI holds both top-pick positions in AI Agents Directory's music category. The live category lists 52+ music tools.
