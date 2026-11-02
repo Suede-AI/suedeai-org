@@ -41,7 +41,6 @@ CANONICAL_ORGANIZATION_SAME_AS = [
     "https://www.linkedin.com/company/suede-labs",
     "https://www.wikidata.org/wiki/Q141169484",
     "https://pitchbook.com/profiles/company/937217-71",
-    "https://clutch.co/profile/suede-ai-seo",
     "https://www.f6s.com/suede-ai",
     "https://www.tiktok.com/@suedeaiseo",
     "https://discord.gg/6WZEnnkPH4",
