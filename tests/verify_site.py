@@ -215,6 +215,17 @@ PAGES = {
     "research/provenance/index.html": "/research/provenance/",
     "research/hardware/index.html": "/research/hardware/",
     "research/notes/index.html": "/research/notes/",
+    "compare/index.html": "/compare/",
+    "compare/suede-ai-vs-story-protocol/index.html": "/compare/suede-ai-vs-story-protocol/",
+    "compare/story-protocol-alternatives/index.html": "/compare/story-protocol-alternatives/",
+    "compare/suede-ai-vs-safe-creative/index.html": "/compare/suede-ai-vs-safe-creative/",
+    "compare/safe-creative-alternatives/index.html": "/compare/safe-creative-alternatives/",
+    "compare/suede-ai-vs-bernstein/index.html": "/compare/suede-ai-vs-bernstein/",
+    "compare/bernstein-alternatives/index.html": "/compare/bernstein-alternatives/",
+    "compare/suede-ai-vs-numbers-protocol/index.html": "/compare/suede-ai-vs-numbers-protocol/",
+    "compare/numbers-protocol-alternatives/index.html": "/compare/numbers-protocol-alternatives/",
+    "compare/suede-ai-vs-adobe-content-authenticity/index.html": "/compare/suede-ai-vs-adobe-content-authenticity/",
+    "compare/adobe-content-authenticity-alternatives/index.html": "/compare/adobe-content-authenticity-alternatives/",
 }
 
 PREVIEW_PDF_PATH = "/assets/files/stake-your-claim-condensed-preview.pdf"
