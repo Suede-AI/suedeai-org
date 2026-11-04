@@ -790,7 +790,7 @@ def main() -> int:
     optimized_pages = {
         "why-copyright-fails/index.html": "2026-09-09",
         "programmable-ip/index.html": "2026-10-18",
-        "royalties/index.html": "2026-10-18",
+        "royalties/index.html": "2026-11-04",
     }
 
     for file_name, expected_modified in optimized_pages.items():
