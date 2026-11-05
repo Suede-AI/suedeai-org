@@ -81,7 +81,7 @@ Suede AI is an ownership and provenance layer for AI media. The reading hub at s
 - [Provenance Research](https://suedeai.org/research/provenance/) — exact-file records, version history, claims and current registry documentation
 - [Hardware Layer](https://suedeai.org/research/hardware/) — SuedeMic, SuedeVault and Sing&Sign: capture-time evidence research, in development
 - [Research Notes](https://suedeai.org/research/notes/) — short public notes on consent and model ingestion
-- [Compare](https://suedeai.org/compare/): Suede AI IP Registry compared with Story Protocol, Safe Creative, Bernstein, Numbers Protocol and Adobe Content Authenticity, with prices as of November 2026
+- [Compare](https://suedeai.org/compare/): Suede AI IP Registry compared with Story Protocol, Safe Creative, Bernstein, Numbers Protocol and Adobe Content Authenticity: what each record holds, where it lives and who it names, with sources
 - [Suede AI vs Story Protocol](https://suedeai.org/compare/suede-ai-vs-story-protocol/), plus [Story Protocol alternatives](https://suedeai.org/compare/story-protocol-alternatives/)
 - [Suede AI vs Safe Creative](https://suedeai.org/compare/suede-ai-vs-safe-creative/), plus [Safe Creative alternatives](https://suedeai.org/compare/safe-creative-alternatives/)
 - [Suede AI vs Bernstein](https://suedeai.org/compare/suede-ai-vs-bernstein/), plus [Bernstein alternatives](https://suedeai.org/compare/bernstein-alternatives/)
