@@ -367,8 +367,27 @@ Embedded structured data on HTML pages:
 ## Accomplishments
 
 #1 in Palm Beach County, top 25 in Florida for AI deployment
-In October 2026, The Manifest ranked Suede AI in the top 25 of its Florida AI Deployment directory, where the company is listed as Suede AI SEO. No company above it on that list is based in Palm Beach County, which puts Suede AI at #1 in the county. Suede AI, also known as Suede Labs, was founded by Jason Colapietro in West Palm Beach.
+On October 31, 2026, Suede AI SEO ranked #1 among Palm Beach County-based companies and Top 25 in Florida in The Manifest’s AI Deployment directory. Suede AI was founded by Jason Colapietro in West Palm Beach.
 See the ranking on The Manifest: https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida
+
+5.0/5 on Clutch
+Suede AI SEO received a 5.0/5 review from StoryBeam founder Kat Fantom, published September 24, 2026.
+Clutch: Suede AI SEO: https://clutch.co/profile/suede-ai-seo
+The Manifest company profile: https://themanifest.com/company/suede-ai-seo
+
+IA Práctica: bringing SEO in-house with Claude
+IA Práctica covered Jason Colapietro’s six-step playbook for bringing SEO in-house with Claude on November 4, 2026.
+Read the Spanish-language article: https://goyohernandez.com/ia/caso/despide-a-la-agencia-y-lleva-el-seo-dentro-con-claude-el-playbook-de-s/
+
+Suede Creator Skills on Glama
+The Suede Creator Skills MCP server is listed in Glama’s directory, connecting developers with the open-source skills library.
+Suede Creator Skills on Glama: https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills
+
+Cited by a GEO practitioner on measuring versus implementing AI visibility
+Paul Rowe, founder of NeuralAdX Ltd, cites Suede AI SEO’s comparison of AI visibility tools and managed GEO implementation in The Three Pillars of AI Visibility, updated October 28, 2026. The article explores how measurement, technical implementation and ongoing optimization work together.
+NeuralAdX: The Three Pillars of AI Visibility: https://neuraladx.com/the-three-pillars-of-ai-platform-visibility/
+The cited comparison: AI visibility tools vs. a managed service: https://seo.suedeai.ai/ai-visibility-tools-vs-managed-service
+The receipt on the evidence page: https://seo.suedeai.ai/evidence#industry-citations
 
 Best Overall + Best API Option — AI Agents Directory, 52+ music tools
 Suede AI holds both top-pick positions in AI Agents Directory's music category. The live category lists 52+ music tools.
@@ -439,16 +458,17 @@ Company portfolio: https://jcinvestmentgroup.ventures/portfolio
 The estate, entity by entity: https://map.suedeai.ai
 jasoncolapietro.com: https://jasoncolapietro.com
 
-6 Google Play apps and 2 Chrome extensions
+9 iOS apps, 6 Android apps and 2 Chrome extensions
 The portfolio includes 9 iOS apps under Jason’s developer account, including StoryBeam, 6 Android apps on Google Play, and 2 Chrome extensions. These are platform listings; Android editions overlap iOS products. Suede AI Visibility and Suede Sing are published on the Chrome Web Store.
+All apps: complete iOS, Android and Chrome catalog: https://jasoncolapietro.com/apps/
 Suede: AI Music Generator: https://play.google.com/store/apps/details?id=xyz.suedeai.app
 Suede: Guitar Forum & Gear: https://play.google.com/store/apps/details?id=ai.suede.social
 Suede Voice: Vocal Range Test: https://play.google.com/store/apps/details?id=ai.suedeai.suedevoice
 Suede Guitar Tuner & Studio: https://play.google.com/store/apps/details?id=ai.suede.fretpulse
 Suede AI Agents: Directory: https://play.google.com/store/apps/details?id=ai.suede.agents
 StoryBeam Kids: Bedtime Books: https://play.google.com/store/apps/details?id=com.storybeamkids.app
-Suede AI Visibility — SEO & AEO Audit: https://chromewebstore.google.com/detail/hekigfiohpacglhcaiidnbphejpihaki
-Suede Sing: Vocal Coach, Pitch Trainer & Vocal Range Test: https://chromewebstore.google.com/detail/dbimnmcokgmibdenmonoafhmdbjhpicd
+Suede AI Visibility — SEO & AEO Audit: https://chromewebstore.google.com/detail/suede-ai-visibility-%E2%80%94-seo/hekigfiohpacglhcaiidnbphejpihaki
+Suede Sing: Vocal Coach, Pitch Trainer & Vocal Range Test: https://chromewebstore.google.com/detail/suede-sing-vocal-coach-pi/dbimnmcokgmibdenmonoafhmdbjhpicd
 
 Agent flows that ship as x402 endpoints settling in USDC on Base
 Suede AI Agent Studio lets a builder draw an agent as a node graph and launch it as an x402 pay-per-call endpoint settling in USDC on Base, with Agentix tracking per-call earnings. The work implements the x402 protocol and ERC-8004 and includes a merged fix in the x402 Foundation’s own repository. It builds on those standards as an implementer, not a standards author.
