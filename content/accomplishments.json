@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-06",
   "source": "https://seo.suedeai.ai/evidence",
   "title": "Accomplishments, with the record behind them.",
   "intro": "The work and recognition of Jason Colapietro and Suede AI: businesses built, software shipped, books published, and contributions accepted. Each entry links to the underlying record.",
@@ -7,13 +7,77 @@
     {
       "id": "manifest-ai-deployment",
       "category": "Ranking",
-      "date": "The Manifest, October 2026",
+      "date": "October 31, 2026",
       "title": "#1 in Palm Beach County, top 25 in Florida for AI deployment",
-      "body": "In October 2026, The Manifest ranked Suede AI in the top 25 of its Florida AI Deployment directory, where the company is listed as Suede AI SEO. No company above it on that list is based in Palm Beach County, which puts Suede AI at #1 in the county. Suede AI, also known as Suede Labs, was founded by Jason Colapietro in West Palm Beach.",
+      "body": "On October 31, 2026, Suede AI SEO ranked #1 among Palm Beach County-based companies and Top 25 in Florida in The Manifest’s AI Deployment directory. Suede AI was founded by Jason Colapietro in West Palm Beach.",
       "links": [
         {
           "label": "See the ranking on The Manifest",
           "url": "https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida"
+        }
+      ]
+    },
+    {
+      "id": "clutch-review",
+      "category": "Client reviews",
+      "date": "September 24, 2026",
+      "title": "5.0/5 on Clutch",
+      "body": "Suede AI SEO received a 5.0/5 review from StoryBeam founder Kat Fantom, published September 24, 2026.",
+      "links": [
+        {
+          "label": "Clutch: Suede AI SEO",
+          "url": "https://clutch.co/profile/suede-ai-seo"
+        },
+        {
+          "label": "The Manifest company profile",
+          "url": "https://themanifest.com/company/suede-ai-seo"
+        }
+      ]
+    },
+    {
+      "id": "spanish-coverage",
+      "category": "Spanish-language coverage",
+      "date": "November 4, 2026",
+      "title": "IA Práctica: bringing SEO in-house with Claude",
+      "body": "IA Práctica covered Jason Colapietro’s six-step playbook for bringing SEO in-house with Claude on November 4, 2026.",
+      "links": [
+        {
+          "label": "Read the Spanish-language article",
+          "url": "https://goyohernandez.com/ia/caso/despide-a-la-agencia-y-lleva-el-seo-dentro-con-claude-el-playbook-de-s/"
+        }
+      ]
+    },
+    {
+      "id": "glama-listing",
+      "category": "Developer ecosystem",
+      "date": "November 2026",
+      "title": "Suede Creator Skills on Glama",
+      "body": "The Suede Creator Skills MCP server is listed in Glama’s directory, connecting developers with the open-source skills library.",
+      "links": [
+        {
+          "label": "Suede Creator Skills on Glama",
+          "url": "https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills"
+        }
+      ]
+    },
+    {
+      "id": "industry-citation",
+      "category": "Industry citation",
+      "date": "Updated October 28, 2026",
+      "title": "Cited by a GEO practitioner on measuring versus implementing AI visibility",
+      "body": "Paul Rowe, founder of NeuralAdX Ltd, cites Suede AI SEO’s comparison of AI visibility tools and managed GEO implementation in The Three Pillars of AI Visibility, updated October 28, 2026. The article explores how measurement, technical implementation and ongoing optimization work together.",
+      "links": [
+        {
+          "label": "NeuralAdX: The Three Pillars of AI Visibility",
+          "url": "https://neuraladx.com/the-three-pillars-of-ai-platform-visibility/"
+        },
+        {
+          "label": "The cited comparison: AI visibility tools vs. a managed service",
+          "url": "https://seo.suedeai.ai/ai-visibility-tools-vs-managed-service"
+        },
+        {
+          "label": "The receipt on the evidence page",
+          "url": "https://seo.suedeai.ai/evidence#industry-citations"
         }
       ]
     },
@@ -266,10 +330,14 @@
     {
       "id": "android-chrome",
       "category": "Products",
-      "date": "Listings verified October 8, 2026",
-      "title": "6 Google Play apps and 2 Chrome extensions",
+      "date": "Listings verified November 6, 2026",
+      "title": "9 iOS apps, 6 Android apps and 2 Chrome extensions",
       "body": "The portfolio includes 9 iOS apps under Jason’s developer account, including StoryBeam, 6 Android apps on Google Play, and 2 Chrome extensions. These are platform listings; Android editions overlap iOS products. Suede AI Visibility and Suede Sing are published on the Chrome Web Store.",
       "links": [
+        {
+          "label": "All apps: complete iOS, Android and Chrome catalog",
+          "url": "https://jasoncolapietro.com/apps/"
+        },
         {
           "label": "Suede: AI Music Generator",
           "url": "https://play.google.com/store/apps/details?id=xyz.suedeai.app"
@@ -296,11 +364,11 @@
         },
         {
           "label": "Suede AI Visibility — SEO & AEO Audit",
-          "url": "https://chromewebstore.google.com/detail/hekigfiohpacglhcaiidnbphejpihaki"
+          "url": "https://chromewebstore.google.com/detail/suede-ai-visibility-%E2%80%94-seo/hekigfiohpacglhcaiidnbphejpihaki"
         },
         {
           "label": "Suede Sing: Vocal Coach, Pitch Trainer & Vocal Range Test",
-          "url": "https://chromewebstore.google.com/detail/dbimnmcokgmibdenmonoafhmdbjhpicd"
+          "url": "https://chromewebstore.google.com/detail/suede-sing-vocal-coach-pi/dbimnmcokgmibdenmonoafhmdbjhpicd"
         }
       ]
     },
