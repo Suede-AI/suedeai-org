@@ -84,7 +84,11 @@ test('every full company node shares one identity, logo and accurate company con
     assert.ok(org.alternateName.includes('Suede Labs AI'));
     assert.equal(org.legalName, undefined);
     assert.equal(org.logo, 'https://suedeai.ai/suede-ai-logo-transparent.png');
-    assert.equal(org.address.addressLocality, 'West Palm Beach');
+    assert.equal(org.address.addressLocality, 'Jupiter');
+    assert.equal(org.address.streetAddress, '138 Victorian Lane');
+    assert.equal(org.address.postalCode, '33458');
+    assert.equal(org.parentOrganization.name, 'JC Investment Group LLC');
+    assert.equal(org.hasMerchantReturnPolicy.merchantReturnDays, 90);
     assert.ok(org.sameAs.includes('https://www.wikidata.org/wiki/Q141169484'));
     assert.equal(new Set(org.sameAs).size, org.sameAs.length);
   }

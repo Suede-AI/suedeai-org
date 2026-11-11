@@ -47,14 +47,15 @@ for (const file of htmlFiles(root)) {
   });
 }
 
-test('the company entity never lists the bare word "Suede" as an alternateName', () => {
+test('the company entity keeps Suede as an alternate name under its canonical company name', () => {
   for (const file of htmlFiles(root)) {
     for (const match of fs.readFileSync(file, 'utf8').matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
       const value = JSON.parse(match[1]);
       const nodes = (Array.isArray(value) ? value : [value]).flatMap(item => item['@graph'] || [item]);
       for (const node of nodes.filter(n => n['@id'] === 'https://suedeai.ai/#organization' && n.alternateName)) {
         const names = [].concat(node.alternateName);
-        assert.ok(!names.includes('Suede'), path.relative(root, file));
+        assert.equal(node.name, 'Suede AI', path.relative(root, file));
+        assert.deepEqual(names, ['Suede Labs AI', 'Suede Labs', 'Suede'], path.relative(root, file));
       }
     }
   }
