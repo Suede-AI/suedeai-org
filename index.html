@@ -66,263 +66,329 @@
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
+      "@type": "ProfessionalService",
+      "@id": "https://seo.suedeai.ai/#organization",
+      "name": "Suede AI SEO",
+      "url": "https://seo.suedeai.ai/",
+      "sameAs": [
+        "https://clutch.co/profile/suede-ai-seo"
+      ],
+      "parentOrganization": {
+        "@id": "https://suedeai.ai/#organization"
+      },
+      "alternateName": [
+        "Suede SEO"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "138 Victorian Lane",
+        "addressLocality": "Jupiter",
+        "addressRegion": "FL",
+        "postalCode": "33458",
+        "addressCountry": "US"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "@id": "https://suedeai.ai/terms#money-back-policy",
+        "name": "90-day money-back policy",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 90,
+        "returnFees": "https://schema.org/FreeReturn",
+        "refundType": "https://schema.org/FullRefund",
+        "merchantReturnLink": "https://suedeai.ai/terms#money-back-policy"
+      }
+    },
+    {
+      "@type": "Organization",
       "@context": "https://schema.org",
-      "@graph": [
+      "@id": "https://suedeai.ai/#organization",
+      "name": "Suede AI",
+      "description": "Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.",
+      "url": "https://suedeai.ai",
+      "foundingDate": "2024",
+      "award": [
+        "#1 Palm Beach County company in The Manifest's Florida AI Deployment directory, October 31, 2026",
+        "Top 25 in Florida, The Manifest AI Deployment directory, October 31, 2026",
+        "Best Overall and Best API Option, AI Agents Directory music category"
+      ],
+      "founder": {
+        "@id": "https://suedeai.ai/founder#person"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "138 Victorian Lane",
+        "addressLocality": "Jupiter",
+        "addressRegion": "FL",
+        "postalCode": "33458",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://suedeai.org/",
+        "https://x.com/AISUEDE",
+        "https://github.com/Suede-AI",
+        "https://www.youtube.com/@aisuede",
+        "https://www.instagram.com/suedeai/",
+        "https://www.instagram.com/suedesingapp/",
+        "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
+        "https://t.me/SUEDEAI",
+        "https://linktr.ee/suedelabsai",
+        "https://www.crunchbase.com/organization/suede-labs-ai",
+        "https://www.linkedin.com/company/suede-labs",
+        "https://www.wikidata.org/wiki/Q141169484",
+        "https://pitchbook.com/profiles/company/937217-71",
+        "https://www.f6s.com/suede-ai",
+        "https://www.tiktok.com/@suedeaiseo",
+        "https://discord.gg/6WZEnnkPH4"
+      ],
+      "alternateName": [
+        "Suede Labs AI",
+        "Suede Labs",
+        "Suede"
+      ],
+      "logo": "https://suedeai.ai/suede-ai-logo-transparent.png",
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "https://jcinvestmentgroup.ventures/#organization",
+        "name": "JC Investment Group LLC",
+        "url": "https://jcinvestmentgroup.ventures/"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "@id": "https://suedeai.ai/terms#money-back-policy",
+        "name": "90-day money-back policy",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 90,
+        "returnFees": "https://schema.org/FreeReturn",
+        "refundType": "https://schema.org/FullRefund",
+        "merchantReturnLink": "https://suedeai.ai/terms#money-back-policy"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://suedeai.ai/founder#person",
+      "name": "Jason Colapietro",
+      "givenName": "Jason",
+      "familyName": "Colapietro",
+      "alternateName": "Johnny Suede",
+      "jobTitle": "Founder and CEO, Suede AI",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Fractional Forward-Deployed Engineer"
+      },
+      "url": "https://suedeai.ai/founder",
+      "subjectOf": {
+        "@type": "ProfilePage",
+        "@id": "https://suedeai.org/jason-colapietro/"
+      },
+      "mainEntityOfPage": "https://suedeai.ai/founder",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://suedeai.org/assets/img/founder-jason.png",
+        "width": 1060,
+        "height": 1484,
+        "caption": "Jason Colapietro, founder and CEO of Suede AI"
+      },
+      "description": "Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.",
+      "worksFor": {
+        "@id": "https://suedeai.ai/#organization"
+      },
+      "knowsAbout": [
+        "Web development",
+        "Software engineering",
+        "Creator ownership",
+        "Proof of creation",
+        "Programmable IP",
+        "Music rights",
+        "Content provenance",
+        "Music licensing",
+        "Agent commerce",
+        "x402 payments",
+        "Agentic commerce",
+        "Voice and likeness rights",
+        "AI integration",
+        "Forward-deployed engineering",
+        "AI agents",
+        "Search engine optimization",
+        "Generative engine optimization",
+        "Answer engine optimization",
+        "Digital PR"
+      ],
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q140235755",
+        "https://www.crunchbase.com/person/jason-colapietro-d83e",
+        "https://apps.apple.com/us/developer/jason-colapietro/id1895958699",
+        "https://github.com/JasonColapietro",
+        "https://www.linkedin.com/in/jasoncolapietro",
+        "https://x.com/johnnysuede",
+        "https://www.youtube.com/@johnnysuede",
+        "https://jasoncolapietro.substack.com",
+        "https://jasoncolapietro.com",
+        "https://johnnysuede.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://suedeai.org/#website",
+      "description": "Company site and reading hub for Suede AI, the web development, software engineering, SEO and AI agent company founded by Jason Colapietro: engineering record, investor thesis, founder profile, books, research and creator ownership guides.",
+      "url": "https://suedeai.org/",
+      "name": "Suede AI",
+      "alternateName": [
+        "Suede Labs"
+      ],
+      "publisher": {
+        "@id": "https://suedeai.ai/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://suedeai.org/#webpage",
+      "url": "https://suedeai.org/",
+      "name": "AI Agents, SEO and Software Engineering | Suede AI",
+      "isPartOf": {
+        "@id": "https://suedeai.org/#website"
+      },
+      "about": {
+        "@id": "https://suedeai.ai/#organization"
+      },
+      "primaryImageOfPage": "https://suedeai.org/assets/img/og-suede.png?v=20260919",
+      "inLanguage": "en",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-11-06"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://suedeai.org/#engineering",
+      "name": "Web development and software engineering",
+      "serviceType": [
+        "Web development",
+        "Web application development",
+        "Software engineering",
+        "iOS app development",
+        "AI agent development"
+      ],
+      "provider": {
+        "@id": "https://suedeai.ai/#organization"
+      },
+      "description": "Suede AI designs, builds and ships websites, web apps, APIs, payment integrations, iOS apps and AI agents for businesses, in the client's own repository and stack, with tests and code review before release.",
+      "url": "https://suedeai.org/#engineering"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://suedeai.org/#x402-catalog",
+      "name": "Suede AI x402 Endpoint Catalog",
+      "serviceType": "Agent-native paid API",
+      "provider": {
+        "@id": "https://suedeai.ai/#organization"
+      },
+      "areaServed": "Worldwide",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "AI agents, autonomous software, developers building agentic commerce"
+      },
+      "description": "3 paid x402 resources on Base mainnet. Agents pay per call in USDC for music, video, and image generation.",
+      "url": "https://app.suedeai.ai/.well-known/x402.json",
+      "termsOfService": "https://suedeai.org/terms/",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "0.15",
+        "highPrice": "4.99",
+        "offerCount": 3,
+        "availability": "https://schema.org/InStock",
+        "url": "https://app.suedeai.ai/.well-known/x402.json"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://suedeai.org/#producer-agent",
+      "name": "Producer by Suede AI",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, ACP, x402",
+      "description": "Hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting.",
+      "url": "https://app.suedeai.ai/.well-known/agent-card.json",
+      "identifier": "019e3991-374d-75f3-a6b8-17ff309b4cd2",
+      "provider": {
+        "@id": "https://suedeai.ai/#organization"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "0.15",
+        "highPrice": "4.99",
+        "offerCount": 3,
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://suedeai.org/#faq",
+      "mainEntity": [
         {
-          "@type": "ProfessionalService",
-          "@id": "https://seo.suedeai.ai/#organization",
-          "name": "Suede AI SEO",
-          "url": "https://seo.suedeai.ai/",
-          "sameAs": [
-            "https://clutch.co/profile/suede-ai-seo"
-          ],
-          "parentOrganization": {
-            "@id": "https://suedeai.ai/#organization"
+          "@type": "Question",
+          "name": "What is Suede AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients."
           }
         },
         {
-          "@type": "Organization",
-          "@context": "https://schema.org",
-          "@id": "https://suedeai.ai/#organization",
-          "name": "Suede AI",
-          "description": "Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.",
-          "url": "https://suedeai.ai",
-          "foundingDate": "2024",
-          "award": ["#1 Palm Beach County company in The Manifest's Florida AI Deployment directory, October 31, 2026", "Top 25 in Florida, The Manifest AI Deployment directory, October 31, 2026", "Best Overall and Best API Option, AI Agents Directory music category"],
-          "founder": {
-            "@id": "https://suedeai.ai/founder#person"
-          },
-          "address": { "@type": "PostalAddress", "addressLocality": "West Palm Beach", "addressRegion": "FL", "addressCountry": "US" },
-          "sameAs": [
-            "https://suedeai.org/",
-            "https://x.com/AISUEDE",
-            "https://github.com/Suede-AI",
-            "https://www.youtube.com/@aisuede",
-            "https://www.instagram.com/suedeai/",
-            "https://www.instagram.com/suedesingapp/",
-            "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
-            "https://t.me/SUEDEAI",
-            "https://linktr.ee/suedelabsai",
-            "https://www.crunchbase.com/organization/suede-labs-ai",
-            "https://www.linkedin.com/company/suede-labs",
-            "https://www.wikidata.org/wiki/Q141169484",
-            "https://pitchbook.com/profiles/company/937217-71",
-            "https://www.f6s.com/suede-ai",
-            "https://www.tiktok.com/@suedeaiseo",
-            "https://discord.gg/6WZEnnkPH4"
-          ],
-          "alternateName": [
-            "Suede Labs AI",
-            "Suede Labs"
-          ],
-          "logo": "https://suedeai.ai/suede-ai-logo-transparent.png"
+          "@type": "Question",
+          "name": "Does Suede AI build websites and software for clients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Suede AI takes on web development and software engineering for businesses: new websites and web apps, rebuilds, integrations, payments, iOS apps and AI agents, delivered in the client's own repository and stack with tests and code review before release. Start on the contact page or book a call."
+          }
         },
         {
-          "@type": "Person",
-          "@id": "https://suedeai.ai/founder#person",
-          "name": "Jason Colapietro",
-          "givenName": "Jason",
-          "familyName": "Colapietro",
-          "alternateName": "Johnny Suede",
-          "jobTitle": "Founder and CEO, Suede AI",
-          "hasOccupation": {
-            "@type": "Occupation",
-            "name": "Fractional Forward-Deployed Engineer"
-          },
-          "url": "https://suedeai.ai/founder",
-          "subjectOf": { "@type": "ProfilePage", "@id": "https://suedeai.org/jason-colapietro/" },
-          "mainEntityOfPage": "https://suedeai.ai/founder",
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://suedeai.org/assets/img/founder-jason.png",
-            "width": 1060,
-            "height": 1484,
-            "caption": "Jason Colapietro, founder and CEO of Suede AI"
-          },
-          "description": "Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.",
-          "worksFor": {
-            "@id": "https://suedeai.ai/#organization"
-          },
-          "knowsAbout": [
-            "Web development",
-            "Software engineering",
-            "Creator ownership",
-            "Proof of creation",
-            "Programmable IP",
-            "Music rights",
-            "Content provenance",
-            "Music licensing",
-            "Agent commerce",
-            "x402 payments",
-            "Agentic commerce",
-            "Voice and likeness rights",
-            "AI integration",
-            "Forward-deployed engineering",
-            "AI agents",
-            "Search engine optimization",
-            "Generative engine optimization",
-            "Answer engine optimization",
-            "Digital PR"
-          ],
-          "sameAs": [
-            "https://www.wikidata.org/wiki/Q140235755",
-            "https://www.crunchbase.com/person/jason-colapietro-d83e",
-            "https://apps.apple.com/us/developer/jason-colapietro/id1895958699",
-            "https://github.com/JasonColapietro",
-            "https://www.linkedin.com/in/jasoncolapietro",
-            "https://x.com/johnnysuede",
-            "https://www.youtube.com/@johnnysuede",
-            "https://jasoncolapietro.substack.com",
-            "https://jasoncolapietro.com",
-            "https://johnnysuede.com"
-          ]
+          "@type": "Question",
+          "name": "What does \"proof of creation\" actually mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A proof-of-creation record stores a file fingerprint, a wallet-signed creator claim, contributor metadata, and a timestamp. The record is public evidence to review; it does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties."
+          }
         },
         {
-          "@type": "WebSite",
-          "@id": "https://suedeai.org/#website",
-          "description": "Company site and reading hub for Suede AI, the web development, software engineering, SEO and AI agent company founded by Jason Colapietro: engineering record, investor thesis, founder profile, books, research and creator ownership guides.",
-          "url": "https://suedeai.org/",
-          "name": "Suede AI",
-          "alternateName": ["Suede Labs"],
-          "publisher": { "@id": "https://suedeai.ai/#organization" },
-          "inLanguage": "en"
+          "@type": "Question",
+          "name": "Can Suede protect a voice or likeness from AI cloning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No registry can stop a model from generating a synthetic voice or face. Suede preserves source files and dated creator claims that can help a counterparty review a use. Registration does not establish consent on its own, prevent copying, or guarantee payment."
+          }
         },
         {
-          "@type": "WebPage",
-          "@id": "https://suedeai.org/#webpage",
-          "url": "https://suedeai.org/",
-          "name": "AI Agents, SEO and Software Engineering | Suede AI",
-          "isPartOf": { "@id": "https://suedeai.org/#website" },
-          "about": { "@id": "https://suedeai.ai/#organization" },
-          "primaryImageOfPage": "https://suedeai.org/assets/img/og-suede.png?v=20260919",
-          "inLanguage": "en",
-          "datePublished": "2024-01-01",
-          "dateModified": "2026-11-06"
+          "@type": "Question",
+          "name": "How does agentic commerce work on Suede?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Suede publishes a public agent card and an x402 manifest for paid music, video, and image generation. The manifest describes each resource, its price, and payment requirements for USDC on Base. These paid generation services are separate from the IP Registry and do not automatically license a creator's catalog or distribute royalties."
+          }
         },
         {
-          "@type": "Service",
-          "@id": "https://suedeai.org/#engineering",
-          "name": "Web development and software engineering",
-          "serviceType": [
-            "Web development",
-            "Web application development",
-            "Software engineering",
-            "iOS app development",
-            "AI agent development"
-          ],
-          "provider": { "@id": "https://suedeai.ai/#organization" },
-          "description": "Suede AI designs, builds and ships websites, web apps, APIs, payment integrations, iOS apps and AI agents for businesses, in the client's own repository and stack, with tests and code review before release.",
-          "url": "https://suedeai.org/#engineering"
+          "@type": "Question",
+          "name": "Who is behind Suede AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Suede AI was founded by Jason Colapietro, also known as Johnny Suede."
+          }
         },
         {
-          "@type": "Service",
-          "@id": "https://suedeai.org/#x402-catalog",
-          "name": "Suede AI x402 Endpoint Catalog",
-          "serviceType": "Agent-native paid API",
-          "provider": { "@id": "https://suedeai.ai/#organization" },
-          "areaServed": "Worldwide",
-          "audience": {
-            "@type": "Audience",
-            "audienceType": "AI agents, autonomous software, developers building agentic commerce"
-          },
-          "description": "3 paid x402 resources on Base mainnet. Agents pay per call in USDC for music, video, and image generation.",
-          "url": "https://app.suedeai.ai/.well-known/x402.json",
-          "termsOfService": "https://suedeai.org/terms/",
-          "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "USD",
-              "lowPrice": "0.15",
-              "highPrice": "4.99",
-              "offerCount": 3,
-              "availability": "https://schema.org/InStock",
-              "url": "https://app.suedeai.ai/.well-known/x402.json"
-            }
-        },
-        {
-          "@type": "SoftwareApplication",
-          "@id": "https://suedeai.org/#producer-agent",
-          "name": "Producer by Suede AI",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Web, ACP, x402",
-          "description": "Hireable Virtuals ACP agent for music and video generation and ACP/x402 consulting.",
-          "url": "https://app.suedeai.ai/.well-known/agent-card.json",
-          "identifier": "019e3991-374d-75f3-a6b8-17ff309b4cd2",
-          "provider": { "@id": "https://suedeai.ai/#organization" },
-          "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "USD",
-              "lowPrice": "0.15",
-              "highPrice": "4.99",
-              "offerCount": 3,
-              "availability": "https://schema.org/InStock"
-            }
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://suedeai.org/#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is Suede AI?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does Suede AI build websites and software for clients?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Suede AI takes on web development and software engineering for businesses: new websites and web apps, rebuilds, integrations, payments, iOS apps and AI agents, delivered in the client's own repository and stack with tests and code review before release. Start on the contact page or book a call."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What does \"proof of creation\" actually mean?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A proof-of-creation record stores a file fingerprint, a wallet-signed creator claim, contributor metadata, and a timestamp. The record is public evidence to review; it does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can Suede protect a voice or likeness from AI cloning?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No registry can stop a model from generating a synthetic voice or face. Suede preserves source files and dated creator claims that can help a counterparty review a use. Registration does not establish consent on its own, prevent copying, or guarantee payment."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does agentic commerce work on Suede?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Suede publishes a public agent card and an x402 manifest for paid music, video, and image generation. The manifest describes each resource, its price, and payment requirements for USDC on Base. These paid generation services are separate from the IP Registry and do not automatically license a creator's catalog or distribute royalties."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Who is behind Suede AI?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Suede AI was founded by Jason Colapietro, also known as Johnny Suede."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How can I work with Suede?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Businesses can start a web development or software project on the contact page or by booking a call, investors can request the investor brief, partners can reach out at info@suedeai.ai, and agents/developers can hit the x402 catalog or Agent Studio at agents.suedeai.ai. No key needed to start."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "How can I work with Suede?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Businesses can start a web development or software project on the contact page or by booking a call, investors can request the investor brief, partners can reach out at info@suedeai.ai, and agents/developers can hit the x402 catalog or Agent Studio at agents.suedeai.ai. No key needed to start."
+          }
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
   <link rel="stylesheet" href="/accomplishments.css">
 </head>
   <body class="editorial">

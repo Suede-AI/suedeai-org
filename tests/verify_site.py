@@ -489,8 +489,20 @@ def main() -> int:
         # Amazon shelf additions of 2026-09-04 must be on the visible books list
         assert_contains("index.html", home_html, 'href="https://www.amazon.com/dp/B0HHTMJWB4"', failures)
         assert_contains("index.html", home_html, 'href="https://www.amazon.com/dp/B0HHTF3LG1"', failures)
-        # Organization node carries a city-level PostalAddress (Florida record, West Palm Beach)
-        assert_contains("index.html", home_html, '"@type": "PostalAddress", "addressLocality": "West Palm Beach", "addressRegion": "FL", "addressCountry": "US"', failures)
+        # Compare the confirmed business fields as schema, independently of formatting.
+        company = next((node for node in json_ld_nodes(home_html)
+                        if node.get("@id") == CANONICAL_ORGANIZATION_ID), {})
+        expected_address = {"@type": "PostalAddress", "streetAddress": "138 Victorian Lane",
+                            "addressLocality": "Jupiter", "addressRegion": "FL",
+                            "postalCode": "33458", "addressCountry": "US"}
+        if company.get("address") != expected_address:
+            failures.append("index.html: company business address differs from the confirmed Jupiter address")
+        if company.get("alternateName") != ["Suede Labs AI", "Suede Labs", "Suede"]:
+            failures.append("index.html: company alternate names differ")
+        if company.get("parentOrganization", {}).get("name") != "JC Investment Group LLC":
+            failures.append("index.html: company parent is missing")
+        if company.get("hasMerchantReturnPolicy", {}).get("merchantReturnDays") != 90:
+            failures.append("index.html: company money-back window differs")
         # Root SEO presence — restored after the "Creative rails" redesign
         assert_contains("index.html", home_html, '<link rel="canonical" href="https://suedeai.org/"', failures)
         assert_contains("index.html", home_html, '<link rel="icon" href="/favicon.ico?v=3" sizes="any">', failures)
@@ -548,7 +560,7 @@ def main() -> int:
     if founder_path.exists():
         founder_html = read_text(founder_path)
         assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#person"', failures)
-        assert_contains("jason-colapietro/index.html", founder_html, '"alternateName": ["Johnny Suede"]', failures)
+        assert_regex("jason-colapietro/index.html", founder_html, r'"alternateName"\s*:\s*\[\s*"Johnny Suede"\s*\]', failures)
         assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
