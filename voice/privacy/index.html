@@ -45,7 +45,7 @@
     "description": "Privacy policy for Suede AI Voice on Android and iOS.",
     "isPartOf": { "@id": "https://suedeai.org/#website" },
     "publisher": { "@id": "https://suedeai.ai/#organization" },
-    "dateModified": "2026-08-27"
+    "dateModified": "2026-11-12"
   }
   </script>
 <script type="application/ld+json">
@@ -196,7 +196,7 @@
       <span class="eyebrow">Suede AI Voice · Legal</span>
       <h1>Suede AI Voice Privacy Policy</h1>
       <p class="lede"><strong>Suede AI Voice</strong> on Android (package <code>ai.suedeai.suedevoice</code>) and on iOS shares one architectural commitment: <strong>your singing audio never leaves your device.</strong> This page explains what that means in practice, what information the app processes, and your rights as a user. Suede AI Voice is published by <strong>JC Investment Group LLC</strong>, a Florida limited liability company doing business as Suede AI ("we", "us", "our"). Suede AI Voice was previously listed as <strong>Suede Studio Voice</strong> and, before that, <strong>Suede Sing</strong>; this policy covers the same app under those earlier names.</p>
-      <p><strong>Last updated:</strong> August 26, 2026</p>
+      <p><strong>Last updated:</strong> November 12, 2026</p>
     </section>
 
     <div class="page-layout">
@@ -204,7 +204,7 @@
         <article class="panel">
           <h2>1. The on-device principle</h2>
           <p>Suede AI Voice performs its singing-voice analysis (pitch detection, spectral analysis, register classification, range tracking, and recommendation matching) locally on your phone using on-device audio frameworks and classifiers. Microphone audio is never uploaded to any Suede AI server, third-party server, analytics service, advertising service, or cloud service.</p>
-          <p>The Android app does not request the internet permission and disables Android app backup. The iOS app's App Privacy declaration reflects the same developer-side architecture: <strong>"Data Not Collected."</strong></p>
+          <p>Android app backup is disabled. Section 5 explains how Google Play subscriptions work in the current Android release and what would change in version 2.1.5. The iOS app's App Privacy declaration reflects the same developer-side architecture: <strong>"Data Not Collected."</strong></p>
         </article>
 
         <article class="panel">
@@ -236,7 +236,8 @@
 
         <article class="panel">
           <h2>5. Network activity</h2>
-          <p>Suede AI Voice on Android has no internet permission and cannot make a network request at all. The operating system enforces that, not our convention.</p>
+          <p><strong>Current Google Play release, Android 2.1.1.</strong> The app has no internet permission. It checks Pro access through the Google Play Store app on your phone. Google handles checkout, renewals and payment details.</p>
+          <p><strong>Planned for Android 2.1.5 (build 17).</strong> This build has not been released. It would use the internet to verify Pro access with Suede AI. The app would send the Google Play purchase token over an encrypted connection to Suede AI’s billing service. The token identifies the purchase. Suede AI would use it to ask Google Play for the subscription and order status, amount paid, test-purchase status and expiration, then return the access decision to the app. As with any HTTPS connection, the service receives ordinary connection information, such as the IP address. The verification request contains no voice recordings, measurements, contact information or payment card details.</p>
           <p>Suede AI Voice on iOS has no feature that uploads audio, measurements, replays, takes, or calibration data, and none of those ever leave the device. Two things on iOS do involve the network, and neither carries anything about your voice: Apple's StoreKit handles subscription billing, and the campaign-measurement feature described in the next section, which is switched off in the current release.</p>
           <p>Both apps can open external links you deliberately tap, such as this privacy policy, the Terms of Use, or a Suede website, in your phone's browser.</p>
           <ul>
@@ -258,7 +259,7 @@
             <li>"Erase measurement data" deletes what was sent. Erasing is permanent: it also turns the feature off for good on that install.</li>
             <li>Nothing is combined with data from other companies, and no profile follows you between apps or websites.</li>
           </ul>
-          <p>The Android app has none of this. It has no attribution code and no internet permission, so the operating system itself prevents it from opening a network connection.</p>
+          <p>Campaign measurement is an iOS feature. The planned Android purchase check described in section 5 is for subscription access.</p>
         </article>
 
         <article class="panel">
@@ -268,12 +269,12 @@
 
         <article class="panel">
           <h2>8. Children</h2>
-          <p>The app is intended for general audiences, including young singers. Because the app does not send personal information to Suede AI, there is no Suede-AI-held information about a child to retain, share, or delete. Parents and guardians remain in control of microphone and notification permissions through device settings.</p>
+          <p>The app is intended for general audiences, including young singers. The app processes singing audio and measurements on the device. Section 5 explains the purchase information the planned Android billing check would process. Parents and guardians remain in control of microphone and notification permissions through device settings.</p>
         </article>
 
         <article class="panel">
           <h2>9. Your rights and your data</h2>
-          <p>Because the app does not collect personal information about you, there is generally no Suede-AI-held data to access, correct, port, or delete on your behalf. On both platforms, Settings lets you delete saved WAV replays and reset calibration data. On iOS, Recorder takes are deleted individually from the Recorder screen; "Delete saved audio recordings" covers range-test replays and does not touch them. Numeric session history is deliberately kept when replays are deleted, so your progress charts survive; clear it by uninstalling the app, or on Android with the system's per-app "Clear storage".</p>
+          <p>On both platforms, Settings lets you delete saved WAV replays and reset calibration data. On iOS, Recorder takes are deleted individually from the Recorder screen; "Delete saved audio recordings" covers range-test replays and does not touch them. Numeric session history is deliberately kept when replays are deleted, so your progress charts survive; clear it by uninstalling the app, or on Android with the system's per-app "Clear storage".</p>
           <p>If you have questions about your rights under the CCPA/CPRA, GDPR, or another applicable privacy law as it relates to this app, email <a href="mailto:info@suedeai.ai">info@suedeai.ai</a>.</p>
         </article>
 
