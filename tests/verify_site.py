@@ -489,6 +489,9 @@ def main() -> int:
         # Amazon shelf additions of 2026-09-04 must be on the visible books list
         assert_contains("index.html", home_html, 'href="https://www.amazon.com/dp/B0HHTMJWB4"', failures)
         assert_contains("index.html", home_html, 'href="https://www.amazon.com/dp/B0HHTF3LG1"', failures)
+        # The AI Operator Series (November 2026) sells direct from suedeai.ai/books.
+        assert_contains("index.html", home_html, '<h3>The AI Operator Series</h3>', failures)
+        assert_contains("index.html", home_html, 'href="https://suedeai.ai/books"', failures)
         # Compare the confirmed business fields as schema, independently of formatting.
         company = next((node for node in json_ld_nodes(home_html)
                         if node.get("@id") == CANONICAL_ORGANIZATION_ID), {})
