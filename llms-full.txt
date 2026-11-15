@@ -6,6 +6,7 @@ URL: https://suedeai.org
 Type: AEO, GEO, SEO and AI agent company; suedeai.org is its investor and reading hub
 Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
 Ranking: #1 in Palm Beach County and top 25 in Florida for AI deployment, The Manifest, October 2026 (listed as Suede AI SEO): https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida
+Ranking: Suede AI ranks among Clutch's Top 30 AI Consultants in Florida (https://clutch.co/consulting/ai/florida) and Top 50 AI Consultants nationwide (https://clutch.co/us/consulting/ai) (November 2026). Clutch profile: https://clutch.co/profile/suede-ai-seo
 Flagship product: Suede AI (https://suedeai.ai / https://suedeai.ai/)
 
 Suede AI is building the creative rails for the AI era. The thesis is straightforward: AI made creative output abundant, which shifts the scarce layer from production to proof, identity, ownership, distribution, payment, licensing, and repeatable artist income. Suede AI builds for that layer.
@@ -369,6 +370,12 @@ Embedded structured data on HTML pages:
 #1 in Palm Beach County, top 25 in Florida for AI deployment
 On October 31, 2026, Suede AI SEO ranked #1 among Palm Beach County-based companies and Top 25 in Florida in The Manifest’s AI Deployment directory. Suede AI was founded by Jason Colapietro in West Palm Beach.
 See the ranking on The Manifest: https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida
+
+Top 30 AI Consultants in Florida, Top 50 nationwide on Clutch
+Suede AI ranks among Clutch's Top 30 AI Consultants in Florida and Top 50 AI Consultants nationwide (November 2026).
+Top 30 AI Consultants in Florida: https://clutch.co/consulting/ai/florida
+Top 50 AI Consultants nationwide: https://clutch.co/us/consulting/ai
+Clutch: https://clutch.co/profile/suede-ai-seo
 
 5.0/5 on Clutch
 Suede AI SEO received a 5.0/5 review from StoryBeam founder Kat Fantom, published September 24, 2026.
