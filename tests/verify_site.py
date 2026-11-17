@@ -500,7 +500,7 @@ def main() -> int:
                             "postalCode": "33458", "addressCountry": "US"}
         if company.get("address") != expected_address:
             failures.append("index.html: company business address differs from the confirmed Jupiter address")
-        if company.get("alternateName") != ["Suede Labs AI", "Suede Labs", "Suede"]:
+        if company.get("alternateName") != ["Suede AI", "Suede Labs AI", "Suede Labs"]:
             failures.append("index.html: company alternate names differ")
         if company.get("parentOrganization", {}).get("name") != "JC Investment Group LLC":
             failures.append("index.html: company parent is missing")
@@ -638,8 +638,8 @@ def main() -> int:
             failures.append(f"{relative_path}: missing Person JSON-LD node")
         for organization in organizations:
             if organization.get("@id") == CANONICAL_ORGANIZATION_ID:
-                if organization.get("name") != "Suede AI":
-                    failures.append(f"{relative_path}: canonical company name must be Suede AI")
+                if organization.get("name") != "Suede":
+                    failures.append(f"{relative_path}: canonical company name must be Suede")
                 if "Suede Labs AI" not in organization.get("alternateName", []):
                     failures.append(f"{relative_path}: canonical company must retain Suede Labs AI as company context")
             organization_same_as = same_as_urls(organization)

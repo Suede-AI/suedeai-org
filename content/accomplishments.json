@@ -136,8 +136,8 @@
       "id": "entities",
       "category": "Business",
       "date": "JC Investment Group LLC organized 2019",
-      "title": "Founder and CEO of Suede AI; Manager of JC Investment Group LLC",
-      "body": "Jason is founder and CEO of Suede AI, working on AI integration, search visibility, AI agents and creator-ownership infrastructure: proof of creation, rights metadata, licensing, royalty routing, and agent commerce. He is also manager of JC Investment Group LLC, a founder-led venture platform organized in Florida in 2019 under document L19000146068, alongside the Suede Foundation at suedeai.org. JC Investment Group LLC is the holding company for Suede AI.",
+      "title": "Founder and CEO of Suede; Manager of JC Investment Group LLC",
+      "body": "Jason is founder and CEO of Suede, working on AI integration, search visibility, AI agents and creator-ownership infrastructure: proof of creation, rights metadata, licensing, royalty routing, and agent commerce. He is also manager of JC Investment Group LLC, a founder-led venture platform organized in Florida in 2019 under document L19000146068, alongside the Suede Foundation at suedeai.org. JC Investment Group LLC is the holding company for Suede AI.",
       "links": [
         {
           "label": "Suede AI",
@@ -352,12 +352,16 @@
       "id": "android-chrome",
       "category": "Products",
       "date": "Listings verified November 6, 2026",
-      "title": "9 iOS apps, 6 Android apps and 2 Chrome extensions",
-      "body": "The portfolio includes 9 iOS apps under Jason’s developer account, including StoryBeam, 6 Android apps on Google Play, and 2 Chrome extensions. These are platform listings; Android editions overlap iOS products. Suede AI Visibility and Suede Sing are published on the Chrome Web Store.",
+      "title": "100+ apps built; 17 live store listings (9 App Store, 6 Google Play, 2 Chrome extensions)",
+      "body": "Jason Colapietro has built more than 100 apps. 17 are live in public stores: 9 on the Apple App Store, 6 on Google Play and 2 Chrome Web Store extensions. The App Store line under his developer account includes Suede Voice, Suede AI Generator, Suede Agent Studio, StoryBeam Kids, Suede Guitar Tuner & Studio, GuitarHub, Suede Social, Agentix and Suede Studio Muse. The Chrome extensions are Suede AI Visibility and Suede Sing for Chrome.",
       "links": [
         {
           "label": "All apps: complete iOS, Android and Chrome catalog",
           "url": "https://jasoncolapietro.com/apps/"
+        },
+        {
+          "label": "Jason Colapietro on the App Store (9 apps)",
+          "url": "https://apps.apple.com/us/developer/jason-colapietro/id1895958699"
         },
         {
           "label": "Suede: AI Music Generator",
@@ -388,7 +392,7 @@
           "url": "https://chromewebstore.google.com/detail/suede-ai-visibility-%E2%80%94-seo/hekigfiohpacglhcaiidnbphejpihaki"
         },
         {
-          "label": "Suede Sing: Vocal Coach, Pitch Trainer & Vocal Range Test",
+          "label": "Suede Sing for Chrome (extension)",
           "url": "https://chromewebstore.google.com/detail/suede-sing-vocal-coach-pi/dbimnmcokgmibdenmonoafhmdbjhpicd"
         }
       ]
