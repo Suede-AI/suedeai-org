@@ -26,7 +26,8 @@ function decode(text) {
     .trim();
 }
 
-const bareBrand = /\bSuede\b(?! AI\b)(?!Mic|Vault)/;
+// Product names (Suede Voice, SuedeMic, SuedeVault) are not the bare brand.
+const bareBrand = /\bSuede\b(?! AI\b)(?! Voice\b)(?!Mic|Vault)/;
 
 for (const file of htmlFiles(root)) {
   const rel = path.relative(root, file);
@@ -47,15 +48,15 @@ for (const file of htmlFiles(root)) {
   });
 }
 
-test('the company entity keeps Suede as an alternate name under its canonical company name', () => {
+test('the company entity is named Suede, with Suede AI, Suede Labs AI and Suede Labs as alternate names', () => {
   for (const file of htmlFiles(root)) {
     for (const match of fs.readFileSync(file, 'utf8').matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
       const value = JSON.parse(match[1]);
       const nodes = (Array.isArray(value) ? value : [value]).flatMap(item => item['@graph'] || [item]);
       for (const node of nodes.filter(n => n['@id'] === 'https://suedeai.ai/#organization' && n.alternateName)) {
         const names = [].concat(node.alternateName);
-        assert.equal(node.name, 'Suede AI', path.relative(root, file));
-        assert.deepEqual(names, ['Suede Labs AI', 'Suede Labs', 'Suede'], path.relative(root, file));
+        assert.equal(node.name, 'Suede', path.relative(root, file));
+        assert.deepEqual(names, ['Suede AI', 'Suede Labs AI', 'Suede Labs'], path.relative(root, file));
       }
     }
   }

@@ -80,7 +80,7 @@ test('every full company node shares one identity, logo and accurate company con
   assert.equal(organizations.length, 24);
   for (const org of organizations) {
     assert.deepEqual(org, organizations[0]);
-    assert.equal(org.name, 'Suede AI');
+    assert.equal(org.name, 'Suede');
     assert.ok(org.alternateName.includes('Suede Labs AI'));
     assert.equal(org.legalName, undefined);
     assert.equal(org.logo, 'https://suedeai.ai/suede-ai-logo-transparent.png');
@@ -124,11 +124,12 @@ test('proof thesis links technical guide and consistently states evidentiary lim
   assert.match(sitemap, /<loc>https:\/\/suedeai.org\/proof-of-creation\/<\/loc>\s*<lastmod>2026-10-03<\/lastmod>/);
 });
 
-// Identity canon v2 (2026-10-19), Suede-AI-App suede-home/src/lib/identity-canon.ts:
+// Identity canon v2 (2026-10-19), company one-liner and names updated to canon v4
+// (2026-11-16), Suede-AI-App suede-home/src/lib/identity-canon.ts:
 // the company and founder one-liners are quoted, never paraphrased, and the
 // founder's sameAs is the verified list only (no pages of his own sites).
-const COMPANY_ONE_LINER = 'Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.';
-const FOUNDER_ONE_LINER = 'Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.';
+const COMPANY_ONE_LINER = 'Suede, founded in 2024 by Jason Colapietro in West Palm Beach, Florida, is an AI engineering and digital marketing company. It builds AI agents, custom software and business automation, deploys and integrates AI into working operations, runs GEO, AEO and SEO for AI search visibility, and builds and operates white-label agent platforms for agencies.';
+const FOUNDER_ONE_LINER = 'Jason Colapietro is an engineer, author, and the founder and CEO of Suede. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.';
 const CANONICAL_PERSON_SAME_AS = [
   'https://www.wikidata.org/wiki/Q140235755',
   'https://www.crunchbase.com/person/jason-colapietro-d83e',
@@ -150,7 +151,7 @@ test('company and founder nodes quote identity canon v2', () => {
   assert.ok(people.length > 0);
   for (const person of people) {
     if (person.description) assert.equal(person.description, FOUNDER_ONE_LINER);
-    if (person.jobTitle) assert.equal(person.jobTitle, 'Founder and CEO, Suede AI');
+    if (person.jobTitle) assert.equal(person.jobTitle, 'Founder and CEO, Suede');
     assert.deepEqual(person.sameAs, CANONICAL_PERSON_SAME_AS);
   }
   for (const file of ['llms.txt', 'llms-full.txt']) {

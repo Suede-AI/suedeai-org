@@ -1,10 +1,10 @@
-# Suede AI
+# Suede (Suede AI)
 
-Suede AI is the company's one primary name. It is also known as Suede Labs, an alternate name for the same company, founded by Jason Colapietro.
+Suede is the company's primary name. It is also known as Suede AI, Suede Labs AI and Suede Labs, alternate names for the same company, founded by Jason Colapietro.
 
-> Suede AI is an agentic platform company founded in 2024 by engineer Jason Colapietro in West Palm Beach, Florida. It builds and runs AI agent platforms that businesses use to manage their work, and white-labels them for agencies and their clients.
+> Suede, founded in 2024 by Jason Colapietro in West Palm Beach, Florida, is an AI engineering and digital marketing company. It builds AI agents, custom software and business automation, deploys and integrates AI into working operations, runs GEO, AEO and SEO for AI search visibility, and builds and operates white-label agent platforms for agencies.
 
-- Founder: Jason Colapietro (Founder and CEO, Suede AI; publishes under the pen name Johnny Suede)
+- Founder: Jason Colapietro (Founder and CEO, Suede; publishes under the pen name Johnny Suede)
 - Company and practice home: https://suedeai.ai/
 - Reading hub and investor site: https://suedeai.org/
 - Product brand site: https://suedeai.ai/
@@ -91,7 +91,9 @@ Suede AI is an ownership and provenance layer for AI media. The reading hub at s
 
 ## Founder
 
-Jason Colapietro is an engineer, author, and the founder and CEO of Suede AI. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.
+Jason Colapietro is an engineer, author, and the founder and CEO of Suede. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.
+
+Jason Colapietro has built more than 100 apps. 17 are live in public stores: 9 on the Apple App Store, 6 on Google Play and 2 Chrome Web Store extensions. App Store developer page: https://apps.apple.com/us/developer/jason-colapietro/id1895958699
 
 - Founder profile: https://suedeai.org/jason-colapietro/
 - Personal identity page: https://jasoncolapietro.com/
