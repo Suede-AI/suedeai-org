@@ -182,9 +182,9 @@
     {
       "id": "open-source",
       "category": "Engineering",
-      "date": "Record includes merges through September 30, 2026",
-      "title": "54 merged pull requests. 46 external repositories.",
-      "body": "The public record includes 33 substantive code or documentation contributions and 21 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. A separate Linux kernel USB/IP contribution is recorded as Public upstream v7; it is not included in the merged-PR count. Adobe React Spectrum #10426 was accepted and later replaced by #10491; that entry records a historical contribution, not a currently shipped API.",
+      "date": "As of November 2026",
+      "title": "63 merged pull requests. 54 external repositories.",
+      "body": "The public record includes 41 substantive code or documentation contributions and 22 accepted listings of Jason-owned work. Maintainers have merged contributions into projects including Jest, Adobe React Spectrum, Backstage, Hardhat, and the x402 Foundation. Jason also has 1 public Linux kernel contribution, to USB/IP (Public upstream v7), counted on top of the 63 merged pull requests. Adobe React Spectrum merged #10426, which #10491 later superseded.",
       "links": [
         {
           "label": "Complete upstream record",
@@ -254,7 +254,7 @@
       "category": "Ecosystem",
       "date": "June–September 2026",
       "title": "Listed in fifteen independent skills directories and the x402 ecosystem list",
-      "body": "Suede Creator Skills, the public Claude Code skills marketplace, has been accepted by the maintainers of fifteen independent awesome-lists and directories, including buildwithclaude, awesome-codex, awesome-agent-skills, and awesome-claude-code-plugins. Suede AI Agent Studio is listed in the x402 ecosystem’s awesome-x402. These accepted listings are counted inside the 54 merged pull requests above and are stated separately so the composition stays clear.",
+      "body": "Suede Creator Skills, the public Claude Code skills marketplace, has been accepted by the maintainers of fifteen independent awesome-lists and directories, including buildwithclaude, awesome-codex, awesome-agent-skills, and awesome-claude-code-plugins. Suede AI Agent Studio is listed in the x402 ecosystem’s awesome-x402. These accepted listings are among the 63 merged pull requests above.",
       "links": [
         {
           "label": "Suede Creator Skills on GitHub",
@@ -402,7 +402,7 @@
       "category": "Products",
       "date": "Live · 2026",
       "title": "Agent flows that ship as x402 endpoints settling in USDC on Base",
-      "body": "Suede AI Agent Studio lets a builder draw an agent as a node graph and launch it as an x402 pay-per-call endpoint settling in USDC on Base, with Agentix tracking per-call earnings. The work implements the x402 protocol and ERC-8004 and includes a merged fix in the x402 Foundation’s own repository. It builds on those standards as an implementer, not a standards author.",
+      "body": "Suede AI Agent Studio lets a builder draw an agent as a node graph and launch it as an x402 pay-per-call endpoint settling in USDC on Base, with Agentix tracking per-call earnings. The work implements the x402 protocol and ERC-8004 and includes a merged fix in the x402 Foundation’s own repository.",
       "links": [
         {
           "label": "Suede AI Agent Studio",
@@ -598,7 +598,7 @@
       "category": "Public mention",
       "date": "February 2026",
       "title": "Suede Labs in a screenshot on Elon Musk’s timeline",
-      "body": "Elon Musk posted a screenshot of proposed Community Notes about AI training data. One of the proposed notes visible in that screenshot names Suede Labs as an opt-out option. The archived capture of the post recorded 2.7 million views. The mention is the note’s wording inside the screenshot, not a personal endorsement by Musk.",
+      "body": "Elon Musk posted a screenshot of proposed Community Notes about AI training data. One of the proposed notes visible in that screenshot names Suede Labs as an opt-out option. The archived capture of the post recorded 2.7 million views.",
       "links": [
         {
           "label": "Open the post",
@@ -615,7 +615,7 @@
       "category": "AI search visibility",
       "date": "Captured September 6, 2026",
       "title": "Google's Web Guide calls Suede AI highly rated",
-      "body": "Asked to review Suede AI, Google's Web Guide, the AI-organized results layer inside Google Search, opens by calling the company highly rated by users, earning a 5/5 rating from verified reviews for its creator-ownership infrastructure, and cites the two App Store listings it drew that from. The quote comes from a dated capture of that Google Search response on September 6, 2026. Like the Gemini captures, this is a dated response from a Google search surface, not a rating Google issued or a permanent placement.",
+      "body": "Asked to review Suede AI, Google's Web Guide, the AI-organized results layer inside Google Search, opens by calling the company highly rated by users, earning a 5/5 rating from verified reviews for its creator-ownership infrastructure, and cites the two App Store listings it drew that from. The quote comes from a dated capture of that Google Search response on September 6, 2026.",
       "links": [
         {
           "label": "The capture and the quote",
@@ -636,7 +636,7 @@
       "category": "AI search visibility",
       "date": "Captured February 17 & March 21, 2026",
       "title": "Gemini names Suede alongside Suno and Udio",
-      "body": "In the February capture, Gemini places Suede in a “New Big 3” of AI music platforms beside Suno and Udio, describing it as “The Creator’s IP Fortress.” A separate March session discusses Jason’s experience and Suede’s architecture. Both are dated Gemini responses, captured on the dates above and linked below. These are dated model responses, not a Google endorsement or a permanent ranking.",
+      "body": "In the February capture, Gemini places Suede in a “New Big 3” of AI music platforms beside Suno and Udio, describing it as “The Creator’s IP Fortress.” A separate March session discusses Jason’s experience and Suede’s architecture. Both are dated Gemini responses, captured on the dates above and linked below.",
       "links": [
         {
           "label": "February capture",

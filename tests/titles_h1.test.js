@@ -4,9 +4,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 // Search-result contract for every public page: a title of 60 characters or
-// fewer that names the company as "Suede AI" (never bare "Suede"), a meta
-// description of 155 characters or fewer, and exactly one H1 that never uses
-// the bare brand either.
+// fewer that names the company Suede, a meta description of 155 characters or
+// fewer, and exactly one H1. The company is named "Suede" (owner ruling
+// 2026-11-18); "Suede AI", "Suede Labs AI" and "Suede Labs" are alternate names,
+// so titles and H1s may use either form.
 const root = path.resolve(__dirname, '..');
 
 function htmlFiles(dir) {
@@ -26,9 +27,6 @@ function decode(text) {
     .trim();
 }
 
-// Product names (Suede Voice, SuedeMic, SuedeVault) are not the bare brand.
-const bareBrand = /\bSuede\b(?! AI\b)(?! Voice\b)(?!Mic|Vault)/;
-
 for (const file of htmlFiles(root)) {
   const rel = path.relative(root, file);
   const html = fs.readFileSync(file, 'utf8');
@@ -36,17 +34,21 @@ for (const file of htmlFiles(root)) {
     const title = decode((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '');
     assert.ok(title, 'missing <title>');
     assert.ok(title.length <= 60, `title is ${title.length} characters: ${title}`);
-    assert.ok(title.includes('Suede AI'), `title must name Suede AI: ${title}`);
-    assert.doesNotMatch(title, bareBrand, `title uses bare "Suede": ${title}`);
+    assert.match(title, /\bSuede\b/, `title must name Suede: ${title}`);
 
     const description = decode((html.match(/<meta\s+name="description"\s+content="([^"]*)"/) || [])[1] || '');
     assert.ok(description.length > 0 && description.length <= 155, `description is ${description.length} characters`);
 
     const h1s = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map(match => decode(match[1]));
     assert.equal(h1s.length, 1, `expected one H1, found ${h1s.length}`);
-    assert.doesNotMatch(h1s[0], bareBrand, `H1 uses bare "Suede": ${h1s[0]}`);
   });
 }
+
+test('the founder page title and H1 name the company Suede', () => {
+  const html = fs.readFileSync(path.join(root, 'jason-colapietro', 'index.html'), 'utf8');
+  assert.match(html, /<title>Jason Colapietro, Founder and CEO of Suede<\/title>/);
+  assert.match(html, /<h1>Jason Colapietro, founder and CEO of Suede<\/h1>/);
+});
 
 test('the company entity is named Suede, with Suede AI, Suede Labs AI and Suede Labs as alternate names', () => {
   for (const file of htmlFiles(root)) {
