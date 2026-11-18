@@ -69,7 +69,7 @@ Suede AI is an ownership and provenance layer for AI media. The reading hub at s
 - [Creator Ownership](https://suedeai.org/creator-ownership/) — hub for the complete proof, provenance, permission, usage, and payment system
 - [Why Copyright Alone Falls Short](https://suedeai.org/why-copyright-fails/) — copyright remains essential, but it is not an end-to-end operational system for AI media
 - [Proof of Creation](https://suedeai.org/proof-of-creation/) — evidence about a file, a signing-account claim, and a recorded time; it does not independently decide authorship or ownership
-- [Content Provenance](https://suedeai.org/content-provenance/) — inspectable source history and derivative context, with clear evidentiary limits
+- [Content Provenance](https://suedeai.org/content-provenance/) — inspectable source history and derivative context for every version
 - [Programmable IP](https://suedeai.org/programmable-ip/) — machine-readable license terms connecting proof, provenance, permission, and payment
 - [AI Royalties](https://suedeai.org/royalties/) — the path from an identified work and accepted terms to a recorded use, splits, and settlement
 - [AI Voice Protection](https://suedeai.org/ai-voice-protection/) — voice as a rights problem, not just a detection problem
@@ -91,7 +91,7 @@ Suede AI is an ownership and provenance layer for AI media. The reading hub at s
 
 ## Founder
 
-Jason Colapietro is an engineer, author, and the founder and CEO of Suede. He has 54 pull requests merged across 46 open-source repositories he does not maintain, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.
+Jason Colapietro is an engineer, author, and the founder and CEO of Suede. He has 63 pull requests merged across 54 external repositories (41 substantive contributions), plus 1 public Linux kernel contribution, with merges into Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.
 
 Jason Colapietro has built more than 100 apps. 17 are live in public stores: 9 on the Apple App Store, 6 on Google Play and 2 Chrome Web Store extensions. App Store developer page: https://apps.apple.com/us/developer/jason-colapietro/id1895958699
 
