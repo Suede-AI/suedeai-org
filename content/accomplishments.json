@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-06",
-  "source": "https://seo.suedeai.ai/evidence",
+  "source": "https://suedeai.ai/seo/evidence",
   "title": "Accomplishments, with the record behind them.",
   "intro": "The work and recognition of Jason Colapietro and Suede AI: businesses built, software shipped, books published, and contributions accepted. Each entry links to the underlying record.",
   "records": [
@@ -94,11 +94,11 @@
         },
         {
           "label": "The cited comparison: AI visibility tools vs. a managed service",
-          "url": "https://seo.suedeai.ai/ai-visibility-tools-vs-managed-service"
+          "url": "https://suedeai.ai/seo/ai-visibility-tools-vs-managed-service"
         },
         {
           "label": "The receipt on the evidence page",
-          "url": "https://seo.suedeai.ai/evidence#industry-citations"
+          "url": "https://suedeai.ai/seo/evidence#industry-citations"
         }
       ]
     },
@@ -124,7 +124,7 @@
       "links": [
         {
           "label": "Read the operator background",
-          "url": "https://seo.suedeai.ai/#operations"
+          "url": "https://suedeai.ai/seo#operations"
         },
         {
           "label": "Founder biography",
@@ -162,7 +162,7 @@
       "links": [
         {
           "label": "Partnership record",
-          "url": "https://seo.suedeai.ai/evidence#google-cloud"
+          "url": "https://suedeai.ai/seo/evidence#google-cloud"
         }
       ]
     },
@@ -192,7 +192,7 @@
         },
         {
           "label": "Open-source evidence on Suede AI SEO",
-          "url": "https://seo.suedeai.ai/evidence#open-source"
+          "url": "https://suedeai.ai/seo/evidence#open-source"
         },
         {
           "label": "Machine-readable merged-PR record",
@@ -287,7 +287,7 @@
         },
         {
           "label": "Read The Screenshot",
-          "url": "https://seo.suedeai.ai/book"
+          "url": "https://suedeai.ai/seo/book"
         },
         {
           "label": "The Human Authenticity Layer on Amazon",
@@ -406,7 +406,7 @@
       "links": [
         {
           "label": "Suede AI Agent Studio",
-          "url": "https://agents.suedeai.ai"
+          "url": "https://suedeai.app"
         },
         {
           "label": "Agentix",
@@ -427,7 +427,7 @@
       "links": [
         {
           "label": "Read the filing disclosure",
-          "url": "https://seo.suedeai.ai/evidence#credentials"
+          "url": "https://suedeai.ai/seo/evidence#credentials"
         }
       ]
     },
@@ -440,7 +440,7 @@
       "links": [
         {
           "label": "Program admission record",
-          "url": "https://seo.suedeai.ai/evidence#credentials"
+          "url": "https://suedeai.ai/seo/evidence#credentials"
         }
       ]
     },
@@ -453,7 +453,7 @@
       "links": [
         {
           "label": "All issued credentials and module records",
-          "url": "https://seo.suedeai.ai/evidence#training-credentials"
+          "url": "https://suedeai.ai/seo/evidence#training-credentials"
         },
         {
           "label": "Claude with Amazon Bedrock badge",
@@ -489,7 +489,7 @@
         },
         {
           "label": "AWS Bedrock course completion record",
-          "url": "https://seo.suedeai.ai/assets/credentials/aws-bedrock-completion.png"
+          "url": "https://suedeai.ai/seo/assets/credentials/aws-bedrock-completion.png"
         }
       ]
     },
@@ -515,7 +515,7 @@
       "links": [
         {
           "label": "Affiliation record",
-          "url": "https://seo.suedeai.ai/evidence#credentials"
+          "url": "https://suedeai.ai/seo/evidence#credentials"
         },
         {
           "label": "FAU research announcement",
@@ -606,7 +606,7 @@
         },
         {
           "label": "View the archived screenshots",
-          "url": "https://seo.suedeai.ai/evidence#elon-timeline"
+          "url": "https://suedeai.ai/seo/evidence#elon-timeline"
         }
       ]
     },
@@ -619,7 +619,7 @@
       "links": [
         {
           "label": "The capture and the quote",
-          "url": "https://seo.suedeai.ai/evidence#google-web-guide"
+          "url": "https://suedeai.ai/seo/evidence#google-web-guide"
         },
         {
           "label": "Suede AI Generator on the App Store",
@@ -640,11 +640,11 @@
       "links": [
         {
           "label": "February capture",
-          "url": "https://seo.suedeai.ai/evidence#gemini-big3"
+          "url": "https://suedeai.ai/seo/evidence#gemini-big3"
         },
         {
           "label": "March capture",
-          "url": "https://seo.suedeai.ai/evidence#gemini-authority"
+          "url": "https://suedeai.ai/seo/evidence#gemini-authority"
         }
       ]
     },
@@ -657,7 +657,7 @@
       "links": [
         {
           "label": "View the ranking receipt",
-          "url": "https://seo.suedeai.ai/evidence#ranked-1"
+          "url": "https://suedeai.ai/seo/evidence#ranked-1"
         }
       ]
     },
@@ -670,7 +670,7 @@
       "links": [
         {
           "label": "Archived directory record",
-          "url": "https://seo.suedeai.ai/evidence#directory"
+          "url": "https://suedeai.ai/seo/evidence#directory"
         },
         {
           "label": "Live music category",
@@ -735,13 +735,13 @@
         "name": "Google Cloud",
         "image": "/accomplishment-assets/google-cloud.svg",
         "label": "Partnership since September 2025",
-        "url": "https://seo.suedeai.ai/evidence#google-cloud"
+        "url": "https://suedeai.ai/seo/evidence#google-cloud"
       },
       {
         "name": "Stripe Startups",
         "image": "/accomplishment-assets/stripe.svg",
         "label": "Admitted July 2026",
-        "url": "https://seo.suedeai.ai/evidence#credentials"
+        "url": "https://suedeai.ai/seo/evidence#credentials"
       }
     ],
     "screenshots": [
@@ -752,7 +752,7 @@
         "height": 2000,
         "alt": "Google Web Guide result for the search Suede labs ai review, opening with Suede Labs AI is highly rated by users, earning a 5/5 rating from verified reviews, above an App Store Reviews and Feedback section citing two apps.apple.com listings",
         "caption": "Google’s AI-organized results, captured 6 September 2026, with the two App Store listings it cited.",
-        "url": "https://seo.suedeai.ai/evidence#google-web-guide",
+        "url": "https://suedeai.ai/seo/evidence#google-web-guide",
         "linkLabel": "Read the receipt"
       },
       {
