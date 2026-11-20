@@ -9,12 +9,12 @@ const start = '<!-- accomplishments:start -->';
 const end = '<!-- accomplishments:end -->';
 
 const partners = `<ul class="accomplishments-partners">${data.visuals.partners.map(p => `<li><a class="accomplishments-partner" href="${esc(p.url)}"><img src="${esc(p.image)}" alt="" width="42" height="42" loading="lazy"><span><strong>${esc(p.name)}</strong><span>${esc(p.label)}</span></span></a></li>`).join('')}</ul>`;
-const gallery = `<div class="accomplishments-gallery">${data.visuals.screenshots.map(s => `<figure class="accomplishments-capture"><a href="${esc(s.image)}" aria-label="Open full-size image: ${esc(s.title)}"><img src="${esc(s.image)}" alt="${esc(s.alt)}" width="${s.width}" height="${s.height}" loading="lazy"></a><figcaption><strong>${esc(s.title)}</strong><p>${esc(s.caption)}</p><span class="accomplishments-capture-links"><a href="${esc(s.url)}">${esc(s.linkLabel)}</a><a href="https://seo.suedeai.ai/evidence#directory">View the archive</a></span></figcaption></figure>`).join('')}</div>`;
+const gallery = `<div class="accomplishments-gallery">${data.visuals.screenshots.map(s => `<figure class="accomplishments-capture"><a href="${esc(s.image)}" aria-label="Open full-size image: ${esc(s.title)}"><img src="${esc(s.image)}" alt="${esc(s.alt)}" width="${s.width}" height="${s.height}" loading="lazy"></a><figcaption><strong>${esc(s.title)}</strong><p>${esc(s.caption)}</p><span class="accomplishments-capture-links"><a href="${esc(s.url)}">${esc(s.linkLabel)}</a><a href="https://suedeai.ai/seo/evidence#directory">View the archive</a></span></figcaption></figure>`).join('')}</div>`;
 const bookCover = (record, link) => {
  if (record.id !== 'books') return '';
  const slugs = {'B0HHTMJWB4':'claude-code-bible','B0HHTF3LG1':'codex-in-production','B0GMB2VLXQ':'proof-as-infrastructure','B0GRG8LGQQ':'stake-your-claim','B0GD5FX6N6':'human-authenticity-layer'};
  let slug = Object.entries(slugs).find(([key]) => link.url.includes(key))?.[1];
- if (['https://seo.suedeai.ai/book','https://github.com/JasonColapietro/suede-geo-book'].includes(link.url.replace(/\/$/, ''))) slug = 'the-screenshot';
+ if (['https://suedeai.ai/seo/book','https://github.com/JasonColapietro/suede-geo-book'].includes(link.url.replace(/\/$/, ''))) slug = 'the-screenshot';
  if (['https://guitar.solutions','https://strumly.suedeai.ai/book'].includes(link.url.replace(/\/$/, ''))) slug = 'the-signal-chain';
  if (!slug) return '';
  return `<img src="https://suedeai.ai/books/${slug}-cover.${slug === 'the-signal-chain' ? 'webp' : 'jpg'}" alt="Cover of ${esc(link.label)}" width="80" height="128" loading="lazy" style="display:block;object-fit:contain;max-width:100%;margin-bottom:0.75rem">`;

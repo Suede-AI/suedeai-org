@@ -45,7 +45,7 @@ test('each standalone JSON-LD document declares its own schema context', () => {
 });
 const orgId = 'https://suedeai.ai/#organization';
 const founderId = 'https://suedeai.ai/founder#person';
-const practiceId = 'https://seo.suedeai.ai/#organization';
+const practiceId = 'https://suedeai.ai/seo#organization';
 const practiceProfile = 'https://clutch.co/profile/suede-ai-seo';
 test('Clutch identifies the SEO practice, linked to its parent company', () => {
   for (const file of pages) {
@@ -56,7 +56,7 @@ test('Clutch identifies the SEO practice, linked to its parent company', () => {
     assert.ok(company.sameAs.includes('https://suedeai.org/'));
     const practice = graph.find(n => n['@id'] === practiceId);
     assert.equal(practice?.['@type'], 'ProfessionalService', path.relative(root, file));
-    assert.equal(practice.url, 'https://seo.suedeai.ai/');
+    assert.equal(practice.url, 'https://suedeai.ai/seo');
     assert.deepEqual(practice.sameAs, [practiceProfile]);
     assert.equal(practice.parentOrganization['@id'], orgId);
   }
