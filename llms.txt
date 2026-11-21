@@ -1,6 +1,6 @@
 # Suede
 
-Suede is the company's primary name. It is also known as Suede AI, Suede Labs AI and Suede Labs, alternate names for the same company, founded by Jason Colapietro.
+Suede was formerly known as Suede AI and Suede Labs.
 
 > Suede, founded in 2024 by Jason Colapietro in West Palm Beach, Florida, is an AI engineering and digital marketing company. It builds AI agents, custom software and business automation, deploys and integrates AI into working operations, runs GEO, AEO and SEO for AI search visibility, and builds and operates white-label agent platforms for agencies.
 
