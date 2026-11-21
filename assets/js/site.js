@@ -119,13 +119,17 @@ document.querySelectorAll("form[data-api-endpoint]").forEach((form) => {
       return;
     }
 
-    if (response.status >= 500) {
-      announce(`${result.error || "Submission failed."} Retrying with a standard submission...`);
-      submitNatively();
-      return;
-    }
-
+    // The server answered, so the request reached it. A native resubmit here
+    // would send the same lead twice and strand the visitor on a plain-text
+    // error page; keep them on the form with their input and a direct address.
     announce(result.error || "Submission failed.");
+    if (response.status >= 500 && statusNode) {
+      const address = form.getAttribute("data-fallback-email") || "info@suedeai.ai";
+      const link = document.createElement("a");
+      link.href = `mailto:${address}`;
+      link.textContent = address;
+      statusNode.append(" Or email ", link, ".");
+    }
     form.dataset.submitting = "false";
     setBusy(false);
     // A polite update can be dropped if speech is already queued, and nothing

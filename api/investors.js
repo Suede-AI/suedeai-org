@@ -4,10 +4,12 @@ const {
   getRequestFields,
   insertRow,
   isValidEmail,
+  logInsertFailure,
   normalizeText,
   redirect,
   sendEmail,
   sendJson,
+  sendLeadLost,
   wantsJson,
 } = require("./_shared");
 const { assessSubmission, logDrop, reviewNote, reviewPrefix } = require("./_spam-gate");
@@ -146,18 +148,13 @@ module.exports = async (req, res) => {
   }
 
   if (!result.ok) {
-    if (wantsJson(req)) {
-      sendJson(res, result.status, result.payload);
-      return;
-    }
-    res.statusCode = result.status;
-    res.setHeader("Content-Type", "text/plain; charset=utf-8");
-    res.end(result.payload.error || "Submission failed.");
-    return;
+    logInsertFailure("investors", result);
   }
 
   const sender = getEnv("INVESTOR_EMAIL_FROM");
   const notifyTo = getEnv("INVESTOR_NOTIFY_TO");
+
+  let notified = false;
 
   if (sender && notifyTo) {
     const summary = [
@@ -177,13 +174,27 @@ module.exports = async (req, res) => {
       message || "(no message)",
     ].join("\n");
 
-    await sendEmail({
+    const notifyResult = await sendEmail({
       from: sender,
       to: [notifyTo],
       subject: `${reviewPrefix(gate)}New investor lead: ${firm}${checkSize ? ` [${checkSize}]` : ""}`,
       text: summary + reviewNote(gate),
       reply_to: email,
     });
+    notified = Boolean(notifyResult && notifyResult.ok);
+    if (!notified) {
+      console.error("[investors] email notification failed", {
+        status: notifyResult && notifyResult.status,
+        payload: notifyResult && notifyResult.payload,
+      });
+    }
+  }
+
+  // The row and the notification are two copies of the lead. Fail only when
+  // neither landed, and then before the autoresponder sends materials.
+  if (!result.ok && !notified) {
+    sendLeadLost(req, res);
+    return;
   }
 
   if (sender && getEnv("INVESTOR_AUTORESPONDER") === "true") {

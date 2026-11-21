@@ -4,10 +4,12 @@ const {
   getRequestFields,
   insertRow,
   isValidEmail,
+  logInsertFailure,
   normalizeText,
   redirect,
   sendEmail,
   sendJson,
+  sendLeadLost,
   wantsJson,
 } = require("./_shared");
 const { assessSubmission, logDrop, reviewNote, reviewPrefix } = require("./_spam-gate");
@@ -62,19 +64,12 @@ module.exports = async (req, res) => {
   });
 
   if (!result.ok) {
-    if (wantsJson(req)) {
-      sendJson(res, result.status, result.payload);
-      return;
-    }
-
-    res.statusCode = result.status;
-    res.setHeader("Content-Type", "text/plain; charset=utf-8");
-    res.end(result.payload.error || "Submission failed.");
-    return;
+    logInsertFailure("contact", result);
   }
 
   const notifyTo = getEnv("CONTACT_NOTIFY_TO");
   const sender = getEnv("CONTACT_EMAIL_FROM");
+  let notified = false;
 
   if (notifyTo && sender) {
     const emailResult = await sendEmail({
@@ -85,12 +80,20 @@ module.exports = async (req, res) => {
       reply_to: email,
     });
 
-    if (!emailResult || !emailResult.ok) {
+    notified = Boolean(emailResult && emailResult.ok);
+    if (!notified) {
       console.error("[contact] email notification failed", {
         status: emailResult && emailResult.status,
         payload: emailResult && emailResult.payload,
       });
     }
+  }
+
+  // The database row and the notification email are two copies of the same
+  // lead. Report success when either one landed; fail only when both did not.
+  if (!result.ok && !notified) {
+    sendLeadLost(req, res);
+    return;
   }
 
   if (wantsJson(req)) {
