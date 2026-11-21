@@ -5,6 +5,7 @@ const {
   getRequestFields,
   insertRow,
   isValidEmail,
+  logInsertFailure,
   normalizeText,
   redirect,
   sendEmail,
@@ -245,16 +246,10 @@ module.exports = async (req, res) => {
     submitted_at: new Date().toISOString(),
   });
 
+  // The thanks page links the preview directly and the email below sends it,
+  // so a failed row is logged rather than shown to the reader as a dead end.
   if (!result.ok) {
-    if (wantsJson(req)) {
-      sendJson(res, result.status, result.payload);
-      return;
-    }
-
-    res.statusCode = result.status;
-    res.setHeader("Content-Type", "text/plain; charset=utf-8");
-    res.end(result.payload.error || "Submission failed.");
-    return;
+    logInsertFailure("book", result);
   }
 
   const sender = getEnv("BOOK_EMAIL_FROM") || getEnv("CONTACT_EMAIL_FROM");

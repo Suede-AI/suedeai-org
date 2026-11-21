@@ -4,10 +4,12 @@ const {
   getRequestFields,
   insertRow,
   isValidEmail,
+  logInsertFailure,
   normalizeText,
   redirect,
   sendEmail,
   sendJson,
+  sendLeadLost,
   wantsJson,
 } = require("./_shared");
 const { assessSubmission, logDrop, reviewNote, reviewPrefix } = require("./_spam-gate");
@@ -88,18 +90,13 @@ module.exports = async (req, res) => {
   });
 
   if (!result.ok) {
-    if (wantsJson(req)) {
-      sendJson(res, result.status, result.payload);
-      return;
-    }
-    res.statusCode = result.status;
-    res.setHeader("Content-Type", "text/plain; charset=utf-8");
-    res.end(result.payload.error || "Submission failed.");
-    return;
+    logInsertFailure("book-call", result);
   }
 
   const sender = getEnv("BOOK_EMAIL_FROM") || getEnv("CONTACT_EMAIL_FROM");
   const notifyTo = getEnv("CALL_NOTIFY_TO") || getEnv("CONTACT_NOTIFY_TO");
+
+  let notified = false;
 
   if (sender && notifyTo) {
     const summary = [
@@ -112,13 +109,27 @@ module.exports = async (req, res) => {
       message,
     ].join("\n");
 
-    await sendEmail({
+    const notifyResult = await sendEmail({
       from: sender,
       to: [notifyTo],
       subject: `${reviewPrefix(gate)}New call request${topic ? `: ${topic}` : ""}`,
       text: summary + reviewNote(gate),
       reply_to: email,
     });
+    notified = Boolean(notifyResult && notifyResult.ok);
+    if (!notified) {
+      console.error("[book-call] email notification failed", {
+        status: notifyResult && notifyResult.status,
+        payload: notifyResult && notifyResult.payload,
+      });
+    }
+  }
+
+  // The row and the notification are two copies of the lead. Fail only when
+  // neither landed, and then before the autoresponder promises a reply.
+  if (!result.ok && !notified) {
+    sendLeadLost(req, res);
+    return;
   }
 
   if (sender) {

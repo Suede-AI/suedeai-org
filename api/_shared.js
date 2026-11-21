@@ -48,16 +48,25 @@ async function insertRow(table, row) {
     };
   }
 
-  const response = await fetch(`${config.url}/rest/v1/${table}`, {
-    method: "POST",
-    headers: {
-      apikey: config.key,
-      Authorization: `Bearer ${config.key}`,
-      "Content-Type": "application/json",
-      Prefer: "return=minimal",
-    },
-    body: JSON.stringify(row),
-  });
+  let response;
+  try {
+    response = await fetch(`${config.url}/rest/v1/${table}`, {
+      method: "POST",
+      headers: {
+        apikey: config.key,
+        Authorization: `Bearer ${config.key}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify(row),
+    });
+  } catch (error) {
+    return {
+      ok: false,
+      status: 502,
+      payload: { error: "Supabase insert failed.", details: String(error && error.message) },
+    };
+  }
 
   if (!response.ok) {
     const text = await response.text();
@@ -87,14 +96,25 @@ async function sendEmail(payload) {
     };
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${config.apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+  let response;
+  try {
+    response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${config.apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (error) {
+    // A network failure must not throw past the handler and turn a stored
+    // lead into a 500 for the visitor.
+    return {
+      ok: false,
+      status: 502,
+      payload: { error: "Email delivery failed.", details: String(error && error.message) },
+    };
+  }
 
   if (!response.ok) {
     const text = await response.text();
@@ -171,6 +191,31 @@ function getRequestFields(req) {
   return {};
 }
 
+// A lead is kept when either the database row or the team notification email
+// lands. Only when both fail does the visitor see an error, and the error never
+// carries the database's own text: that goes to the function log instead.
+const LEAD_LOST_MESSAGE =
+  "We could not send that just now. Please try again in a minute.";
+
+function logInsertFailure(label, result) {
+  console.error(`[${label}] lead insert failed`, {
+    status: result && result.status,
+    error: result && result.payload && result.payload.error,
+    details: result && result.payload && result.payload.details,
+  });
+}
+
+function sendLeadLost(req, res) {
+  if (wantsJson(req)) {
+    sendJson(res, 503, { error: LEAD_LOST_MESSAGE });
+    return;
+  }
+
+  res.statusCode = 503;
+  res.setHeader("Content-Type", "text/plain; charset=utf-8");
+  res.end(LEAD_LOST_MESSAGE);
+}
+
 function wantsJson(req) {
   const accept = String(req.headers.accept || "").toLowerCase();
   return accept.includes("application/json");
@@ -183,9 +228,12 @@ module.exports = {
   getRequestFields,
   insertRow,
   isValidEmail,
+  LEAD_LOST_MESSAGE,
+  logInsertFailure,
   normalizeText,
   redirect,
   sendEmail,
   sendJson,
+  sendLeadLost,
   wantsJson,
 };

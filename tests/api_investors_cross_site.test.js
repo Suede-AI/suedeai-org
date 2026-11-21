@@ -174,8 +174,10 @@ test("the 400, drop, 405 and insert-error answers all carry the allow-origin hea
 
   stubFetch([{ ok: false, status: 500, text: "boom" }]);
   const failed = makeRes();
-  await handler(makeReq({ origin: AI, body: lead }), failed);
-  assert.strictEqual(failed.statusCode, 500);
+  await quiet(() => handler(makeReq({ origin: AI, body: lead }), failed));
+  // The stub fails every call, so the notification email that would carry
+  // the lead fails too and the visitor gets the generic 503.
+  assert.strictEqual(failed.statusCode, 503);
   assert.strictEqual(failed.headers["access-control-allow-origin"], AI);
 });
 
@@ -231,10 +233,12 @@ test("if the insert policy still rejects the .ai source, the lead is stored unde
 test("a policy rejection of the default source is not retried", async () => {
   const calls = stubFetch([{ ok: false, status: 401, text: "rls" }]);
   const res = makeRes();
-  await handler(makeReq({ origin: AI, body: lead }), res);
-  assert.strictEqual(res.statusCode, 401);
+  await quiet(() => handler(makeReq({ origin: AI, body: lead }), res));
+  assert.strictEqual(res.statusCode, 503);
   assert.strictEqual(inserts(calls).length, 1);
-  assert.strictEqual(emails(calls).length, 0);
+  // The team notification is tried once to carry the lead; with it failing
+  // too, no autoresponder goes out.
+  assert.strictEqual(emails(calls).length, 1);
 });
 
 // ---- spam gate ----
