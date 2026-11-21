@@ -521,7 +521,7 @@ def main() -> int:
         assert_contains("index.html", home_html, '"@type": "Person"', failures)
         assert_contains("index.html", home_html, '"@id": "https://suedeai.ai/founder#person"', failures)
         assert_contains("index.html", home_html, '"url": "https://suedeai.ai/founder"', failures)
-        assert_contains("index.html", home_html, '"https://suedeai.org/jason-colapietro/"', failures)
+        assert_contains("index.html", home_html, 'href="/jason-colapietro/"', failures)
 
     h1_pattern = r"<h1\b[^>]*>.*?</h1>"
     h1_flags = re.IGNORECASE | re.DOTALL
@@ -560,7 +560,7 @@ def main() -> int:
     if founder_path.exists():
         founder_html = read_text(founder_path)
         assert_contains("jason-colapietro/index.html", founder_html, '"@id": "https://suedeai.ai/founder#person"', failures)
-        assert_regex("jason-colapietro/index.html", founder_html, r'"alternateName"\s*:\s*\[\s*"Johnny Suede"\s*\]', failures)
+        assert_regex("jason-colapietro/index.html", founder_html, r'"alternateName"\s*:\s*\[\s*"Johnny Suede",\s*"Jay Colapietro"\s*\]', failures)
         assert_contains("jason-colapietro/index.html", founder_html, '"url": "https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://suedeai.ai/founder"', failures)
         assert_contains("jason-colapietro/index.html", founder_html, 'href="https://jasoncolapietro.com/"', failures)
@@ -700,10 +700,9 @@ def main() -> int:
                 if url in text:
                     relative_path = text_path.relative_to(ROOT).as_posix()
                     failures.append(f"{relative_path}: dead public URL '{url}'")
-            # "Jay Colapietro" was declared as an alias until 2026-08-07 and
-            # removed: Jason has never used it publicly, so it consolidated no
-            # real query or citation, and answer engines had begun repeating
-            # the claim as established fact. Guard against reintroduction.
+            # "Jay Colapietro" stays out of the llms prose. The Person JSON-LD
+            # carries it as an alternateName because the canonical node does
+            # (JASON_ALTERNATE_NAMES in Suede-AI-App suede-home seo-entity.ts).
             if "Jay Colapietro" in text:
                 relative_path = text_path.relative_to(ROOT).as_posix()
                 failures.append(f"{relative_path}: removed alias 'Jay Colapietro'")
