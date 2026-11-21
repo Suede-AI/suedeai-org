@@ -457,7 +457,6 @@ def main() -> int:
         "24 live x402 paid endpoints",
         "24 production paid endpoints",
         "24 agent-payable x402 endpoints",
-        "-".join(("full", "stack")) + " GEO",
         "-".join(("full", "stack")) + " AI visibility",
     ]
     dead_asins = [
