@@ -5,9 +5,10 @@ const path = require('node:path');
 
 // Search-result contract for every public page: a title of 60 characters or
 // fewer that names the company Suede, a meta description of 155 characters or
-// fewer, and exactly one H1. The company is named "Suede" (owner ruling
-// 2026-11-18); "Suede AI", "Suede Labs AI" and "Suede Labs" are alternate names,
-// so titles and H1s may use either form.
+// fewer, and exactly one H1. The company is named "Suede" (owner rulings
+// 2026-11-18 and 2026-11-21); "Suede AI", "Suede Labs AI" and "Suede Labs" are
+// former names kept only as schema alternateName aliases, never in titles or H1s
+// (tests/brand_name.test.js guards the copy).
 const root = path.resolve(__dirname, '..');
 
 function htmlFiles(dir) {

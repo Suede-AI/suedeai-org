@@ -478,11 +478,12 @@ def main() -> int:
     home_path = ROOT / "index.html"
     if home_path.exists():
         home_html = read_text(home_path)
-        # New "Creative rails for the AI era" content strings — root is now the Suede AI investor thesis page
+        # New "Creative rails for the AI era" content strings — root is now the Suede investor thesis page
         assert_contains("index.html", home_html, "Creative rails for the", failures)
         assert_contains("index.html", home_html, "AI era.", failures)
-        assert_contains("index.html", home_html, "Suede Labs", failures)
-        assert_contains("index.html", home_html, "Suede AI investor thesis", failures)
+        # The company is "Suede" (owner direction 2026-11-21); "Suede AI" and
+        # "Suede Labs" are schema alternateName aliases only.
+        assert_contains("index.html", home_html, "Suede investor thesis", failures)
         assert_contains("index.html", home_html, "Talk to Suede", failures)
         assert_contains("index.html", home_html, "Jason Colapietro", failures)
         assert_contains("index.html", home_html, 'href="https://suedeai.ai/"', failures)
@@ -519,7 +520,7 @@ def main() -> int:
         assert_contains("index.html", home_html, 'property="og:url"', failures)
         assert_contains("index.html", home_html, 'name="twitter:card"', failures)
         assert_contains("index.html", home_html, 'type="application/ld+json"', failures)
-        # JSON-LD must include Organization (Suede Labs) and Person (Jason Colapietro)
+        # JSON-LD must include Organization (Suede) and Person (Jason Colapietro)
         assert_contains("index.html", home_html, '"@type": "Organization"', failures)
         assert_contains("index.html", home_html, '"@type": "Person"', failures)
         assert_contains("index.html", home_html, '"@id": "https://suedeai.ai/founder#person"', failures)
@@ -641,7 +642,7 @@ def main() -> int:
                 if organization.get("name") != "Suede":
                     failures.append(f"{relative_path}: canonical company name must be Suede")
                 if "Suede Labs AI" not in organization.get("alternateName", []):
-                    failures.append(f"{relative_path}: canonical company must retain Suede Labs AI as company context")
+                    failures.append(f"{relative_path}: canonical company must list its former name Suede Labs AI as an alternateName alias")
             organization_same_as = same_as_urls(organization)
             if UNRELATED_PERSON_WIKIDATA in organization_same_as:
                 failures.append(
@@ -1100,7 +1101,7 @@ def main() -> int:
     if robots.exists():
         robots_text = read_text(robots)
         assert_contains("robots.txt", robots_text, "Sitemap: https://suedeai.org/sitemap.xml", failures)
-        # AI-crawler allowlist must be explicit so Suede Labs content is indexed by the major LLM crawlers.
+        # AI-crawler allowlist must be explicit so Suede content is indexed by the major LLM crawlers.
         for crawler in [
             "GPTBot",
             "ClaudeBot",
@@ -1154,7 +1155,7 @@ def main() -> int:
         "programmable ip": "programmable-ip/index.html",
         "creator ownership": "creator-ownership/index.html",
     }
-    keyword_forbidden = ("vocal range test", "suede labs", "angel investing")
+    keyword_forbidden = ("vocal range test", "suede labs", "suede ai", "angel investing")
     keyword_short_pages = {
         "privacy/index.html", "terms/index.html", "refund-policy/index.html",
         "contact/index.html", "book-a-call/index.html", "voice/privacy/index.html",

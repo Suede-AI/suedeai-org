@@ -41,7 +41,7 @@ function buildAutoresponder({ name, deckUrl, calendarUrl }) {
   const lines = [
     `Hi${hi},`,
     "",
-    "Thank you for your interest in Suede AI. We build the ownership and settlement layer for the AI media era: proof of creation, programmable IP, provenance, royalty routing, and agent commerce.",
+    "Thank you for your interest in Suede. We build the ownership and settlement layer for the AI media era: proof of creation, programmable IP, provenance, royalty routing, and agent commerce.",
     "",
   ];
   if (deckUrl) lines.push(`Investor materials: ${deckUrl}`);
@@ -49,8 +49,8 @@ function buildAutoresponder({ name, deckUrl, calendarUrl }) {
   if (!deckUrl && !calendarUrl) {
     lines.push("Our team will follow up shortly with materials and next steps.");
   }
-  lines.push("", "Suede AI", "https://suedeai.org/");
-  return { subject: "Suede AI — investor materials", text: lines.join("\n") };
+  lines.push("", "Suede", "https://suedeai.org/");
+  return { subject: "Suede — investor materials", text: lines.join("\n") };
 }
 
 module.exports = async (req, res) => {

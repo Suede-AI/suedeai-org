@@ -6,4 +6,4 @@ Keep evidence URLs with each entry, and keep each entry's date in the JSON: no s
 
 Source snapshot: 2026-09-16. Original press placements remain listed individually on the existing press pages.
 
-Directory and partnership visuals use the `visuals` section of the same snapshot. The files in `accomplishment-assets/` are unchanged copies of the Google Cloud and Stripe marks and the two AI Agents Directory screenshots already published on Suede AI SEO. Full pages show the archived screenshots with full-size and live-source links; homepage highlights show the two partner/program marks. Keep capture captions and relationship labels precise when refreshing assets.
+Directory and partnership visuals use the `visuals` section of the same snapshot. The files in `accomplishment-assets/` are unchanged copies of the Google Cloud and Stripe marks and the two AI Agents Directory screenshots already published on Suede SEO. Full pages show the archived screenshots with full-size and live-source links; homepage highlights show the two partner/program marks. Keep capture captions and relationship labels precise when refreshing assets.

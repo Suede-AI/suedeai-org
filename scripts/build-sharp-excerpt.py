@@ -134,7 +134,7 @@ def on_page(canvas, doc):
     canvas.setStrokeColor(LINE)
     canvas.setLineWidth(0.5)
     canvas.line(MARGIN_X, 0.52 * inch, PAGE_WIDTH - MARGIN_X, 0.52 * inch)
-    footer = Paragraph(f"Suede Labs - Stake Your Claim Sharp Excerpt - {doc.page}", styles["Footer"])
+    footer = Paragraph(f"Suede - Stake Your Claim Sharp Excerpt - {doc.page}", styles["Footer"])
     footer.wrapOn(canvas, PAGE_WIDTH - 2 * MARGIN_X, 0.3 * inch)
     footer.drawOn(canvas, MARGIN_X, 0.28 * inch)
     canvas.restoreState()
@@ -188,7 +188,7 @@ def build():
         topMargin=MARGIN_Y,
         bottomMargin=MARGIN_Y,
         title="Stake Your Claim - Sharp Excerpt",
-        author="Suede Labs",
+        author="Suede",
     )
     doc.addPageTemplates(
         [
@@ -198,13 +198,13 @@ def build():
     )
 
     story = []
-    story.append(para("SUEDE LABS - READER BRIEF", "Kicker"))
+    story.append(para("SUEDE - READER BRIEF", "Kicker"))
     story.append(para("Stake Your Claim.", "TitleHuge"))
     story.append(para("A sharper excerpt on AI, ownership, provenance, and the infrastructure creators will need when content becomes abundant.", "Deck"))
     story.append(Spacer(1, 0.25 * inch))
     story.append(para("This is the fast version. The 46-page preview gives you the wider argument. This excerpt gives you the spine: what is changing, why ownership matters now, and what to do before the market catches up.", "Pull"))
     story.append(Spacer(1, 0.5 * inch))
-    story.append(para("Jason Colapietro - Suede Labs", "Small"))
+    story.append(para("Jason Colapietro - Suede", "Small"))
     story.append(para("Proof of creation. Programmable IP. Human authenticity for AI-era media.", "Small"))
     story.append(PageBreak())
 

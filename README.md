@@ -1,6 +1,6 @@
-# Suede AI SEO Website
+# Suede Reading Hub Website
 
-> **[Suede AI](https://suedeai.ai) · By [Jason Colapietro](https://suedeai.ai/founder) · Live at [suedeai.org](https://suedeai.org)**
+> **[Suede](https://suedeai.ai) · By [Jason Colapietro](https://suedeai.ai/founder) · Live at [suedeai.org](https://suedeai.org)**
 
 Static website source for `suedeai.org`.
 
