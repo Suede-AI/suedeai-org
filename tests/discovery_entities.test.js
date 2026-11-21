@@ -53,11 +53,14 @@ test('Clutch identifies the SEO practice, linked to its parent company', () => {
     const company = graph.find(n => n['@type'] === 'Organization' && n['@id'] === orgId);
     if (!company) continue;
     assert.ok(!company.sameAs.includes(practiceProfile), path.relative(root, file));
-    assert.ok(company.sameAs.includes('https://suedeai.org/'));
+    assert.ok(company.sameAs.includes('https://suedeai.org'));
+    assert.ok(!company.sameAs.includes('https://www.instagram.com/suedesingapp/'), path.relative(root, file));
     const practice = graph.find(n => n['@id'] === practiceId);
     assert.equal(practice?.['@type'], 'ProfessionalService', path.relative(root, file));
     assert.equal(practice.url, 'https://suedeai.ai/seo');
     assert.deepEqual(practice.sameAs, [practiceProfile]);
+    // Same alias /seo declares for the practice node: its former product name.
+    assert.deepEqual(practice.alternateName, ['Suede AI SEO'], path.relative(root, file));
     assert.equal(practice.parentOrganization['@id'], orgId);
   }
 });
@@ -174,5 +177,12 @@ test('every patent mention on llms.txt lists all five provisional applications',
     for (const serial of ['63/946,189', '63/946,192', '63/946,212', '63/946,217', '63/947,120']) {
       assert.ok(line.includes(serial), `${serial} missing from: ${line.slice(0, 80)}`);
     }
+  }
+});
+
+test('llms files carry the estate-wide alias line from the rename brief', () => {
+  for (const file of ['llms.txt', 'llms-full.txt']) {
+    const text = fs.readFileSync(path.join(root, file), 'utf8');
+    assert.ok(text.includes('Suede was formerly known as Suede AI and Suede Labs.'), file);
   }
 });

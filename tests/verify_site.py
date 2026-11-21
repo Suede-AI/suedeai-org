@@ -27,23 +27,20 @@ FOUNDER_OG_IMAGE_URL = f"{SITE_URL}/assets/img/og-jason-colapietro.png"
 FAVICON_MAX_BYTES = 12_000
 FAVICON_REQUIRED_SIZES = [(16, 16), (32, 32), (48, 48)]
 CANONICAL_ORGANIZATION_ID = "https://suedeai.ai/#organization"
+# The canonical Organization sameAs is SUEDE_ORG_SAME_AS in
+# suede-home/src/lib/seo-entity.ts (Suede-AI/Suede-AI-App), the source every
+# Suede site copies. The Suede Sing app's Instagram account is a product
+# profile, not the company's, so it stays off the company node.
 CANONICAL_ORGANIZATION_SAME_AS = [
-    "https://suedeai.org/",
+    "https://www.crunchbase.com/organization/suede-labs-ai",
+    "https://www.linkedin.com/company/suede-labs",
     "https://x.com/AISUEDE",
     "https://github.com/Suede-AI",
     "https://www.youtube.com/@aisuede",
     "https://www.instagram.com/suedeai/",
-    "https://www.instagram.com/suedesingapp/",
-    "https://www.facebook.com/people/Suede-Labs-AI/61584534847516",
-    "https://t.me/SUEDEAI",
-    "https://linktr.ee/suedelabsai",
-    "https://www.crunchbase.com/organization/suede-labs-ai",
-    "https://www.linkedin.com/company/suede-labs",
+    "https://www.facebook.com/people/Suede-AI/61584534847516/",
+    "https://suedeai.org",
     "https://www.wikidata.org/wiki/Q141169484",
-    "https://pitchbook.com/profiles/company/937217-71",
-    "https://www.f6s.com/suede-ai",
-    "https://www.tiktok.com/@suedeaiseo",
-    "https://discord.gg/6WZEnnkPH4",
 ]
 RETIRED_TOKEN_LENGTH = 15
 RETIRED_TOKEN_SHA256 = "3ae7a42b9a56f4041cc3d72682d561783d20597a5806d3870feaf4f23aa25e69"
