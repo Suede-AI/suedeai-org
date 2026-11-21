@@ -48,40 +48,16 @@
   "@graph": [
     {
       "@type": "ProfessionalService",
-      "@id": "https://suedeai.ai/seo#organization",
+      "@id": "https://suedeai.agency/#suede-seo",
       "name": "Suede SEO",
-      "url": "https://suedeai.ai/seo",
-      "sameAs": [
-        "https://clutch.co/profile/suede-ai-seo"
-      ],
+      "url": "https://suedeai.agency/",
       "parentOrganization": {
         "@id": "https://suedeai.ai/#organization"
-      },
-      "alternateName": [
-        "Suede AI SEO"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "138 Victorian Lane",
-        "addressLocality": "Jupiter",
-        "addressRegion": "FL",
-        "postalCode": "33458",
-        "addressCountry": "US"
-      },
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "@id": "https://suedeai.ai/terms#money-back-policy",
-        "name": "90-day money-back policy",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 90,
-        "returnFees": "https://schema.org/FreeReturn",
-        "refundType": "https://schema.org/FullRefund",
-        "merchantReturnLink": "https://suedeai.ai/terms#money-back-policy"
       }
     },
     {
-      "@type": "ProfilePage",
-      "@id": "https://suedeai.org/jason-colapietro/#profilepage",
+      "@type": "WebPage",
+      "@id": "https://suedeai.org/jason-colapietro/#webpage",
       "url": "https://suedeai.org/jason-colapietro/",
       "name": "Jason Colapietro, Founder & CEO, Suede",
       "description": "Founder profile for Jason Colapietro, founder and CEO of Suede.",
@@ -92,9 +68,6 @@
       "primaryImageOfPage": "https://suedeai.org/assets/img/founder-jason.png",
       "breadcrumb": {
         "@id": "https://suedeai.org/jason-colapietro/#breadcrumbs"
-      },
-      "mainEntity": {
-        "@id": "https://suedeai.ai/founder#person"
       },
       "hasPart": [
         {
@@ -118,7 +91,10 @@
         {
           "@id": "https://suedeai.ai/founder#book-the-signal-chain"
         }
-      ]
+      ],
+      "about": {
+        "@id": "https://suedeai.ai/founder#person"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -145,52 +121,53 @@
       "givenName": "Jason",
       "familyName": "Colapietro",
       "alternateName": [
-        "Johnny Suede"
+        "Johnny Suede",
+        "Jay Colapietro"
       ],
       "jobTitle": "Founder and CEO, Suede",
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Fractional Forward-Deployed Engineer",
-        "description": "Integrates AI agents into how a company works, then runs its SEO, AI search visibility and PR."
-      },
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Fractional Forward-Deployed Engineer"
+        }
+      ],
       "description": "Jason Colapietro is an engineer, author, and the founder and CEO of Suede. He has 63 pull requests merged across 54 external repositories (41 substantive contributions), plus 1 public Linux kernel contribution, with merges into Jest, Adobe React Spectrum, Backstage and the Polkadot SDK; he has written five books on Amazon in hardcover, paperback, and Kindle, including The Claude Code Bible and Codex in Production; and he has shipped 9 iOS apps under his own Apple developer account. He publishes under the pen name Johnny Suede.",
+      "disambiguatingDescription": "Founder and CEO of Suede, the AI engineering company at suedeai.ai, and author publishing as Johnny Suede; not the 1991 film Johnny Suede or the British band Suede.",
       "url": "https://suedeai.ai/founder",
       "mainEntityOfPage": "https://suedeai.ai/founder",
       "image": {
         "@type": "ImageObject",
-        "url": "https://suedeai.org/assets/img/founder-jason.png",
-        "width": 1060,
-        "height": 1484,
+        "url": "https://suedeai.ai/founderlegit.png",
+        "width": 1067,
+        "height": 1475,
         "caption": "Jason Colapietro, founder and CEO of Suede"
       },
-      "worksFor": {
-        "@id": "https://suedeai.ai/#organization"
-      },
-      "affiliation": {
-        "@id": "https://suedeai.ai/#organization"
-      },
       "knowsAbout": [
-        "Creator ownership",
-        "Proof of creation",
-        "Programmable IP",
-        "music rights",
-        "Content provenance",
-        "Music licensing",
-        "Voice and likeness rights",
-        "Agentic commerce",
-        "Agent Commerce Protocol (ACP)",
-        "x402 payments",
-        "Royalty infrastructure",
+        "AI agents",
+        "Agentic platforms",
+        "Software engineering",
+        "Open-source software",
+        "AI coding agents",
+        "Claude Code",
+        "OpenAI Codex",
+        "Workflow automation",
         "AI integration",
         "Forward-deployed engineering",
-        "AI agents",
-        "Search engine optimization",
         "Generative engine optimization",
         "Answer engine optimization",
-        "Digital PR"
-      ],
-      "knowsLanguage": [
-        "en"
+        "Search engine optimization",
+        "x402",
+        "agent payments",
+        "ERC-8004",
+        "artificial intelligence",
+        "generative AI",
+        "AI infrastructure",
+        "creative software",
+        "AI music generation",
+        "music production",
+        "electric guitar signal chain",
+        "amplifier history",
+        "self-taught guitar methodology"
       ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q140235755",
@@ -203,7 +180,10 @@
         "https://jasoncolapietro.substack.com",
         "https://jasoncolapietro.com",
         "https://johnnysuede.com"
-      ]
+      ],
+      "worksFor": {
+        "@id": "https://suedeai.ai/#organization"
+      }
     },
     {
       "@type": "Book",
@@ -505,7 +485,7 @@
             <span class="eyebrow">Jason Colapietro</span>
             <h2>Founder and builder of Suede.</h2>
             <p class="lede">Suede is built from a simple thesis: creation is becoming abundant, but ownership still needs proof, permission, provenance, and usable rights.</p>
-            <p>Jason Colapietro's work connects creator ownership, music rights, voice and likeness rights, programmable IP, licensing, and agent-readable commerce into one infrastructure story. The goal is practical: help creators prove what they made, control how it can be used, and turn rights into something software can understand. He has written seven works: five books on Amazon in hardcover, paperback, and Kindle, <a href="https://www.amazon.com/dp/B0HHTMJWB4" target="_blank" rel="noopener">The Claude Code Bible</a>, <a href="https://www.amazon.com/dp/B0HHTF3LG1" target="_blank" rel="noopener">Codex in Production</a>, <a href="https://www.amazon.com/dp/B0GMB2VLXQ" target="_blank" rel="noopener">Proof as Infrastructure</a>, <a href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener">Stake Your Claim</a> and <a href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener">Suede: The Human Authenticity Layer</a>; and two self-hosted, <a href="https://suedeai.ai/seo/book" target="_blank" rel="noopener">The Screenshot</a> (free at seo.suedeai.ai) and <a href="https://guitar.solutions" target="_blank" rel="noopener">The Signal Chain</a> (free at guitar.solutions, three editions). Five USPTO provisional patent applications: 63/946,189, 63/946,192, 63/946,212, 63/946,217 and 63/947,120. He is also an open-source contributor, with 63 pull requests merged across 54 external repositories (41 substantive contributions), plus 1 public Linux kernel contribution, as of November 2026, including Jest, Backstage, and Adobe's React Spectrum.</p>
+            <p>Jason Colapietro's work connects creator ownership, music rights, voice and likeness rights, programmable IP, licensing, and agent-readable commerce into one infrastructure story. The goal is practical: help creators prove what they made, control how it can be used, and turn rights into something software can understand. He has written seven works: five books on Amazon in hardcover, paperback, and Kindle, <a href="https://www.amazon.com/dp/B0HHTMJWB4" target="_blank" rel="noopener">The Claude Code Bible</a>, <a href="https://www.amazon.com/dp/B0HHTF3LG1" target="_blank" rel="noopener">Codex in Production</a>, <a href="https://www.amazon.com/dp/B0GMB2VLXQ" target="_blank" rel="noopener">Proof as Infrastructure</a>, <a href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener">Stake Your Claim</a> and <a href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener">Suede: The Human Authenticity Layer</a>; and two self-hosted, <a href="https://suedeai.ai/seo/book" target="_blank" rel="noopener">The Screenshot</a> (free at suedeai.ai/seo) and <a href="https://guitar.solutions" target="_blank" rel="noopener">The Signal Chain</a> (free at guitar.solutions, three editions). Five USPTO provisional patent applications: 63/946,189, 63/946,192, 63/946,212, 63/946,217 and 63/947,120. He is also an open-source contributor, with 63 pull requests merged across 54 external repositories (41 substantive contributions), plus 1 public Linux kernel contribution, as of November 2026, including Jest, Backstage, and Adobe's React Spectrum.</p>
             <div class="founder-panel__meta">
               <strong>Jason Colapietro</strong>
               <span>Founder &amp; CEO, Suede</span>
@@ -696,7 +676,6 @@
     <nav class="site-footer__ecosystem" aria-label="Suede properties">
     <a href="https://suedeai.ai/" target="_blank" rel="noopener">Suede</a>
     <a href="https://suedeai.app/" target="_blank" rel="noopener">Agent Studio</a>
-    <a href="https://suedeai.agency/" target="_blank" rel="noopener">Suede GEO</a>
     <a href="https://guitarhub.org/" target="_blank" rel="noopener">GuitarHub</a>
     <a href="https://registry.suedeai.ai/" target="_blank" rel="noopener">IP Registry</a>
     <a href="https://strumly.suedeai.ai/" target="_blank" rel="noopener">Strumly</a>
@@ -706,6 +685,7 @@
     <a href="https://suede.social/" target="_blank" rel="noopener">Suede Social</a>
     <a href="https://hub.suedeai.ai/" target="_blank" rel="noopener">Suede Hub</a>
     </nav>
+    <nav class="site-footer__ecosystem site-footer__services" aria-label="Suede services"><span>Suede services:</span> <a href="https://suedeai.ai/geo" target="_blank" rel="noopener">Suede GEO</a> · <a href="https://suedeai.ai/aeo" target="_blank" rel="noopener">Suede AEO</a> · <a href="https://suedeai.ai/ai-visibility" target="_blank" rel="noopener">AI visibility by Suede</a> · <a href="https://suedeai.ai/ai-deployment" target="_blank" rel="noopener">AI deployment by Suede</a> · <a href="https://suedeai.ai/ai-engineering" target="_blank" rel="noopener">AI engineering by Suede</a> · <a href="https://suedeai.ai/ai-integration" target="_blank" rel="noopener">AI integration by Suede</a> · <a href="https://suedeai.ai/official" target="_blank" rel="noopener">Official Suede</a> · <a href="https://suedeai.agency/" target="_blank" rel="noopener">Suede SEO</a></nav>
     <div class="founder-signature">
       <img src="/assets/img/founder-jason-colapietro.png" alt="Jason Colapietro" class="founder-signature__avatar" width="256" height="256" loading="lazy">
       <span>Built by <a href="https://suedeai.ai/founder" target="_blank" rel="noopener">Jason Colapietro</a>, founder of Suede.</span>

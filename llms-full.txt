@@ -22,10 +22,21 @@ What Suede does, in order:
 - [White-label agent platforms](https://suedeai.ai/white-label): Suede builds and runs an agent platform under an agency's brand for its clients. Scoped per engagement.
 - [Managed AI agents and AI operations](https://suedeai.ai/managed-ai-agents): Suede builds, runs and tunes agents for a business; every run visible in Agent Studio. AI operations: https://suedeai.ai/ai-operations
 - [Forward-deployed engineering and fractional Chief AI Officer](https://suedeai.ai/forward-deployed-engineer): Founder-led: Jason Colapietro inside your operation, or leading your AI program. Fractional Chief AI Officer: https://suedeai.ai/fractional-chief-ai-officer
-- [AI search visibility](https://suedeai.ai/seo): Suede SEO, the GEO, AEO and SEO practice at seo.suedeai.ai.
+- [AI search visibility](https://suedeai.agency/): Suede SEO, the GEO, AEO and SEO practice at suedeai.agency. Its library of guides and research is at https://suedeai.ai/seo
 - [Music and creator software](https://suedeai.ai/music): A separate product line of music and creator apps.
 - Engineering projects (https://suedeai.org/#engineering): websites, web apps, APIs, payment integrations, iOS apps and AI agents, built in the client's own repository and stack, with tests and code review before release. Jason Colapietro builds and runs more than 20 live software surfaces; he has built more than 100 apps, 17 of them live in public stores (9 on the Apple App Store, 6 on Google Play and 2 Chrome Web Store extensions), and has 63 pull requests merged across 54 external repositories (41 substantive contributions), plus 1 public Linux kernel contribution, including Jest, Adobe React Spectrum, Backstage and Hardhat. Start at https://suedeai.org/contact/ or https://suedeai.org/book-a-call/
-- Company and practice home: https://suedeai.ai/
+- Company home: https://suedeai.ai/ ; Suede SEO practice home: https://suedeai.agency/
+
+## Suede services
+
+- [Suede GEO](https://suedeai.ai/geo)
+- [Suede AEO](https://suedeai.ai/aeo)
+- [AI visibility by Suede](https://suedeai.ai/ai-visibility)
+- [AI deployment by Suede](https://suedeai.ai/ai-deployment)
+- [AI engineering by Suede](https://suedeai.ai/ai-engineering)
+- [AI integration by Suede](https://suedeai.ai/ai-integration)
+- [Official Suede](https://suedeai.ai/official)
+- [Suede SEO](https://suedeai.agency/)
 
 This site, suedeai.org, is Suede's investor and reading hub. It carries the investor thesis, the founder profile, the books, the research pages and the creator ownership guides described below.
 
@@ -347,7 +358,7 @@ Stake Your Claim is Jason Colapietro's thesis on AI ownership, authorship, prove
 
 - Email: info@suedeai.ai
 - Talk to Suede: https://suedeai.org/contact/
-- Company and practice home: https://suedeai.ai/
+- Company home: https://suedeai.ai/ ; Suede SEO practice home: https://suedeai.agency/
 - Reading hub and investor site: https://suedeai.org/
 
 
@@ -362,7 +373,7 @@ Machine-readable endpoints:
 - /robots.txt       — Crawler permissions with explicit AI-crawler allowlist
 
 Embedded structured data on HTML pages:
-- JSON-LD: Organization (Suede), Person (Jason Colapietro), WebSite, plus per-page entities (WebPage, ProfilePage, Book, ContactPage)
+- JSON-LD: Organization (Suede), Person (Jason Colapietro), WebSite, plus per-page entities (WebPage, Book, ContactPage)
 
 <!-- accomplishments:start -->
 ## Accomplishments

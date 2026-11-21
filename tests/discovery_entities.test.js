@@ -45,38 +45,78 @@ test('each standalone JSON-LD document declares its own schema context', () => {
 });
 const orgId = 'https://suedeai.ai/#organization';
 const founderId = 'https://suedeai.ai/founder#person';
-const practiceId = 'https://suedeai.ai/seo#organization';
-const practiceProfile = 'https://clutch.co/profile/suede-ai-seo';
-test('Clutch identifies the SEO practice, linked to its parent company', () => {
+const practiceId = 'https://suedeai.agency/#suede-seo';
+const retiredPracticeIds = ['https://suedeai.ai/seo#organization', 'https://suedeai.ai/seo#service', 'https://suedeai.ai/#ai-search-service'];
+// Owner ruling 2026-11-21: suedeai.agency owns Suede SEO. Its full node lives
+// there; this site references the one practice @id and never redeclares it.
+test('the SEO practice is the suedeai.agency node, referenced by its one @id', () => {
   for (const file of pages) {
+    const html = fs.readFileSync(file, 'utf8');
+    for (const id of retiredPracticeIds) assert.ok(!html.includes(`"${id}"`), `${path.relative(root, file)} uses retired ${id}`);
     const graph = nodes(file);
     const company = graph.find(n => n['@type'] === 'Organization' && n['@id'] === orgId);
-    if (!company) continue;
-    assert.ok(!company.sameAs.includes(practiceProfile), path.relative(root, file));
-    assert.ok(company.sameAs.includes('https://suedeai.org'));
-    assert.ok(!company.sameAs.includes('https://www.instagram.com/suedesingapp/'), path.relative(root, file));
-    const practice = graph.find(n => n['@id'] === practiceId);
-    assert.equal(practice?.['@type'], 'ProfessionalService', path.relative(root, file));
-    assert.equal(practice.url, 'https://suedeai.ai/seo');
-    assert.deepEqual(practice.sameAs, [practiceProfile]);
-    // Same alias /seo declares for the practice node: its former product name.
-    assert.deepEqual(practice.alternateName, ['Suede AI SEO'], path.relative(root, file));
-    assert.equal(practice.parentOrganization['@id'], orgId);
+    if (company) assert.ok(company.sameAs.includes('https://suedeai.org'));
+    if (company) assert.ok(!company.sameAs.includes('https://clutch.co/profile/suede-ai-seo'), path.relative(root, file));
+    for (const practice of graph.filter(n => n['@id'] === practiceId)) {
+      assert.deepEqual(practice, { ...(practice['@context'] ? { '@context': 'https://schema.org' } : {}), '@type': 'ProfessionalService', '@id': practiceId, name: 'Suede SEO', url: 'https://suedeai.agency/', parentOrganization: { '@id': orgId } }, path.relative(root, file));
+    }
   }
 });
-test('founder ImageObject dimensions match the checked-in PNG', () => {
-  const png = fs.readFileSync(path.join(root, 'assets/img/founder-jason.png'));
-  assert.equal(png.subarray(1, 4).toString(), 'PNG');
-  const dimensions = [png.readUInt32BE(16), png.readUInt32BE(20)];
+test('founder ImageObject is the image suedeai.ai/founder uses', () => {
   let checked = 0;
   for (const file of pages) {
-    for (const person of nodes(file).filter(n => n['@id'] === founderId && n.image?.['@type'] === 'ImageObject')) {
-      if (person.image.url !== 'https://suedeai.org/assets/img/founder-jason.png') continue;
-      assert.deepEqual([person.image.width, person.image.height], dimensions, path.relative(root, file));
+    for (const person of nodes(file).filter(n => n['@id'] === founderId && n['@type'] === 'Person')) {
+      assert.deepEqual(person.image, { '@type': 'ImageObject', url: 'https://suedeai.ai/founderlegit.png', width: 1067, height: 1475, caption: 'Jason Colapietro, founder and CEO of Suede' }, path.relative(root, file));
       checked++;
     }
   }
   assert.ok(checked > 0);
+});
+test('every Person node mirrors the canonical founder node', () => {
+  const people = pages.flatMap(nodes).filter(n => n['@type'] === 'Person' && n['@id'] === founderId);
+  for (const person of people) {
+    const { '@context': _ctx, ...rest } = person;
+    const { '@context': _c0, ...first } = people[0];
+    assert.deepEqual(rest, first);
+    assert.deepEqual(person.alternateName, ['Johnny Suede', 'Jay Colapietro']);
+    assert.deepEqual(person.worksFor, { '@id': orgId });
+  }
+});
+test('the supporting founder page is a WebPage about the canonical Person', () => {
+  const graph = nodes(path.join(root, 'jason-colapietro/index.html'));
+  assert.ok(!graph.some(n => n['@type'] === 'ProfilePage'));
+  const page = graph.find(n => n['@id'] === 'https://suedeai.org/jason-colapietro/#webpage');
+  assert.equal(page['@type'], 'WebPage');
+  assert.deepEqual(page.about, { '@id': founderId });
+});
+test('Suede Voice and Suede Sing keep their own listings', () => {
+  const voice = 'https://apps.apple.com/us/app/suede-voice-singing-coach/id6767763231';
+  for (const file of pages) {
+    const html = fs.readFileSync(file, 'utf8');
+    assert.doesNotMatch(html, /suede-voice-vocal-range-test/, path.relative(root, file));
+    assert.doesNotMatch(html, /href="https:\/\/sing\.suedeai\.ai\/"[^>]*>(?!Suede Sing\b|sing\.suedeai\.ai<)/, path.relative(root, file));
+  }
+  for (const file of ['index.html', 'investors/index.html']) {
+    const html = fs.readFileSync(path.join(root, file), 'utf8');
+    assert.ok(html.includes(voice), file);
+    assert.ok(html.includes('Suede Voice: Singing Coach'), file);
+    assert.ok(html.includes('https://play.google.com/store/apps/details?id=ai.suedeai.suedevoice'), file);
+    assert.ok(html.includes('https://chromewebstore.google.com/detail/dbimnmcokgmibdenmonoafhmdbjhpicd'), file);
+  }
+});
+test('footers carry the Suede services row with separated anchors', () => {
+  const row = '<a href="https://suedeai.ai/geo" target="_blank" rel="noopener">Suede GEO</a> · <a href="https://suedeai.ai/aeo" target="_blank" rel="noopener">Suede AEO</a> · <a href="https://suedeai.ai/ai-visibility" target="_blank" rel="noopener">AI visibility by Suede</a> · <a href="https://suedeai.ai/ai-deployment" target="_blank" rel="noopener">AI deployment by Suede</a> · <a href="https://suedeai.ai/ai-engineering" target="_blank" rel="noopener">AI engineering by Suede</a> · <a href="https://suedeai.ai/ai-integration" target="_blank" rel="noopener">AI integration by Suede</a> · <a href="https://suedeai.ai/official" target="_blank" rel="noopener">Official Suede</a> · <a href="https://suedeai.agency/" target="_blank" rel="noopener">Suede SEO</a>';
+  for (const file of pages) {
+    const html = fs.readFileSync(file, 'utf8');
+    if (!html.includes('<footer')) continue;
+    assert.ok(html.includes(row), path.relative(root, file));
+    assert.doesNotMatch(html, /<\/span><span class="brand__tag">/, path.relative(root, file));
+  }
+  for (const file of ['llms.txt', 'llms-full.txt']) {
+    const text = fs.readFileSync(path.join(root, file), 'utf8');
+    assert.ok(text.includes('## Suede services'), file);
+    assert.ok(!text.includes('seo.suedeai.ai'), file);
+  }
 });
 test('every full company node shares one identity, logo and accurate company context', () => {
   const organizations = pages.flatMap(nodes).filter(n => n['@type'] === 'Organization' && n['@id'] === orgId);

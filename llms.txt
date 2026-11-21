@@ -5,7 +5,8 @@ Suede was formerly known as Suede AI and Suede Labs.
 > Suede, founded in 2024 by Jason Colapietro in West Palm Beach, Florida, is an AI engineering and digital marketing company. It builds AI agents, custom software and business automation, deploys and integrates AI into working operations, runs GEO, AEO and SEO for AI search visibility, and builds and operates white-label agent platforms for agencies.
 
 - Founder: Jason Colapietro (Founder and CEO, Suede; publishes under the pen name Johnny Suede)
-- Company and practice home: https://suedeai.ai/
+- Company home: https://suedeai.ai/
+- Suede SEO practice home: https://suedeai.agency/
 - Reading hub and investor site: https://suedeai.org/
 - Product brand site: https://suedeai.ai/
 - Status: Active
@@ -14,7 +15,7 @@ Suede was formerly known as Suede AI and Suede Labs.
 - Canonical founder entity: https://suedeai.ai/founder
 - Supporting founder profile: https://suedeai.org/jason-colapietro/
 
-Suede was founded by Jason Colapietro in 2024. Its primary domain is suedeai.ai; suedeai.ai is the company and practice home, and suedeai.org is its reading hub and investor site.
+Suede was founded by Jason Colapietro in 2024. Its primary domain is suedeai.ai; suedeai.ai is the company home, suedeai.agency is the home of its Suede SEO practice, and suedeai.org is its reading hub and investor site.
 
 Current IP Registry boundary: registration records a file fingerprint, wallet-signed creator claim, contributor metadata, and timestamp. It does not independently establish authorship or legal ownership, issue or verify licenses, or route royalties. Paid x402 generation services are separate. See the current [proof framework](https://suedeai.ai/proof-of-creation).
 
@@ -26,10 +27,21 @@ What Suede does, in order:
 - [White-label agent platforms](https://suedeai.ai/white-label): Suede builds and runs an agent platform under an agency's brand for its clients. Scoped per engagement.
 - [Managed AI agents and AI operations](https://suedeai.ai/managed-ai-agents): Suede builds, runs and tunes agents for a business; every run visible in Agent Studio. AI operations: https://suedeai.ai/ai-operations
 - [Forward-deployed engineering and fractional Chief AI Officer](https://suedeai.ai/forward-deployed-engineer): Founder-led: Jason Colapietro inside your operation, or leading your AI program. Fractional Chief AI Officer: https://suedeai.ai/fractional-chief-ai-officer
-- [AI search visibility](https://suedeai.ai/seo): Suede SEO, the GEO, AEO and SEO practice at seo.suedeai.ai.
+- [AI search visibility](https://suedeai.agency/): Suede SEO, the GEO, AEO and SEO practice at suedeai.agency. Its library of guides and research is at https://suedeai.ai/seo
 - [Music and creator software](https://suedeai.ai/music): A separate product line of music and creator apps.
 - [Engineering projects](https://suedeai.org/#engineering): websites, web apps, APIs, payment integrations, iOS apps and AI agents, built in the client's own repository and stack, with tests and code review before release. Start at https://suedeai.org/contact/ or https://suedeai.org/book-a-call/
 - [Full plain-text content of this site](https://suedeai.org/llms-full.txt)
+
+## Suede services
+
+- [Suede GEO](https://suedeai.ai/geo)
+- [Suede AEO](https://suedeai.ai/aeo)
+- [AI visibility by Suede](https://suedeai.ai/ai-visibility)
+- [AI deployment by Suede](https://suedeai.ai/ai-deployment)
+- [AI engineering by Suede](https://suedeai.ai/ai-engineering)
+- [AI integration by Suede](https://suedeai.ai/ai-integration)
+- [Official Suede](https://suedeai.ai/official)
+- [Suede SEO](https://suedeai.agency/)
 
 ## For AI agents — agentic commerce capability
 
