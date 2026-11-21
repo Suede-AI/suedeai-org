@@ -105,7 +105,7 @@ test('founder identity remains canonical and excludes company and software accou
 });
 test('homepage location and legal navigation agree with company identity', () => {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-  assert.ok(html.includes('Suede AI, West Palm Beach, FL'));
+  assert.ok(html.includes('Suede, West Palm Beach, FL'));
   assert.ok(!html.includes('San Francisco'));
   const footer = html.match(/<footer[\s\S]*?<\/footer>/)[0];
   for (const route of ['/privacy/', '/terms/']) assert.ok(footer.includes(`href="${route}"`));

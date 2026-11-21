@@ -24,3 +24,9 @@ Owner ruling 2026-11-18. These five families (case-insensitive, curly-quote vari
 5. listing caveats: "editions overlap", "Android editions overlap iOS", "counts describe platform listings"
 
 The guard is `tests/hedging_phrases.test.js` (families, scope and exemptions in `tests/hedging-guard.js`), run by `node --test tests/*.test.js` in CI. It prints `file:line` and the family for each hit. Exempt, each listed in the guard with its reason: legal pages (terms, privacy, refund policy, Suede Voice terms and privacy, licenses), code comments and inline scripts, error and status messages (`role="alert"`/`role="status"`), third-party quotes marked with `cite` or `data-third-party`, test fixtures, `docs/handoffs/`, IP-registry legal explanations (for example "a registry record doesn't prove ownership"), and methodology chapters of a book that teach readers measurement.
+
+## The company name is "Suede"
+
+Owner direction, 2026-11-21. The company is "Suede"; sub-brands drop "AI" and "Labs" ("Suede SEO", "Suede GEO", "Suede Agent Studio", "Suede IP Registry", "Suede Social", "Suede Distro"). "Suede AI", "Suede Labs" and "Suede Labs AI" are former names. In public copy they appear only as the Organization's schema `alternateName` and in one alias line per `llms.txt`, `llms-full.txt` and `ai-instructions` page. Verbatim press headlines, quoted third-party text and external listing names this repo cannot change (for example the "Suede AI Generator" App Store app or the "Suede AI SEO" Clutch profile) stay as published. Domains, URLs, slugs and code identifiers are not names and stay as they are.
+
+The guard is `tests/brand_name.test.js` (allowed spots and literals, each with its reason, in `tests/brand-name-guard.js`), run by `node --test tests/*.test.js`. When it fails, write "Suede"; add a literal to the allowlist only for verbatim third-party text or an external listing name.
