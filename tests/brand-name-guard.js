@@ -39,6 +39,7 @@ const ALLOWED_LITERALS = [
   // Quoted third-party text.
   { text: 'Suede labs ai review', reason: 'Google search query shown in a screenshot' },
   { text: 'Suede Labs AI is highly rated', reason: "Google Web Guide's words, quoted" },
+  { text: 'names Suede Labs as an opt-out option', reason: 'the proposed Community Note names Suede Labs; the record states what it says' },
 ];
 
 // The one alias line allowed per discovery file.
