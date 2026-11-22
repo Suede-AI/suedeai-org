@@ -798,10 +798,22 @@ def main() -> int:
     # Each optimized page carries its own last-modified date. A single shared
     # literal made it impossible to update one page without retouching the other
     # two just to keep this assertion green, so the date is pinned per page.
+    # The dates themselves come from git (scripts/sync-lastmod.mjs), so each is
+    # read from the page's sitemap <lastmod>; tests/lastmod_sync.test.js keeps
+    # the two in step.
+    sitemap_lastmods = dict(
+        re.findall(
+            r"<loc>https://suedeai\.org/([^<]*)</loc>\s*<lastmod>([^<]+)</lastmod>",
+            read_text(ROOT / "sitemap.xml"),
+        )
+    )
     optimized_pages = {
-        "why-copyright-fails/index.html": "2026-09-09",
-        "programmable-ip/index.html": "2026-10-18",
-        "royalties/index.html": "2026-11-04",
+        page: sitemap_lastmods.get(page[: -len("index.html")], "")
+        for page in (
+            "why-copyright-fails/index.html",
+            "programmable-ip/index.html",
+            "royalties/index.html",
+        )
     }
 
     for file_name, expected_modified in optimized_pages.items():

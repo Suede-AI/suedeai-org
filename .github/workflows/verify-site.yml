@@ -21,6 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: tests/lastmod_sync.test.js compares each sitemap
+          # lastmod with its page's last commit date.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
